@@ -219,134 +219,6 @@ Delete		O(1)	O(n)
 - cf. Back-of-the-book index, Concordance
 - applications: full-text search, sequence assembly
 
-##### algorithms
-
-## cache algorithms
-
-- optimization
--- Unconstrained nonlinear without derivative (black box, direct search), for functions which are not continuous or differentiable
-  * Random search (random sampling from hypersphere surrounding the current position using uniform distribution)
-    - Randomized algorithm
-  * Random optimization (random sampling from hypersphere surrounding the current position using normal distribution)
-  * Luus–Jaakola
-    - heuristic
-  * Pattern search
-  * Golden-section search (for Unimodal)
-  * Interpolation methods
-  * Line search (iterative approache to find a local minimum)
-  * Nelder–Mead method
-    - heuristic search
-    - implemented in Mathematica NMinimize ("NelderMead", "DifferentialEvolution", "SimulatedAnnealing", "RandomSearch")
-    - L-BFGS-B variant implemented in scipy.optimize.minimize
-  * Successive parabolic interpolation (for continuous unimodal function)
-  * genetic algorithm
-  * differential evolution
-  * Powell's method
-    - modified variant implemented in scipy.optimize.minimize
-  * Principal Axis (by Brent)
-    - implemented in Mathematica FindMinimum(Method->'PrincipalAxis')
-    - uses SVD
-
--- Unconstrained nonlinear with derivate
-  * Trust region
-  * Broyden–Fletcher–Goldfarb–Shanno algorithm (BFGS)
-    - Quasi-Newton method
-    - iterative method
-    - implemented in scipy.optimize.minimize
-    - implemented in Mathematica FindMinimum(Method->'QuasiNewton')
-  * Limited-memory BFGS (L-BFGS)
-    - Quasi-Newton method
-    - BFGS variant for large systems with memory optimisations
-    - implemented in Mathematica FindMinimum(Method->'QuasiNewton')
-    - implemented in scipy.optimize.minimize
-    - applications:
-      - "the algorithm of choice" for fitting log-linear (MaxEnt) models and conditional random fields with l2-regularization.[wiki]
-  * Davidon–Fletcher–Powell formula
-    - Quasi-Newton method
-    - superseded by the BFGS
-  * Symmetric rank-one (SR1)
-    - Quasi-Newton method
-    - advantages for sparse or partially separable problems
-  * Gauss–Newton
-    - non-linear least squares only
-  * Levenberg–Marquardt algorithm
-    - non-linear least squares
-    - iterative procedure
-    - generic curve-fitting problems
-    - finds local minimum
-    - implemented in Mathematica FindMinimum(Method->'LevenbergMarquardt')
-    - implemented in scipy.optimize.least_squares(method='lm')
-    - variant of Gauss–Newton
-  * Berndt–Hall–Hall–Hausman algorithm (BHHH)
-  * Gradient descent (gradient, steepest descent)
-    - stochastic approximation: Stochastic gradient descent
-    - will converge to a global minimum if the function is convex
-  * Nonlinear conjugate gradient method
-    - implemented in Mathematica FindMinimum(Method->'ConjugateGradient')
-    - implemented in scipy.optimize.minimize
-  * Truncated Newton
-    - implemented in scipy.optimize.minimize
-
--- unconstrained nonlinear with hessian
-  * Newton's method in optimization
-    - implemented in Mathematica FindMinimum(Method->'Newton')
-    - Anytime algorithm
-
--- constrained nonlinear
-  * Penalty method
-  * Sequential quadratic programming (SQP)
-    - Sequential Least SQuares Programming (SLSQP) implemented in scipy.optimize.minimize
-  * Augmented Lagrangian method
-  * Successive Linear Programming (SLP)
-  * Interior-point method (aka Barrier method)
-    - implemented in Mathematica FindMinimum(Method->'InteriorPoint') (only one for constrained optimization)
-
--- Metaheuristics (randomized search methods)
-  * Evolutionary algorithm
-    - for one variant see Genetic algorithm
-  * Genetic algorithm (GA)
-  * Local search
-    - variants: Hill climbing, Tabu search, Simulated annealing
-    - applications: vertex cover problem, travelling salesman problem, boolean satisfiability problem, nurse scheduling problem, k-medoid
-  * Simulated annealing (SA)
-    - applications: combinatorial optimization problems
-    - approximate global optimization
-  * Tabu search (TS)
-    - combinatorial optimization problems
-  * Ant colony optimization algorithms
-    - applications: combinatorial optimization problems
-    - see also: Swarm intelligence
-    - works well on graphs with changing topologies
-
--- Combinatorial optimization (https://en.wikipedia.org/wiki/Combinatorial_optimization)
-  * see also Metaheuristics
-
--- Stochastic optimization
-  * Stochastic gradient descent (SGD)
-    - variants: momentum, Averaging, AdaGrad, RMSProp, Adam (many implemented in Keras and/or Tensorflow)
-  * Stochastic approximation
-  * see also Metaheuristics
-  * see book 'Clever Algorithms: Nature-Inspired Programming Recipes'
-
--- convex
-
--- nonlinear with NOT ENOUGH INFO
-  * Newton conjugate gradient
-    - implemented in scipy.optimize.minimize
-  * Constrained Optimization BY Linear Approximation (COBYLA) algorithm
-    - implemented in scipy.optimize.minimize
-  * Trust-region dogleg
-    - implemented in scipy.optimize.minimize
-  * Linear Programming
-    - implemented in Mathematica FindMinimum(Method->'LinearProgramming')
-    - is this SLP?
-
--- Linear least squares
-  * "Direct" and "IterativeRefinement", and for sparse arrays "Direct" and "Krylov"
-
--- important practical theorems
-  * no free lunch theorem
-
 # named algorithms:
 
 ## Breadth-first search
@@ -361,13 +233,16 @@ Delete		O(1)	O(n)
 
 ## Introselect
 - https://en.wikipedia.org/wiki/Introselect
-- selection algorithm
 - implemented in C++ std::nth_element
+- is a: 'Selection algorithm'
 
 ## Floyd–Rivest algorithm
 - https://en.wikipedia.org/wiki/Floyd%E2%80%93Rivest_algorithm
-- selection algorithm
-- divide and conquer algorithm
+- is a: 'Selection algorithm', 'Divide and conquer algorithm'
+
+## Quickselect
+- https://en.wikipedia.org/wiki/Quickselect
+- is a: 'Selection algorithm'
 
 ## Order statistic tree
 - variant of  binary search tree
@@ -491,18 +366,6 @@ Delete		O(1)	O(n)
 - finds: 'Longest increasing subsequence'
 - applications: 'Process control'
 - see also: 'Floyd's game'
-
-## Quickselect
-- https://en.wikipedia.org/wiki/Quickselect
-- is a: 'Selection algorithm'
-
-## Introselect
-- https://en.wikipedia.org/wiki/Introselect
-- is a: 'Selection algorithm'
-
-## Floyd–Rivest algorithm
-- https://en.wikipedia.org/wiki/Floyd%E2%80%93Rivest_algorithm
-- is a: 'Selection algorithm', 'Divide and conquer algorithm'
 
 ## Fisher–Yates shuffle
 - https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle

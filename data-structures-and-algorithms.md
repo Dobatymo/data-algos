@@ -1,3 +1,7 @@
+# online books
+- https://bradfieldcs.com/algos/
+- http://interactivepython.org/RkmcZ/courselib/static/pythonds/index.html
+
 # Abstract data type
 
 ## list / array
@@ -345,6 +349,12 @@ Delete		O(1)	O(n)
 
 # named algorithms:
 
+## Breadth-first search
+- https://en.wikipedia.org/wiki/Breadth-first_search
+
+## Depth-first search
+- https://en.wikipedia.org/wiki/Depth-first_search
+
 ## Median of medians
 - https://en.wikipedia.org/wiki/Median_of_medians
 - selection algorithm
@@ -425,15 +435,83 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/Exponential_search
 
 ## Funnelsort
-- comparison-based sorting algorithm
-- cache-oblivious algorithm
-- external memory algorithm
+- https://en.wikipedia.org/wiki/Funnelsort
+- is a: 'cache-oblivious algorithm', 'external memory algorithm', 'Comparison-based sorting algorithm'
 
 ## Quicksort
-- sorting algorithm
-- divide and conquer algorithm
-- unstable sort
-- in-place algorithm
+- https://en.wikipedia.org/wiki/Quicksort
+- is a: 'Sorting algorithm', 'Unstable sorting algorithm', 'In-place algorithm', 'Divide and conquer algorithm', 'Comparison-based sorting algorithm'
+- best case time complexity: O(n log n)
+- average case time complexity: O(n log n)
+- worst case time complexity: O(n^2)
+- space complexity: O(log n) auxiliary
+
+## Merge Sort
+- https://en.wikipedia.org/wiki/Merge_sort
+- is a: 'Sorting algorithm', 'Stable sorting algorithm' (usually), 'Divide and conquer algorithm', 'Comparison-based sorting algorithm'
+- implemented in: 'C++ std::stable_sort (usually)'
+- good for sequential access, can work on 'singly linked lists', external sorting
+- easily parallelizable
+
+## Heapsort
+- https://en.wikipedia.org/wiki/Heapsort
+- is a: 'Sorting algorithm', 'In-place algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
+- solves: 'Partial sorting'
+- best case time complexity: O(n log n)
+- average case time complexity: O(n log n)
+- worst case time complexity: O(n log n)
+- space complexity: O(1)
+- uses: 'max heap'
+- not easily parallelizable
+- can work on 'doubly linked lists'
+
+## Timsort
+- https://en.wikipedia.org/wiki/Timsort
+- is a: 'Sorting algorithm', 'Stable sorting algorithm', 'Comparison-based sorting algorithm'
+- implemented in: 'Python sorted', 'Android Java'
+
+## Introsort
+- https://en.wikipedia.org/wiki/Introsort
+- is a: 'Sorting algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
+- implemented in: 'C++ STL std::sort (usually)', '.net sort'
+
+## Cycle sort
+- https://en.wikipedia.org/wiki/Cycle_sort
+- is a: 'Sorting algorithm', 'In-place algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
+- solves: 'cycle decomposition'
+- theoretically optimal in terms of the total number of writes to the original array
+- used for sorting where writes are expensive
+- applications: EEPROM
+- time complexity: O(n^2)
+- space complexity: O(1) auxiliary
+
+## Patience sorting
+- https://en.wikipedia.org/wiki/Patience_sorting
+- is a: 'Sorting algorithm', 'Comparison-based sorting algorithm'
+- finds: 'Longest increasing subsequence'
+- applications: 'Process control'
+- see also: 'Floyd's game'
+
+## Quickselect
+- https://en.wikipedia.org/wiki/Quickselect
+- is a: 'Selection algorithm'
+
+## Introselect
+- https://en.wikipedia.org/wiki/Introselect
+- is a: 'Selection algorithm'
+
+## Floyd–Rivest algorithm
+- https://en.wikipedia.org/wiki/Floyd%E2%80%93Rivest_algorithm
+- is a: 'Selection algorithm', 'Divide and conquer algorithm'
+
+## Fisher–Yates shuffle
+- https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+- is a: 'Shuffling algorithm', 'In-place algorithm'
+- unbiased
+
+## Reservoir sampling
+- family of 'randomized algorithms'
+- version of: 'Fisher–Yates shuffle'
 
 ## Cache-oblivious distribution sort
 - comparison-based sorting algorithm
@@ -516,6 +594,12 @@ Delete		O(1)	O(n)
 - implemented in c++ boost::graph::prim_minimum_spanning_tree
 - time complexity depends on used data structures
 - see book: 'Introduction to Algorithms'
+
+## Hierholzer's algorithm
+- https://en.wikipedia.org/wiki/Eulerian_path#Hierholzer's_algorithm
+- https://www.geeksforgeeks.org/hierholzers-algorithm-directed-graph/
+- solves: 'Eulerian path'
+- more efficient than: 'Fleury's algorithm'
 
 ## Matching pursuit
 - https://en.wikipedia.org/wiki/Matching_pursuit
@@ -681,6 +765,9 @@ Delete		O(1)	O(n)
 ---# interesting problems with clever solutions
 - optimal binary search tree (cf. Shannon coding)
 
+## Cycle decomposition
+- https://en.wikipedia.org/wiki/Cycle_decomposition_(group_theory)
+
 ## RSA problem
 - https://en.wikipedia.org/wiki/RSA_problem
 - see: 'Integer factorization'
@@ -794,6 +881,10 @@ Delete		O(1)	O(n)
 - applications: sparse matrix compression
 - domain: 'combinatorics'
 
+## Longest increasing subsequence
+- https://en.wikipedia.org/wiki/Longest_increasing_subsequence
+- domain: 'combinatorics'
+
 ## Maximum subarray problem
 - https://en.wikipedia.org/wiki/Maximum_subarray_problem
 - applications: 'genomic sequence analysis', 'computer vision', 'data mining'
@@ -803,3 +894,38 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/Optical_flow
 - applications: 'Motion estimation', 'video compression', 'object detection', 'object tracking', 'image dominant plane extraction', 'movement detection', 'robot navigation , 'visual odometry'
 - domain: 'machine vision', 'computer vision'
+
+## Partial sorting
+- https://en.wikipedia.org/wiki/Partial_sorting
+- solved by: 'heaps', 'quickselsort', 'Quickselect'
+
+## Incremental sorting
+- https://en.wikipedia.org/wiki/Partial_sorting#Incremental_sorting
+- solved by: 'quickselect', 'heaps'
+
+## Hamiltonian path problem
+- https://en.wikipedia.org/wiki/Hamiltonian_path_problem
+- https://www.hackerearth.com/practice/algorithms/graphs/hamiltonian-path/
+- solved by algorithms which solve: 'Boolean satisfiability problem'
+- domain: "graph theory"
+
+## Eulerian path problem
+- https://en.wikipedia.org/wiki/Eulerian_path
+- application: 'in bioinformatics to reconstruct the DNA sequence from its fragments'
+- application: 'CMOS circuit design to find an optimal logic gate ordering'
+- compare: 'Hamiltonian path problem'
+- if exists, optimal solution for: 'Route inspection problem'
+- domain: "graph theory"
+
+## Route inspection problem / Chinese postman problem
+- https://en.wikipedia.org/wiki/Route_inspection_problem
+- http://mathworld.wolfram.com/ChinesePostmanProblem.html
+
+# Very specific problems
+
+## Knight's tour
+- https://en.wikipedia.org/wiki/Knight%27s_tour
+- http://mathworld.wolfram.com/KnightGraph.html
+- its graph is a: 'bipartite graph'
+- solved by 'depth first search' on graph of legal moves, using 'Warnsdorff's Rule' (heuristic) for improved performance
+- version of: 'Hamiltonian path problem'

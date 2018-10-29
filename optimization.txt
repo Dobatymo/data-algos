@@ -122,3 +122,14 @@
 
 -- important practical theorems
   * no free lunch theorem
+
+# 
+
+## n-d to 2-d mapping
+
+### Self-organizing map
+- https://en.wikipedia.org/wiki/Self-organizing_map
+- type of: artificial neural network
+- unsupervised
+- applications: visualization
+- implemented in: python mvpa2.mappers.som.SimpleSOMMapper

@@ -328,7 +328,7 @@ Delete		O(1)	O(n)
 - solves 'All-pairs shortest paths problem' for real-valued weights for directed/undirected graphs in O(v^3) where v is the number of vertices
 - negative cycles are not allowed
 - uses method: 'dynamic programming'
-- implemented in python scipy.sparse.csgraph.shortest_path(method='FW'), c++ boost::graph::floyd_warshall_all_pairs_shortest_paths
+- implemented in: 'python scipy.sparse.csgraph.shortest_path(method='FW')', 'c++ boost::graph::floyd_warshall_all_pairs_shortest_paths'
 - is faster then 'Johnson's algorithm' for dense graphs
 
 ## A* search algorithm
@@ -336,26 +336,29 @@ Delete		O(1)	O(n)
 - generalization of 'Dijkstra's algorithm'
 - heuristic search
 - informed search algorithm (best-first search)
-- usually implemented using 'priority queue'
+- usually implemented using: 'priority queue'
 - applications: pathfinding, parsing using stochastic grammars in NLP
 - uses method: 'dynamic programming'
 
 ## Linear search
 - https://en.wikipedia.org/wiki/Linear_search
-- find element in any ordered seqeunce in O(i) time where i is the index of the element in the sequence
+- find element in any sequence in O(i) time where i is the index of the element in the sequence
+- works on: 'Linked list', 'Array', 'List'
+- has an advantage when sequential access is fast compared to random access
 - O(1) for list with geometric distributed values
 - implemented in c++ std::find (impl. dependent), python list.index
 
 ## Binary search algorithm
 - https://en.wikipedia.org/wiki/Binary_search_algorithm
 - find element in sorted finite list in O(log n) time where n is the number of elements in list
-- variants: Exponential search
-- implemented in std::binary_search, python bisect
+- requires: 'Random access'
+- variants: 'Exponential search'
+- implemented in 'C++ std::binary_search', 'python bisect'
 
 ## Naïve string-search algorithm
 - https://en.wikipedia.org/wiki/String-searching_algorithm#Na%C3%AFve_string_search
 - find string in string in O(n+m) average time and O(n*m) worst case, where n and m are strings to be search for, resp. in.
-- implemented in std::search (impl. dependent), python list.index
+- implemented in: 'C++ std::search (impl. dependent)', 'python list.index'
 
 ## Exponential search
 - https://en.wikipedia.org/wiki/Exponential_search
@@ -519,6 +522,10 @@ Delete		O(1)	O(n)
 ## Christofides algorithm
 - https://en.wikipedia.org/wiki/Christofides_algorithm
 - solves 'Travelling salesman problem' approximately for metric distances
+
+## Push–relabel maximum flow algorithm
+- https://en.wikipedia.org/wiki/Push–relabel_maximum_flow_algorithm
+- solves: 'Maximum flow problem', 'Minimum-cost flow problem'
 
 ## Kruskal's algorithm
 - https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
@@ -1035,6 +1042,10 @@ Delete		O(1)	O(n)
 - domain: "graph theory"
 - applications: 'Open pit mining', 'Military targeting', 'Transportation network design', 'Job scheduling'
 - can be reduced to: 'Maximum flow problem'
+
+## Maximum flow problem
+- https://en.wikipedia.org/wiki/Maximum_flow_problem
+- domain: 'graph theory'
 
 # Specific problems
 

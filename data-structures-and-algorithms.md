@@ -299,6 +299,7 @@ Delete		O(1)	O(n)
 
 ## Dijkstra's algorithm
 - https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+- http://mathworld.wolfram.com/DijkstrasAlgorithm.html
 - uses method: 'dynamic programming'
 - solves 'shortest path problem' for non-negative weights in directed/undirected graphs in O(v^2) where v is the number of vertices
 - is a: 'graph algorithm'
@@ -324,12 +325,24 @@ Delete		O(1)	O(n)
 
 ## Floyd–Warshall algorithm
 - https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
+- http://mathworld.wolfram.com/Floyd-WarshallAlgorithm.html
 - graph algorithm
 - solves 'All-pairs shortest paths problem' for real-valued weights for directed/undirected graphs in O(v^3) where v is the number of vertices
 - negative cycles are not allowed
 - uses method: 'dynamic programming'
 - implemented in: 'python scipy.sparse.csgraph.shortest_path(method='FW')', 'c++ boost::graph::floyd_warshall_all_pairs_shortest_paths'
 - is faster then 'Johnson's algorithm' for dense graphs
+
+# Reaching algorithm
+- http://mathworld.wolfram.com/ReachingAlgorithm.html
+- solves: 'Shortest path problem' for 'acyclic digraphs'
+- time complexity: O(n), where n is the number of edges
+- where does the name come from? is this the same as using topological sorting?
+
+## Collaborative diffusion
+- https://en.wikipedia.org/wiki/Collaborative_diffusion
+- applications: 'pathfinding'
+- time complexity: constant in the number of agents
 
 ## A* search algorithm
 - https://en.wikipedia.org/wiki/A*_search_algorithm
@@ -370,6 +383,7 @@ Delete		O(1)	O(n)
 
 ## Quicksort
 - https://en.wikipedia.org/wiki/Quicksort
+- http://mathworld.wolfram.com/Quicksort.html
 - is a: 'Sorting algorithm', 'Unstable sorting algorithm', 'In-place algorithm', 'Divide and conquer algorithm', 'Comparison-based sorting algorithm'
 - best case time complexity: O(n log n)
 - average case time complexity: O(n log n)
@@ -385,6 +399,7 @@ Delete		O(1)	O(n)
 
 ## Heapsort
 - https://en.wikipedia.org/wiki/Heapsort
+- http://mathworld.wolfram.com/Heapsort.html
 - is a: 'Sorting algorithm', 'In-place algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
 - solves: 'Partial sorting'
 - best case time complexity: O(n log n)
@@ -404,6 +419,16 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/Introsort
 - is a: 'Sorting algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
 - implemented in: 'C++ STL std::sort (usually)', '.net sort'
+
+## Selection sort
+- https://en.wikipedia.org/wiki/Selection_sort
+- http://mathworld.wolfram.com/SelectionSort.html
+- is a: 'Sorting algorithm', 'In-place algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
+
+## Shellsort
+- https://en.wikipedia.org/wiki/Shellsort
+- http://mathworld.wolfram.com/Shellsort.html
+- is a: 'Sorting algorithm', 'In-place algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm', 'Adaptive sort'
 
 ## Cycle sort
 - https://en.wikipedia.org/wiki/Cycle_sort
@@ -437,10 +462,15 @@ Delete		O(1)	O(n)
 - comparison-based sorting algorithm
 - cache-oblivious algorithm
 
+## Naive Method for SimRank by Jeh and Widom
+- paper: 'SimRank: a measure of structural-context similarity (2002)'
+- calculate: 'SimRank'
+
 ## Wagner–Fischer algorithm
 - https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm
 - uses method: 'dynamic programming'
-- calculate Levenshtein distance in O(n*m) complexity where n and m are the respective string lenths
+- calculates: 'Levenshtein distance'
+- O(n*m) complexity where n and m are the respective string lenths
 - optimal time complexity for problem proven to be O(n^2), so this algorithm is pretty much optimal
 - space complexity of O(n*m) could be reduced to O(n+m)
 
@@ -529,6 +559,7 @@ Delete		O(1)	O(n)
 
 ## Kruskal's algorithm
 - https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
+- http://mathworld.wolfram.com/KruskalsAlgorithm.html
 - finds 'Minimum spanning tree'
 - greedy algorithm
 - implemented in c++ boost::graph::kruskal_minimum_spanning_tree
@@ -551,7 +582,7 @@ Delete		O(1)	O(n)
 ## Matching pursuit
 - https://en.wikipedia.org/wiki/Matching_pursuit
 - does 'Sparse approximation'
-- greedy algorithm
+- properties: 'greedy'
 
 ## Kahn's algorithm
 - https://en.wikipedia.org/wiki/Topological_sorting#Kahn's_algorithm
@@ -586,6 +617,13 @@ Delete		O(1)	O(n)
 - paper: 'A minimum spanning tree algorithm with inverse-Ackermann type complexity'
 - finds 'Minimum spanning tree'
 - uses 'soft heaps'
+
+## Risch semi-algorithm
+- https://en.wikipedia.org/wiki/Risch_algorithm
+- http://mathworld.wolfram.com/RischAlgorithm.html
+- solves: 'indefinite integration'
+- applications: 'Symbolic computation', 'Computer algebra'
+- implemented in: 'Axiom'
 
 ## Fan and Su algortihm for multiple pattern match
 - paper 'An Efficient Algorithm for Matching Multiple Patterns'
@@ -744,9 +782,18 @@ Delete		O(1)	O(n)
 
 ## Bresenham's line algorithm
 - https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
+- http://mathworld.wolfram.com/BresenhamsLineAlgorithm.html
 - is a: line drawing algorithm
 - domain: computer graphics
 - applications: rasterisation
+
+## Berlekamp–Massey algorithm
+- https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm
+- http://mathworld.wolfram.com/Berlekamp-MasseyAlgorithm.html
+- finds: 'shortest linear feedback shift register'
+- finds: 'minimal polynomial of a linearly recurrent sequence in an arbitrary field'
+- applications: 'Error detection and correction'
+- domain: 'Field theory'
 
 ## Xiaolin Wu's line algorithm
 - https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm
@@ -816,6 +863,149 @@ Delete		O(1)	O(n)
 - domain: 'image processing'
 - implemented in: 'cv::threshold(type=THRESH_OTSU)'
 
+## Soundex
+- https://en.wikipedia.org/wiki/Soundex
+- is a: 'Phonetic algorithm'
+- applications: 'Indexing', 'Phonetic encoding'
+
+## Match rating approach
+- https://en.wikipedia.org/wiki/Match_rating_approach
+- is a: 'Phonetic algorithm'
+- applications: 'Indexing', 'Phonetic encoding', 'Phonetic comparison'
+- is a: 'Similarity measure'
+
+## Chamfer matching
+- paper: 'Parametric correspondence and chamfer matching: two new techniques for image matching'
+- uses: 'Chamfer distance'
+
+## k-nearest neighbors algorithm
+- is a: machine learning algorithm
+- properties: 'non-parametric', 'instance-based learning'
+- special case of: 'Variable kernel density estimation'
+- applications: 'Pattern recognition'
+- implemented: 'Python sklearn.neighbors.KNeighborsRegressor, sklearn.neighbors.KNeighborsClassifier'
+
+## Forsythe's algorithm for sampling generalized exponential distributions
+- paper: 'Von Neumann's Comparison Method for Random Sampling from the Normal and Other Distributions'
+- sample from: exp(−G(x)), where G(x) is 'easy to compute'
+- domain: 'Random numbers'
+
+## Ziggurat algorithm
+- https://en.wikipedia.org/wiki/Ziggurat_algorithm
+- paper: 'The Ziggurat Metho d for Generating Random Variables'
+- sample from: 'monotone decreasing probability distribution', 'symmetric unimodal distribution'
+- is a: 'Statistical algorithm'
+- domain: 'Random numbers'
+
+## Remez algorithm
+- https://en.wikipedia.org/wiki/Remez_algorithm
+- http://mathworld.wolfram.com/RemezAlgorithm.html
+- is a: 'Minimax approximation algorithm'
+- finds: 'Polynomial of best approximation'
+- applications: 'Function approximation'
+
+## Neville's algorithm
+- https://en.wikipedia.org/wiki/Neville%27s_algorithm
+- http://mathworld.wolfram.com/NevillesAlgorithm.html
+- applications: 'Polynomial interpolation', 'Numerical differentiation'
+
+## Bron–Kerbosch algorithm
+- https://en.wikipedia.org/wiki/Bron%E2%80%93Kerbosch_algorithm
+- http://mathworld.wolfram.com/Bron-KerboschAlgorithm.html
+- finds: all 'Maximal Clique' in an 'undirected graph'
+- domain: 'Graph theory'
+- applications: 'Computational chemistry'
+- properties: 'not output-sensitive'
+
+## Havel–Hakimi algorithm
+- https://en.wikipedia.org/wiki/Havel%E2%80%93Hakimi_algorithm
+- solves: 'Graph realization problem'
+- domain: 'Graph theory'
+
+## QR algorithm
+- https://en.wikipedia.org/wiki/QR_algorithm
+- is a: 'Eigenvalue algorithm'
+- uses: 'QR decomposition'
+- properties: 'numerically stable'
+- modern implicit variant called: 'Francis algorithm'
+- supersedes: 'LR algorithm' because of better numerical stability
+
+## Weiler–Atherton clipping algorithm
+- https://en.wikipedia.org/wiki/Weiler%E2%80%93Atherton_clipping_algorithm
+- solves: 'Clipping problem' for polygons in 2 dimensions
+- implemented in: 'Boost.Geometry'
+
+## Sutherland–Hodgman algorithm
+- https://en.wikipedia.org/wiki/Sutherland%E2%80%93Hodgman_algorithm
+- solves: 'Clipping problem' for polygons in 2 dimensions
+
+## Vatti clipping algorithm
+- https://en.wikipedia.org/wiki/Vatti_clipping_algorithm
+- solves: 'Clipping problem' for polygons in 2 dimensions
+- supports: 'complex polygons' (compared to 'Weiler–Atherton clipping algorithm' and 'Sutherland–Hodgman algorithm')
+- used to implement: 'Boolean operations on polygons'
+- implemented in: 'Angus Johnson's Clipper' (extended), 'General Polygon Clipper' (variant)
+
+## Greiner–Hormann clipping algorithm
+- https://en.wikipedia.org/wiki/Greiner%E2%80%93Hormann_clipping_algorithm
+- solves: 'Clipping problem' for polygons in 2 dimensions
+- used to implement: 'Boolean operations on polygons'
+
+## Schutte's algorithm for polygon clipping
+- paper: 'An Edge Labeling Approach to Concave Polygon Clipping (1995)'
+- solves: 'Clipping problem' for polygons
+- implemented in: 'Clippoly'
+
+## PolyBoolean algorithm
+- solves: 'Boolean operations on polygons'
+- paper: 'Implementation of Boolean operations on sets of polygons in the plane (1998)'
+- http://www.complex-a5.ru/polyboolean/comp.html
+- extends: 'Schutte algorithm'
+
+## Fast multipole method
+- https://en.wikipedia.org/wiki/Fast_multipole_method
+- domain: 'Computational electromagnetism'
+
+## Fast Fourier transform method
+- https://en.wikipedia.org/wiki/Fast_Fourier_transform
+- calculates: 'Discrete Fourier transform'
+
+## Cooley–Tukey FFT algorithm
+- https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm
+- variation of: 'Fast Fourier transform'
+- implemented in: 'Python numpy.fft'
+
+## Kirkpatrick–Seidel algorithm
+- https://en.wikipedia.org/wiki/Kirkpatrick%E2%80%93Seidel_algorithm
+- paper: 'The Ultimate Planar Convex Hull Algorithm? (1983)'
+- calculates: 'Convex hull' in 2 dimensions
+- properties: 'output-sensitive'
+
+## Chan's algorithm
+- https://en.wikipedia.org/wiki/Chan%27s_algorithm
+- calculates: 'Convex hull' in 2 or 3 dimensions
+- properties: 'output-sensitive'
+- supersedes: 'Kirkpatrick–Seidel algorithm' (simpler and same complexity)
+
+## Fortune and Hopcroft algorithm for the closest pair of points problem
+- paper: 'A note on Rabin's nearest-neighbor algorithm (1978)'
+- time complexity: O(n log(log(n)))
+- properties: 'deterministic'
+- assumes constant time floor function
+
+## Khuller and Matias algorithm for the closest pair of points problem
+- paper: 'A Simple Randomized Sieve Algorithm for the Closest-Pair Problem'
+- time complexity: O(n)
+- properties: 'randomized'
+
+## Kalman filter
+- also called: 'linear quadratic estimation'
+- https://en.wikipedia.org/wiki/Kalman_filter
+- http://mathworld.wolfram.com/KalmanFilter.html
+- domain: 'Control theory'
+- applications: 'guidance, navigation, and control', 'time series analysis', 'Trajectory optimization', 'Computer vision', 'Object tracking'
+- solves: 'Linear–quadratic–Gaussian control problem'
+
 # Filters
 
 - these are convolved with some input
@@ -854,7 +1044,7 @@ Delete		O(1)	O(n)
 
 ## Locality-sensitive hashing
 - https://en.wikipedia.org/wiki/Locality-sensitive_hashing
-- used for: 'nearest neighbor search' 
+- used for: 'nearest neighbor search'
 
 ## Dynamic programming
 - https://en.wikipedia.org/wiki/Dynamic_programming
@@ -1036,6 +1226,7 @@ Delete		O(1)	O(n)
 ## Route inspection problem / Chinese postman problem
 - https://en.wikipedia.org/wiki/Route_inspection_problem
 - http://mathworld.wolfram.com/ChinesePostmanProblem.html
+- domain: "graph theory"
 
 ## Closure problem
 - https://en.wikipedia.org/wiki/Closure_problem
@@ -1046,6 +1237,29 @@ Delete		O(1)	O(n)
 ## Maximum flow problem
 - https://en.wikipedia.org/wiki/Maximum_flow_problem
 - domain: 'graph theory'
+
+## Polynomial of best approximation
+- https://www.encyclopediaofmath.org/index.php/Polynomial_of_best_approximation
+- domain: 'Approximation theory'
+
+## Point location problem
+- https://en.wikipedia.org/wiki/Point_location
+- domain: 'Computational geometry'
+
+## Point-in-polygon problem
+- https://en.wikipedia.org/wiki/Point_in_polygon
+- special case of: 'Point location problem'
+- domain: 'Computational geometry'
+
+## Convex hull
+- also called: 'minimum convex polygon'
+- https://en.wikipedia.org/wiki/Convex_hull
+- domain: 'Computational geometry'
+
+## Closest pair of points problem
+- https://en.wikipedia.org/wiki/Closest_pair_of_points_problem
+- domain: 'Computational geometry'
+- brute force time complexity: O(n^2) for a set of points of size n
 
 # Specific problems
 
@@ -1061,3 +1275,8 @@ Delete		O(1)	O(n)
 - http://mathworld.wolfram.com/TowerofHanoi.html
 - applications: 'Backup rotation scheme'
 - isomorphic to finding a 'Hamiltonian path' on an n-hypercube
+
+## Optimal solutions for Rubik's Cube
+- calculate maximal turn numbers by: diameters of the corresponding Cayley graphs of the Rubik's Cube group
+- use 'Korf's algorithm' to calculate optimal solution
+- implementation: http://www.cflmath.com/~reid/Rubik/optimal_solver.html

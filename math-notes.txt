@@ -1,0 +1,57 @@
+# Knuth's Simpath algorithm
+- https://en.wikipedia.org/wiki/Knuth%27s_Simpath_algorithm
+- domain: 'Graph theory'
+
+# Zeilberger's Algorithm
+- http://mathworld.wolfram.com/ZeilbergersAlgorithm.html
+
+# Gosper's Algorithm
+- http://mathworld.wolfram.com/GospersAlgorithm.html
+
+# PSOS Algorithm
+- http://mathworld.wolfram.com/PSOSAlgorithm.html
+- is a: 'Integer relation algorithm'
+
+# Ferguson-Forcade Algorithm
+- http://mathworld.wolfram.com/Ferguson-ForcadeAlgorithm.html
+- is a: 'Integer relation algorithm'
+
+# HJLS Algorithm
+- http://mathworld.wolfram.com/HJLSAlgorithm.html
+- is a: 'Integer relation algorithm'
+
+# LLL Algorithm
+- https://en.wikipedia.org/wiki/Lenstra%E2%80%93Lenstra%E2%80%93Lov%C3%A1sz_lattice_basis_reduction_algorithm
+- http://mathworld.wolfram.com/LLLAlgorithm.html
+- is a: 'Integer relation algorithm'
+
+# PSLQ Algorithm
+- http://mathworld.wolfram.com/PSLQAlgorithm.html
+- is a: 'Integer relation algorithm'
+
+# Fleury's Algorithm
+- http://mathworld.wolfram.com/FleurysAlgorithm.html
+
+# Lanczos Algorithm
+- http://mathworld.wolfram.com/LanczosAlgorithm.html
+
+# Blankinship Algorithm
+- http://mathworld.wolfram.com/BlankinshipAlgorithm.html
+
+# Splitting Algorithm
+- http://mathworld.wolfram.com/SplittingAlgorithm.html
+
+# Recursive Monotone Stable Quadrature
+- http://mathworld.wolfram.com/RecursiveMonotoneStableQuadrature.html
+
+# Lin's Method
+- http://mathworld.wolfram.com/LinsMethod.html
+
+# Hungarian Maximum Matching Algorithm
+- http://mathworld.wolfram.com/HungarianMaximumMatchingAlgorithm.html
+
+# Blossom Algorithm
+- http://mathworld.wolfram.com/BlossomAlgorithm.html
+
+# Miller's Algorithm
+- http://mathworld.wolfram.com/MillersAlgorithm.html

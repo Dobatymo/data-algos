@@ -17,3 +17,17 @@
 - https://en.wikipedia.org/wiki/Metaheuristic
 - a method to select a heuristic based on data
 - also see: 'no free lunch theorem'
+
+## Distance measure
+- https://en.wikipedia.org/wiki/Distance
+- a description of how to calculate the similarity or distance between two objects (numbers, vectors, strings, images, ...)
+
+## Spigot algorithm
+- https://en.wikipedia.org/wiki/Spigot_algorithm
+- http://mathworld.wolfram.com/SpigotAlgorithm.html
+- calculate mathematical constants to arbitrary precision with limited intermediate storage
+
+## Anytime algorithm
+- also called: 'Interruptible algorithm'
+- https://en.wikipedia.org/wiki/Anytime_algorithm
+- iterative algorithm were each steps improves the result. can be stopped anytime to get an approximation.

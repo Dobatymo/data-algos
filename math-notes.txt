@@ -1,57 +1,165 @@
-# Knuth's Simpath algorithm
+# Problems
+
+## Singular value decomposition
+- https://en.wikipedia.org/wiki/Singular_value_decomposition
+- implemented in: 'scipy.linalg.svd'
+- applications: 'Matrix decomposition', 'Matrix approximation', 'Signal processing', 'Statistics'
+- used for: 'Pseudoinverse', 'Kabsch algorithm'
+- solves: 'Total least squares problem'
+- domain: 'Linear algebra'
+
+## Cholesky decomposition
+- https://en.wikipedia.org/wiki/Cholesky_decomposition
+- implemented in: 'numpy.linalg.cholesky, scipy.linalg.cholesky', 'LAPACK'
+- applications: 'Matrix decomposition', 'Matrix inversion', 'Non-linear optimization', 'Monte Carlo simulation'
+- solves: 'Linear least squares problem'
+- used for: 'Kalman filter'
+- domain: 'Linear algebra'
+
+## LU decomposition
+- https://en.wikipedia.org/wiki/LU_decomposition
+- applications: 'Matrix decomposition', 'Matrix inversion', 'System of linear equations', 'Determinant'
+- implemented in: 'scipy.linalg.lu'
+
+## Maximal matching
+- https://en.wikipedia.org/wiki/Matching_(graph_theory)#Maximal_matchings
+- https://brilliant.org/wiki/matching/#definitions-and-terminology
+
+## Maximum matching
+- the 'Maximal matching' with the maximum number of edges
+- https://brilliant.org/wiki/matching/#definitions-and-terminology
+- solves: 'Assignment problem' on 'weighted bipartite graphs'
+
+## Stable marriage problem
+- https://en.wikipedia.org/wiki/Stable_marriage_problem
+- is a: 'matching problem'
+
+# Algorithms and methods
+
+## Runge–Kutta methods
+- https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods
+- applications: 'Numerical analysis', 'Ordinary differential equation'
+- implemented in: 'scipy.integrate.RK45, scipy.integrate.RK23'
+
+## Ordinary least squares method
+- https://en.wikipedia.org/wiki/Ordinary_least_squares
+
+## Non-linear least squares method
+- https://en.wikipedia.org/wiki/Non-linear_least_squares
+
+## Total least squares method
+- https://en.wikipedia.org/wiki/Total_least_squares
+
+## Orthogonal Distance Regression
+- implemented by: 'scipy.odr', 'ODRPACK'
+
+## Newton–Cotes formulas
+- https://en.wikipedia.org/wiki/Newton%E2%80%93Cotes_formulas
+- applications: 'Numerical integration'
+- implemented in: 'scipy.integrate.newton_cotes'
+
+## Kabsch algorithm
+- https://en.wikipedia.org/wiki/Kabsch_algorithm
+- calculates: 'optimal rotation matrix'
+
+## Jacobi eigenvalue algorithm
+- https://en.wikipedia.org/wiki/Jacobi_eigenvalue_algorithm
+- is a: 'Iterative method'
+- applications: 'Matrix diagonalization'
+
+## Finite difference: central difference
+- https://en.wikipedia.org/wiki/Finite_difference#Forward,_backward,_and_central_differences
+- implemented in: 'scipy.misc.derivative'
+
+## Cholesky algorithm
+- calculates: 'Cholesky decomposition'
+
+## Cholesky–Banachiewicz algorithm
+- variation of: 'Cholesky algorithm'
+
+## Cholesky–Crout algorithm
+- variation of: 'Cholesky algorithm'
+
+## Romberg's method
+- https://en.wikipedia.org/wiki/Romberg%27s_method
+- applications: 'Numerical integration'
+- implemented in: 'scipy.integrate.romberg'
+
+## Knuth's Simpath algorithm
 - https://en.wikipedia.org/wiki/Knuth%27s_Simpath_algorithm
 - domain: 'Graph theory'
 
-# Zeilberger's Algorithm
+## Zeilberger's Algorithm
 - http://mathworld.wolfram.com/ZeilbergersAlgorithm.html
 
-# Gosper's Algorithm
+## Gosper's Algorithm
 - http://mathworld.wolfram.com/GospersAlgorithm.html
 
-# PSOS Algorithm
+## PSOS Algorithm
 - http://mathworld.wolfram.com/PSOSAlgorithm.html
 - is a: 'Integer relation algorithm'
 
-# Ferguson-Forcade Algorithm
+## Ferguson-Forcade Algorithm
 - http://mathworld.wolfram.com/Ferguson-ForcadeAlgorithm.html
 - is a: 'Integer relation algorithm'
 
-# HJLS Algorithm
+## HJLS Algorithm
 - http://mathworld.wolfram.com/HJLSAlgorithm.html
 - is a: 'Integer relation algorithm'
 
-# LLL Algorithm
+## LLL Algorithm
 - https://en.wikipedia.org/wiki/Lenstra%E2%80%93Lenstra%E2%80%93Lov%C3%A1sz_lattice_basis_reduction_algorithm
 - http://mathworld.wolfram.com/LLLAlgorithm.html
 - is a: 'Integer relation algorithm'
 
-# PSLQ Algorithm
+## PSLQ Algorithm
 - http://mathworld.wolfram.com/PSLQAlgorithm.html
 - is a: 'Integer relation algorithm'
 
-# Fleury's Algorithm
+## Fleury's Algorithm
 - http://mathworld.wolfram.com/FleurysAlgorithm.html
 
-# Lanczos Algorithm
+## Lanczos Algorithm
 - http://mathworld.wolfram.com/LanczosAlgorithm.html
 
-# Blankinship Algorithm
+## Blankinship Algorithm
 - http://mathworld.wolfram.com/BlankinshipAlgorithm.html
 
-# Splitting Algorithm
+## Splitting Algorithm
 - http://mathworld.wolfram.com/SplittingAlgorithm.html
 
-# Recursive Monotone Stable Quadrature
+## Recursive Monotone Stable Quadrature
 - http://mathworld.wolfram.com/RecursiveMonotoneStableQuadrature.html
 
-# Lin's Method
+## Lin's Method
 - http://mathworld.wolfram.com/LinsMethod.html
 
-# Hungarian Maximum Matching Algorithm
+## Hungarian Maximum Matching algorithm
+- https://en.wikipedia.org/wiki/Hungarian_algorithm
 - http://mathworld.wolfram.com/HungarianMaximumMatchingAlgorithm.html
+- https://brilliant.org/wiki/hungarian-matching/
+- also called: 'Kuhn-Munkres algorithm'
+- solves: 'maximum-weight matching' for 'bipartite graph'
+- time complexity: O(V^3) for V vertices
 
-# Blossom Algorithm
+## Hopcroft–Karp algorithm
+- https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
+- https://brilliant.org/wiki/hopcroft-karp/
+- solves: 'maximum matching' for 'bipartite graph'
+- time complexity: O(E sqrt(V)) for E edges and V vertices
+- best for sparse, for dense, there are more recent improvements like 'Alt et al. (1991)'
+
+## Blossom Algorithm
+- paper: 'Paths, trees, and flowers (1965)'
+- also called: 'Edmonds' matching algorithm'
+- https://en.wikipedia.org/wiki/Blossom_algorithm
 - http://mathworld.wolfram.com/BlossomAlgorithm.html
+- https://brilliant.org/wiki/blossom-algorithm/
+- domain: 'Graph theory'
+- calculates: 'Maximum matching' for any graph
+- time complexity: O(E V^2) for E edges and V vertices
 
-# Miller's Algorithm
+## Miller's Algorithm
 - http://mathworld.wolfram.com/MillersAlgorithm.html
+- https://crypto.stanford.edu/pbc/notes/ep/miller.html
+- domain: 'Cryptography'

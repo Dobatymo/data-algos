@@ -8,8 +8,17 @@
 - https://en.wikipedia.org/wiki/Nonlinear_programming
 - domain: 'Numerical optimization'
 - mainly used for: 'functions which are not continuous or differentiable'
-- also called: 'black box', 'direct search
+- also called: 'black box', 'direct search'
 - domain: 'Mathematical optimization'
+
+## Unconstrained nonlinear optimization with first derivative
+- https://en.wikipedia.org/wiki/Nonlinear_programming
+
+## Constrained nonlinear optimization
+- https://en.wikipedia.org/wiki/Nonlinear_programming
+
+## Convex optimization
+- https://en.wikipedia.org/wiki/Convex_optimization
 
 ## Nonlinear dimensionality reduction
 - https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction
@@ -64,8 +73,8 @@
 - https://en.wikipedia.org/wiki/Differential_evolution
 - paper: 'Differential Evolution – A Simple and Efficient Heuristic for global Optimization over Continuous Spaces'
 - type: 'Unconstrained nonlinear without derivatives'
-- implemented in: 'Mathematica NMinimize(Method->"DifferentialEvolution")'
-- is a: 'Metaheuristic'
+- implemented in: 'Mathematica NMinimize(Method->"DifferentialEvolution")', 'scipy.optimize.differential_evolution'
+- is a: 'Metaheuristic', 'Stochastic algorithm'
 
 ## Random search
 - https://en.wikipedia.org/wiki/Random_search
@@ -114,7 +123,7 @@
 - https://en.wikipedia.org/wiki/Broyden–Fletcher–Goldfarb–Shanno_algorithm
 - is a: 'Quasi-Newton method', 'Iterative method'
 - implemented in: 'Python scipy.optimize.minimize(method="BFGS")', 'Mathematica FindMinimum(Method->"QuasiNewton")'
-- type: 'Unconstrained nonlinear with first derivate'
+- type: 'Unconstrained nonlinear with first derivative'
 
 ## Limited-memory BFGS
 - https://en.wikipedia.org/wiki/Limited-memory_BFGS
@@ -123,42 +132,120 @@
 - implemented in: 'Mathematica FindMinimum(Method->"QuasiNewton")', 'Python scipy.minimize(method="L-BFGS-B")' (L-BFGS-B variant)
 - applications: 'Maximum entropy models', 'CRF'
 
--- Unconstrained nonlinear with derivate
-  * Trust region
-  * Davidon–Fletcher–Powell formula
-    - Quasi-Newton method
-    - superseded by the BFGS
-  * Symmetric rank-one (SR1)
-    - Quasi-Newton method
-    - advantages for sparse or partially separable problems
-  * Gauss–Newton
-    - non-linear least squares only
-  * Levenberg–Marquardt algorithm
-    - non-linear least squares
-    - iterative procedure
-    - generic curve-fitting problems
-    - finds local minimum
-    - implemented in: 'Mathematica FindMinimum(Method->"LevenbergMarquardt")', 'Python scipy.optimize.least_squares(method="lm")'
-    - variant of Gauss–Newton
-  * Berndt–Hall–Hall–Hausman algorithm (BHHH)
-  * Gradient descent (gradient, steepest descent)
-    - stochastic approximation: Stochastic gradient descent
-    - will converge to a global minimum if the function is convex
-  * Nonlinear conjugate gradient method
-    - implemented in: 'Mathematica FindMinimum(Method->"ConjugateGradient")'
-    - implemented in: 'Python scipy.optimize.minimize(method="Newton-CG")'
-  * Truncated Newton
-    - implemented in: 'Python scipy.optimize.minimize(method="TNC")'
+## Basin-hopping algorithm
+- https://en.wikipedia.org/wiki/Basin-hopping
+- paper: 'Global Optimization by Basin-Hopping and the Lowest Energy Structures of Lennard-Jones Clusters Containing up to 110 Atoms'
+- implemented in: 'scipy.optimize.basinhopping'
+- global optimization of a smooth scalar function of one or more variables
+- applications: 'Physical Chemistry'
+- works good if there are lots of local extrema
+- is a: 'stochastic algorithm', 'sampling algorithm'
+- type: 'Unconstrained nonlinear without derivatives'
+- depends on any: 'local optimization algorithm'
 
--- constrained nonlinear
-  * Penalty method
-  * Sequential quadratic programming (SQP)
-    - Sequential Least SQuares Programming (SLSQP) implemented in 'Python scipy.optimize.minimize(method="SLSQP")'
-  * Augmented Lagrangian method
-  * Successive Linear Programming (SLP)
-  * Interior-point method (aka Barrier method)
-	- http://mathworld.wolfram.com/InteriorPointMethod.html
-    - implemented in: 'Mathematica FindMinimum(Method->'InteriorPoint')'
+## Levenberg–Marquardt algorithm
+- https://en.wikipedia.org/wiki/Levenberg%E2%80%93Marquardt_algorithm
+- http://mathworld.wolfram.com/Levenberg-MarquardtMethod.html
+- paper: 'A Method for the Solution of Certain Non-Linear Problems in Least Squares (1944)'
+- type: 'Unconstrained nonlinear with first derivative'
+- solves: 'Non-linear least squares', 'Orthogonal non-linear least squares'
+- is a: 'iterative procedure'
+- applications: 'generic curve-fitting problems'
+- finds local minimum
+- implemented in: 'Mathematica FindMinimum(Method->"LevenbergMarquardt")', 'Python scipy.optimize.least_squares(method="lm"), scipy.optimize.root(method="lm")', 'MINPACK', 'R ONLS'
+- variant of: 'Gauss–Newton'
+
+## Davidon–Fletcher–Powell formula
+- https://en.wikipedia.org/wiki/Davidon%E2%80%93Fletcher%E2%80%93Powell_formula
+- type: 'Unconstrained nonlinear with first derivative'
+- is a: 'Quasi-Newton method'
+- superseded by: 'Broyden–Fletcher–Goldfarb–Shanno algorithm'
+
+## Symmetric rank-one
+- https://en.wikipedia.org/wiki/Symmetric_rank-one
+- also called: 'SR1'
+- is a: 'Quasi-Newton method'
+- advantages for sparse or partially separable problems
+- implemented in: 'scipy.optimize.SR1'
+- type: 'Unconstrained nonlinear with first derivative'
+
+## Berndt–Hall–Hall–Hausman algorithm
+- also called: 'BHHH'
+- https://en.wikipedia.org/wiki/Berndt%E2%80%93Hall%E2%80%93Hall%E2%80%93Hausman_algorithm
+- type: 'Unconstrained nonlinear with first derivative'
+- similar: 'Gauss–Newton algorithm'
+
+## Nonlinear conjugate gradient method
+- https://en.wikipedia.org/wiki/Nonlinear_conjugate_gradient_method
+- type: 'Unconstrained nonlinear with first derivative'
+- implemented in: 'Mathematica FindMinimum(Method->"ConjugateGradient")'
+- implemented in: 'Python scipy.optimize.minimize(method="Newton-CG")'
+
+## Truncated Newton method
+- https://en.wikipedia.org/wiki/Truncated_Newton_method
+- type: 'Unconstrained nonlinear with first derivative'
+- implemented in: 'Python scipy.optimize.minimize(method="TNC")'
+
+## Gauss–Newton algorithm
+- https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm
+- applications: 'Non-linear least squares'
+- type: 'Unconstrained nonlinear with first derivative'
+
+## Trust region method
+- https://en.wikipedia.org/wiki/Trust_region
+- https://optimization.mccormick.northwestern.edu/index.php/Trust-region_methods
+- http://www.applied-mathematics.net/optimization/optimizationIntro.html
+- type: 'Unconstrained nonlinear with first derivative'
+
+## Gradient descent
+- https://en.wikipedia.org/wiki/Gradient_descent
+- type: 'Unconstrained nonlinear with first derivative'
+- also called: 'Steepest descent'
+- will converge to a global minimum if the function is convex
+- stochastic approximation: 'Stochastic gradient descent'
+- applications: 'Convex optimization'
+
+## Stochastic gradient descent
+- also called: 'SGD'
+- https://en.wikipedia.org/wiki/Stochastic_gradient_descent
+- applications: 'Machine learning'
+- stochastic approximation of: 'Gradient descent'
+- variants: momentum, Averaging, AdaGrad, RMSProp, Adam (many implemented in Keras and/or Tensorflow)
+
+## Interior-point method
+- also called: 'Barrier method'
+- https://en.wikipedia.org/wiki/Interior-point_method
+- http://mathworld.wolfram.com/InteriorPointMethod.html
+- implemented in: 'Mathematica FindMinimum(Method->'InteriorPoint')'
+- applications: 'Convex optimization'
+- type: 'Constrained convex optimization'
+
+## Sequential Least SQuares Programming
+- also called: SLSQP
+- implemented in: 'Python scipy.optimize.minimize(method="SLSQP")'
+- type of: 'Sequential quadratic programming'
+
+## Sequential quadratic programming
+- also called: SQP
+- https://en.wikipedia.org/wiki/Sequential_quadratic_programming
+- type: 'Constrained non-linear' for 'twice continuously differentiable functions'
+
+## Successive linear programming
+- also called: SLP, 'Sequential Linear Programming'
+- https://en.wikipedia.org/wiki/Successive_linear_programming
+- type: 'Constrained non-linear'
+- applications: 'Petrochemical industry'
+
+## Augmented Lagrangian method
+- https://en.wikipedia.org/wiki/Augmented_Lagrangian_method
+- type: 'Constrained non-linear'
+- applications: 'Total variation denoising', 'Compressed sensing'
+- variant: 'Alternating direction method of multipliers'
+
+## Penalty method
+- https://en.wikipedia.org/wiki/Penalty_method
+- type: 'Constrained non-linear'
+- applications: 'Image compression'
 
 -- Metaheuristics (randomized search methods)
   * Evolutionary algorithm
@@ -183,12 +270,8 @@
   * see also Metaheuristics
 
 -- Stochastic optimization
-  * Stochastic gradient descent (SGD)
-    - variants: momentum, Averaging, AdaGrad, RMSProp, Adam (many implemented in Keras and/or Tensorflow)
   * Stochastic approximation
   * see also Metaheuristics
-
--- convex
 
 -- nonlinear with NOT ENOUGH INFO
   * Newton conjugate gradient
@@ -204,6 +287,7 @@
 -- Linear least squares
   * "Direct" and "IterativeRefinement", and for sparse arrays "Direct" and "Krylov"
   * implemented in: 'minimize(method="trust-krylov")'
+
 -- important practical theorems
   * no free lunch theorem
 
@@ -223,3 +307,16 @@
 - solves: 'Nonlinear dimensionality reduction'
 - applications: 'novelty detection', 'image de-noising'
 - implemented in: 'Python sklearn.decomposition.KernelPCA'
+
+## Isomap
+- https://en.wikipedia.org/wiki/Isomap
+- paper: 'A Global Geometric Framework for Nonlinear Dimensionality Reduction (2000)'
+- solves: 'Nonlinear dimensionality reduction'
+
+## Autoencoder
+- https://en.wikipedia.org/wiki/Autoencoder
+- type of: 'Artificial neural network'
+- solves: 'Nonlinear dimensionality reduction'
+- applications: 'Generative model', 'Feature learning'
+- variants: 'Variational autoencoder', 'Contractive autoencoder'
+- unsupervised

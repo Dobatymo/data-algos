@@ -266,7 +266,7 @@ Delete		O(1)	O(n)
 
 ## Inverted index
 - https://en.wikipedia.org/wiki/Inverted_index
-- used by ElasticSearch
+- used by: 'ElasticSearch', 'Lucene'
 - maps content/text to locations/documents
 - Search engine indexing
 - cf. Back-of-the-book index, Concordance
@@ -333,7 +333,7 @@ Delete		O(1)	O(n)
 - implemented in: 'python scipy.sparse.csgraph.shortest_path(method='FW')', 'c++ boost::graph::floyd_warshall_all_pairs_shortest_paths'
 - is faster then 'Johnson's algorithm' for dense graphs
 
-# Reaching algorithm
+## Reaching algorithm
 - http://mathworld.wolfram.com/ReachingAlgorithm.html
 - solves: 'Shortest path problem' for 'acyclic digraphs'
 - time complexity: O(n), where n is the number of edges
@@ -879,11 +879,87 @@ Delete		O(1)	O(n)
 - uses: 'Chamfer distance'
 
 ## k-nearest neighbors algorithm
-- is a: machine learning algorithm
+- is a: 'machine learning algorithm'
 - properties: 'non-parametric', 'instance-based learning'
 - special case of: 'Variable kernel density estimation'
 - applications: 'Pattern recognition'
 - implemented: 'Python sklearn.neighbors.KNeighborsRegressor, sklearn.neighbors.KNeighborsClassifier'
+
+## k-means clustering
+- https://en.wikipedia.org/wiki/K-means_clustering
+- implemented in: 'sklearn.cluster.KMeans, scipy.cluster.vq.kmeans', 'cv::kmeans'
+- partitions space into: 'Voronoi cells'
+- applications: 'Vector quantization', 'Cluster analysis', 'Feature learning'
+
+## Linde–Buzo–Gray algorithm
+- https://en.wikipedia.org/wiki/Linde%E2%80%93Buzo%E2%80%93Gray_algorithm
+- similar: 'k-means clustering'
+
+## Single-linkage clustering method
+- also called: 'single-link cluster method', 'Nearest Point Algorithm'
+- https://en.wikipedia.org/wiki/Single-linkage_clustering
+- applications: 'Hierarchical clustering'
+- implemented by: 'SLINK algorithm'
+
+## SLINK algorithm
+- paper: 'SLINK: An optimally efficient algorithm for the single-link cluster method'
+- implementation of: 'Single-linkage clustering method'
+- implemented in: 'scipy.cluster.hierarchy.linkage'
+
+## Rohlf's algorithm for hierarchical clustering
+- also called: MST-algorithm
+- paper: 'Hierarchical clustering using the minimum spanning tree (1973)'
+- implementation of: 'Single-linkage clustering method'
+
+## Complete-linkage clustering method
+- also called: 'Farthest Point Algorithm'
+- https://en.wikipedia.org/wiki/Complete-linkage_clustering
+- applications: 'Hierarchical clustering'
+- implemented by: 'CLINK algorithm' (not according to 'Modern hierarchical, agglomerative clustering algorithms')
+
+## CLINK algorithm
+- paper: 'An efficient algorithm for a complete link method (1977)'
+- implementation of: 'Complete-linkage clustering method' (not according to 'Modern hierarchical, agglomerative clustering algorithms')
+
+## Voorhees algorithm
+- http://courses.cs.vt.edu/~cs5604/cs5604cnCL/CL-alg-details.html
+- paper: 'Implementing agglomerative hierarchic clustering algorithms for use in document retrieval (1986)'
+- credits: 'Chris Buckley'
+- implementation of: 'Complete-linkage clustering method'
+- implemented in: 'scipy.cluster.hierarchy.linkage'
+
+## Unweighted Pair Group Method with Arithmetic Mean
+- also called: UPGMA
+- https://en.wikipedia.org/wiki/UPGMA
+- applications: 'Hierarchical clustering'
+- implemented in: 'scipy.cluster.hierarchy.linkage'
+- creates: 'Dendrogram', 'Ultrametric tree'
+
+## Weighted Pair Group Method with Arithmetic Mean
+- also called: WPGMA
+- https://en.wikipedia.org/wiki/WPGMA
+- applications: 'Hierarchical clustering'
+- implemented in: 'scipy.cluster.hierarchy.linkage'
+- creates: 'Dendrogram', 'Ultrametric tree'
+
+## Unweighted Pair Group Method with Centroid Averaging
+- also called: UPGMC
+- applications: 'Hierarchical clustering'
+- implemented in: 'scipy.cluster.hierarchy.linkage'
+
+## Weighted Pair Group Method with Centroid Averaging
+- also called: WPGMC
+- applications: 'Hierarchical clustering'
+- implemented in: 'scipy.cluster.hierarchy.linkage'
+
+## Rocchio algorithm
+- similar: 'Nearest centroid classifier'
+- https://en.wikipedia.org/wiki/Rocchio_algorithm
+- applications: 'Relevance feedback'
+
+## Nearest centroid classifier
+- https://en.wikipedia.org/wiki/Nearest_centroid_classifier
+- is a: 'Classification model'
 
 ## Forsythe's algorithm for sampling generalized exponential distributions
 - paper: 'Von Neumann's Comparison Method for Random Sampling from the Normal and Other Distributions'
@@ -973,7 +1049,7 @@ Delete		O(1)	O(n)
 ## Cooley–Tukey FFT algorithm
 - https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm
 - variation of: 'Fast Fourier transform'
-- implemented in: 'Python numpy.fft'
+- implemented in: 'Python numpy.fft, scipy.fftpack.fft'
 
 ## Kirkpatrick–Seidel algorithm
 - https://en.wikipedia.org/wiki/Kirkpatrick%E2%80%93Seidel_algorithm
@@ -998,6 +1074,22 @@ Delete		O(1)	O(n)
 - time complexity: O(n)
 - properties: 'randomized'
 
+## Hoshen–Kopelman algorithm
+- https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm
+- is a: 'Cluster analysis algorithm'
+
+## Fiorio's algorithm for connected-component labeling
+- paper: 'Two linear time Union-Find strategies for image processing (1996)'
+- solves: 'Connected-component labeling'
+- implemented in: 'Python skimage.measure.label'
+- version of: 'union-find algorithm'
+- properties: 'two pass'
+
+## Wu's algorithm for connected-component labeling
+- paper: 'Two Strategies to Speed up Connected Component Labeling Algorithms (2005)'
+- solves: 'Connected-component labeling'
+- implemented in: 'opencv::connectedComponents'
+
 ## Kalman filter
 - also called: 'linear quadratic estimation'
 - https://en.wikipedia.org/wiki/Kalman_filter
@@ -1008,7 +1100,12 @@ Delete		O(1)	O(n)
 
 # Filters
 
-- these are convolved with some input
+## Wiener filter
+- https://en.wikipedia.org/wiki/Wiener_filter
+- implemented in: 'scipy.signal.wiener'
+- domain: 'Signal processing'
+- applications: 'System identification', 'Deconvolution', 'Noise reduction', 'Signal detection'
+- is a: 'Linear filter'
 
 ## Canny edge detector
 - https://en.wikipedia.org/wiki/Canny_edge_detector
@@ -1017,28 +1114,36 @@ Delete		O(1)	O(n)
 
 ## Gabor filter
 - https://en.wikipedia.org/wiki/Gabor_filter
-- is a: 'linear filter'
-- domain: 'image processing'
+- is a: 'Linear filter'
+- domain: 'Image processing'
 - applications: 'localize and extract text-only regions', 'facial expression recognition', 'pattern analysis'
 
 ## Sobel operator
 - https://en.wikipedia.org/wiki/Sobel_operator
-- is a: 'discrete differentiation operator'
-- domain: 'image processing'
+- is a: 'Discrete differentiation operator'
+- domain: 'Image processing'
 - applications: 'Edge detection'
+- implemented in: 'scipy.ndimage.sobel'
+
+## Prewitt operator
+- https://en.wikipedia.org/wiki/Prewitt_operator
+- implemented in: 'scipy.ndimage.prewitt'
+- applications: 'Edge detection'
+- domain: 'Image processing'
+- is a: 'Discrete differentiation operator'
 
 ## Scharr operator
 - dissertation: 'Optimale Operatoren in der Digitalen Bildverarbeitung'
-- domain: 'image processing'
+- domain: 'Image processing'
 - applications: 'Edge detection'
 
 ## Kuwahara filter
 - https://en.wikipedia.org/wiki/Kuwahara_filter
 - https://reference.wolfram.com/language/ref/KuwaharaFilter.html
-- is a: 'non-linear filter'
+- is a: 'Non-linear filter'
 - applications: 'adaptive noise reduction', 'medical imaging', 'fine-art photography'
 - disadvantages: 'create block artifacts'
-- domain: 'image processing'
+- domain: 'Image processing'
 
 # Methods
 
@@ -1072,21 +1177,26 @@ Delete		O(1)	O(n)
 ## Integer factorization
 - https://en.wikipedia.org/wiki/Integer_factorization
 - applications: 'cryptography'
-- domain: 'number theory'
+- domain: 'Number theory'
 
 ## Envy-free item assignment
 - https://en.wikipedia.org/wiki/Envy-free_item_assignment
 - type of: 'Fair item assignment', 'Fair division'
 
+## Connected-component labeling
+- https://en.wikipedia.org/wiki/Connected-component_labeling
+- domain: 'Graph theory'
+- applications: 'Computer vision'
+
 ## Strongly connected component
 - https://en.wikipedia.org/wiki/Strongly_connected_component
 - used for 'Dulmage–Mendelsohn decomposition'
 - see book: 'Introduction to Algorithms'
-- domain: graph theory
+- domain: 'Graph theory'
 
 ## Greatest common divisor
 - https://en.wikipedia.org/wiki/Greatest_common_divisor
-- domain: number theory
+- domain: 'Number theory'
 
 ## Topological sorting
 - https://en.wikipedia.org/wiki/Topological_sorting
@@ -1260,6 +1370,9 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/Closest_pair_of_points_problem
 - domain: 'Computational geometry'
 - brute force time complexity: O(n^2) for a set of points of size n
+
+## Hierarchical clustering
+- applications: 'Paleoecology'
 
 # Specific problems
 

@@ -57,10 +57,16 @@
 - implemented in: 'Python sklearn.metrics.log_loss'
 - properties: 'Convex', 'Continuous'
 
+# Root-mean-square deviation
+- https://en.wikipedia.org/wiki/Root-mean-square_deviation
+- also called: 'root-mean-square error'
+- implemented in: 'Python skimage.measure.compare_nrmse'
+- properties: 'Convex', 'Continuous'
+
 # Mean squared error
 - https://en.wikipedia.org/wiki/Mean_squared_error
 - applications: 'Statistical model', 'Linear regression'
-- implemented in: 'Python sklearn.metrics.mean_squared_error, tf.metrics.mean_squared_error'
+- implemented in: 'Python sklearn.metrics.mean_squared_error, tf.metrics.mean_squared_error, skimage.measure.compare_mse'
 - properties: 'Continuous'
 
 # Mean absolute error
@@ -99,3 +105,26 @@
 
 # q-gram distance
 - for example defined in paper: 'Approximate string-matching with q-grams and maximal matches'
+
+# Structural similarity
+- paper: 'Image quality assessment: from error visibility to structural similarity (2004)'
+- https://en.wikipedia.org/wiki/Structural_similarity
+- implemented in: 'Python skimage.measure.compare_ssim'
+- properties: 'full reference'
+- corresponding distance: 'Structural Dissimilarity' (not a metric)
+- applications: 'Video quality evaluation', 'Image Quality Assessment'
+- domain: 'Image processing'
+
+# Visual Information Fidelity
+- https://en.wikipedia.org/wiki/Visual_Information_Fidelity
+- properties: 'full reference'
+- applications: 'Video quality evaluation', 'Image Quality Assessment'
+- domain: 'Image processing'
+
+# Shannon entropy
+- https://en.wikipedia.org/wiki/Entropy_(information_theory)
+- implemented in: 'Python skimage.measure.shannon_entropy'
+
+# Peak signal-to-noise ratio
+- https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio
+- implemented in: 'Python skimage.measure.compare_psnr'

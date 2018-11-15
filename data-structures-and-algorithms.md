@@ -1,10 +1,17 @@
-# online books
+# resources
+
+## online books
 - https://bradfieldcs.com/algos/
 - http://interactivepython.org/RkmcZ/courselib/static/pythonds/index.html
 
+## books
+- Artificial Intelligence: A Modern Approach
+- Introduction to Algorithms
+
 # Abstract data type
 
-## Array / List
+## Array
+- also called: 'List'
 - https://en.wikipedia.org/wiki/List_(abstract_data_type)
 - implemented as: 'Array', 'Linked list'
 
@@ -27,7 +34,8 @@
 - could be implemented as deterministic acyclic finite state acceptor
 - implemented in: 'std::set', 'Java SortedSet'
 
-## Map / Associative array
+## Map
+- also called: 'Associative array'
 - https://en.wikipedia.org/wiki/Associative_array
 - used to map a unique key to a value (a phone number to a name). Can only be used for exact matches. ie. cannot find all phone numbers which differ only in one digit.
 
@@ -52,7 +60,7 @@
 
 ## Array
 - https://en.wikipedia.org/wiki/Array_data_structure
-- implemented in: 'C++ std::vector', 'Python list', 'Python tuple'
+- implemented in: 'C++ std::vector', 'Python list, tuple'
 - continuous list of elements in memory. fast to iterate, fast to access by index. slow to find by value, slow to insert/delete within the array (as memory always need to be continuous, they need to be reallocated)
 - usually fast to append/delete at the end or beginning (if there is free memory and depending on exact implementation)
 
@@ -65,19 +73,16 @@
 
 ## Hash table
 - https://en.wikipedia.org/wiki/Hash_table
-- used to implement maps: 'Python dict', 'std::unordered_map'
+- used to implement maps: 'Python dict', 'C++ std::unordered_map'
 - probably the most important data structure in Python
 - has basically perfect complexity for a good hash function. (Minimal) perfect hashing can be used if the keys are known in advance.
 - ordering depends on implementation (python 3.7 garuantees preservation of insertion order, whereas C++ as the name says does not define any ordering)
 - even though hashing is constant in time, it might still be slow. also the hash consumes space
 - hash tables usually have set characteristics (ie. the can test in average constant time if an item is the table or not)
-
-### complexity, https://en.wikipedia.org/wiki/Hash_table
-Average	Worst case
-Space		O(n)	O(n) # often a lot of padding space is needed...
-Search		O(1)	O(n)
-Insert		O(1)	O(n)
-Delete		O(1)	O(n)
+- time complexity (search, insert, delete) (average): O(1)
+- time complexity (search, insert, delete) (worst): O(n)
+- space complexity (average): O(n)
+- space complexity (worst): O(n) # often a lot of padding space is needed...
 
 ## Binary search tree
 - https://en.wikipedia.org/wiki/Binary_search_tree
@@ -94,7 +99,8 @@ Delete		O(1)	O(n)
 - implements a: 'Priority queue'
 - variant implemented in: 'Python heapq', 'C++ std::make_heap, push_heap and pop_heap'
 
-## Trie / digital tree
+## Trie
+- also called: 'digital tree'
 - https://en.wikipedia.org/wiki/Trie
 - tree structure
 - set and map characteristics
@@ -173,24 +179,46 @@ Delete		O(1)	O(n)
 - implemented in Lucence
 - applications: Moving median
 
-## DAFSA (deterministic acyclic finite state acceptor)
+## Finite-state machine
+- https://en.wikipedia.org/wiki/Finite-state_machine
+
+## Finite-state transducer
+- https://en.wikipedia.org/wiki/Finite-state_transducer
+- is a: 'Finite-state machine'
+- implemented in: 'OpenFst'
+
+## Deterministic acyclic finite state automaton
+- also called: 'DAFSA', 'deterministic acyclic finite state acceptor'
 - https://en.wikipedia.org/wiki/Deterministic_acyclic_finite_state_automaton
 - used to implement ordered sets
+- is a: 'Finite-state machine'
 
-## MAFSA (minimal acyclic finite state automaton)
-- also called: 'minimal acyclic finite state acceptor'
+## Minimal acyclic finite state automaton
+- also called: 'MAFSA', 'minimal acyclic finite state acceptor'
 - https://en.wikipedia.org/wiki/Deterministic_acyclic_finite_state_automaton
 - https://blog.burntsushi.net/transducers/
-- optimal DAFSA
+- minimal: 'Deterministic acyclic finite state automaton'
 - space optimized version of tries, with missing map characteristics
 - allow for prefix (and possibly suffix) search
 - more space efficient than tries as common prefixes and suffixes are only stored once and thus the number of pointers is reduced as well
-- for a version with map characteristics see MAFST
+- for a version with map characteristics see: 'Minimal acyclic finite state transducer'
+- implemented in: 'C++ dawgdic'
 
-## MAFST (minimal acyclic finite state transducer)
+## Deterministic acyclic finite state transducer
+- see: 'Minimal acyclic finite state transducer'
+- paper: 'Applications of finite automata representing large vocabularies'
 - https://blog.burntsushi.net/transducers/
+- is a: 'Finite-state transducer'
+
+## Minimal acyclic finite state transducer
+- also called: 'MAFST'
+- https://blog.burntsushi.net/transducers/
+- http://stevehanov.ca/blog/index.php?id=119
+- minimal: 'Deterministic acyclic finite state transducer'
 - MAFSA with map characteristics
 - association of keys with values reduces lookup time from O(sequence-length) to O(sequence-length*log(tree size))???
+- solves: 'Minimal Perfect Hashing'
+- implemented in: 'C++ dawgdic'
 
 ## B-tree
 - https://en.wikipedia.org/wiki/B-tree
@@ -240,17 +268,34 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 - Multiway tree
 - applications: connected components of an undirected graph
-- implemented in boost::graph::incremental_components
-- used for 'Kruskal's algorithm'
+- implemented in: 'boost::graph::incremental_components'
+- used for: 'Kruskal's algorithm'
+
+## HAT-trie
+- https://en.wikipedia.org/wiki/HAT-trie
+- implemented in: 'Python pytries/hat-trie'
+- implements: 'Ordered map'
+- variant of: 'radix trie'
+- properties: 'cache friendly'
+
+## Double-Array Trie
+- also called: 'DATrie'
+- implemented in: 'pytries/datrie', 'libdatrie'
+- paper: 'An Efficient Digital Search Algorithm by Using a Double-Array Structure'
+
+## Ternary search tree
+- https://en.wikipedia.org/wiki/Ternary_search_tree
+- type of: 'Trie'
+- applications: 'Nearest neighbor search'
 
 ## Soft heap
 - https://en.wikipedia.org/wiki/Soft_heap
-- approximate priority queue
+- approximates: 'Priority queue'
 
 ## Bloom filter
 - https://en.wikipedia.org/wiki/Bloom_filter
-- probabilistic data structure
-- implements: set
+- properties: 'probabilistic'
+- implements: 'Set'
 - applications: caching strategies, database query optimization, rate-limiting, data synchronization, chemical structure searching
 
 ## Optimal binary search tree
@@ -261,6 +306,10 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/Order_statistic_tree
 - variant of: 'Binary search tree'
 - additional interface: find the i'th smallest element stored in the tree, find the rank of element x in the tree, i.e. its index in the sorted list of elements of the tree
+
+## Exponential tree
+- https://en.wikipedia.org/wiki/Exponential_tree
+- variant of: 'Binary search tree'
 
 # Index data structures
 
@@ -279,6 +328,11 @@ Delete		O(1)	O(n)
 
 ## Depth-first search
 - https://en.wikipedia.org/wiki/Depth-first_search
+
+## k-d tree construction algorithm using sliding midpoint rule
+- example paper: Maneewongvatana and Mount 1999
+- constructs: 'k-d tree'
+- implemented in: 'scipy.spatial.KDTree'
 
 ## Median of medians
 - https://en.wikipedia.org/wiki/Median_of_medians
@@ -301,7 +355,7 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 - http://mathworld.wolfram.com/DijkstrasAlgorithm.html
 - uses method: 'dynamic programming'
-- solves 'shortest path problem' for non-negative weights in directed/undirected graphs in O(v^2) where v is the number of vertices
+- solves 'Shortest path problem' for non-negative weights in directed/undirected graphs in O(v^2) where v is the number of vertices
 - is a: 'graph algorithm'
 - variant implementation with Fibonacci heaps runs in O(e * v*log v) where e and v are the number of edges and vertices resp.
 - implemented in: 'Python scipy.sparse.csgraph.shortest_path(method='D')'
@@ -310,7 +364,7 @@ Delete		O(1)	O(n)
 ## Bellman–Ford algorithm
 - https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
 - is a: 'graph algorithm'
-- solves variant of the 'shortest path problem' for real-valued edge weights in directed graph in O(v*e) where v and e are the number of vertices and edges respectively.
+- solves variant of the 'Shortest path problem' for real-valued edge weights in directed graph in O(v*e) where v and e are the number of vertices and edges respectively.
 - negative cycles are detected
 - implemented in: 'Python scipy.sparse.csgraph.shortest_path(method="BF")'
 
@@ -319,7 +373,7 @@ Delete		O(1)	O(n)
 - graph algorithm
 - solves 'All-pairs shortest paths problem' for real-valued weights in a directed graph in O(v^2 log v + v*e) where v and e are the number of vertices and edges
 - negative cycles are not allowed
-- implemented in python scipy.sparse.csgraph.shortest_path(method='J'), c++ boost::graph::johnson_all_pairs_shortest_paths
+- implemented in: 'Python scipy.sparse.csgraph.shortest_path(method='J')', 'C++ boost::graph::johnson_all_pairs_shortest_paths'
 - combination of 'Bellman–Ford' and 'Dijkstra's algorithm'
 - is faster than 'Floyd–Warshall algorithm' for sparse graphs
 
@@ -333,6 +387,17 @@ Delete		O(1)	O(n)
 - implemented in: 'python scipy.sparse.csgraph.shortest_path(method='FW')', 'c++ boost::graph::floyd_warshall_all_pairs_shortest_paths'
 - is faster then 'Johnson's algorithm' for dense graphs
 
+## Suurballe's algorithm
+- https://en.wikipedia.org/wiki/Suurballe%27s_algorithm
+- paper: 'Disjoint paths in a network (1974)'
+- solves: 'Shortest pair of edge disjoint paths'
+
+## Edge disjoint shortest pair algorithm
+- https://en.wikipedia.org/wiki/Edge_disjoint_shortest_pair_algorithm
+- paper: 'Survivable networks: algorithms for diverse routing'
+- solves: 'Shortest pair of edge disjoint paths'
+- superseded by: 'Suurballe's algorithm'
+
 ## Reaching algorithm
 - http://mathworld.wolfram.com/ReachingAlgorithm.html
 - solves: 'Shortest path problem' for 'acyclic digraphs'
@@ -343,6 +408,13 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/Collaborative_diffusion
 - applications: 'pathfinding'
 - time complexity: constant in the number of agents
+
+## Ukkonen's algorithm
+- https://en.wikipedia.org/wiki/Ukkonen%27s_algorithm
+- paper: 'On-line construction of suffix trees'
+- constructs: 'suffix tree'
+- properties: 'online'
+- time complecity: O(n), where n is the length of the string
 
 ## A* search algorithm
 - https://en.wikipedia.org/wiki/A*_search_algorithm
@@ -385,9 +457,9 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/Quicksort
 - http://mathworld.wolfram.com/Quicksort.html
 - is a: 'Sorting algorithm', 'Unstable sorting algorithm', 'In-place algorithm', 'Divide and conquer algorithm', 'Comparison-based sorting algorithm'
-- best case time complexity: O(n log n)
-- average case time complexity: O(n log n)
-- worst case time complexity: O(n^2)
+- time complexity (best): O(n log n)
+- time complexity (average): O(n log n)
+- time complexity (worst): O(n^2)
 - space complexity: O(log n) auxiliary
 
 ## Merge Sort
@@ -402,9 +474,7 @@ Delete		O(1)	O(n)
 - http://mathworld.wolfram.com/Heapsort.html
 - is a: 'Sorting algorithm', 'In-place algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
 - solves: 'Partial sorting'
-- best case time complexity: O(n log n)
-- average case time complexity: O(n log n)
-- worst case time complexity: O(n log n)
+- time complexity (average, best, worst): O(n log n)
 - space complexity: O(1)
 - uses: 'max heap'
 - not easily parallelizable
@@ -479,7 +549,7 @@ Delete		O(1)	O(n)
 - https://xlinux.nist.gov/dads/HTML/ahoCorasick.html
 - multiple *string searching*
 - implemented in: original fgrep
-- (pre)constructs finite-state machine from set of search strings
+- (pre)constructs 'Finite-state machine' from set of search strings
 - applications: virus signature detection
 - paper 'Efficient string matching: An aid to bibliographic search'
 - classification 'constructed search engine', 'match prefix first', 'one-pass'
@@ -489,28 +559,29 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/Commentz-Walter_algorithm
 - multiple *string searching*
 - classification 'match suffix first'
-- variant implemented in grep
+- implemented in: grep (variant)
 
 ## Boyer–Moore string-search algorithm
 - https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm
 - single *string searching*
-- implemented in grep, c++ std::boyer_moore_searcher
-- variant implemented in python string class
-- better for large alphabets like text than Knuth–Morris–Pratt
-- paper 'A Fast String Searching Algorithm'
+- implemented in: 'grep', 'C++ std::boyer_moore_searcher'
+- implemented in: 'Python str' (variant)
+- better for large alphabets like text than: 'Knuth–Morris–Pratt algorithm'
+- paper: 'A Fast String Searching Algorithm'
 
 ## Knuth–Morris–Pratt algorithm
 - https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
 - single *string searching*
-- implemented in grep
-- better for small alphabets like DNA than Boyer–Moore
+- implemented in: 'grep'
+- better for small alphabets like DNA than: 'Boyer–Moore string-search algorithm'
 
 ## Beam search
 - https://en.wikipedia.org/wiki/Beam_search
-- heuristic search algorithm, greedy algorithm
+- is a: 'heuristic search algorithm'
+- properties: 'greedy'
 - optimization of best-first search
 - greedy version of breadth-first search
-- applications: machine translation, speech recognition
+- applications: 'Machine translation', 'Speech recognition'
 - approximate solution
 
 ## Hu–Tucker algorithm
@@ -522,7 +593,7 @@ Delete		O(1)	O(n)
 
 ## Knuth's optimal binary search tree algorithm
 - https://en.wikipedia.org/wiki/Optimal_binary_search_tree#Knuth%27s_dynamic_programming_algorithm
-- paper: Optimum binary search trees
+- paper: 'Optimum binary search trees'
 - uses method: 'dynamic programming'
 - constructs: 'Optimal binary search tree'
 - time comlexity: O(n^2)
@@ -540,7 +611,8 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/Maze_solving_algorithm#Dead-end_filling
 - global *Maze solving* algorithm
 
-## Wall follower (left-hand rule / right-hand rule)
+## Wall follower
+- also called: 'left-hand rule', 'right-hand rule'
 - https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower
 - local *Maze solving* algorithm for simply connected mazes
 
@@ -560,10 +632,10 @@ Delete		O(1)	O(n)
 ## Kruskal's algorithm
 - https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
 - http://mathworld.wolfram.com/KruskalsAlgorithm.html
-- finds 'Minimum spanning tree'
-- greedy algorithm
-- implemented in c++ boost::graph::kruskal_minimum_spanning_tree
-- see book: 'Introduction to Algorithms'
+- finds: 'Minimum spanning tree'
+- properties: 'greedy'
+- implemented in: 'C++ boost::graph::kruskal_minimum_spanning_tree'
+- book: 'Introduction to Algorithms'
 
 ## Prim's algorithm
 - https://en.wikipedia.org/wiki/Prim%27s_algorithm
@@ -571,7 +643,7 @@ Delete		O(1)	O(n)
 - greedy algorithm
 - implemented in c++ boost::graph::prim_minimum_spanning_tree
 - time complexity depends on used data structures
-- see book: 'Introduction to Algorithms'
+- book: 'Introduction to Algorithms'
 
 ## Hierholzer's algorithm
 - https://en.wikipedia.org/wiki/Eulerian_path#Hierholzer's_algorithm
@@ -596,6 +668,11 @@ Delete		O(1)	O(n)
 - https://en.wikipedia.org/wiki/HyperLogLog
 - solves 'Count-distinct problem' approximately
 - implemented by Lucence
+
+## Hunt–McIlroy algorithm
+- https://en.wikipedia.org/wiki/Hunt%E2%80%93McIlroy_algorithm
+- solves: 'Longest common subsequence problem'
+- implemented in: 'diff'
 
 ## Tarjan's strongly connected components algorithm
 - https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm
@@ -726,7 +803,7 @@ Delete		O(1)	O(n)
 ## Kadane's algorithm
 - https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm
 - applications: 'Maximum subarray problem'
-- runtime complexity: O(n)
+- time complexity: O(n)
 - uses method: 'Dynamic programming'
 
 ## Mean shift
@@ -891,9 +968,16 @@ Delete		O(1)	O(n)
 - partitions space into: 'Voronoi cells'
 - applications: 'Vector quantization', 'Cluster analysis', 'Feature learning'
 
+## k-medoids algorithm
+- also called: 'Partitioning Around Medoids'
+- https://en.wikipedia.org/wiki/K-medoids
+- is a: 'Clustering algorithm'
+- more robust to noise than 'k-means clustering'
+
 ## Linde–Buzo–Gray algorithm
 - https://en.wikipedia.org/wiki/Linde%E2%80%93Buzo%E2%80%93Gray_algorithm
 - similar: 'k-means clustering'
+- generalization of: 'Lloyd's algorithm'
 
 ## Single-linkage clustering method
 - also called: 'single-link cluster method', 'Nearest Point Algorithm'
@@ -1090,6 +1174,128 @@ Delete		O(1)	O(n)
 - solves: 'Connected-component labeling'
 - implemented in: 'opencv::connectedComponents'
 
+## Fortune's algorithm
+- https://en.wikipedia.org/wiki/Fortune%27s_algorithm
+- is a: 'Sweep line algorithm'
+- constructs: 'Voronoi diagram'
+- time complexity: O(n log n)
+- space complexity: O(n)
+
+## Lloyd's algorithm
+- https://en.wikipedia.org/wiki/Lloyd%27s_algorithm
+- constructs: 'Voronoi diagram'
+- is a: 'Iterative method'
+- approximates: 'Centroidal Voronoi tessellation'
+
+## Bowyer–Watson algorithm
+- https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm
+- also called: 'Bowyer algorithm', 'Watson algorithm'
+- creates: 'Delaunay triangulation'
+- is a: 'Incremental algorithm'
+- time complexity (average): O(n log n)
+- time complexity (worst): O(n^2)
+
+## Quickhull algorithm
+- https://en.wikipedia.org/wiki/Quickhull
+- paper: 'The quickhull algorithm for convex hulls (1996)' (modern version)
+- constructs: 'Convex hull'
+- implemented in: 'Qhull'
+
+## Simplified Memory Bounded A*
+- also called: 'SMA*'
+- https://en.wikipedia.org/wiki/SMA*
+- based on: 'A*'
+- solves: 'Shortest path problem'
+- is a: 'heuristic algorithm'
+
+## Thompson's construction algorithm
+- also called: 'McNaughton-Yamada-Thompson algorithm'
+- https://en.wikipedia.org/wiki/Thompson%27s_construction
+- transforms 'regular expression' into equivalent 'nondeterministic finite automaton'
+- domain: 'Automata theory'
+
+## Daciuk's algorithm for constructing minimal acyclic finite state automata
+- paper: 'Incremental Construction of Minimal Acyclic Finite-State Automata'
+- constructs: 'Minimal acyclic finite state automaton'
+
+## Glushkov's construction algorithm
+- https://en.wikipedia.org/wiki/Glushkov%27s_construction_algorithm
+- transforms 'regular expression' into equivalent 'nondeterministic finite automaton'
+- domain: 'Automata theory'
+
+## Powerset construction
+- also called: 'Rabin–Scott powerset construction'
+- https://en.wikipedia.org/wiki/Powerset_construction
+- converts 'nondeterministic finite automaton' into 'deterministic finite automaton'
+- domain: 'Automata theory'
+
+## Kleene's algorithm
+- https://en.wikipedia.org/wiki/Kleene%27s_algorithm
+- transforms 'deterministic finite automaton' into 'regular expression'
+
+## Hopcroft's algorithm
+- https://en.wikipedia.org/wiki/DFA_minimization#Hopcroft's_algorithm
+- solves: 'DFA minimization'
+
+## Moore's algorithm
+- also called: 'Moore reduction procedure'
+- https://en.wikipedia.org/wiki/Moore_reduction_procedure
+- solves: 'DFA minimization'
+
+## Brzozowski's algorithm
+- https://en.wikipedia.org/wiki/DFA_minimization#Brzozowski's_algorithm
+- solves: 'DFA minimization'
+- uses: 'Powerset construction'
+
+## Featherstone's algorithm
+- https://en.wikipedia.org/wiki/Featherstone%27s_algorithm
+- approximates: 'Kinematic chain' (also called 'Rigid bodies dynamics') (subset of 'Classical mechanics')
+- applications: 'Robotics', 'Physics engines', 'Game development'
+- domain: 'Computational physics', 'Robot kinematics'
+- cf. 'Lagrange multiplier method'
+
+## Fireworks algorithm
+- https://en.wikipedia.org/wiki/Fireworks_algorithm
+- see: 'Swarm intelligence'
+- domain: 'mathematical optimization'
+
+## Sequence step algorithm
+- https://en.wikipedia.org/wiki/Sequence_step_algorithm
+- https://www.planopedia.com/sequence-step-algorithm/
+- applications: 'Scheduling'
+
+## Fast folding algorithm
+- https://en.wikipedia.org/wiki/Fast_folding_algorithm
+- applications: 'Time series analysis', 'Pulsar detection'
+- domain: 'Signal processing'
+
+## Faugère's F4 algorithm
+- https://en.wikipedia.org/wiki/Faug%C3%A8re%27s_F4_and_F5_algorithms
+- domain: 'Algebra'
+- finds: 'Gröbner basis of an ideal of a multivariate polynomial ring.'
+- implemented in: 'Python SymPy'
+
+## Faugère's F5 algorithm
+- https://en.wikipedia.org/wiki/Faug%C3%A8re%27s_F4_and_F5_algorithms
+- domain: 'Algebra'
+
+## Hirschberg–Sinclair algorithm
+- https://en.wikipedia.org/wiki/Hirschberg%E2%80%93Sinclair_algorithm
+- paper: 'Decentralized extrema-finding in circular configurations of processors'
+- solves: 'Leader election problem'
+- properties: 'distributed'
+
+## Gale–Church alignment algorithm
+- https://en.wikipedia.org/wiki/Gale%E2%80%93Church_alignment_algorithm
+- paper: 'A Program for Aligning Sentences in Bilingual Corpora'
+- domain: 'Computational linguistics'
+- applications: 'Sentence alignment'
+
+## Beier–Neely morphing algorithm
+- https://en.wikipedia.org/wiki/Beier%E2%80%93Neely_morphing_algorithm
+- applications: 'Image processing'
+- domain: 'Computer graphics'
+
 ## Kalman filter
 - also called: 'linear quadratic estimation'
 - https://en.wikipedia.org/wiki/Kalman_filter
@@ -1149,16 +1355,30 @@ Delete		O(1)	O(n)
 
 ## Locality-sensitive hashing
 - https://en.wikipedia.org/wiki/Locality-sensitive_hashing
-- used for: 'nearest neighbor search'
+- used for: 'Approximate nearest neighbor search'
+- is a: 'data-independent method'
+
+## Locality-preserving hashing
+- https://en.wikipedia.org/wiki/Locality-sensitive_hashing#Locality-preserving_hashing
+- is a: 'data-dependent method'
 
 ## Dynamic programming
 - https://en.wikipedia.org/wiki/Dynamic_programming
 - exploits: 'optimal substructure'
 
 ## Brute force
+- also called: 'Exhaustive search'
 - https://en.wikipedia.org/wiki/Brute-force_search
+- http://mathworld.wolfram.com/ExhaustiveSearch.html
+- variant: 'British Museum algorithm'
+
+## Backtracking
+- https://en.wikipedia.org/wiki/Backtracking
 
 # General problems
+
+## DFA minimization
+- https://en.wikipedia.org/wiki/DFA_minimization
 
 ## Nearest neighbor search
 - https://en.wikipedia.org/wiki/Nearest_neighbor_search
@@ -1166,6 +1386,10 @@ Delete		O(1)	O(n)
 - solved exactly by: 'Space partitioning', 'Linear search'
 - solved approximatly by: 'Hierarchical Navigable Small World graphs', 'Locality-sensitive hashing', 'Cover tree', 'Vector quantization'
 - implemented by: 'spotify/annoy', 'C++ ANN', 'nmslib/hnsw', 'nmslib/nmslib'
+
+## Approximate nearest neighbor search
+- book: 'Handbook of Discrete and Computational Geometry'
+- https://en.wikipedia.org/wiki/Nearest_neighbor_search#Approximate_nearest_neighbor
 
 ## Cycle decomposition
 - https://en.wikipedia.org/wiki/Cycle_decomposition_(group_theory)
@@ -1191,7 +1415,7 @@ Delete		O(1)	O(n)
 ## Strongly connected component
 - https://en.wikipedia.org/wiki/Strongly_connected_component
 - used for 'Dulmage–Mendelsohn decomposition'
-- see book: 'Introduction to Algorithms'
+- book: 'Introduction to Algorithms'
 - domain: 'Graph theory'
 
 ## Greatest common divisor
@@ -1205,28 +1429,30 @@ Delete		O(1)	O(n)
 
 ## Travelling salesman problem
 - https://en.wikipedia.org/wiki/Travelling_salesman_problem
-- solved by 'Concorde TSP Solver' application
+- solved by: 'Concorde TSP Solver' application
+- solved by: 'Approximate global optimization'
+- hardness: NP-hard
 
 ## Minimum spanning tree
 - https://en.wikipedia.org/wiki/Minimum_spanning_tree
 - http://algorist.com/problems/Minimum_Spanning_Tree.html
-- see book: 'Introduction to Algorithms'
+- book: 'Introduction to Algorithms'
 - solved by 'Kruskal's algorithm', 'Prim's algorithm'
 - unique solution
 - applications: 'Network design', 'Image segmentation', 'Cluster analysis'
 
 ## Second-best minimum spanning tree
-- see book: 'Introduction to Algorithms'
+- book: 'Introduction to Algorithms'
 - solution need not be unique
-- variant of 'Minimum spanning tree'
+- variant of: 'Minimum spanning tree'
 
 ## Bottleneck spanning tree
-- see book: 'Introduction to Algorithms'
-- variant of 'Minimum spanning tree'
+- book: 'Introduction to Algorithms'
+- variant of: 'Minimum spanning tree'
 - a 'minimum spanning tree' is a 'bottleneck spanning tree'
 
 ## spanning-tree verification
-- see book: 'Introduction to Algorithms'
+- book: 'Introduction to Algorithms'
 - related to 'Minimum spanning tree'
 
 ## Matrix chain multiplication
@@ -1240,13 +1466,13 @@ Delete		O(1)	O(n)
 ## Single-source shortest path problem
 - https://en.wikipedia.org/wiki/Shortest_path_problem
 - find shortest path in graph so that the sum of edge weights is minimized
-- optimization problem
+- is a: 'optimization problem'
 - solved by 'Breadth-first search' for unweighted graphs
 - solved by 'Dijkstra's algorithm' for directed/undirected graphs and positive weights
 - solved by 'Bellman–Ford algorithm' for directed graphs with arbitrary weights
-- see book: 'Introduction to Algorithms'
-- exhibits: 'optimal substructure'
-- domain: 'graph theory'
+- book: 'Introduction to Algorithms'
+- properties: 'optimal substructure'
+- domain: 'Graph theory'
 
 ## Single-pair shortest path problem
 - https://en.wikipedia.org/wiki/Shortest_path_problem#Single-source_shortest_paths
@@ -1255,33 +1481,33 @@ Delete		O(1)	O(n)
 ## All-pairs shortest paths problem
 - https://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths
 - finds the shortest path for all pairs of vectices in a graph
-- solved by 'Floyd–Warshall algorithm', 'Johnson's algorithm'
+- solved by: 'Floyd–Warshall algorithm', 'Johnson's algorithm'
 - domain: 'graph theory'
-- exhibits: 'optimal substructure'
+- properties: 'optimal substructure'
 
-## approximate string matching
+## Approximate string matching
 - https://en.wikipedia.org/wiki/Approximate_string_matching
-- paper "Fast Approximate String Matching in a Dictionary"
-- applications: s'pell checking', 'nucleotide sequence matching'
+- paper: 'Fast Approximate String Matching in a Dictionary'
+- applications: 'spell checking', 'nucleotide sequence matching'
 
 ## Lowest common ancestor (LCA)
 - https://en.wikipedia.org/wiki/Lowest_common_ancestor
-- domain: 'graph theory'
+- domain: 'Graph theory'
 
 ## Longest common substring problem
 - https://en.wikipedia.org/wiki/Longest_common_substring_problem
 - cf. 'Longest common subsequence problem'
-- exhibits: 'optimal substructure'
-- solutions: Generalized suffix tree
-- domain: 'combinatorics'
+- properties: 'optimal substructure'
+- solutions: 'Generalized suffix tree'
+- domain: 'Combinatorics'
 
 ## Longest common subsequence problem
 - https://en.wikipedia.org/wiki/Longest_common_subsequence_problem
 - cf. 'Longest common substring problem'
-- Hunt–McIlroy algorithm
-- applications: version control systems, wiki engines, and molecular phylogenetics
-- domain: 'combinatorics'
-- solved by: 'diff'
+- solved by: 'Hunt–McIlroy algorithm'
+- solved by application: 'diff'
+- applications: 'Version control systems', 'Wiki engines', 'Molecular phylogenetics'
+- domain: 'Combinatorics'
 
 ## Shortest common supersequence problem
 - https://en.wikipedia.org/wiki/Shortest_common_supersequence_problem
@@ -1295,8 +1521,8 @@ Delete		O(1)	O(n)
 
 ## Longest increasing subsequence
 - https://en.wikipedia.org/wiki/Longest_increasing_subsequence
-- domain: 'combinatorics'
-- exhibits: 'optimal substructure'
+- domain: 'Combinatorics'
+- properties: 'optimal substructure'
 
 ## Maximum subarray problem
 - https://en.wikipedia.org/wiki/Maximum_subarray_problem
@@ -1333,7 +1559,8 @@ Delete		O(1)	O(n)
 - if exists, optimal solution for: 'Route inspection problem'
 - domain: "graph theory"
 
-## Route inspection problem / Chinese postman problem
+## Route inspection problem
+- also called: 'Chinese postman problem'
 - https://en.wikipedia.org/wiki/Route_inspection_problem
 - http://mathworld.wolfram.com/ChinesePostmanProblem.html
 - domain: "graph theory"
@@ -1347,6 +1574,13 @@ Delete		O(1)	O(n)
 ## Maximum flow problem
 - https://en.wikipedia.org/wiki/Maximum_flow_problem
 - domain: 'graph theory'
+
+## Minimum-cost flow problem
+- https://en.wikipedia.org/wiki/Minimum-cost_flow_problem
+
+## Shortest pair of edge disjoint paths
+- special case of: 'Minimum-cost flow problem'
+- applications: 'Routing'
 
 ## Polynomial of best approximation
 - https://www.encyclopediaofmath.org/index.php/Polynomial_of_best_approximation
@@ -1363,16 +1597,61 @@ Delete		O(1)	O(n)
 
 ## Convex hull
 - also called: 'minimum convex polygon'
+- book: 'Handbook of Discrete and Computational Geometry'
 - https://en.wikipedia.org/wiki/Convex_hull
+- http://mathworld.wolfram.com/ConvexHull.html
 - domain: 'Computational geometry'
+- implemented in: 'Mathematica ConvexHullMesh', 'Python scipy.spatial.ConvexHull' (using Quickhull)
+
+## Halfspace intersection problem
+- book: 'Handbook of Discrete and Computational Geometry'
+- implemented in: 'scipy.spatial.HalfspaceIntersection', 'Qhull'
+- https://en.wikipedia.org/wiki/Half-space_(geometry)
 
 ## Closest pair of points problem
 - https://en.wikipedia.org/wiki/Closest_pair_of_points_problem
 - domain: 'Computational geometry'
 - brute force time complexity: O(n^2) for a set of points of size n
 
+## Largest empty sphere problem
+- https://en.wikipedia.org/wiki/Largest_empty_sphere
+- domain: 'Computational geometry'
+- special cases can be solved using 'Voronoi diagram' in optimal time O(n log(n))
+
 ## Hierarchical clustering
-- applications: 'Paleoecology'
+- https://en.wikipedia.org/wiki/Hierarchical_clustering
+- applications: 'Data mining', 'Paleoecology'
+- domain: 'Statistics'
+
+## Delaunay triangulation
+- https://en.wikipedia.org/wiki/Delaunay_triangulation
+- http://mathworld.wolfram.com/DelaunayTriangulation.html
+- book: 'Handbook of Discrete and Computational Geometry'
+- paper: 'Sur la sphère vide. A la mémoire de Georges Voronoï'
+- domain: 'Geometry'
+- is dual graph of: 'Voronoi diagram'
+- related: 'Euclidean minimum spanning tree'
+- implemented in: 'scipy.spatial.Delaunay' (using Qhull)
+
+## Voronoi diagram
+- also called: 'Voronoi tessellation', 'Voronoi decomposition', 'Voronoi partition'
+- https://en.wikipedia.org/wiki/Voronoi_diagram
+- http://mathworld.wolfram.com/VoronoiDiagram.html
+- book: 'Handbook of Discrete and Computational Geometry'
+- paper: 'Nouvelles applications des paramètres continus à la théorie de formes quadratiques'
+- domain: 'Geometry'
+- is dual graph of: 'Delaunay triangulation'
+- applications: 'Space partitioning', 'biological structure modelling', 'growth patterns in ecology', 'Epidemiology'
+- related: 'Closest pair of points problem', 'Largest empty sphere problem'
+- implemented in: 'scipy.spatial.Voronoi' (using Qhull), 'scipy.spatial.SphericalVoronoi'
+
+## Subset sum problem
+- https://en.wikipedia.org/wiki/Subset_sum_problem
+- hardness: NP-complete
+
+## Minimal Perfect Hashing
+- http://iswsa.acm.org/mphf/index.html
+- https://en.wikipedia.org/wiki/Perfect_hash_function#Minimal_perfect_hash_function
 
 # Specific problems
 

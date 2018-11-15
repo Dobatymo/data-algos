@@ -1,29 +1,100 @@
 # Books
-- 'Clever Algorithms: Nature-Inspired Programming Recipes'
+
+- 'Nonlinear Programming: 3rd Edition' by 'Dimitri P. Bertsekas'
+- 'Clever Algorithms: Nature-Inspired Programming Recipes' by 'Jason Brownlee'
+- 'Convex Optimization' by 'Stephen Boyd' and 'Lieven Vandenberghe'
 
 # Problems
 
+## Linear programming
+- also called: 'Linear optimization', 'Constrained linear optimization'
+- https://en.wikipedia.org/wiki/Linear_programming
+- implemented in: 'Mathematica FindMinimum(Method->"LinearProgramming")' (what is the algorithm here?)
+
+## Convex optimization
+- https://en.wikipedia.org/wiki/Convex_optimization
+
 ## Unconstrained nonlinear optimization without derivatives
+- also called: 'black box', 'direct search'
 - https://en.wikipedia.org/wiki/Derivative-free_optimization
 - https://en.wikipedia.org/wiki/Nonlinear_programming
 - domain: 'Numerical optimization'
 - mainly used for: 'functions which are not continuous or differentiable'
-- also called: 'black box', 'direct search'
 - domain: 'Mathematical optimization'
 
 ## Unconstrained nonlinear optimization with first derivative
 - https://en.wikipedia.org/wiki/Nonlinear_programming
 
-## Constrained nonlinear optimization
+## Nonlinear programming
+- also called: 'Constrained nonlinear optimization'
 - https://en.wikipedia.org/wiki/Nonlinear_programming
 
-## Convex optimization
-- https://en.wikipedia.org/wiki/Convex_optimization
+## Combinatorial optimization
+- https://en.wikipedia.org/wiki/Combinatorial_optimization
 
 ## Nonlinear dimensionality reduction
 - https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction
 
+## Linear least squares
+- https://en.wikipedia.org/wiki/Linear_least_squares
+- implemented in: 'Mathematica LeastSquares(Method->"Direct"), LeastSquares(Method->"IterativeRefinement"), LeastSquares(Method->"Krylov")'
+- implemented in: 'Python scipy.optimize.minimize(method="trust-krylov")'
+
+## Total least squares
+- https://en.wikipedia.org/wiki/Total_least_squares
+- generalization of: 'Deming regression', 'Orthogonal regression'
+- is a: 'Errors-in-variables model'
+
+## Non-linear least squares
+- https://en.wikipedia.org/wiki/Non-linear_least_squares
+- applications: 'Nonlinear regression'
+
+## Orthogonal regression
+- https://en.wikipedia.org/wiki/Deming_regression#Orthogonal_regression
+- http://www.nlreg.com/orthogonal.htm
+- also called: 'Orthogonal distance regression', 'Orthogonal non-linear least squares'
+- implemented by: 'scipy.odr', 'ODRPACK', 'R ONLS'
+
+## Vertex cover problem
+- https://en.wikipedia.org/wiki/Vertex_cover
+- solved approximatly by: 'Approximate global optimization'
+- hardness: NP-hard
+
+## Boolean satisfiability problem
+- https://en.wikipedia.org/wiki/Boolean_satisfiability_problem
+- solved approximatly by: 'Approximate global optimization'
+- hardness: NP-complete
+
+## Nurse scheduling problem
+- https://en.wikipedia.org/wiki/Nurse_scheduling_problem
+- solved approximatly by: 'Approximate global optimization'
+- hardness: NP-hard
+
 # Numerical optimization algorithms
+
+## Ordinary least squares method
+- https://en.wikipedia.org/wiki/Ordinary_least_squares
+- solves: 'Linear least squares'
+
+## Karmarkar's algorithm
+- https://en.wikipedia.org/wiki/Karmarkar%27s_algorithm
+- paper: 'A new polynomial-time algorithm for linear programming'
+- type: 'Linear programming'
+- is a: 'Interior point method'
+
+## Simplex algorithm
+- https://en.wikipedia.org/wiki/Simplex_algorithm
+- http://mathworld.wolfram.com/SimplexMethod.html
+- also called: 'Dantzig's simplex algorithm'
+- type: 'Linear programming'
+- implemented in: 'Mathematica LinearProgramming(Method->"Simplex")'
+- implemented in: 'scipy.optimize.linprog(method="simplex")'
+
+## Revised simplex method
+- https://en.wikipedia.org/wiki/Revised_simplex_method
+- implemented in: 'Mathematica LinearProgramming(Method->"RevisedSimplex")'
+- type: 'Linear programming'
+- variant of: 'Simplex algorithm'
 
 ## Powell's method
 - https://en.wikipedia.org/wiki/Powell%27s_method
@@ -92,6 +163,7 @@
 - related: 'Random search'
 
 ## Nelder–Mead method
+- also called: 'downhill simplex method'
 - https://en.wikipedia.org/wiki/Nelder–Mead_method
 - http://mathworld.wolfram.com/Nelder-MeadMethod.html
 - http://www.scholarpedia.org/article/Nelder-Mead_algorithm
@@ -104,7 +176,7 @@
 - https://en.wikipedia.org/wiki/Genetic_algorithm
 - book: 'Adaptation in natural and artificial systems (1975)'
 - type: 'Unconstrained nonlinear without derivatives'
-- is a: 'Metaheuristic', 'Randomized search method'
+- is a: 'Metaheuristic', 'Randomized search method', 'Evolutionary algorithm'
 
 ## Principal Axis Method
 - https://reference.wolfram.com/language/tutorial/UnconstrainedOptimizationPrincipalAxisMethod.html
@@ -180,6 +252,7 @@
 - type: 'Unconstrained nonlinear with first derivative'
 - implemented in: 'Mathematica FindMinimum(Method->"ConjugateGradient")'
 - implemented in: 'Python scipy.optimize.minimize(method="Newton-CG")'
+- implemented in: 'Python scipy.optimize.minimize(method="trust-ncg")' (Trust region variant)
 
 ## Truncated Newton method
 - https://en.wikipedia.org/wiki/Truncated_Newton_method
@@ -216,9 +289,10 @@
 - also called: 'Barrier method'
 - https://en.wikipedia.org/wiki/Interior-point_method
 - http://mathworld.wolfram.com/InteriorPointMethod.html
-- implemented in: 'Mathematica FindMinimum(Method->'InteriorPoint')'
+- implemented in: 'Mathematica FindMinimum(Method->"InteriorPoint"), LinearProgramming(Method->"InteriorPoint")'
+- implemented in: 'scipy.optimize.linprog(method="interior-point")'
 - applications: 'Convex optimization'
-- type: 'Constrained convex optimization'
+- type: 'Constrained convex optimization', 'Linear programming'
 
 ## Sequential Least SQuares Programming
 - also called: SLSQP
@@ -228,68 +302,85 @@
 ## Sequential quadratic programming
 - also called: SQP
 - https://en.wikipedia.org/wiki/Sequential_quadratic_programming
-- type: 'Constrained non-linear' for 'twice continuously differentiable functions'
+- type: 'Nonlinear programming' for 'twice continuously differentiable functions'
 
 ## Successive linear programming
 - also called: SLP, 'Sequential Linear Programming'
 - https://en.wikipedia.org/wiki/Successive_linear_programming
-- type: 'Constrained non-linear'
+- type: 'Nonlinear programming'
 - applications: 'Petrochemical industry'
 
 ## Augmented Lagrangian method
 - https://en.wikipedia.org/wiki/Augmented_Lagrangian_method
-- type: 'Constrained non-linear'
+- type: 'Nonlinear programming'
 - applications: 'Total variation denoising', 'Compressed sensing'
 - variant: 'Alternating direction method of multipliers'
 
 ## Penalty method
 - https://en.wikipedia.org/wiki/Penalty_method
-- type: 'Constrained non-linear'
+- type: 'Nonlinear programming'
 - applications: 'Image compression'
 
--- Metaheuristics (randomized search methods)
-  * Evolutionary algorithm
-    - for one variant see Genetic algorithm
-  * Genetic algorithm (GA)
-  * Local search
-    - variants: Hill climbing, Tabu search, Simulated annealing
-    - applications: vertex cover problem, traveling salesman problem, boolean satisfiability problem, nurse scheduling problem, k-medoid
-  * Simulated annealing (SA)
-    - applications: combinatorial optimization problems
-    - approximate global optimization
-	- implemented in: 'Mathematica NMinimize(Method->"SimulatedAnnealing")'
-	- http://mathworld.wolfram.com/SimulatedAnnealing.html
-  * Tabu search (TS)
-    - combinatorial optimization problems
-  * Ant colony optimization algorithms
-    - applications: combinatorial optimization problems
-    - see also: Swarm intelligence
-    - works well on graphs with changing topologies
+## Local search
+- https://en.wikipedia.org/wiki/Local_search_(optimization)
 
--- Combinatorial optimization (https://en.wikipedia.org/wiki/Combinatorial_optimization)
-  * see also Metaheuristics
+## Hill climbing
+- https://en.wikipedia.org/wiki/Hill_climbing
+- type: 'Local search', 'Heuristic search'
+- is a: 'Iterative method', 'Anytime algorithm', 'Metaheuristic'?
+- applications: 'Artificial intelligence'
+- finds: 'Local extremum'
 
--- Stochastic optimization
-  * Stochastic approximation
-  * see also Metaheuristics
+## Tabu search
+- https://en.wikipedia.org/wiki/Tabu_search
+- paper: 'Future Paths for Integer Programming and Links to Artificial Intelligence (1986)'
+- is a: 'Metaheuristic'
+- type: 'Local search'
+- applications: 'Combinatorial optimization', 'Travelling salesman problem'
+- domain: 'Approximate global optimization'
 
--- nonlinear with NOT ENOUGH INFO
-  * Newton conjugate gradient
-    - implemented in scipy.optimize.minimize(method="trust-ncg")
-  * Constrained Optimization BY Linear Approximation (COBYLA) algorithm
-    - implemented in scipy.optimize.minimize(method="COBYLA")
-  * Trust-region dogleg
-    - implemented in scipy.optimize.minimize(method="dogleg")
-  * Linear Programming
-    - implemented in Mathematica FindMinimum(Method->'LinearProgramming')
-    - is this SLP?
+## Simulated annealing
+- https://en.wikipedia.org/wiki/Simulated_annealing
+- http://mathworld.wolfram.com/SimulatedAnnealing.html
+- applications: 'Combinatorial optimization'
+- domain: 'Approximate global optimization'
+- implemented in: 'Mathematica NMinimize(Method->"SimulatedAnnealing")'
+- is a: 'Metaheuristic', 'Stochastic optimization method'
 
--- Linear least squares
-  * "Direct" and "IterativeRefinement", and for sparse arrays "Direct" and "Krylov"
-  * implemented in: 'minimize(method="trust-krylov")'
+## Cuckoo search
+- https://en.wikipedia.org/wiki/Cuckoo_search
+- is a: 'Metaheuristic'
+- applications: 'Operations research'
 
--- important practical theorems
-  * no free lunch theorem
+## Ant colony optimization algorithms
+- https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms
+- applications: 'Combinatorial optimization', 'Scheduling', 'Routing', 'Assignment problem', 'Edge detection'
+- see also: 'Swarm intelligence'
+- works well on graphs with changing topologies
+- is a: 'Metaheuristic'
+
+## Estimation of distribution algorithms
+- https://en.wikipedia.org/wiki/Estimation_of_distribution_algorithm
+- is a: 'Stochastic optimization method', 'Evolutionary algorithm'
+- class of algorithms
+
+## Constrained Optimization BY Linear Approximation
+- also called: 'COBYLA'
+- https://en.wikipedia.org/wiki/COBYLA
+- implemented in scipy.optimize.minimize(method="COBYLA")
+- type: 'Constrained optimization without derivatives'
+
+## Dogleg Method
+- also called: 'Trust-region dogleg'
+- https://optimization.mccormick.northwestern.edu/index.php/Trust-region_methods#Dogleg_Method
+- implemented in: 'Python scipy.optimize.minimize(method="dogleg")'
+- is a: 'Trust region method'
+
+# Practical theorems
+
+## No free lunch theorem
+- https://en.wikipedia.org/wiki/No_free_lunch_theorem
+- "any two optimization algorithms are equivalent when their performance is averaged across all possible problems"
 
 # Machine learning algorithms
 

@@ -128,3 +128,11 @@
 # Peak signal-to-noise ratio
 - https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio
 - implemented in: 'Python skimage.measure.compare_psnr'
+
+# Earth mover's distance
+- also called: 'Wasserstein metric'
+- https://en.wikipedia.org/wiki/Earth_mover%27s_distance
+- solved as: 'Transportation problem'
+- applications: 'Content-based image retrieval'
+- domain: 'Transportation theory'
+- implemented in: 'scipy.stats.wasserstein_distance'

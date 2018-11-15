@@ -1,5 +1,10 @@
 # Problems
 
+## Polynomial factorization
+- http://mathworld.wolfram.com/PolynomialFactorization.html
+- https://en.wikipedia.org/wiki/Factorization_of_polynomials
+- domain: 'Algebra'
+
 ## Singular value decomposition
 - https://en.wikipedia.org/wiki/Singular_value_decomposition
 - implemented in: 'scipy.linalg.svd'
@@ -36,22 +41,47 @@
 
 # Algorithms and methods
 
+## Pantelides algorithm
+- https://en.wikipedia.org/wiki/Pantelides_algorithm
+- reduces: 'Differential-algebraic system of equations' to lower index
+- implemented in: 'Mathematica NDSolve' (as part of)
+
+## Lemke's algorithm
+- https://en.wikipedia.org/wiki/Lemke%27s_algorithm
+- domain: 'mathematical optimization'
+- solves: 'Linear complementarity problem', 'Mixed linear complementarity problem'
+- type: 'Basis-exchange'
+
+## Berlekamp–Zassenhaus algorithm
+- https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Zassenhaus_algorithm
+- http://mathworld.wolfram.com/Berlekamp-ZassenhausAlgorithm.html
+- applications: 'Polynomial factorization'
+
+## Blahut–Arimoto algorithm
+- https://en.wikipedia.org/wiki/Blahut%E2%80%93Arimoto_algorithm
+- domain: 'Coding theory'
+
+## Block Lanczos algorithm
+- https://en.wikipedia.org/wiki/Block_Lanczos_algorithm
+- paper: 'A Block Lanczos Algorithm for Finding Dependencies over GF(2)'
+- finds: 'nullspace of a matrix over a finite field'
+- domain: 'Linear algebra'
+
+## Lanczos algorithm
+- https://en.wikipedia.org/wiki/Lanczos_algorithm
+- solves: 'Matrix diagonalization'
+- applications: 'Latent semantic analysis'
+- variation: 'Block Lanczos algorithm'
+- implemented in: 'ARPACK'
+
+## Block Wiedemann algorithm
+- https://en.wikipedia.org/wiki/Block_Wiedemann_algorithm
+- finds: 'kernel vectors of a matrix over a finite field'
+
 ## Runge–Kutta methods
 - https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods
 - applications: 'Numerical analysis', 'Ordinary differential equation'
 - implemented in: 'scipy.integrate.RK45, scipy.integrate.RK23'
-
-## Ordinary least squares method
-- https://en.wikipedia.org/wiki/Ordinary_least_squares
-
-## Non-linear least squares method
-- https://en.wikipedia.org/wiki/Non-linear_least_squares
-
-## Total least squares method
-- https://en.wikipedia.org/wiki/Total_least_squares
-
-## Orthogonal Distance Regression
-- implemented by: 'scipy.odr', 'ODRPACK'
 
 ## Newton–Cotes formulas
 - https://en.wikipedia.org/wiki/Newton%E2%80%93Cotes_formulas

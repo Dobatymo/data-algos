@@ -10,10 +10,21 @@
 
 # Abstract data type
 
-## Array
-- also called: 'List'
+## Collection
+- supports iteration (multiple times)
+- known length
+
+## List
+- also called: 'Iterable', 'Stream'
 - https://en.wikipedia.org/wiki/List_(abstract_data_type)
-- implemented as: 'Array', 'Linked list'
+- usually implemented as: 'Linked list'
+- supports iteration (once)
+- possibly infinite
+
+## Array
+- https://en.wikipedia.org/wiki/Array_data_type
+- implemented as: 'Array'
+- constant time random access
 
 ## Stack
 - https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
@@ -21,6 +32,7 @@
 
 ## Set
 - https://en.wikipedia.org/wiki/Set_(abstract_data_type)
+- is a: 'Collection'
 - list of unique elements
 - similar to mathematical set
 - offer fast in collection checks
@@ -69,7 +81,7 @@
 - single elements in memory which contain a pointer to the next element in the sequence
 - double linked list also contain pointers back to the previous element int the sequence (XOR linked list is a clever optimization)
 - insert and delete can be constant time if pointers are already found. iteration is slow. access by index is not possible, search by value in linear.
-- implemented in: 'C++ std::list'
+- implemented in: 'C++ std::list, std::forward_list'
 
 ## Hash table
 - https://en.wikipedia.org/wiki/Hash_table
@@ -325,57 +337,63 @@
 
 ## Breadth-first search
 - https://en.wikipedia.org/wiki/Breadth-first_search
+- input: 'Graph'
 
 ## Depth-first search
 - https://en.wikipedia.org/wiki/Depth-first_search
+- input: 'Graph'
 
 ## k-d tree construction algorithm using sliding midpoint rule
 - example paper: Maneewongvatana and Mount 1999
 - constructs: 'k-d tree'
 - implemented in: 'scipy.spatial.KDTree'
+- input: 'List of k-dimensional points'
 
 ## Median of medians
 - https://en.wikipedia.org/wiki/Median_of_medians
 - selection algorithm
+- input: 'random access collection'
 
 ## Introselect
 - https://en.wikipedia.org/wiki/Introselect
 - implemented in C++ std::nth_element
 - is a: 'Selection algorithm'
+- input: 'random access collection'
 
 ## Floyd–Rivest algorithm
 - https://en.wikipedia.org/wiki/Floyd%E2%80%93Rivest_algorithm
 - is a: 'Selection algorithm', 'Divide and conquer algorithm'
+- input: 'random access collection'
 
 ## Quickselect
 - https://en.wikipedia.org/wiki/Quickselect
 - is a: 'Selection algorithm'
+- input: 'random access collection'
 
 ## Dijkstra's algorithm
 - https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 - http://mathworld.wolfram.com/DijkstrasAlgorithm.html
 - uses method: 'dynamic programming'
 - solves 'Shortest path problem' for non-negative weights in directed/undirected graphs in O(v^2) where v is the number of vertices
-- is a: 'graph algorithm'
 - variant implementation with Fibonacci heaps runs in O(e * v*log v) where e and v are the number of edges and vertices resp.
 - implemented in: 'Python scipy.sparse.csgraph.shortest_path(method='D')'
 - Fibonacci implementation is the asymptotically the fastest known single-source shortest-path algorithm for arbitrary directed graphs with unbounded non-negative weights.
+- input: 'Directed graph with non-negative weights'
 
 ## Bellman–Ford algorithm
 - https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
-- is a: 'graph algorithm'
 - solves variant of the 'Shortest path problem' for real-valued edge weights in directed graph in O(v*e) where v and e are the number of vertices and edges respectively.
 - negative cycles are detected
 - implemented in: 'Python scipy.sparse.csgraph.shortest_path(method="BF")'
+- input: 'Weighted directed graph'
 
 ## Johnson's algorithm
 - https://en.wikipedia.org/wiki/Johnson%27s_algorithm
-- graph algorithm
 - solves 'All-pairs shortest paths problem' for real-valued weights in a directed graph in O(v^2 log v + v*e) where v and e are the number of vertices and edges
-- negative cycles are not allowed
 - implemented in: 'Python scipy.sparse.csgraph.shortest_path(method='J')', 'C++ boost::graph::johnson_all_pairs_shortest_paths'
 - combination of 'Bellman–Ford' and 'Dijkstra's algorithm'
 - is faster than 'Floyd–Warshall algorithm' for sparse graphs
+- input: 'weighted directed graph without negative cycles'
 
 ## Floyd–Warshall algorithm
 - https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
@@ -386,23 +404,27 @@
 - uses method: 'dynamic programming'
 - implemented in: 'python scipy.sparse.csgraph.shortest_path(method='FW')', 'c++ boost::graph::floyd_warshall_all_pairs_shortest_paths'
 - is faster then 'Johnson's algorithm' for dense graphs
+- operates in: 'weighted directed graph without negative cycles'
 
 ## Suurballe's algorithm
 - https://en.wikipedia.org/wiki/Suurballe%27s_algorithm
 - paper: 'Disjoint paths in a network (1974)'
 - solves: 'Shortest pair of edge disjoint paths'
+- input: 'Directed graph with non-negative weights'
 
 ## Edge disjoint shortest pair algorithm
 - https://en.wikipedia.org/wiki/Edge_disjoint_shortest_pair_algorithm
 - paper: 'Survivable networks: algorithms for diverse routing'
 - solves: 'Shortest pair of edge disjoint paths'
 - superseded by: 'Suurballe's algorithm'
+- input: 'Weighted directed graph'
 
 ## Reaching algorithm
 - http://mathworld.wolfram.com/ReachingAlgorithm.html
-- solves: 'Shortest path problem' for 'acyclic digraphs'
+- solves: 'Shortest path problem'
 - time complexity: O(n), where n is the number of edges
 - where does the name come from? is this the same as using topological sorting?
+- input: 'Acyclic directed graph'
 
 ## Collaborative diffusion
 - https://en.wikipedia.org/wiki/Collaborative_diffusion
@@ -414,7 +436,8 @@
 - paper: 'On-line construction of suffix trees'
 - constructs: 'suffix tree'
 - properties: 'online'
-- time complecity: O(n), where n is the length of the string
+- time complexity: O(n), where n is the length of the string
+- input: 'List of strings'
 
 ## A* search algorithm
 - https://en.wikipedia.org/wiki/A*_search_algorithm
@@ -424,6 +447,7 @@
 - usually implemented using: 'priority queue'
 - applications: pathfinding, parsing using stochastic grammars in NLP
 - uses method: 'dynamic programming'
+- input: 'Weighted graph'
 
 ## Linear search
 - https://en.wikipedia.org/wiki/Linear_search
@@ -432,6 +456,7 @@
 - has an advantage when sequential access is fast compared to random access
 - O(1) for list with geometric distributed values
 - implemented in c++ std::find (impl. dependent), python list.index
+- input: 'List'
 
 ## Binary search algorithm
 - https://en.wikipedia.org/wiki/Binary_search_algorithm
@@ -439,19 +464,23 @@
 - requires: 'Random access'
 - variants: 'Exponential search'
 - implemented in 'C++ std::binary_search', 'python bisect'
+- input: 'Sorted list'
 
 ## Naïve string-search algorithm
 - https://en.wikipedia.org/wiki/String-searching_algorithm#Na%C3%AFve_string_search
 - find string in string in O(n+m) average time and O(n*m) worst case, where n and m are strings to be search for, resp. in.
 - implemented in: 'C++ std::search (impl. dependent)', 'python list.index'
+- input: 'Buffered list'
 
 ## Exponential search
 - https://en.wikipedia.org/wiki/Exponential_search
 - find element in sorted infinite list in O(log i) time where i is the position of the element in the list
+- input: 'Sorted list'
 
 ## Funnelsort
 - https://en.wikipedia.org/wiki/Funnelsort
 - is a: 'cache-oblivious algorithm', 'external memory algorithm', 'Comparison-based sorting algorithm'
+- input: 'Collection'
 
 ## Quicksort
 - https://en.wikipedia.org/wiki/Quicksort
@@ -461,6 +490,33 @@
 - time complexity (average): O(n log n)
 - time complexity (worst): O(n^2)
 - space complexity: O(log n) auxiliary
+- input: 'Random access collection'
+
+## Radix sort
+- https://en.wikipedia.org/wiki/Radix_sort
+- input: 'Collection of integers'
+
+## Bubble sort
+- also called: 'Sinking sort'
+- https://en.wikipedia.org/wiki/Bubble_sort
+- input: 'Bidirectional Collection'
+- it's bad, only applicable to almost sorted inputs
+- properties: 'stable', 'in-place'
+
+## Gnome sort
+- https://en.wikipedia.org/wiki/Gnome_sort
+- time complexity (average, worst): O(n^2)
+- time complexity (best): O(n)
+- requires no nested loops
+
+## Cocktail shaker sort
+- also called: 'bidirectional bubble sort'
+- https://en.wikipedia.org/wiki/Cocktail_shaker_sort
+- input: 'Bidirectional Collection'
+- properties: 'stable', 'in-place'
+- variant of: 'Bubble sort'
+- time complexity (average, worst): O(n^2)
+- time complexity (best): O(n)
 
 ## Merge Sort
 - https://en.wikipedia.org/wiki/Merge_sort
@@ -468,6 +524,7 @@
 - implemented in: 'C++ std::stable_sort (usually)'
 - good for sequential access, can work on 'singly linked lists', external sorting
 - easily parallelizable
+- input: 'Collection'
 
 ## Heapsort
 - https://en.wikipedia.org/wiki/Heapsort
@@ -478,27 +535,38 @@
 - space complexity: O(1)
 - uses: 'max heap'
 - not easily parallelizable
-- can work on 'doubly linked lists'
+- variant works on 'doubly linked lists'
+- input: 'Random access collection'
 
 ## Timsort
 - https://en.wikipedia.org/wiki/Timsort
 - is a: 'Sorting algorithm', 'Stable sorting algorithm', 'Comparison-based sorting algorithm'
 - implemented in: 'Python sorted', 'Android Java'
+- input: 'Random access collection'
 
 ## Introsort
 - https://en.wikipedia.org/wiki/Introsort
 - is a: 'Sorting algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
 - implemented in: 'C++ STL std::sort (usually)', '.net sort'
+- input: 'Random access collection'
 
 ## Selection sort
 - https://en.wikipedia.org/wiki/Selection_sort
 - http://mathworld.wolfram.com/SelectionSort.html
 - is a: 'Sorting algorithm', 'In-place algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
+- input: 'Random access collection'
+
+## Insertion sort
+- https://en.wikipedia.org/wiki/Insertion_sort
+- properties: 'stable', 'in-place'
+- input: 'List' (for not-in-place)
+- input: 'bidirectional list' (for in-place)
 
 ## Shellsort
 - https://en.wikipedia.org/wiki/Shellsort
 - http://mathworld.wolfram.com/Shellsort.html
 - is a: 'Sorting algorithm', 'In-place algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm', 'Adaptive sort'
+- input: 'Random access collection'
 
 ## Cycle sort
 - https://en.wikipedia.org/wiki/Cycle_sort
@@ -509,6 +577,7 @@
 - applications: EEPROM
 - time complexity: O(n^2)
 - space complexity: O(1) auxiliary
+- input: 'Random access collection'
 
 ## Patience sorting
 - https://en.wikipedia.org/wiki/Patience_sorting
@@ -516,11 +585,14 @@
 - finds: 'Longest increasing subsequence'
 - applications: 'Process control'
 - see also: 'Floyd's game'
+- input: 'Collection'
+- input: 'Contigious Collection' (time complexity: O(n log(log(n))), using 'Van Emde Boas tree')
 
 ## Fisher–Yates shuffle
 - https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 - is a: 'Shuffling algorithm', 'In-place algorithm'
 - unbiased
+- input: 'Random access collection'
 
 ## Reservoir sampling
 - https://en.wikipedia.org/wiki/Reservoir_sampling
@@ -543,6 +615,7 @@
 - O(n*m) complexity where n and m are the respective string lenths
 - optimal time complexity for problem proven to be O(n^2), so this algorithm is pretty much optimal
 - space complexity of O(n*m) could be reduced to O(n+m)
+- input: 'two strings'
 
 ## Aho–Corasick algorithm
 - https://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_algorithm
@@ -554,6 +627,8 @@
 - paper 'Efficient string matching: An aid to bibliographic search'
 - classification 'constructed search engine', 'match prefix first', 'one-pass'
 - shows better results than 'Commentz-Walter' for peptide identification according to 'Commentz-Walter: Any Better Than Aho-Corasick For Peptide Identification?' and for biological sequences according to 'A Comparative Study On String Matching Algorithms Of Biological Sequences'
+- input: 'Collection of strings' (construction)
+- input: 'List of characters' (searching)
 
 ## Commentz-Walter algorithm
 - https://en.wikipedia.org/wiki/Commentz-Walter_algorithm
@@ -850,27 +925,33 @@
 
 ## Karmarkar's algorithm
 - https://en.wikipedia.org/wiki/Karmarkar%27s_algorithm
-- was patented
+- properties: 'was patented'
 
 ## Exponentiation by squaring
 - https://en.wikipedia.org/wiki/Exponentiation_by_squaring
-- is a: powers algorithm (for semigroups)
-- domain: arithmetic
+- is a: 'Powers algorithm'
+- domain: 'Arithmetic'
+- input: 'Semigroup' & 'Positive integer'
+- output: 'Exponentiated semigroup'
 
 ## Bresenham's line algorithm
 - https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
 - http://mathworld.wolfram.com/BresenhamsLineAlgorithm.html
-- is a: line drawing algorithm
-- domain: computer graphics
-- applications: rasterisation
+- is a: 'Line drawing algorithm'
+- domain: 'Computer graphics'
+- applications: 'Rasterisation'
+- input: 'Start and end points'
+- output: 'List of points'
 
 ## Berlekamp–Massey algorithm
 - https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm
 - http://mathworld.wolfram.com/Berlekamp-MasseyAlgorithm.html
-- finds: 'shortest linear feedback shift register'
-- finds: 'minimal polynomial of a linearly recurrent sequence in an arbitrary field'
 - applications: 'Error detection and correction'
 - domain: 'Field theory'
+- input: 'List of bools'
+- output: 'shortest linear feedback shift register'
+- input: 'arbitrary field'
+- output: 'minimal polynomial of a linearly recurrent sequence'
 
 ## Xiaolin Wu's line algorithm
 - https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm
@@ -878,12 +959,15 @@
 - is a: Line drawing algorithm, Anti-aliasing algorithm
 - domain: computer graphics
 - applications: antialiasing
+- input: 'Start and end points'
+- output: 'List of points with associated graylevel'
 
 ## MinHash
 - https://en.wikipedia.org/wiki/MinHash
-- is a: probabilistic algorithm
-- applications: 'Locality-sensitive hashing', set similarity, 'Jaccard similarity', 'data mining', 'bioinformatics'
+- properties: 'probabilistic'
+- applications: 'Locality-sensitive hashing', 'Set similarity', 'data mining', 'bioinformatics'
 - implemented in: 'ekzhu/datasketch'
+- approximates: 'Jaccard similarity'
 
 ## Needleman–Wunsch algorithm
 - https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm
@@ -891,6 +975,8 @@
 - time complexity: O(m n)
 - uses method: 'Dynamic programming'
 - domain: 'bioinformatics'
+- input: 'two random access collections'
+- output: 'Optimal global alignment'
 
 ## Smith–Waterman algorithm
 - https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm
@@ -898,25 +984,30 @@
 - time complexity: O(m n)
 - uses method: 'Dynamic programming'
 - domain: 'bioinformatics'
+- input: 'two random access collections'
+- output: 'Optimal local alignment'
 
 ## Hirschberg's algorithm
 - https://en.wikipedia.org/wiki/Hirschberg%27s_algorithm
 - applications: 'Sequence alignment'
 - uses method: 'Dynamic programming'
 - loss function: 'Levenshtein distance'
+- input: 'two random access collections'
+- output: 'Optimal sequence alignment'
 
 ## Karger's algorithm
 - https://en.wikipedia.org/wiki/Karger%27s_algorithm
-- is a: 'randomized algorithm'
-- solves: 'minimum cut of a connected graph'
-- domain: 'graph theory'
+- properties: 'randomized'
+- input: 'Connected graph'
+- output: 'Minimum cut'
+- domain: 'Graph theory'
 - improved by: 'Karger–Stein algorithm'
 
 ## Boykov-Kolmogorov algorithm
 - paper: 'An experimental comparison of min-cut/max- flow algorithms for energy minimization in vision'
 - implemented in: 'Python networkx.algorithms.flow.boykov_kolmogorov', 'boost::graph::boykov_kolmogorov_max_flow'
 
-## Ford–Fulkerson algorithm
+## Ford–Fulkerson method
 - https://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm
 - https://brilliant.org/wiki/ford-fulkerson-algorithm/
 - properties: 'greedy', 'incomplete'
@@ -926,19 +1017,28 @@
 ## Edmonds–Karp algorithm
 - https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm
 - https://brilliant.org/wiki/edmonds-karp-algorithm/
-- implements: 'Ford–Fulkerson algorithm'
+- implements: 'Ford–Fulkerson method'
 - implemented in: 'Python networkx.algorithms.flow.edmonds_karp'
+- time complexity: O(v e^2) or O(v^2 e) where v is the number of vertices and e the number of edges
+- input: 'Flow network'
+- output: 'Maximum flow'
+- book: 'Introduction to Algorithms'
 
 ## Marr–Hildreth algorithm
 - https://en.wikipedia.org/wiki/Marr%E2%80%93Hildreth_algorithm
+- paper: 'Theory of edge detection (1980)'
 - applications: 'Edge detection'
 - domain: 'image processing'
+- input: 'Grayscale image'
+- output: 'Binary image'
 
 ## Otsu's method
 - https://en.wikipedia.org/wiki/Otsu%27s_method
 - applications: 'Image thresholding'
-- domain: 'image processing'
+- domain: 'Image processing'
 - implemented in: 'cv::threshold(type=THRESH_OTSU)'
+- input: 'Grayscale image'
+- output: 'Binary image'
 
 ## Soundex
 - https://en.wikipedia.org/wiki/Soundex
@@ -964,15 +1064,21 @@
 
 ## k-means clustering
 - https://en.wikipedia.org/wiki/K-means_clustering
-- implemented in: 'sklearn.cluster.KMeans, scipy.cluster.vq.kmeans', 'cv::kmeans'
+- is a: 'Clustering algorithm'
+- implemented in: 'sklearn.cluster.KMeans, scipy.cluster.vq.kmeans, Bio.Cluster.kcluster', 'cv::kmeans'
 - partitions space into: 'Voronoi cells'
 - applications: 'Vector quantization', 'Cluster analysis', 'Feature learning'
+- input: 'Collection of points' & 'Positive integer k'
+- output: 'Collection of cluster indices'
 
 ## k-medoids algorithm
 - also called: 'Partitioning Around Medoids'
 - https://en.wikipedia.org/wiki/K-medoids
 - is a: 'Clustering algorithm'
 - more robust to noise than 'k-means clustering'
+- input: 'Collection of points' & 'Positive integer k'
+- output: 'Collection of cluster indices'
+- implemented in: 'Python Bio.Cluster.kmedoids'
 
 ## Linde–Buzo–Gray algorithm
 - https://en.wikipedia.org/wiki/Linde%E2%80%93Buzo%E2%80%93Gray_algorithm
@@ -1044,6 +1150,11 @@
 ## Nearest centroid classifier
 - https://en.wikipedia.org/wiki/Nearest_centroid_classifier
 - is a: 'Classification model'
+- input: 'Collection of points with associated labels' (training)
+- input: 'Point' (prediction)
+- output: 'Label'
+- properties: 'reduced data model'
+- relies on: 'Nearest neighbor search'
 
 ## Forsythe's algorithm for sampling generalized exponential distributions
 - paper: 'Von Neumann's Comparison Method for Random Sampling from the Normal and Other Distributions'
@@ -1053,7 +1164,8 @@
 ## Ziggurat algorithm
 - https://en.wikipedia.org/wiki/Ziggurat_algorithm
 - paper: 'The Ziggurat Metho d for Generating Random Variables'
-- sample from: 'monotone decreasing probability distribution', 'symmetric unimodal distribution'
+- input: 'List of uniformly-distributed random numbers'
+- output: sample from 'monotone decreasing probability distribution', 'symmetric unimodal distribution'
 - is a: 'Statistical algorithm'
 - domain: 'Random numbers'
 
@@ -1061,18 +1173,22 @@
 - https://en.wikipedia.org/wiki/Remez_algorithm
 - http://mathworld.wolfram.com/RemezAlgorithm.html
 - is a: 'Minimax approximation algorithm'
-- finds: 'Polynomial of best approximation'
+- input: 'Function'
+- output: 'Function in Chebyshev space of best approximation', e.g. 'Polynomial of best approximation'
 - applications: 'Function approximation'
 
 ## Neville's algorithm
 - https://en.wikipedia.org/wiki/Neville%27s_algorithm
 - http://mathworld.wolfram.com/NevillesAlgorithm.html
 - applications: 'Polynomial interpolation', 'Numerical differentiation'
+- input: 'Collection of points'
+- output: 'Polynomial'
 
 ## Bron–Kerbosch algorithm
 - https://en.wikipedia.org/wiki/Bron%E2%80%93Kerbosch_algorithm
 - http://mathworld.wolfram.com/Bron-KerboschAlgorithm.html
-- finds: all 'Maximal Clique' in an 'undirected graph'
+- input: 'Undirected graph'
+- output: all 'Maximal Clique'
 - domain: 'Graph theory'
 - applications: 'Computational chemistry'
 - properties: 'not output-sensitive'
@@ -1081,6 +1197,8 @@
 - https://en.wikipedia.org/wiki/Havel%E2%80%93Hakimi_algorithm
 - solves: 'Graph realization problem'
 - domain: 'Graph theory'
+- input: 'Collection of non-negative integers'
+- output: 'simple graph'
 
 ## QR algorithm
 - https://en.wikipedia.org/wiki/QR_algorithm
@@ -1128,7 +1246,7 @@
 
 ## Fast Fourier transform method
 - https://en.wikipedia.org/wiki/Fast_Fourier_transform
-- calculates: 'Discrete Fourier transform'
+- output: 'Discrete Fourier transform'
 
 ## Cooley–Tukey FFT algorithm
 - https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm
@@ -1138,29 +1256,33 @@
 ## Kirkpatrick–Seidel algorithm
 - https://en.wikipedia.org/wiki/Kirkpatrick%E2%80%93Seidel_algorithm
 - paper: 'The Ultimate Planar Convex Hull Algorithm? (1983)'
-- calculates: 'Convex hull' in 2 dimensions
+- input: 'Collection of 2-d points'
+- output: 'Convex hull'
 - properties: 'output-sensitive'
 
 ## Chan's algorithm
 - https://en.wikipedia.org/wiki/Chan%27s_algorithm
-- calculates: 'Convex hull' in 2 or 3 dimensions
+- input: 'Collection of 2-d or 3-d points'
+- output: 'Convex hull'
 - properties: 'output-sensitive'
 - supersedes: 'Kirkpatrick–Seidel algorithm' (simpler and same complexity)
 
 ## Fortune and Hopcroft algorithm for the closest pair of points problem
 - paper: 'A note on Rabin's nearest-neighbor algorithm (1978)'
-- time complexity: O(n log(log(n)))
+- time complexity: O(n log(log(n))) (assumes constant time floor function)
 - properties: 'deterministic'
-- assumes constant time floor function
+- input: 'Collection of points'
 
 ## Khuller and Matias algorithm for the closest pair of points problem
 - paper: 'A Simple Randomized Sieve Algorithm for the Closest-Pair Problem'
 - time complexity: O(n)
 - properties: 'randomized'
+- input: 'Collection of points'
 
 ## Hoshen–Kopelman algorithm
 - https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm
 - is a: 'Cluster analysis algorithm'
+- input: 'regular network of bools'
 
 ## Fiorio's algorithm for connected-component labeling
 - paper: 'Two linear time Union-Find strategies for image processing (1996)'
@@ -1177,29 +1299,33 @@
 ## Fortune's algorithm
 - https://en.wikipedia.org/wiki/Fortune%27s_algorithm
 - is a: 'Sweep line algorithm'
-- constructs: 'Voronoi diagram'
+- input: 'Collection of points'
+- output: 'Voronoi diagram'
 - time complexity: O(n log n)
 - space complexity: O(n)
 
 ## Lloyd's algorithm
 - https://en.wikipedia.org/wiki/Lloyd%27s_algorithm
-- constructs: 'Voronoi diagram'
 - is a: 'Iterative method'
+- input: 'Collection of points'
+- output: 'Voronoi diagram'
 - approximates: 'Centroidal Voronoi tessellation'
 
 ## Bowyer–Watson algorithm
-- https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm
 - also called: 'Bowyer algorithm', 'Watson algorithm'
-- creates: 'Delaunay triangulation'
+- https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm
 - is a: 'Incremental algorithm'
+- input: 'Collection of points'
+- output: 'Delaunay triangulation'
 - time complexity (average): O(n log n)
 - time complexity (worst): O(n^2)
 
 ## Quickhull algorithm
 - https://en.wikipedia.org/wiki/Quickhull
 - paper: 'The quickhull algorithm for convex hulls (1996)' (modern version)
-- constructs: 'Convex hull'
 - implemented in: 'Qhull'
+- input: 'Collection of points'
+- output: 'Convex hull'
 
 ## Simplified Memory Bounded A*
 - also called: 'SMA*'
@@ -1207,57 +1333,71 @@
 - based on: 'A*'
 - solves: 'Shortest path problem'
 - is a: 'heuristic algorithm'
+- input: 'Graph'
 
 ## Thompson's construction algorithm
 - also called: 'McNaughton-Yamada-Thompson algorithm'
 - https://en.wikipedia.org/wiki/Thompson%27s_construction
-- transforms 'regular expression' into equivalent 'nondeterministic finite automaton'
+- input: 'Regular expression'
+- output: equivalent 'Nondeterministic finite automaton'
 - domain: 'Automata theory'
 
 ## Daciuk's algorithm for constructing minimal acyclic finite state automata
 - paper: 'Incremental Construction of Minimal Acyclic Finite-State Automata'
-- constructs: 'Minimal acyclic finite state automaton'
+- input: 'List of strings'
+- output: 'Minimal acyclic finite state automaton'
 
 ## Glushkov's construction algorithm
 - https://en.wikipedia.org/wiki/Glushkov%27s_construction_algorithm
-- transforms 'regular expression' into equivalent 'nondeterministic finite automaton'
+- input: 'Regular expression'
+- output: equivalent 'Nondeterministic finite automaton'
 - domain: 'Automata theory'
 
 ## Powerset construction
 - also called: 'Rabin–Scott powerset construction'
 - https://en.wikipedia.org/wiki/Powerset_construction
-- converts 'nondeterministic finite automaton' into 'deterministic finite automaton'
+- input: 'Nondeterministic finite automaton'
+- output: 'Deterministic finite automaton'
 - domain: 'Automata theory'
 
 ## Kleene's algorithm
 - https://en.wikipedia.org/wiki/Kleene%27s_algorithm
-- transforms 'deterministic finite automaton' into 'regular expression'
+- input: 'Deterministic finite automaton'
+- output: 'Regular expression'
 
 ## Hopcroft's algorithm
 - https://en.wikipedia.org/wiki/DFA_minimization#Hopcroft's_algorithm
 - solves: 'DFA minimization'
+- input: 'Deterministic finite automaton'
+- output: 'Minimal deterministic finite automaton'
 
 ## Moore's algorithm
 - also called: 'Moore reduction procedure'
 - https://en.wikipedia.org/wiki/Moore_reduction_procedure
 - solves: 'DFA minimization'
+- input: 'Deterministic finite automaton'
+- output: 'Minimal deterministic finite automaton'
 
 ## Brzozowski's algorithm
 - https://en.wikipedia.org/wiki/DFA_minimization#Brzozowski's_algorithm
 - solves: 'DFA minimization'
 - uses: 'Powerset construction'
+- input: 'Deterministic finite automaton'
+- output: 'Minimal deterministic finite automaton'
 
 ## Featherstone's algorithm
 - https://en.wikipedia.org/wiki/Featherstone%27s_algorithm
-- approximates: 'Kinematic chain' (also called 'Rigid bodies dynamics') (subset of 'Classical mechanics')
+- approximates: 'Rigid bodies dynamics' (subset of 'Classical mechanics')
 - applications: 'Robotics', 'Physics engines', 'Game development'
 - domain: 'Computational physics', 'Robot kinematics'
 - cf. 'Lagrange multiplier method'
+- input: 'Kinematic chain' (Collection of points and constraints)
 
 ## Fireworks algorithm
 - https://en.wikipedia.org/wiki/Fireworks_algorithm
 - see: 'Swarm intelligence'
 - domain: 'mathematical optimization'
+- input: 'Function'
 
 ## Sequence step algorithm
 - https://en.wikipedia.org/wiki/Sequence_step_algorithm
@@ -1266,14 +1406,17 @@
 
 ## Fast folding algorithm
 - https://en.wikipedia.org/wiki/Fast_folding_algorithm
+- paper: 'Fast folding algorithm for detection of periodic pulse trains (1969)'
 - applications: 'Time series analysis', 'Pulsar detection'
 - domain: 'Signal processing'
+- input: 'Buffered list of floats'?
 
 ## Faugère's F4 algorithm
 - https://en.wikipedia.org/wiki/Faug%C3%A8re%27s_F4_and_F5_algorithms
 - domain: 'Algebra'
-- finds: 'Gröbner basis of an ideal of a multivariate polynomial ring.'
+- output: 'Gröbner basis'
 - implemented in: 'Python SymPy'
+- input: 'ideal of a multivariate polynomial ring'
 
 ## Faugère's F5 algorithm
 - https://en.wikipedia.org/wiki/Faug%C3%A8re%27s_F4_and_F5_algorithms
@@ -1290,11 +1433,13 @@
 - paper: 'A Program for Aligning Sentences in Bilingual Corpora'
 - domain: 'Computational linguistics'
 - applications: 'Sentence alignment'
+- input: 'pair of list of sentences'
 
 ## Beier–Neely morphing algorithm
 - https://en.wikipedia.org/wiki/Beier%E2%80%93Neely_morphing_algorithm
 - applications: 'Image processing'
 - domain: 'Computer graphics'
+- input: 'pair of images'
 
 ## Kalman filter
 - also called: 'linear quadratic estimation'

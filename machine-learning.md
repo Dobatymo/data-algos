@@ -15,9 +15,31 @@
 - outliers are included in dataset
 - type of: 'One-class classification'
 
-# Algorithms
+# Machine learning models and algorithms
 
-# Machine learning algorithms
+## Gradient Tree Boosting
+- also called: 'Gradient boosting machine' (GBM), 'Gradient boosted regression tree' (GBRT)
+- also called: 'Gradient Boosting Decision Tree' (GBDT), 'Multiple Additive Regression Trees' (MART)
+- https://en.wikipedia.org/wiki/Gradient_boosting#Gradient_tree_boosting
+- implemented in: 'xgboost', 'LightGBM', 'pGBRT'
+- applications: 'Learning to rank'
+- easily distributable
+
+## Elastic net regularization
+- https://en.wikipedia.org/wiki/Elastic_net_regularization
+- implemented in: 'sklearn.linear_model.ElasticNet'
+- combines: 'LASSO regularization' and 'Tikhonov regularization'
+
+## Tikhonov regularization
+- also called: 'Ridge regression'
+- https://en.wikipedia.org/wiki/Tikhonov_regularization
+
+## LASSO regularization
+- https://en.wikipedia.org/wiki/Lasso_(statistics)
+- also called: 'Least absolute shrinkage and selection operator'
+- applications: 'regression analysis'
+- implemented in: 'sklearn.linear_model.Lasso' (fitted with 'Coordinate descent')
+- properties: 'linear'
 
 ## Isomap
 - https://en.wikipedia.org/wiki/Isomap
@@ -31,6 +53,7 @@
 - solves: 'Nonlinear dimensionality reduction'
 - applications: 'Visualization'
 - implemented in: 'Python mvpa2.mappers.som.SimpleSOMMapper, Bio.Cluster.somcluster'
+- paradigm: 'Competitive learning'
 
 ## Autoencoder
 - https://en.wikipedia.org/wiki/Autoencoder

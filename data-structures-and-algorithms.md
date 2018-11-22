@@ -726,11 +726,6 @@
 - solves: 'Eulerian path'
 - more efficient than: 'Fleury's algorithm'
 
-## Matching pursuit
-- https://en.wikipedia.org/wiki/Matching_pursuit
-- does 'Sparse approximation'
-- properties: 'greedy'
-
 ## Kahn's algorithm
 - https://en.wikipedia.org/wiki/Topological_sorting#Kahn's_algorithm
 - applications: 'topological sorting'

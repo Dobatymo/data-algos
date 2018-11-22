@@ -6,6 +6,11 @@
 
 # Problems
 
+## Sparse approximation
+- https://en.wikipedia.org/wiki/Sparse_approximation
+- domain: 'Linear algebra', 'Signal processing'
+- applications: 'Machine learning'
+
 ## Linear programming
 - also called: 'LP', 'Linear optimization', 'Constrained linear optimization'
 - https://en.wikipedia.org/wiki/Linear_programming
@@ -354,6 +359,15 @@
 - http://www.applied-mathematics.net/optimization/optimizationIntro.html
 - type: 'Unconstrained nonlinear with first derivative'
 
+## Proximal gradient method
+- https://en.wikipedia.org/wiki/Proximal_gradient_method
+- solves: 'Convex optimization'
+
+## Coordinate descent
+- https://en.wikipedia.org/wiki/Coordinate_descent
+- input: 'Real-valued function of several real variables'
+- input: 'Differentiable real-valued function of several real variables and its gradient' (variant)
+
 ## Gradient descent
 - also called: 'Steepest descent'
 - https://en.wikipedia.org/wiki/Gradient_descent
@@ -369,7 +383,30 @@
 - https://en.wikipedia.org/wiki/Stochastic_gradient_descent
 - applications: 'Machine learning'
 - stochastic approximation of: 'Gradient descent'
-- variants: momentum, Averaging, AdaGrad, RMSProp, Adam (many implemented in Keras and/or Tensorflow)
+- variants: momentum, Averaging, 'AdaGrad', 'RMSProp', 'Adam'
+
+## Momentum method for stochastic gradient descent
+- paper: 'Learning representations by back-propagating errors (1986)'
+- implemented in: 'tf.train.MomentumOptimizer, keras.optimizers.SGD'
+
+## Adam
+- also called: 'Adaptive moment estimation optimization algorithm'
+- paper: 'Adam: A Method for Stochastic Optimization (2014)'
+- implemented in: 'tf.train.AdamOptimizer, keras.optimizers.Adam'
+- variant of: 'Stochastic gradient descent'
+
+## RMSProp
+- also called: 'Root Mean Square Propagation'
+- implemented in: 'tf.train.RMSPropOptimizer, keras.optimizers.RMSprop'
+
+## ADADELTA
+- paper: 'ADADELTA: An Adaptive Learning Rate Method (2012)'
+- implemented in: 'tf.train.AdadeltaOptimizer, keras.optimizers.Adadelta'
+
+## AdaGrad
+- also called: 'Adaptive gradient algorithm'
+- paper: 'Adaptive Subgradient Methods for Online Learning and Stochastic Optimization (2011)'
+- implemented in: 'tf.train.AdagradOptimizer, keras.optimizers.Adagrad'
 
 ## Interior-point method
 - also called: 'Barrier method'
@@ -399,11 +436,16 @@
 - applications: 'Petrochemical industry'
 - input: 'Nonlinear program'
 
+## Frank–Wolfe algorithm
+- https://en.wikipedia.org/wiki/Frank%E2%80%93Wolfe_algorithm
+- solves: 'Constrained convex optimization'
+- iterative first-order optimization algorithm 
+
 ## Augmented Lagrangian method
 - https://en.wikipedia.org/wiki/Augmented_Lagrangian_method
 - type: 'Nonlinear programming'
 - applications: 'Total variation denoising', 'Compressed sensing'
-- variant: 'Alternating direction method of multipliers'
+- variant: 'Alternating direction method of multipliers' (ADMM)
 - input: 'Function and constraints'
 
 ## Penalty method
@@ -469,6 +511,18 @@
 - https://optimization.mccormick.northwestern.edu/index.php/Trust-region_methods#Dogleg_Method
 - implemented in: 'Python scipy.optimize.minimize(method="dogleg")'
 - is a: 'Trust region method'
+
+## Matching pursuit
+- paper: 'Matching pursuits with time-frequency dictionaries (1993)'
+- https://en.wikipedia.org/wiki/Matching_pursuit
+- solves: 'Sparse approximation'
+- properties: 'greedy'
+- variants: 'Orthogonal Matching Pursuit'
+
+## Orthogonal Matching Pursuit
+- paper: 'Orthogonal Matching Pursuit: recursive function approximation with application to wavelet decomposition (1993)'
+- implemented in: 'sklearn.linear_model.OrthogonalMatchingPursuit' (Orthogonal variant)
+- variant of: 'Matching pursuit'
 
 # Practical theorems
 

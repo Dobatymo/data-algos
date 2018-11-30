@@ -8,66 +8,6 @@
 - Artificial Intelligence: A Modern Approach
 - Introduction to Algorithms
 
-# Abstract data type
-
-## Collection
-- supports iteration (multiple times)
-- known length
-
-## List
-- also called: 'Iterable', 'Stream'
-- https://en.wikipedia.org/wiki/List_(abstract_data_type)
-- usually implemented as: 'Linked list'
-- supports iteration (once)
-- possibly infinite
-
-## Array
-- https://en.wikipedia.org/wiki/Array_data_type
-- implemented as: 'Array'
-- constant time random access
-
-## Stack
-- https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
-- usually implemented as: 'Array', 'Singly linked list'
-
-## Set
-- https://en.wikipedia.org/wiki/Set_(abstract_data_type)
-- is a: 'Collection'
-- list of unique elements
-- similar to mathematical set
-- offer fast in collection checks
-
-### unordered set (interface)
-- usually implemented as: 'hash table'
-- implemented in: 'std::unordered_set', 'Python set', 'Java Set'
-
-### ordered set (interface)
-- usually implemented as: 'binary search trees'
-- could be implemented as deterministic acyclic finite state acceptor
-- implemented in: 'std::set', 'Java SortedSet'
-
-## Map
-- also called: 'Associative array'
-- https://en.wikipedia.org/wiki/Associative_array
-- used to map a unique key to a value (a phone number to a name). Can only be used for exact matches. ie. cannot find all phone numbers which differ only in one digit.
-
-### unordered map (interface)
-- usually implemented as: 'Hash table'
-
-### ordered map (interface)
-- usually implemented as: 'Binary search tree'
-
-## Double-ended queue (deque)
-- https://en.wikipedia.org/wiki/Double-ended_queue
-- usually implemeted as: 'array with pointers to smaller arrays' or 'Doubly linked list'
-- implemented in: 'std::deque', 'Python collections.deque'
-- applications: 'Job scheduling'
-
-## Priority queue
-- https://en.wikipedia.org/wiki/Priority_queue
-- usually implemented as: 'heap'
-- implemented in: 'Python heapq'
-
 # Data structures
 
 ## Array
@@ -82,6 +22,24 @@
 - double linked list also contain pointers back to the previous element int the sequence (XOR linked list is a clever optimization)
 - insert and delete can be constant time if pointers are already found. iteration is slow. access by index is not possible, search by value in linear.
 - implemented in: 'C++ std::list, std::forward_list'
+- can be: 'Persistent data structure'
+
+## Rope
+- https://en.wikipedia.org/wiki/Rope_(data_structure)
+- similar to: 'deque', 'Gap buffer'
+- is a: 'Binary tree'
+- can be a: 'Persistent data structure'
+- implemented in: 'libstdc++ rope'
+
+## Gap buffer
+- https://en.wikipedia.org/wiki/Gap_buffer
+- applications: 'Text editor'
+
+## Piece table
+- https://en.wikipedia.org/wiki/Piece_table
+- applications: 'Text editor'
+- similar: 'Gap buffer'
+- implemented by: 'Visual Studio Code'
 
 ## Hash table
 - https://en.wikipedia.org/wiki/Hash_table
@@ -98,18 +56,44 @@
 
 ## Binary search tree
 - https://en.wikipedia.org/wiki/Binary_search_tree
-- implements set or map
+- implements: 'set', 'map'
 - is a: 'rooted binary tree'
 - variants: 'Huffman tree'
 
+## Zipper
+- https://en.wikipedia.org/wiki/Zipper_(data_structure)
+- generalization of: 'Gap buffer'
+- more a general technique than a data structure
+
 ## Fibonacci heap
+- paper: 'Fibonacci heaps and their uses in improved network optimization algorithms (1987)'
 - https://en.wikipedia.org/wiki/Fibonacci_heap
-- implements a: 'Priority queue'
+- implements: 'Priority queue'
+
+## Pairing heap
+- https://en.wikipedia.org/wiki/Pairing_heap
+- implements: 'Priority queue'
 
 ## Binary heap
 - https://en.wikipedia.org/wiki/Binary_heap
-- implements a: 'Priority queue'
+- implements: 'Priority queue'
 - variant implemented in: 'Python heapq', 'C++ std::make_heap, push_heap and pop_heap'
+
+## Binary decision diagram
+- https://en.wikipedia.org/wiki/Binary_decision_diagram
+- compressed representation of sets or relations
+- implements: 'Boolean function'
+- is a: 'rooted, directed, acyclic graph'
+- applications: 'Computer-aided design', 'Formal verification', 'Fault tree analysis', 'Private information retrieval'
+
+## Zero-suppressed decision diagram
+- https://en.wikipedia.org/wiki/Zero-suppressed_decision_diagram
+- type of: 'Binary decision diagram'
+
+## Propositional directed acyclic graph
+- also called: 'PDAG'
+- https://en.wikipedia.org/wiki/Propositional_directed_acyclic_graph
+- implements: 'Boolean function'
 
 ## Trie
 - also called: 'digital tree'
@@ -122,9 +106,23 @@
 - not very space efficient. common prefixed only have to be stored once, but pointers to next element of sequence uses more memory than what is saved.
 - for a more space efficient data structure see MAFST
 
+## WPL tree
+- paper: 'Weighting Without Waiting: the Weighted Path Length Tree (1991)'
+
+## PQ tree
+- paper: 'Testing for the consecutive ones property, interval graphs, and graph planarity using PQ-tree algorithms (1976)'
+- https://en.wikipedia.org/wiki/PQ_tree
+
 ## Radix tree
 - https://en.wikipedia.org/wiki/Radix_tree
 - is a: 'Binary trie'
+
+## Quadtree
+- https://en.wikipedia.org/wiki/Quadtree
+- is a: 'Tree', 'Space-partitioning tree'
+- can be implemented as: 'Implicit data structure'
+- variant: 'Region quadtree'
+- applications: 'Image processing', 'Connected-component labeling', 'Mesh generation'
 
 ## Red-black tree
 - https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
@@ -135,7 +133,9 @@
 
 ## AVL tree
 - https://en.wikipedia.org/wiki/AVL_tree
-- height-balanced binary tree
+- https://xlinux.nist.gov/dads/HTML/avltree.html
+- is a: 'binary tree'
+- properties: 'height-balanced'
 - stricter balanced and thus better for lookup (compared to Red-black)
 
 ## treap
@@ -147,16 +147,24 @@
 
 ## BK-tree
 - https://en.wikipedia.org/wiki/BK-tree
-- is a: Space-partitioning tree, Metric tree
+- is a: 'Space-partitioning tree', 'Metric tree'
 - applications: approximate string matching
+
+## Splay tree
+- https://en.wikipedia.org/wiki/Splay_tree
+- is a: 'Binary search tree'
+- properties: 'self-optimizing'
+- applications: 'Caching', 'Garbage collection'
+- disadvantages: even concurrent reads require synchronization
+- unsolved problem: 'Do splay trees perform as well as any other binary search tree algorithm?'
 
 ## k-d tree
 - https://en.wikipedia.org/wiki/K-d_tree
-- is a: Space-partitioning tree
+- is a: 'Space-partitioning tree'
 - applications: range searching, nearest neighbor search, kernel density estimation
 - for high dimensions should be: N >> 2^k, where N is the number of nodes and k is the number of dimensions
 - solves 'Recursive partitioning', 'Klee's measure problem', 'Guillotine problem'
-- implemented in python 'scipy.spatial.KDTree', 'sklearn.neighbors.KDTree'
+- implemented in: 'Python scipy.spatial.KDTree, sklearn.neighbors.KDTree, Bio.PDB.kdtrees.KDTree'
 
 ## Range tree
 - https://en.wikipedia.org/wiki/Range_tree
@@ -184,12 +192,19 @@
 - see 'Integer sorting'
 
 ## Skip list
+- paper: 'Concurrent Maintenance of Skip Lists (1998)'
 - https://en.wikipedia.org/wiki/Skip_list
-- probabilistic data structure
+- https://xlinux.nist.gov/dads/HTML/skiplist.html
+- is a: 'probabilistic data structure', 'ordered linked list'
 - basically binary trees converted to linked lists with additional information
 - allows for fast search of sorted sequences
-- implemented in Lucence
-- applications: Moving median
+- implemented by: 'Lucence', 'Redis'
+- implemented in: 'Java ConcurrentSkipListMap'
+- applications: 'Moving median'
+- space complexity (average): O(n)
+- space complexity (worst): O(n log n)
+- time complexity (search, insert, delete) (average): O(log n)
+- time complexity (search, insert, delete) (worst): O(n)
 
 ## Finite-state machine
 - https://en.wikipedia.org/wiki/Finite-state_machine
@@ -251,34 +266,68 @@
 ## M-tree
 - https://en.wikipedia.org/wiki/M-tree
 - better disk storage characteristics (because shallower) than 'Ball tree'
-- uses: nearest neighbor search
-- is a: Space-partitioning tree, Metric tree
+- uses: 'nearest neighbor search'
+- is a: 'Space-partitioning tree', 'Metric tree'
 
 ## Vantage-point tree
 - https://en.wikipedia.org/wiki/Vantage-point_tree
-- is a: Space-partitioning tree, Metric tree
-- specialisation of: Multi-vantage-point tree
+- is a: 'Space-partitioning tree', 'Metric tree'
+- specialisation of: 'Multi-vantage-point tree'
 
 ## Ball tree
 - https://en.wikipedia.org/wiki/Ball_tree
-- is a: Space-partitioning tree, Metric tree, Binary tree
+- is a: 'Space-partitioning tree', 'Metric tree', 'Binary tree'
 - applications: nearest neighbor search, kernel density estimation, N-point correlation function calculations, generalized N-body Problems.
 - specialisation of: M-Tree
 - similar: Vantage-point tree
 - implemented in: 'sklearn.neighbors.BallTree'
 - algorithms for construction: 'Five Balltree Construction Algorithms'
 
+## Winged edge
+- https://en.wikipedia.org/wiki/Winged_edge
+- applications: 'Computer graphics'
+
+## Adjacency list
+- https://en.wikipedia.org/wiki/Adjacency_list
+- implements: 'Graph'
+- implemented in: 'boost::adjacency_list'
+
+## Incidence matrix
+- https://en.wikipedia.org/wiki/Incidence_matrix
+- implements: 'Graph'
+
 ## R-tree
 - https://en.wikipedia.org/wiki/R-tree
 - applications: range searching, nearest neighbor search
+
+## Hash tree
+- is a: 'persistent data structure'
+- implements: 'set', 'map'
+
+## Hash array mapped trie
+- also called: 'HAMT'
+- https://en.wikipedia.org/wiki/Hash_array_mapped_trie
+- specialisation of: 'Hash tree'
+- is a: 'persistent data structure'
+- implements: 'Map'
+
+## Merkle tree
+- also called: 'Hash tree'
+- https://en.wikipedia.org/wiki/Merkle_tree
+- https://xlinux.nist.gov/dads/HTML/MerkleTree.html
+- https://brilliant.org/wiki/merkle-tree/
+- is a: 'Tree'
+- applications: 'Hash-based cryptography', 'peer-to-peer networks'
+- implementation: 'Tiger tree hash'
 
 ## Generalized suffix tree
 - https://en.wikipedia.org/wiki/Generalized_suffix_tree
 - build using 'Ukkonen's algorithm' or 'McCreight's algorithm'
 
 ## Disjoint-set data structure
+- also called: 'union–find data structure'
 - https://en.wikipedia.org/wiki/Disjoint-set_data_structure
-- Multiway tree
+- is a: 'Multiway tree'
 - applications: connected components of an undirected graph
 - implemented in: 'boost::graph::incremental_components'
 - used for: 'Kruskal's algorithm'
@@ -292,17 +341,35 @@
 
 ## Double-Array Trie
 - also called: 'DATrie'
-- implemented in: 'pytries/datrie', 'libdatrie'
 - paper: 'An Efficient Digital Search Algorithm by Using a Double-Array Structure'
+- implemented in: 'pytries/datrie', 'libdatrie'
 
 ## Ternary search tree
 - https://en.wikipedia.org/wiki/Ternary_search_tree
 - type of: 'Trie'
 - applications: 'Nearest neighbor search'
+- implements: 'Map'
+
+## Corner Stitching
+- paper: 'Corner Stitching: a Data Structuring Technique for VLSI Layout Tools (1982)'
+- applications: 'Very Large Scale Integration'
+
+## Difference list
+- https://en.wikipedia.org/wiki/Difference_list
 
 ## Soft heap
 - https://en.wikipedia.org/wiki/Soft_heap
 - approximates: 'Priority queue'
+
+## Binomial heap
+- paper: 'A data structure for manipulating priority queues (1978)'
+- https://en.wikipedia.org/wiki/Binomial_heap
+- implements: 'Mergeable heap'
+
+## Brodal queue
+- paper: 'Worst-Case Efficient Priority Queues (1996)'
+- https://en.wikipedia.org/wiki/Brodal_queue
+- implements: 'heap', 'priority queue'
 
 ## Bloom filter
 - https://en.wikipedia.org/wiki/Bloom_filter
@@ -323,6 +390,12 @@
 - https://en.wikipedia.org/wiki/Exponential_tree
 - variant of: 'Binary search tree'
 
+## Wavelet tree
+- paper: 'High-order entropy-compressed text indexes (2003)'
+- https://en.wikipedia.org/wiki/Wavelet_Tree
+- properties: 'succinct'
+- implemented in: 'Succinct Data Structure Library'
+
 # Index data structures
 
 ## Inverted index
@@ -332,6 +405,11 @@
 - Search engine indexing
 - cf. Back-of-the-book index, Concordance
 - applications: full-text search, sequence assembly
+
+## FM-index
+- https://en.wikipedia.org/wiki/FM-index
+- applications: 'Bioinformatics'
+- is a: 'Substring index'
 
 # Algorithms
 
@@ -348,6 +426,7 @@
 - constructs: 'k-d tree'
 - implemented in: 'scipy.spatial.KDTree'
 - input: 'List of k-dimensional points'
+- output: 'k-d tree'
 
 ## Median of medians
 - https://en.wikipedia.org/wiki/Median_of_medians
@@ -375,7 +454,7 @@
 - http://mathworld.wolfram.com/DijkstrasAlgorithm.html
 - uses method: 'dynamic programming'
 - solves 'Shortest path problem' for non-negative weights in directed/undirected graphs in O(v^2) where v is the number of vertices
-- variant implementation with Fibonacci heaps runs in O(e * v*log v) where e and v are the number of edges and vertices resp.
+- variant implementation with 'Fibonacci heap' runs in O(e * v*log v) where e and v are the number of edges and vertices resp.
 - implemented in: 'Python scipy.sparse.csgraph.shortest_path(method='D')'
 - Fibonacci implementation is the asymptotically the fastest known single-source shortest-path algorithm for arbitrary directed graphs with unbounded non-negative weights.
 - input: 'Directed graph with non-negative weights'
@@ -434,7 +513,7 @@
 ## Ukkonen's algorithm
 - https://en.wikipedia.org/wiki/Ukkonen%27s_algorithm
 - paper: 'On-line construction of suffix trees'
-- constructs: 'suffix tree'
+- output: 'suffix tree'
 - properties: 'online'
 - time complexity: O(n), where n is the length of the string
 - input: 'List of strings'
@@ -508,6 +587,12 @@
 - time complexity (average, worst): O(n^2)
 - time complexity (best): O(n)
 - requires no nested loops
+
+## Splaysort
+- paper: 'Splaysort: Fast, Versatile, Practical (1996)'
+- https://en.wikipedia.org/wiki/Splaysort
+- based on: 'Splay tree'
+- properties: 'comparison based'
 
 ## Cocktail shaker sort
 - also called: 'bidirectional bubble sort'
@@ -596,6 +681,7 @@
 
 ## Reservoir sampling
 - https://en.wikipedia.org/wiki/Reservoir_sampling
+- https://xlinux.nist.gov/dads/HTML/reservoirSampling.html
 - family of 'randomized algorithms'
 - version of: 'Fisher–Yates shuffle'
 
@@ -664,18 +750,19 @@
 
 ## Garsia–Wachs algorithm
 - https://en.wikipedia.org/wiki/Garsia%E2%80%93Wachs_algorithm
-- constructs: 'Optimal binary search tree' (special case)
+- input: 'List of non-negative reals'
+- output: 'Optimal binary search tree' (special case)
 
 ## Knuth's optimal binary search tree algorithm
 - https://en.wikipedia.org/wiki/Optimal_binary_search_tree#Knuth%27s_dynamic_programming_algorithm
 - paper: 'Optimum binary search trees'
 - uses method: 'dynamic programming'
-- constructs: 'Optimal binary search tree'
+- output: 'Optimal binary search tree'
 - time comlexity: O(n^2)
 
 ## Mehlhorn's nearly optimal binary search tree algorithm
 - paper 'Nearly optimal binary search trees'
-- constructs approximatly: 'Optimal binary search tree'
+- output approximatly: 'Optimal binary search tree'
 - time complexity: O(n)
 
 ## Trémaux's algorithm
@@ -698,7 +785,7 @@
 
 ## Christofides algorithm
 - https://en.wikipedia.org/wiki/Christofides_algorithm
-- solves 'Travelling salesman problem' approximately for metric distances
+- solves approximately: 'Travelling salesman problem' (for metric distances)
 
 ## Push–relabel maximum flow algorithm
 - https://en.wikipedia.org/wiki/Push–relabel_maximum_flow_algorithm
@@ -707,23 +794,24 @@
 ## Kruskal's algorithm
 - https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
 - http://mathworld.wolfram.com/KruskalsAlgorithm.html
-- finds: 'Minimum spanning tree'
+- output: 'Minimum spanning tree'
 - properties: 'greedy'
 - implemented in: 'C++ boost::graph::kruskal_minimum_spanning_tree'
 - book: 'Introduction to Algorithms'
 
 ## Prim's algorithm
 - https://en.wikipedia.org/wiki/Prim%27s_algorithm
-- finds 'Minimum spanning tree'
-- greedy algorithm
-- implemented in c++ boost::graph::prim_minimum_spanning_tree
+- output: 'Minimum spanning tree'
+- properties: 'greedy'
+- implemented in 'C++ boost::graph::prim_minimum_spanning_tree'
 - time complexity depends on used data structures
 - book: 'Introduction to Algorithms'
 
 ## Hierholzer's algorithm
 - https://en.wikipedia.org/wiki/Eulerian_path#Hierholzer's_algorithm
 - https://www.geeksforgeeks.org/hierholzers-algorithm-directed-graph/
-- solves: 'Eulerian path'
+- input: 'Finite graph'
+- output: 'Eulerian path'
 - more efficient than: 'Fleury's algorithm'
 
 ## Kahn's algorithm
@@ -736,17 +824,32 @@
 
 ## HyperLogLog++
 - https://en.wikipedia.org/wiki/HyperLogLog
-- solves 'Count-distinct problem' approximately
-- implemented by Lucence
+- solves approximately: 'Count-distinct problem'
+- implemented by: 'Lucence'
 
 ## Hunt–McIlroy algorithm
 - https://en.wikipedia.org/wiki/Hunt%E2%80%93McIlroy_algorithm
 - solves: 'Longest common subsequence problem'
 - implemented in: 'diff'
+- input: 'set of sequences'
+- output: 'Longest common subsequence'
+
+## Burrows–Wheeler transform
+- is a: 'transform'
+- properties: 'reversible'
+- applications: 'text compression'
+- implemented using: 'Suffix array'
+- variant: 'Bijective variant'
 
 ## Tarjan's strongly connected components algorithm
 - https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm
-- computes 'Strongly connected component'
+- input: 'Directed graph'
+- output: 'Strongly connected component'
+
+## Tarjan's off-line lowest common ancestors algorithm
+- https://en.wikipedia.org/wiki/Tarjan%27s_off-line_lowest_common_ancestors_algorithm
+- input: 'pairs of nodes in a tree'
+- output: 'Lowest common ancestor'
 
 ## Default algorithm for Huffman Tree
 - https://en.wikipedia.org/wiki/Huffman_coding#Compression
@@ -760,10 +863,14 @@
 - approximates percentiles
 - is a: 'distributed algorithm'
 
-## Chazelle algorithm for the minimum spanning tree
-- paper: 'A minimum spanning tree algorithm with inverse-Ackermann type complexity'
-- finds 'Minimum spanning tree'
-- uses 'soft heaps'
+## Chazelle's algorithm for the minimum spanning tree
+- paper: 'A minimum spanning tree algorithm with inverse-Ackermann type complexity (2000)'
+- output: 'Minimum spanning tree'
+- uses: 'soft heaps'
+
+## Chazelle's polygon triangulation algorithm
+- paper: 'Triangulating a simple polygon in linear time (1991)'
+- very difficult to implement in code
 
 ## Risch semi-algorithm
 - https://en.wikipedia.org/wiki/Risch_algorithm
@@ -771,6 +878,13 @@
 - solves: 'indefinite integration'
 - applications: 'Symbolic computation', 'Computer algebra'
 - implemented in: 'Axiom'
+- very difficult to implement in code
+
+## Canny's Roadmap algorithm
+- http://planning.cs.uiuc.edu/node298.html
+- very difficult to implement in code
+- domain: 'Computational algebraic geometry'
+- solves: 'Motion planning'
 
 ## Fan and Su algortihm for multiple pattern match
 - paper 'An Efficient Algorithm for Matching Multiple Patterns'
@@ -943,10 +1057,10 @@
 - http://mathworld.wolfram.com/Berlekamp-MasseyAlgorithm.html
 - applications: 'Error detection and correction'
 - domain: 'Field theory'
-- input: 'List of bools'
-- output: 'shortest linear feedback shift register'
-- input: 'arbitrary field'
-- output: 'minimal polynomial of a linearly recurrent sequence'
+- input (variant 1): 'List of bools'
+- output (variant 1): 'shortest linear feedback shift register'
+- input (variant 2): 'arbitrary field'
+- output (variant 2): 'minimal polynomial of a linearly recurrent sequence'
 
 ## Xiaolin Wu's line algorithm
 - https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm
@@ -966,25 +1080,27 @@
 
 ## Needleman–Wunsch algorithm
 - https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm
-- applications: 'Sequence alignment (global)', 'Computer stereo vision'
+- applications: 'Sequence alignment' (global), 'Computer stereo vision'
 - time complexity: O(m n)
 - uses method: 'Dynamic programming'
 - domain: 'bioinformatics'
+- implemented in: 'EMBOSS', 'Python Bio.pairwise2.align.globalxx'
 - input: 'two random access collections'
 - output: 'Optimal global alignment'
 
 ## Smith–Waterman algorithm
 - https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm
-- applications: 'Sequence alignment (local)'
+- applications: 'Sequence alignment' (local)
 - time complexity: O(m n)
 - uses method: 'Dynamic programming'
 - domain: 'bioinformatics'
+- implemented in: 'EMBOSS', 'Python Bio.pairwise2.align.localxx'
 - input: 'two random access collections'
 - output: 'Optimal local alignment'
 
 ## Hirschberg's algorithm
 - https://en.wikipedia.org/wiki/Hirschberg%27s_algorithm
-- applications: 'Sequence alignment'
+- applications: 'Sequence alignment' (global)
 - uses method: 'Dynamic programming'
 - loss function: 'Levenshtein distance'
 - input: 'two random access collections'
@@ -1006,8 +1122,10 @@
 - https://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm
 - https://brilliant.org/wiki/ford-fulkerson-algorithm/
 - properties: 'greedy', 'incomplete'
-- solves: 'maximum flow in a flow network'
+- solves: 'Maximum flow problem'
 - implemented by: 'Edmonds–Karp algorithm'
+- input: 'Flow network'
+- output: 'Maximum flow'
 
 ## Edmonds–Karp algorithm
 - https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm
@@ -1015,6 +1133,7 @@
 - implements: 'Ford–Fulkerson method'
 - implemented in: 'Python networkx.algorithms.flow.edmonds_karp'
 - time complexity: O(v e^2) or O(v^2 e) where v is the number of vertices and e the number of edges
+- solves: 'Maximum flow problem'
 - input: 'Flow network'
 - output: 'Maximum flow'
 - book: 'Introduction to Algorithms'
@@ -1049,6 +1168,11 @@
 ## Chamfer matching
 - paper: 'Parametric correspondence and chamfer matching: two new techniques for image matching'
 - uses: 'Chamfer distance'
+
+## Work stealing algorithm
+- https://en.wikipedia.org/wiki/Work_stealing
+- applications: 'Scheduling'
+- implemented in: 'Cilk'
 
 ## k-nearest neighbors algorithm
 - is a: 'machine learning algorithm'
@@ -1092,7 +1216,7 @@
 - implemented in: 'scipy.cluster.hierarchy.linkage'
 
 ## Rohlf's algorithm for hierarchical clustering
-- also called: MST-algorithm
+- also called: 'MST-algorithm'
 - paper: 'Hierarchical clustering using the minimum spanning tree (1973)'
 - implementation of: 'Single-linkage clustering method'
 
@@ -1117,7 +1241,7 @@
 - also called: UPGMA
 - https://en.wikipedia.org/wiki/UPGMA
 - applications: 'Hierarchical clustering'
-- implemented in: 'scipy.cluster.hierarchy.linkage'
+- implemented in: 'Python scipy.cluster.hierarchy.linkage, Bio.Phylo.TreeConstruction.DistanceTreeConstructor'
 - creates: 'Dendrogram', 'Ultrametric tree'
 
 ## Weighted Pair Group Method with Arithmetic Mean
@@ -1193,15 +1317,16 @@
 - solves: 'Graph realization problem'
 - domain: 'Graph theory'
 - input: 'Collection of non-negative integers'
-- output: 'simple graph'
+- output: 'Simple graph'
 
 ## QR algorithm
 - https://en.wikipedia.org/wiki/QR_algorithm
-- is a: 'Eigenvalue algorithm'
 - uses: 'QR decomposition'
 - properties: 'numerically stable'
 - modern implicit variant called: 'Francis algorithm'
 - supersedes: 'LR algorithm' because of better numerical stability
+- input: 'Real matrix'
+- output: 'Eigenvalues and eigenvectors'
 
 ## Weiler–Atherton clipping algorithm
 - https://en.wikipedia.org/wiki/Weiler%E2%80%93Atherton_clipping_algorithm
@@ -1417,6 +1542,13 @@
 - https://en.wikipedia.org/wiki/Faug%C3%A8re%27s_F4_and_F5_algorithms
 - domain: 'Algebra'
 
+## FGLM algorithm
+- https://en.wikipedia.org/wiki/FGLM_algorithm
+- input: 'Gröbner basis of a zero-dimensional ideal in the ring of polynomials over a field with respect to a monomial order and a second monomial order'
+- output: 'Gröbner basis of the ideal with respect to the second ordering'
+- applications: 'Computer algebra system'
+- domain: 'Computer algebra'
+
 ## Hirschberg–Sinclair algorithm
 - https://en.wikipedia.org/wiki/Hirschberg%E2%80%93Sinclair_algorithm
 - paper: 'Decentralized extrema-finding in circular configurations of processors'
@@ -1435,6 +1567,11 @@
 - applications: 'Image processing'
 - domain: 'Computer graphics'
 - input: 'pair of images'
+
+## Knuth's Algorithm X
+- also called: 'DLX' with implemented using 'Dancing Links'
+- solves: 'Exact cover'
+- applications: 'Sudoku', 'Tessellation', 'Eight queens puzzle'
 
 ## Kalman filter
 - also called: 'linear quadratic estimation'
@@ -1552,12 +1689,6 @@
 - domain: 'Graph theory'
 - applications: 'Computer vision'
 
-## Strongly connected component
-- https://en.wikipedia.org/wiki/Strongly_connected_component
-- used for 'Dulmage–Mendelsohn decomposition'
-- book: 'Introduction to Algorithms'
-- domain: 'Graph theory'
-
 ## Greatest common divisor
 - https://en.wikipedia.org/wiki/Greatest_common_divisor
 - domain: 'Number theory'
@@ -1568,18 +1699,15 @@
 - only possible on 'directed acyclic graph'
 
 ## Travelling salesman problem
+- also called: 'TSP'
 - https://en.wikipedia.org/wiki/Travelling_salesman_problem
 - solved by: 'Concorde TSP Solver' application
 - solved by: 'Approximate global optimization'
 - hardness: NP-hard
 
 ## Minimum spanning tree
+- also called: 'MST'
 - https://en.wikipedia.org/wiki/Minimum_spanning_tree
-- http://algorist.com/problems/Minimum_Spanning_Tree.html
-- book: 'Introduction to Algorithms'
-- solved by 'Kruskal's algorithm', 'Prim's algorithm'
-- unique solution
-- applications: 'Network design', 'Image segmentation', 'Cluster analysis'
 
 ## Second-best minimum spanning tree
 - book: 'Introduction to Algorithms'
@@ -1591,7 +1719,7 @@
 - variant of: 'Minimum spanning tree'
 - a 'minimum spanning tree' is a 'bottleneck spanning tree'
 
-## spanning-tree verification
+## Spanning-tree verification
 - book: 'Introduction to Algorithms'
 - related to 'Minimum spanning tree'
 
@@ -1629,10 +1757,6 @@
 - https://en.wikipedia.org/wiki/Approximate_string_matching
 - paper: 'Fast Approximate String Matching in a Dictionary'
 - applications: 'spell checking', 'nucleotide sequence matching'
-
-## Lowest common ancestor (LCA)
-- https://en.wikipedia.org/wiki/Lowest_common_ancestor
-- domain: 'Graph theory'
 
 ## Longest common substring problem
 - https://en.wikipedia.org/wiki/Longest_common_substring_problem
@@ -1722,10 +1846,6 @@
 - special case of: 'Minimum-cost flow problem'
 - applications: 'Routing'
 
-## Polynomial of best approximation
-- https://www.encyclopediaofmath.org/index.php/Polynomial_of_best_approximation
-- domain: 'Approximation theory'
-
 ## Point location problem
 - https://en.wikipedia.org/wiki/Point_location
 - domain: 'Computational geometry'
@@ -1734,14 +1854,6 @@
 - https://en.wikipedia.org/wiki/Point_in_polygon
 - special case of: 'Point location problem'
 - domain: 'Computational geometry'
-
-## Convex hull
-- also called: 'minimum convex polygon'
-- book: 'Handbook of Discrete and Computational Geometry'
-- https://en.wikipedia.org/wiki/Convex_hull
-- http://mathworld.wolfram.com/ConvexHull.html
-- domain: 'Computational geometry'
-- implemented in: 'Mathematica ConvexHullMesh', 'Python scipy.spatial.ConvexHull' (using Quickhull)
 
 ## Halfspace intersection problem
 - book: 'Handbook of Discrete and Computational Geometry'
@@ -1763,35 +1875,37 @@
 - applications: 'Data mining', 'Paleoecology'
 - domain: 'Statistics'
 
-## Delaunay triangulation
-- https://en.wikipedia.org/wiki/Delaunay_triangulation
-- http://mathworld.wolfram.com/DelaunayTriangulation.html
-- book: 'Handbook of Discrete and Computational Geometry'
-- paper: 'Sur la sphère vide. A la mémoire de Georges Voronoï'
-- domain: 'Geometry'
-- is dual graph of: 'Voronoi diagram'
-- related: 'Euclidean minimum spanning tree'
-- implemented in: 'scipy.spatial.Delaunay' (using Qhull)
-
-## Voronoi diagram
-- also called: 'Voronoi tessellation', 'Voronoi decomposition', 'Voronoi partition'
-- https://en.wikipedia.org/wiki/Voronoi_diagram
-- http://mathworld.wolfram.com/VoronoiDiagram.html
-- book: 'Handbook of Discrete and Computational Geometry'
-- paper: 'Nouvelles applications des paramètres continus à la théorie de formes quadratiques'
-- domain: 'Geometry'
-- is dual graph of: 'Delaunay triangulation'
-- applications: 'Space partitioning', 'biological structure modelling', 'growth patterns in ecology', 'Epidemiology'
-- related: 'Closest pair of points problem', 'Largest empty sphere problem'
-- implemented in: 'scipy.spatial.Voronoi' (using Qhull), 'scipy.spatial.SphericalVoronoi'
-
 ## Subset sum problem
 - https://en.wikipedia.org/wiki/Subset_sum_problem
 - hardness: NP-complete
+- special case of: 'Knapsack problem'
 
 ## Minimal Perfect Hashing
 - http://iswsa.acm.org/mphf/index.html
 - https://en.wikipedia.org/wiki/Perfect_hash_function#Minimal_perfect_hash_function
+
+## Maximum cut problem
+- https://en.wikipedia.org/wiki/Maximum_cut
+- hardness: 'NP-complete'
+- is a: 'Decision problem'
+- kind of: 'Partition problem'
+
+## Exact cover problem
+- https://en.wikipedia.org/wiki/Exact_cover
+- hardness: 'NP-complete'
+- kind of: 'Graph coloring problem'
+- is a: 'Decision problem'
+
+## Graph realization problem
+- https://en.wikipedia.org/wiki/Graph_realization_problem
+- is a: 'Decision problem'
+- domain: 'Graph theory'
+
+## Motion planning
+- also called: 'Piano mover's problem'
+- https://en.wikipedia.org/wiki/Motion_planning
+- http://planning.cs.uiuc.edu/node160.html
+- hardness: PSPACE-hard
 
 # Specific problems
 

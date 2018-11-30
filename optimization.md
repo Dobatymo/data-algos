@@ -11,9 +11,15 @@
 - domain: 'Linear algebra', 'Signal processing'
 - applications: 'Machine learning'
 
+## Logic optimization
+- also called: 'Circuit minimization', 'Minimization of boolean functions'
+- https://en.wikipedia.org/wiki/Logic_optimization
+- solved by: 'Mathematica BooleanMinimize'
+
 ## Linear programming
 - also called: 'LP', 'Linear optimization', 'Constrained linear optimization'
 - https://en.wikipedia.org/wiki/Linear_programming
+- implemented by: 'Mathematica LinearProgramming'
 - implemented by: 'Mathematica FindMinimum(Method->"LinearProgramming")' (what is the algorithm here?)
 - implemented by: 'Artelys Knitro'
 
@@ -67,6 +73,7 @@
 
 ## Combinatorial optimization
 - https://en.wikipedia.org/wiki/Combinatorial_optimization
+- example problems: 'Travelling salesman problem', 'Minimum spanning tree'
 
 ## Nonlinear dimensionality reduction
 - https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction
@@ -93,18 +100,75 @@
 
 ## Vertex cover problem
 - https://en.wikipedia.org/wiki/Vertex_cover
-- solved approximatly by: 'Approximate global optimization'
+- solved approximately by: 'Approximate global optimization'
 - hardness: NP-hard
+- runtime complexity: polynomial for 'Bipartite Graph', 'Tree Graph'
+
+## Maximal matching
+- https://en.wikipedia.org/wiki/Matching_(graph_theory)#Maximal_matchings
+- https://brilliant.org/wiki/matching/#definitions-and-terminology
+- time complexity: linear
+
+## Maximum matching
+- the 'Maximal matching' with the maximum number of edges
+- https://brilliant.org/wiki/matching/#definitions-and-terminology
+- solves: 'Assignment problem' on 'weighted bipartite graphs'
+- time complexity: polynomial
+
+## Minimum maximal matching
+- https://en.wikipedia.org/wiki/Matching_(graph_theory)
+- no polynomial-time algorithm is known
+- solved approximately by: 'networkx.algorithms.approximation.matching.min_maximal_matching'
+
+## Maximum independent set problem
+- https://en.wikipedia.org/wiki/Independent_set_(graph_theory)#Maximum_independent_sets_and_maximum_cliques
+- solved approximately by: 'networkx.algorithms.approximation.independent_set.maximum_independent_set'
 
 ## Boolean satisfiability problem
 - https://en.wikipedia.org/wiki/Boolean_satisfiability_problem
-- solved approximatly by: 'Approximate global optimization'
+- solved approximately by: 'Approximate global optimization'
 - hardness: NP-complete
 
 ## Nurse scheduling problem
 - https://en.wikipedia.org/wiki/Nurse_scheduling_problem
-- solved approximatly by: 'Approximate global optimization'
+- solved approximately by: 'Approximate global optimization'
 - hardness: NP-hard
+
+## Combinatorial optimization algorithms
+
+## Local-Ratio algorithm
+- paper: 'A Local-Ratio Theorem for Approximating the Weighted Vertex Cover Problem'
+- implemented in: 'networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover'
+- solves approximately: 'Vertex cover problem'
+
+## Hungarian Maximum Matching algorithm
+- https://en.wikipedia.org/wiki/Hungarian_algorithm
+- http://mathworld.wolfram.com/HungarianMaximumMatchingAlgorithm.html
+- https://brilliant.org/wiki/hungarian-matching/
+- also called: 'Kuhn-Munkres algorithm'
+- input: 'bipartite graph'
+- output: 'maximum-weight matching'
+- time complexity: O(V^3) for V vertices
+
+## Hopcroft–Karp algorithm
+- paper: 'An $n^{5/2}$ Algorithm for Maximum Matchings in Bipartite Graphs (1973)'
+- https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
+- https://brilliant.org/wiki/hopcroft-karp/
+- input: 'Bipartite graph'
+- output: 'Maximum matching'
+- time complexity: O(E sqrt(V)) for E edges and V vertices
+- best for sparse, for dense, there are more recent improvements like 'Alt et al. (1991)'
+
+## Blossom algorithm
+- paper: 'Paths, trees, and flowers (1965)'
+- also called: 'Edmonds' matching algorithm'
+- https://en.wikipedia.org/wiki/Blossom_algorithm
+- http://mathworld.wolfram.com/BlossomAlgorithm.html
+- https://brilliant.org/wiki/blossom-algorithm/
+- domain: 'Graph theory'
+- input: 'Graph'
+- output: 'Maximum matching'
+- time complexity: O(E V^2) for E edges and V vertices
 
 # Numerical optimization algorithms
 
@@ -523,6 +587,25 @@
 - paper: 'Orthogonal Matching Pursuit: recursive function approximation with application to wavelet decomposition (1993)'
 - implemented in: 'sklearn.linear_model.OrthogonalMatchingPursuit' (Orthogonal variant)
 - variant of: 'Matching pursuit'
+
+## Karnaugh map
+- also called: 'K-map', 'Karnaugh–Veitch map'
+- https://en.wikipedia.org/wiki/Karnaugh_map
+- solves: 'Logic optimization'
+- is a: 'algorithm for humans'
+
+## Quine–McCluskey algorithm
+- also called: 'method of prime implicants'
+- https://en.wikipedia.org/wiki/Quine%E2%80%93McCluskey_algorithm
+- solves: 'Logic optimization'
+- time complexity: exponential
+
+## Espresso algorithm
+- paper: 'Logic Minimization Algorithms for VLSI Synthesis (1984)'
+- https://en.wikipedia.org/wiki/Espresso_heuristic_logic_minimizer
+- solves approximately: 'Logic optimization'
+- is a: 'heuristic algorithm'
+- implemented by: 'Espresso', 'Minilog'
 
 # Practical theorems
 

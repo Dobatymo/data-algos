@@ -32,15 +32,6 @@
 - applications: 'Matrix decomposition', 'Matrix inversion', 'System of linear equations', 'Determinant'
 - implemented in: 'scipy.linalg.lu'
 
-## Maximal matching
-- https://en.wikipedia.org/wiki/Matching_(graph_theory)#Maximal_matchings
-- https://brilliant.org/wiki/matching/#definitions-and-terminology
-
-## Maximum matching
-- the 'Maximal matching' with the maximum number of edges
-- https://brilliant.org/wiki/matching/#definitions-and-terminology
-- solves: 'Assignment problem' on 'weighted bipartite graphs'
-
 ## Stable marriage problem
 - https://en.wikipedia.org/wiki/Stable_marriage_problem
 - is a: 'matching problem'
@@ -257,35 +248,6 @@
 
 ## Lin's Method
 - http://mathworld.wolfram.com/LinsMethod.html
-
-## Hungarian Maximum Matching algorithm
-- https://en.wikipedia.org/wiki/Hungarian_algorithm
-- http://mathworld.wolfram.com/HungarianMaximumMatchingAlgorithm.html
-- https://brilliant.org/wiki/hungarian-matching/
-- also called: 'Kuhn-Munkres algorithm'
-- input: 'bipartite graph'
-- output: 'maximum-weight matching'
-- time complexity: O(V^3) for V vertices
-
-## Hopcroft–Karp algorithm
-- paper: 'An $n^{5/2}$ Algorithm for Maximum Matchings in Bipartite Graphs (1973)'
-- https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
-- https://brilliant.org/wiki/hopcroft-karp/
-- input: 'Bipartite graph'
-- output: 'Maximum matching'
-- time complexity: O(E sqrt(V)) for E edges and V vertices
-- best for sparse, for dense, there are more recent improvements like 'Alt et al. (1991)'
-
-## Blossom algorithm
-- paper: 'Paths, trees, and flowers (1965)'
-- also called: 'Edmonds' matching algorithm'
-- https://en.wikipedia.org/wiki/Blossom_algorithm
-- http://mathworld.wolfram.com/BlossomAlgorithm.html
-- https://brilliant.org/wiki/blossom-algorithm/
-- domain: 'Graph theory'
-- input: 'Graph'
-- output: 'Maximum matching'
-- time complexity: O(E V^2) for E edges and V vertices
 
 ## Miller's Algorithm
 - http://mathworld.wolfram.com/MillersAlgorithm.html

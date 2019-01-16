@@ -1,0 +1,7 @@
+are error metrics like Mean Squared Error really metrics in the mathematical sense
+
+categorize algorithms by input type
+- sorted sequence
+- continuous function
+- digraph
+- ...

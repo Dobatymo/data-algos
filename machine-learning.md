@@ -17,11 +17,35 @@
 
 # Machine learning models and algorithms
 
+## Automatic Differentiation Variational Inference
+- also called: 'ADVI'
+- paper: 'Automatic Variational Inference in Stan (2015)'
+- implemented in: 'Stan'
+- does: 'approximate Bayesian inference'
+
+## Hamiltonian Monte Carlo
+- also called: 'HMC', 'Hybrid Monte Carlo'
+- https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo
+- paper: 'Hybrid Monte Carlo (1987)'
+- is a: 'Markov chain Monte Carlo algorithm'
+- solves: 'Sampling'
+- input: 'probability distribution'
+- output: 'random samples'
+- applications: 'Lattice QCD'
+- implemented in: 'Stan'
+
+## No-U-Turn Sampler
+- also called: 'NUTS'
+- paper: 'The No-U-Turn Sampler: Adaptively Setting Path Lengths in Hamiltonian Monte Carlo (2011)'
+- extends: 'Hamiltonian Monte Carlo'
+- implemented in: 'Stan'
+- solves: 'Sampling'
+
 ## Gradient Tree Boosting
 - also called: 'Gradient boosting machine' (GBM), 'Gradient boosted regression tree' (GBRT)
 - also called: 'Gradient Boosting Decision Tree' (GBDT), 'Multiple Additive Regression Trees' (MART)
 - https://en.wikipedia.org/wiki/Gradient_boosting#Gradient_tree_boosting
-- implemented in: 'xgboost', 'LightGBM', 'pGBRT'
+- implemented in: 'xgboost', 'LightGBM', 'pGBRT', 'catboost'
 - applications: 'Learning to rank'
 - easily distributable
 

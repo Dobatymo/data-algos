@@ -1,6 +1,7 @@
 # Abstract data types
 
 ## Collection
+- also called: 'Sequence'
 - supports iteration (multiple times)
 - known length
 
@@ -25,26 +26,40 @@
 - is a: 'Collection'
 - list of unique elements
 - similar to mathematical set
-- offer fast in collection checks
+- offers fast in-collection checks
 
-### unordered set (interface)
-- usually implemented as: 'hash table'
+### Unordered set (interface)
+- usually implemented as: 'Hash table'
 - implemented in: 'std::unordered_set', 'Python set', 'Java Set'
 
-### ordered set (interface)
-- usually implemented as: 'binary search trees'
+### Ordered set (interface)
+- usually implemented as: 'Binary search tree'
 - could be implemented as deterministic acyclic finite state acceptor
 - implemented in: 'std::set', 'Java SortedSet'
+
+## Multiset
+- also called: 'Bag'
+- https://en.wikipedia.org/wiki/Set_(abstract_data_type)#Multiset
+- is a: 'Collection'
+- like a set where duplicities of unique values are also stored
+
+### Unordered multiset (interface)
+- usually implemented as: 'Hash table'
+- implemented in: 'std::unordered_multiset ', 'Python collections.Counter', 'Smalltalk Bag'
+
+### Ordered multiset (interface)
+- usually implemented as: 'Binary search tree'
+- implemented in: 'std::multiset', 'Java com.google.common.collect.TreeMultiset'
 
 ## Map
 - also called: 'Associative array'
 - https://en.wikipedia.org/wiki/Associative_array
 - used to map a unique key to a value (a phone number to a name). Can only be used for exact matches. ie. cannot find all phone numbers which differ only in one digit.
 
-### unordered map (interface)
+### Unordered map (interface)
 - usually implemented as: 'Hash table'
 
-### ordered map (interface)
+### Ordered map (interface)
 - usually implemented as: 'Binary search tree'
 
 ## Double-ended queue (deque)
@@ -110,7 +125,7 @@
 - also called: 'Voronoi tessellation', 'Voronoi decomposition', 'Voronoi partition'
 - https://en.wikipedia.org/wiki/Voronoi_diagram
 - http://mathworld.wolfram.com/VoronoiDiagram.html
-- book: 'Handbook of Discrete and Computational Geometry'
+- book: 'Handbook of Discrete and Computational Geometry', 'The algorithm design manual'
 - paper: 'Nouvelles applications des paramètres continus à la théorie de formes quadratiques'
 - domain: 'Geometry'
 - found by: 'Fortune's algorithm', 'Lloyd's algorithm'
@@ -122,7 +137,7 @@
 
 ## Convex hull
 - also called: 'minimum convex polygon'
-- book: 'Handbook of Discrete and Computational Geometry'
+- book: 'Handbook of Discrete and Computational Geometry', 'Introduction to Algorithms', 'The algorithm design manual'
 - https://en.wikipedia.org/wiki/Convex_hull
 - http://mathworld.wolfram.com/ConvexHull.html
 - domain: 'Computational geometry'
@@ -144,6 +159,7 @@
 - based on: 'Directed acyclic graph'
 
 ## Minimum spanning tree
+- also called: 'MST'
 - https://en.wikipedia.org/wiki/Minimum_spanning_tree
 - http://algorist.com/problems/Minimum_Spanning_Tree.html
 - book: 'Introduction to Algorithms'
@@ -151,6 +167,16 @@
 - unique solution
 - applications: 'Network design', 'Image segmentation', 'Cluster analysis'
 - based on: 'connected, edge-weighted (un)directed graph'
+
+## Second-best minimum spanning tree
+- book: 'Introduction to Algorithms'
+- solution need not be unique
+- variant of: 'Minimum spanning tree'
+
+## Bottleneck spanning tree
+- book: 'Introduction to Algorithms'
+- variant of: 'Minimum spanning tree'
+- a 'minimum spanning tree' is a 'bottleneck spanning tree'
 
 ## Strongly connected component
 - https://en.wikipedia.org/wiki/Strongly_connected_component
@@ -171,3 +197,70 @@
 ## Eigenvalues and eigenvectors
 - https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors
 - based on: 'Linear map'
+
+## Maximal matching
+- https://en.wikipedia.org/wiki/Matching_(graph_theory)#Maximal_matchings
+- https://brilliant.org/wiki/matching/#definitions-and-terminology
+- time complexity: linear
+- based on: 'Graph'
+
+## Maximum matching
+- the 'Maximal matching' with the maximum number of edges
+- https://brilliant.org/wiki/matching/#definitions-and-terminology
+- solves: 'Assignment problem' on 'weighted bipartite graphs'
+- time complexity: polynomial
+- based on: 'Graph'
+
+## Minimum maximal matching
+- https://en.wikipedia.org/wiki/Matching_(graph_theory)
+- no polynomial-time algorithm is known
+- solved approximately by: 'networkx.algorithms.approximation.matching.min_maximal_matching'
+- based on: 'Graph'
+
+## Longest increasing subsequence
+- https://en.wikipedia.org/wiki/Longest_increasing_subsequence
+- domain: 'Combinatorics'
+- properties: 'optimal substructure'
+- based on: 'Sequence'
+
+## Greatest common divisor
+- https://en.wikipedia.org/wiki/Greatest_common_divisor
+- book: 'Introduction to Algorithms'
+- domain: 'Number theory'
+- based on: 'pair of integers'
+
+## Maximum common edge subgraph
+- https://en.wikipedia.org/wiki/Maximum_common_edge_subgraph
+- hardness: NP-complete
+- generalization of: 'Subgraph isomorphism problem'
+- domain: 'Graph theory'
+- based on: 'pair of graphs'
+
+## Maximum common induced subgraph
+- https://en.wikipedia.org/wiki/Maximum_common_induced_subgraph
+- hardness: NP-complete
+- generalization of: 'Induced subgraph isomorphism problem'
+- applications: 'Cheminformatics', 'Pharmacophore'
+- domain: 'Graph theory'
+- based on: 'pair of graphs'
+
+## Singular value decomposition
+- https://en.wikipedia.org/wiki/Singular_value_decomposition
+- implemented in: 'scipy.linalg.svd'
+- applications: 'Matrix decomposition', 'Matrix approximation', 'Signal processing', 'Statistics'
+- used for: 'Pseudoinverse', 'Kabsch algorithm'
+- solves: 'Total least squares problem'
+- domain: 'Linear algebra'
+
+## Cholesky decomposition
+- https://en.wikipedia.org/wiki/Cholesky_decomposition
+- implemented in: 'numpy.linalg.cholesky, scipy.linalg.cholesky', 'LAPACK'
+- applications: 'Matrix decomposition', 'Matrix inversion', 'Non-linear optimization', 'Monte Carlo simulation'
+- solves: 'Linear least squares problem'
+- used for: 'Kalman filter'
+- domain: 'Linear algebra'
+
+## LU decomposition
+- https://en.wikipedia.org/wiki/LU_decomposition
+- applications: 'Matrix decomposition', 'Matrix inversion', 'System of linear equations', 'Determinant'
+- implemented in: 'scipy.linalg.lu'

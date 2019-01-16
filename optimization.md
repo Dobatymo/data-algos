@@ -98,43 +98,7 @@
 - also called: 'Orthogonal distance regression', 'Orthogonal non-linear least squares'
 - implemented by: 'scipy.odr', 'ODRPACK', 'R ONLS'
 
-## Vertex cover problem
-- https://en.wikipedia.org/wiki/Vertex_cover
-- solved approximately by: 'Approximate global optimization'
-- hardness: NP-hard
-- runtime complexity: polynomial for 'Bipartite Graph', 'Tree Graph'
-
-## Maximal matching
-- https://en.wikipedia.org/wiki/Matching_(graph_theory)#Maximal_matchings
-- https://brilliant.org/wiki/matching/#definitions-and-terminology
-- time complexity: linear
-
-## Maximum matching
-- the 'Maximal matching' with the maximum number of edges
-- https://brilliant.org/wiki/matching/#definitions-and-terminology
-- solves: 'Assignment problem' on 'weighted bipartite graphs'
-- time complexity: polynomial
-
-## Minimum maximal matching
-- https://en.wikipedia.org/wiki/Matching_(graph_theory)
-- no polynomial-time algorithm is known
-- solved approximately by: 'networkx.algorithms.approximation.matching.min_maximal_matching'
-
-## Maximum independent set problem
-- https://en.wikipedia.org/wiki/Independent_set_(graph_theory)#Maximum_independent_sets_and_maximum_cliques
-- solved approximately by: 'networkx.algorithms.approximation.independent_set.maximum_independent_set'
-
-## Boolean satisfiability problem
-- https://en.wikipedia.org/wiki/Boolean_satisfiability_problem
-- solved approximately by: 'Approximate global optimization'
-- hardness: NP-complete
-
-## Nurse scheduling problem
-- https://en.wikipedia.org/wiki/Nurse_scheduling_problem
-- solved approximately by: 'Approximate global optimization'
-- hardness: NP-hard
-
-## Combinatorial optimization algorithms
+# Combinatorial optimization algorithms
 
 ## Local-Ratio algorithm
 - paper: 'A Local-Ratio Theorem for Approximating the Weighted Vertex Cover Problem'
@@ -211,6 +175,7 @@
 ## Simplex algorithm
 - https://en.wikipedia.org/wiki/Simplex_algorithm
 - http://mathworld.wolfram.com/SimplexMethod.html
+- book: 'Introduction to Algorithms'
 - also called: 'Dantzig's simplex algorithm'
 - type: 'Linear programming'
 - implemented in: 'Mathematica LinearProgramming(Method->"Simplex")'
@@ -501,6 +466,8 @@
 - input: 'Nonlinear program'
 
 ## Frank–Wolfe algorithm
+- also called: 'conditional gradient method', 'reduced gradient algorithm', 'convex combination algorithm'
+- paper: 'An algorithm for quadratic programming (1956)'
 - https://en.wikipedia.org/wiki/Frank%E2%80%93Wolfe_algorithm
 - solves: 'Constrained convex optimization'
 - iterative first-order optimization algorithm 

@@ -31,3 +31,14 @@
 - also called: 'Interruptible algorithm'
 - https://en.wikipedia.org/wiki/Anytime_algorithm
 - iterative algorithm were each steps improves the result. can be stopped anytime to get an approximation.
+
+## Sequential algorithm
+- https://en.wikipedia.org/wiki/Sequential_algorithm
+- "executed sequentially – once through, from start to finish, without other processing executing – as opposed to concurrently or in parallel."
+- cf: 'Streaming algorithm', 'Online algorithm'
+
+## Streaming algorithm
+- https://en.wikipedia.org/wiki/Streaming_algorithm
+
+## Online algorithm
+- https://en.wikipedia.org/wiki/Online_algorithm

@@ -5,8 +5,10 @@
 - http://interactivepython.org/RkmcZ/courselib/static/pythonds/index.html
 
 ## books
-- Artificial Intelligence: A Modern Approach
-- Introduction to Algorithms
+- 'MIT Press', 'Introduction to Algorithms'
+- 'Springer', 'The Algorithm Design Manual'
+- 'Cambridge', 'Algorithms on Strings, Trees, and Sequences'
+- 'Prentice Hall', 'Artificial Intelligence: A Modern Approach'
 
 # Data structures
 
@@ -43,12 +45,12 @@
 
 ## Hash table
 - https://en.wikipedia.org/wiki/Hash_table
-- used to implement maps: 'Python dict', 'C++ std::unordered_map'
+- implements: 'Set', 'Multiset', 'Map'
+- used to implement: 'Python dict', 'C++ std::unordered_set', 'C++ std::unordered_multiset', 'C++ std::unordered_map'
 - probably the most important data structure in Python
 - has basically perfect complexity for a good hash function. (Minimal) perfect hashing can be used if the keys are known in advance.
 - ordering depends on implementation (python 3.7 garuantees preservation of insertion order, whereas C++ as the name says does not define any ordering)
-- even though hashing is constant in time, it might still be slow. also the hash consumes space
-- hash tables usually have set characteristics (ie. the can test in average constant time if an item is the table or not)
+- even though hashing is constant in time, it might still be slow. also the hash consumes space.
 - time complexity (search, insert, delete) (average): O(1)
 - time complexity (search, insert, delete) (worst): O(n)
 - space complexity (average): O(n)
@@ -56,7 +58,8 @@
 
 ## Binary search tree
 - https://en.wikipedia.org/wiki/Binary_search_tree
-- implements: 'set', 'map'
+- implements: 'Set', 'Multiset', 'Map'
+- used to implement: 'C++ std::set', 'C++ std::multiset'
 - is a: 'rooted binary tree'
 - variants: 'Huffman tree'
 
@@ -68,6 +71,7 @@
 ## Fibonacci heap
 - paper: 'Fibonacci heaps and their uses in improved network optimization algorithms (1987)'
 - https://en.wikipedia.org/wiki/Fibonacci_heap
+- book: 'Introduction to Algorithms'
 - implements: 'Priority queue'
 
 ## Pairing heap
@@ -126,17 +130,18 @@
 
 ## Red-black tree
 - https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
+- book: 'Introduction to Algorithms'
 - height-balanced binary tree
-- better for insert/delete (compared to AVL)
-- used to implement c++ map, java TreeMap
-- used by MySQL
+- better for insert/delete (compared to 'AVL tree')
+- used to implement: 'C++ std::map', 'Java TreeMap'
+- used by: MySQL
 
 ## AVL tree
 - https://en.wikipedia.org/wiki/AVL_tree
 - https://xlinux.nist.gov/dads/HTML/avltree.html
 - is a: 'binary tree'
 - properties: 'height-balanced'
-- stricter balanced and thus better for lookup (compared to Red-black)
+- stricter balanced and thus better for lookup (compared to 'Red-black tree')
 
 ## treap
 - https://en.wikipedia.org/wiki/Treap
@@ -186,6 +191,7 @@
 
 ## van Emde Boas Trees
 - https://en.wikipedia.org/wiki/Van_Emde_Boas_tree
+- book: 'Introduction to Algorithms'
 - Multiway tree
 - implement ordered maps with integer keys
 - implement priority queues
@@ -249,6 +255,7 @@
 
 ## B-tree
 - https://en.wikipedia.org/wiki/B-tree
+- book: 'Introduction to Algorithms'
 - used to implement lots of databases and filesystems
 - self-balancing
 - non-binary
@@ -322,11 +329,12 @@
 
 ## Generalized suffix tree
 - https://en.wikipedia.org/wiki/Generalized_suffix_tree
-- build using 'Ukkonen's algorithm' or 'McCreight's algorithm'
+- build using: 'Ukkonen's algorithm', 'McCreight's algorithm'
 
 ## Disjoint-set data structure
 - also called: 'union–find data structure'
 - https://en.wikipedia.org/wiki/Disjoint-set_data_structure
+- book: 'Introduction to Algorithms'
 - is a: 'Multiway tree'
 - applications: connected components of an undirected graph
 - implemented in: 'boost::graph::incremental_components'
@@ -390,6 +398,17 @@
 - https://en.wikipedia.org/wiki/Exponential_tree
 - variant of: 'Binary search tree'
 
+## UB-tree
+- https://en.wikipedia.org/wiki/UB-tree
+- is a: 'Self-balancing search tree'
+- based on: 'B+ tree'
+
+## Log-structured merge-tree
+- also called: 'LSM tree'
+- https://en.wikipedia.org/wiki/Log-structured_merge-tree
+- used by: 'Apache Cassandra', 'Apache HBase', 'Bigtable'
+- applications: 'Transaction log'
+
 ## Wavelet tree
 - paper: 'High-order entropy-compressed text indexes (2003)'
 - https://en.wikipedia.org/wiki/Wavelet_Tree
@@ -416,10 +435,12 @@
 ## Breadth-first search
 - https://en.wikipedia.org/wiki/Breadth-first_search
 - input: 'Graph'
+- implemented in: 'boost::graph::breadth_first_search'
 
 ## Depth-first search
 - https://en.wikipedia.org/wiki/Depth-first_search
 - input: 'Graph'
+- implemented in: 'boost::graph::depth_first_search'
 
 ## k-d tree construction algorithm using sliding midpoint rule
 - example paper: Maneewongvatana and Mount 1999
@@ -429,6 +450,8 @@
 - output: 'k-d tree'
 
 ## Median of medians
+- also called: 'Blum-Floyd-Pratt-Rivest-Tarjan partition algorithm', 'BFPRT'
+- paper: 'Time bounds for selection (1973)'
 - https://en.wikipedia.org/wiki/Median_of_medians
 - selection algorithm
 - input: 'random access collection'
@@ -440,11 +463,14 @@
 - input: 'random access collection'
 
 ## Floyd–Rivest algorithm
+- paper: 'Algorithm 489: the algorithm SELECT—for finding the ith smallest of n elements [M1] (1975)'
 - https://en.wikipedia.org/wiki/Floyd%E2%80%93Rivest_algorithm
 - is a: 'Selection algorithm', 'Divide and conquer algorithm'
 - input: 'random access collection'
 
 ## Quickselect
+- also called: 'Hoare's selection algorithm'
+- paper: 'Algorithm 65: find (1961)'
 - https://en.wikipedia.org/wiki/Quickselect
 - is a: 'Selection algorithm'
 - input: 'random access collection'
@@ -455,7 +481,7 @@
 - uses method: 'dynamic programming'
 - solves 'Shortest path problem' for non-negative weights in directed/undirected graphs in O(v^2) where v is the number of vertices
 - variant implementation with 'Fibonacci heap' runs in O(e * v*log v) where e and v are the number of edges and vertices resp.
-- implemented in: 'Python scipy.sparse.csgraph.shortest_path(method='D')'
+- implemented in: 'Python scipy.sparse.csgraph.shortest_path(method="D")', 'boost::graph::dijkstra_shortest_paths'
 - Fibonacci implementation is the asymptotically the fastest known single-source shortest-path algorithm for arbitrary directed graphs with unbounded non-negative weights.
 - input: 'Directed graph with non-negative weights'
 
@@ -463,7 +489,7 @@
 - https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
 - solves variant of the 'Shortest path problem' for real-valued edge weights in directed graph in O(v*e) where v and e are the number of vertices and edges respectively.
 - negative cycles are detected
-- implemented in: 'Python scipy.sparse.csgraph.shortest_path(method="BF")'
+- implemented in: 'Python scipy.sparse.csgraph.shortest_path(method="BF")', 'boost:graph::bellman_ford_shortest_paths'
 - input: 'Weighted directed graph'
 
 ## Johnson's algorithm
@@ -486,8 +512,10 @@
 - operates in: 'weighted directed graph without negative cycles'
 
 ## Suurballe's algorithm
-- https://en.wikipedia.org/wiki/Suurballe%27s_algorithm
 - paper: 'Disjoint paths in a network (1974)'
+- https://en.wikipedia.org/wiki/Suurballe%27s_algorithm
+- implemented in: 'Python nildo/suurballe'
+- uses: 'Dijkstra's algorithm'
 - solves: 'Shortest pair of edge disjoint paths'
 - input: 'Directed graph with non-negative weights'
 
@@ -506,6 +534,8 @@
 - input: 'Acyclic directed graph'
 
 ## Collaborative diffusion
+- also called: 'Dijkstra flow maps'
+- paper: 'Collaborative diffusion: programming antiobjects (2006)'
 - https://en.wikipedia.org/wiki/Collaborative_diffusion
 - applications: 'pathfinding'
 - time complexity: constant in the number of agents
@@ -513,10 +543,21 @@
 ## Ukkonen's algorithm
 - https://en.wikipedia.org/wiki/Ukkonen%27s_algorithm
 - paper: 'On-line construction of suffix trees'
+- book: 'Algorithms on Strings, Trees, and Sequences'
 - output: 'suffix tree'
 - properties: 'online'
 - time complexity: O(n), where n is the length of the string
 - input: 'List of strings'
+
+## Weiner's linear-time suffix tree algorithm
+- book: 'Algorithms on Strings, Trees, and Sequences'
+- output: 'suffix tree'
+- superseded by: 'Ukkonen's algorithm'
+
+## McCreight's algorithm
+- book: 'Algorithms on Strings, Trees, and Sequences'
+- output: 'suffix tree'
+- superseded by: 'Ukkonen's algorithm'
 
 ## A* search algorithm
 - https://en.wikipedia.org/wiki/A*_search_algorithm
@@ -564,6 +605,7 @@
 ## Quicksort
 - https://en.wikipedia.org/wiki/Quicksort
 - http://mathworld.wolfram.com/Quicksort.html
+- book: 'Introduction to Algorithms'
 - is a: 'Sorting algorithm', 'Unstable sorting algorithm', 'In-place algorithm', 'Divide and conquer algorithm', 'Comparison-based sorting algorithm'
 - time complexity (best): O(n log n)
 - time complexity (average): O(n log n)
@@ -614,6 +656,7 @@
 ## Heapsort
 - https://en.wikipedia.org/wiki/Heapsort
 - http://mathworld.wolfram.com/Heapsort.html
+- book: 'Introduction to Algorithms'
 - is a: 'Sorting algorithm', 'In-place algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
 - solves: 'Partial sorting'
 - time complexity (average, best, worst): O(n log n)
@@ -684,6 +727,7 @@
 - https://xlinux.nist.gov/dads/HTML/reservoirSampling.html
 - family of 'randomized algorithms'
 - version of: 'Fisher–Yates shuffle'
+- properties: 'online'
 
 ## Cache-oblivious distribution sort
 - https://en.wikipedia.org/wiki/Cache-oblivious_distribution_sort
@@ -732,9 +776,20 @@
 
 ## Knuth–Morris–Pratt algorithm
 - https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
+- book: 'Introduction to Algorithms'
 - single *string searching*
 - implemented in: 'grep'
 - better for small alphabets like DNA than: 'Boyer–Moore string-search algorithm'
+
+## Rabin–Karp algorithm
+- also called: 'Karp–Rabin algorithm'
+- https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm
+- book: 'Introduction to Algorithms'
+- is a: 'String-searching algorithm'
+- single/multiple *string searching*
+- time complexity (worst): O(m+n)
+- space complexity: constant
+- applications: 'Plagiarism detection'
 
 ## Beam search
 - https://en.wikipedia.org/wiki/Beam_search
@@ -790,6 +845,7 @@
 ## Push–relabel maximum flow algorithm
 - https://en.wikipedia.org/wiki/Push–relabel_maximum_flow_algorithm
 - solves: 'Maximum flow problem', 'Minimum-cost flow problem'
+- implemented in: 'boost::graph::push_relabel_max_flow'
 
 ## Kruskal's algorithm
 - https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
@@ -1118,6 +1174,13 @@
 - paper: 'An experimental comparison of min-cut/max- flow algorithms for energy minimization in vision'
 - implemented in: 'Python networkx.algorithms.flow.boykov_kolmogorov', 'boost::graph::boykov_kolmogorov_max_flow'
 
+## Stoer and Wagner's minimum cut algorithm
+- paper: 'A Simple Min-Cut Algorithm (1994)'
+- input: 'Connected graph'
+- output: 'Minimum cut'
+- implemented in: 'boost::graph::stoer_wagner_min_cut'
+- domain: 'Graph theory'
+
 ## Ford–Fulkerson method
 - https://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm
 - https://brilliant.org/wiki/ford-fulkerson-algorithm/
@@ -1131,7 +1194,7 @@
 - https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm
 - https://brilliant.org/wiki/edmonds-karp-algorithm/
 - implements: 'Ford–Fulkerson method'
-- implemented in: 'Python networkx.algorithms.flow.edmonds_karp'
+- implemented in: 'Python networkx.algorithms.flow.edmonds_karp', 'boost::graph::edmonds_karp_max_flow'
 - time complexity: O(v e^2) or O(v^2 e) where v is the number of vertices and e the number of edges
 - solves: 'Maximum flow problem'
 - input: 'Flow network'
@@ -1360,6 +1423,25 @@
 - http://www.complex-a5.ru/polyboolean/comp.html
 - extends: 'Schutte algorithm'
 
+## Force-directed graph drawing
+- https://en.wikipedia.org/wiki/Force-directed_graph_drawing
+- class of algorithms
+- used by: 'Graphviz'
+- applications: 'Graph drawing'
+
+## Fruchterman–Reingold algorithm
+- paper: 'Graph Drawing by Force-Directed Placement (1991)'
+- type: 'Force-directed graph drawing'
+- implemented in: 'boost::graph::fruchterman_reingold_force_directed_layout'
+- input: 'Unweighted, undirected graph'
+- time complexity (worst): O(v^2 + e) where v is the number of vertices and e the number of edges
+
+## Kamada–Kawai algorithm
+- paper: 'An algorithm for drawing general undirected graphs (1989)'
+- type: 'Force-directed graph drawing'
+- implemented in: 'boost::graph::kamada_kawai_spring_layout'
+- input: 'Connected, undirected graph'
+
 ## Fast multipole method
 - https://en.wikipedia.org/wiki/Fast_multipole_method
 - domain: 'Computational electromagnetism'
@@ -1573,6 +1655,227 @@
 - solves: 'Exact cover'
 - applications: 'Sudoku', 'Tessellation', 'Eight queens puzzle'
 
+## Badouel intersection algorithm
+- https://en.wikipedia.org/wiki/Badouel_intersection_algorithm
+- book: 'Graphics Gems I'
+- domain: 'Computational geometry'
+- input: 'ray and a triangle in three dimensions'
+
+## Rete algorithm
+- https://en.wikipedia.org/wiki/Rete_algorithm
+- is a: 'Pattern matching algorithm'
+
+## Hilltop algorithm
+- https://en.wikipedia.org/wiki/Hilltop_algorithm
+
+## Out-of-kilter algorithm
+- https://en.wikipedia.org/wiki/Out-of-kilter_algorithm
+- solves: 'Minimum-cost flow problem'
+- input: 'Flow network'
+- output: 'Minimum-cost flow'
+
+## Network simplex algorithm
+- https://en.wikipedia.org/wiki/Network_simplex_algorithm
+- solves: 'Minimum-cost flow problem'
+- specialisation of: 'Simplex algorithm'
+
+## Baum–Welch algorithm
+- https://en.wikipedia.org/wiki/Baum%E2%80%93Welch_algorithm
+- uses: 'Forward–backward algorithm', 'Expectation–maximization algorithm'
+- input: 'Hidden Markov model'
+- output: 'HMM parameters'
+
+## WINEPI
+- https://en.wikipedia.org/wiki/WINEPI
+- applications: 'Data mining', 'Time series analysis', 'Association rule learning'
+
+## Bach's algorithm
+- paper: 'How to generate factored random numbers (1988)'
+- https://en.wikipedia.org/wiki/Bach%27s_algorithm
+- applications: 'Random number generation'
+- input: 'Seed'
+- output: 'Random number and its factorization'
+
+## Bareiss algorithm
+- https://en.wikipedia.org/wiki/Bareiss_algorithm
+- properties: 'uses only integer arithmetic'
+- input: 'matrix with integer entries
+- output: 'determinant or the echelon form of metrix'
+- variant of: 'Gaussian elimination'
+
+## Odlyzko–Schönhage algorithm
+- https://en.wikipedia.org/wiki/Odlyzko%E2%80%93Sch%C3%B6nhage_algorithm
+- evaluates: Riemann zeta function
+- properties: vectorized
+- uses: 'Fast Fourier transform'
+
+## Principal component analysis
+- also called: PCA, 'Karhunen–Loève transform', KLT, Hotelling transform,
+- https://en.wikipedia.org/wiki/Principal_component_analysis
+- applications: 'Dimensionality reduction', 'Exploratory data analysis'
+- implemented in: 'LAPACK', 'ARPACK', 'Python sklearn.decomposition.PCA, Bio.Cluster.pca'
+- can be implemented using: 'Singular Value Decomposition'
+
+## Kernel principal component analysis
+- https://en.wikipedia.org/wiki/Kernel_principal_component_analysis
+- is a: 'Machine learning algorithm', 'Kernel method'
+- solves: 'Nonlinear dimensionality reduction'
+- applications: 'novelty detection', 'image de-noising'
+- implemented in: 'Python sklearn.decomposition.KernelPCA'
+
+## Spectral Co-Clustering algorithm
+- http://www.kemaleren.com/post/spectral-biclustering-part-1/
+- paper: 'Co-clustering documents and words using Bipartite Spectral Graph Partitioning (2001)'
+- solves: 'Biclustering'
+- implemented in: 'sklearn.cluster.bicluster.SpectralCoclustering'
+- input: 'Matrix'
+
+## Pantelides algorithm
+- https://en.wikipedia.org/wiki/Pantelides_algorithm
+- reduces: 'Differential-algebraic system of equations' to lower index
+- implemented in: 'Mathematica NDSolve' (as part of)
+
+## Lemke's algorithm
+- https://en.wikipedia.org/wiki/Lemke%27s_algorithm
+- domain: 'mathematical optimization'
+- solves: 'Linear complementarity problem', 'Mixed linear complementarity problem'
+- type: 'Basis-exchange'
+
+## Berlekamp–Zassenhaus algorithm
+- https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Zassenhaus_algorithm
+- http://mathworld.wolfram.com/Berlekamp-ZassenhausAlgorithm.html
+- applications: 'Polynomial factorization'
+
+## Blahut–Arimoto algorithm
+- https://en.wikipedia.org/wiki/Blahut%E2%80%93Arimoto_algorithm
+- domain: 'Coding theory'
+
+## Block Lanczos algorithm
+- https://en.wikipedia.org/wiki/Block_Lanczos_algorithm
+- paper: 'A Block Lanczos Algorithm for Finding Dependencies over GF(2)'
+- input: 'matrix over a finite field'
+- output: 'nullspace'
+- domain: 'Linear algebra'
+
+## Kabsch algorithm
+- https://en.wikipedia.org/wiki/Kabsch_algorithm
+- input: 'two paired sets of points'
+- output: 'optimal rotation matrix' (according to 'Root-mean-square deviation')
+
+## Cholesky algorithm
+- https://en.wikipedia.org/wiki/Cholesky_decomposition#The_Cholesky_algorithm
+- input: 'Hermitian, positive-definite matrix'
+- output: 'Cholesky decomposition'
+
+## Cholesky–Banachiewicz algorithm
+- variation of: 'Cholesky algorithm'
+
+## Cholesky–Crout algorithm
+- variation of: 'Cholesky algorithm'
+
+## Knuth's Simpath algorithm
+- https://en.wikipedia.org/wiki/Knuth%27s_Simpath_algorithm
+- domain: 'Graph theory'
+- input: 'Graph'
+- output: 'zero-suppressed decision diagram (ZDD) representing all simple paths between two vertices'
+
+## Zeilberger's algorithm
+- paper: 'A fast algorithm for proving terminating hypergeometric identities (1990)'
+- http://mathworld.wolfram.com/ZeilbergersAlgorithm.html
+- https://archive.lib.msu.edu/crcmath/math/math/z/z020.htm
+- input: 'Terminating Hypergeometric Identities of a certain form'
+- output: 'Polynomial recurrence'
+
+## Gosper's algorithm
+- https://en.wikipedia.org/wiki/Gosper%27s_algorithm
+- http://mathworld.wolfram.com/GospersAlgorithm.html
+- input: 'hypergeometric terms'
+- output: 'sums that are themselves hypergeometric terms'
+
+## PSOS algorithm
+- also called: 'Partial sum of squares'
+- http://mathworld.wolfram.com/PSOSAlgorithm.html
+- is a: 'Integer relation algorithm'
+
+## Ferguson-Forcade algorithm
+- http://mathworld.wolfram.com/Ferguson-ForcadeAlgorithm.html
+- is a: 'Integer relation algorithm'
+- generalization of: 'Euclidean algorithm'
+
+## HJLS algorithm
+- http://mathworld.wolfram.com/HJLSAlgorithm.html
+- is a: 'Integer relation algorithm'
+- uses: 'Gram-Schmidt Orthonormalization'
+- properties: 'nummerical unstable'
+
+## Lenstra–Lenstra–Lovász lattice basis reduction algorithm
+- also called: 'LLL algorithm'
+- https://en.wikipedia.org/wiki/Lenstra%E2%80%93Lenstra%E2%80%93Lov%C3%A1sz_lattice_basis_reduction_algorithm
+- http://mathworld.wolfram.com/LLLAlgorithm.html
+- is a: 'Integer relation algorithm', 'Lattice basis reduction algorithm'
+- input: 'Basis B and lattice L'
+- output: 'LLL-reduced lattice basis'
+- applications: 'factorizing polynomials with rational coefficients', 'simultaneous rational approximations to real numbers', 'Integer linear programming', 'MIMO detection', 'Cryptanalysis'
+- implemented in: 'Mathematica LatticeReduce'
+
+## PSLQ algorithm
+- http://mathworld.wolfram.com/PSLQAlgorithm.html
+- is a: 'Integer relation algorithm'
+
+## Fleury's algorithm
+- https://en.wikipedia.org/wiki/Eulerian_path#Fleury's_algorithm
+- http://mathworld.wolfram.com/FleurysAlgorithm.html
+- input: 'Graph'
+- output: 'Eulerian cycle' or 'Eulerian trail'
+
+## Blankinship algorithm
+- http://mathworld.wolfram.com/BlankinshipAlgorithm.html
+- finds: 'Greatest common divisor'
+- properties: 'vectorized'
+
+## Splitting algorithm
+- http://mathworld.wolfram.com/SplittingAlgorithm.html
+
+## Miller's algorithm
+- http://mathworld.wolfram.com/MillersAlgorithm.html
+- https://crypto.stanford.edu/pbc/notes/ep/miller.html
+- domain: 'Cryptography'
+- input: 'Weil pairing on an algebraic curve'
+
+## Jacobi eigenvalue algorithm
+- https://en.wikipedia.org/wiki/Jacobi_eigenvalue_algorithm
+- is a: 'Iterative method'
+- applications: 'Matrix diagonalization'
+- input: 'real symmetric matrix'
+- output: 'eigenvalues and eigenvectors'
+
+## Spectral biclustering
+- http://www.kemaleren.com/post/spectral-biclustering-part-2/
+- paper: 'Spectral Biclustering of Microarray Cancer Data: Co-clustering Genes and Conditions (2003)'
+- solves: 'Biclustering'
+- implemented in: 'sklearn.cluster.bicluster.SpectralBiclustering'
+- input: 'Matrix'
+
+## Graphical lasso
+- https://en.wikipedia.org/wiki/Graphical_lasso
+- solves: 'Covariance matrix estimation'
+- is a: 'Graphical model'
+- domain: 'Bayesian statistics'
+- implemented in: 'sklearn.covariance.GraphicalLasso'
+
+## Lanczos algorithm
+- https://en.wikipedia.org/wiki/Lanczos_algorithm
+- http://mathworld.wolfram.com/LanczosAlgorithm.html
+- solves: 'Matrix diagonalization'
+- applications: 'Latent semantic analysis'
+- variation: 'Block Lanczos algorithm'
+- implemented in: 'ARPACK'
+
+## Block Wiedemann algorithm
+- https://en.wikipedia.org/wiki/Block_Wiedemann_algorithm
+- input: 'matrix over a finite field'
+- output: 'kernel vectors'
+
 ## Kalman filter
 - also called: 'linear quadratic estimation'
 - https://en.wikipedia.org/wiki/Kalman_filter
@@ -1654,9 +1957,6 @@
 
 # General problems
 
-## DFA minimization
-- https://en.wikipedia.org/wiki/DFA_minimization
-
 ## Nearest neighbor search
 - https://en.wikipedia.org/wiki/Nearest_neighbor_search
 - also called: 'post-office problem'
@@ -1668,130 +1968,10 @@
 - book: 'Handbook of Discrete and Computational Geometry'
 - https://en.wikipedia.org/wiki/Nearest_neighbor_search#Approximate_nearest_neighbor
 
-## Cycle decomposition
-- https://en.wikipedia.org/wiki/Cycle_decomposition_(group_theory)
-
-## RSA problem
-- https://en.wikipedia.org/wiki/RSA_problem
-- see: 'Integer factorization'
-
-## Integer factorization
-- https://en.wikipedia.org/wiki/Integer_factorization
-- applications: 'cryptography'
-- domain: 'Number theory'
-
-## Envy-free item assignment
-- https://en.wikipedia.org/wiki/Envy-free_item_assignment
-- type of: 'Fair item assignment', 'Fair division'
-
-## Connected-component labeling
-- https://en.wikipedia.org/wiki/Connected-component_labeling
-- domain: 'Graph theory'
-- applications: 'Computer vision'
-
-## Greatest common divisor
-- https://en.wikipedia.org/wiki/Greatest_common_divisor
-- domain: 'Number theory'
-
-## Topological sorting
-- https://en.wikipedia.org/wiki/Topological_sorting
-- implemented in posix tsort.
-- only possible on 'directed acyclic graph'
-
-## Travelling salesman problem
-- also called: 'TSP'
-- https://en.wikipedia.org/wiki/Travelling_salesman_problem
-- solved by: 'Concorde TSP Solver' application
-- solved by: 'Approximate global optimization'
-- hardness: NP-hard
-
-## Minimum spanning tree
-- also called: 'MST'
-- https://en.wikipedia.org/wiki/Minimum_spanning_tree
-
-## Second-best minimum spanning tree
-- book: 'Introduction to Algorithms'
-- solution need not be unique
-- variant of: 'Minimum spanning tree'
-
-## Bottleneck spanning tree
-- book: 'Introduction to Algorithms'
-- variant of: 'Minimum spanning tree'
-- a 'minimum spanning tree' is a 'bottleneck spanning tree'
-
-## Spanning-tree verification
-- book: 'Introduction to Algorithms'
-- related to 'Minimum spanning tree'
-
-## Matrix chain multiplication
-- https://en.wikipedia.org/wiki/Matrix_chain_multiplication
-- optimization problem
-- solved by 'Hu and Shing'
-
-## Count-distinct problem
-- https://en.wikipedia.org/wiki/Count-distinct_problem
-
-## Single-source shortest path problem
-- https://en.wikipedia.org/wiki/Shortest_path_problem
-- find shortest path in graph so that the sum of edge weights is minimized
-- is a: 'optimization problem'
-- solved by 'Breadth-first search' for unweighted graphs
-- solved by 'Dijkstra's algorithm' for directed/undirected graphs and positive weights
-- solved by 'Bellman–Ford algorithm' for directed graphs with arbitrary weights
-- book: 'Introduction to Algorithms'
-- properties: 'optimal substructure'
-- domain: 'Graph theory'
-
-## Single-pair shortest path problem
-- https://en.wikipedia.org/wiki/Shortest_path_problem#Single-source_shortest_paths
-- no algorithms with better worst time complexity than for 'Single-source shortest path problem' are know (which is a generalization)
-
-## All-pairs shortest paths problem
-- https://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths
-- finds the shortest path for all pairs of vectices in a graph
-- solved by: 'Floyd–Warshall algorithm', 'Johnson's algorithm'
-- domain: 'graph theory'
-- properties: 'optimal substructure'
-
 ## Approximate string matching
 - https://en.wikipedia.org/wiki/Approximate_string_matching
 - paper: 'Fast Approximate String Matching in a Dictionary'
 - applications: 'spell checking', 'nucleotide sequence matching'
-
-## Longest common substring problem
-- https://en.wikipedia.org/wiki/Longest_common_substring_problem
-- cf. 'Longest common subsequence problem'
-- properties: 'optimal substructure'
-- solutions: 'Generalized suffix tree'
-- domain: 'Combinatorics'
-
-## Longest common subsequence problem
-- https://en.wikipedia.org/wiki/Longest_common_subsequence_problem
-- cf. 'Longest common substring problem'
-- solved by: 'Hunt–McIlroy algorithm'
-- solved by application: 'diff'
-- applications: 'Version control systems', 'Wiki engines', 'Molecular phylogenetics'
-- domain: 'Combinatorics'
-
-## Shortest common supersequence problem
-- https://en.wikipedia.org/wiki/Shortest_common_supersequence_problem
-- applications: DNA sequencing
-- domain: 'combinatorics'
-
-## Shortest common superstring problem
-- https://en.wikipedia.org/wiki/Shortest_common_supersequence_problem#Shortest_common_superstring
-- applications: sparse matrix compression
-- domain: 'combinatorics'
-
-## Longest increasing subsequence
-- https://en.wikipedia.org/wiki/Longest_increasing_subsequence
-- domain: 'Combinatorics'
-- properties: 'optimal substructure'
-
-## Maximum subarray problem
-- https://en.wikipedia.org/wiki/Maximum_subarray_problem
-- applications: 'genomic sequence analysis', 'computer vision', 'data mining'
-- solved by: 'Kadane's algorithm'
 
 ## Optical flow
 - https://en.wikipedia.org/wiki/Optical_flow
@@ -1809,120 +1989,15 @@
 - https://en.wikipedia.org/wiki/Partial_sorting#Incremental_sorting
 - solved by: 'quickselect', 'heaps'
 
-## Hamiltonian path problem
-- https://en.wikipedia.org/wiki/Hamiltonian_path_problem
-- https://www.hackerearth.com/practice/algorithms/graphs/hamiltonian-path/
-- solved by algorithms which solve: 'Boolean satisfiability problem'
-- domain: "graph theory"
-
-## Eulerian path problem
-- https://en.wikipedia.org/wiki/Eulerian_path
-- application: 'in bioinformatics to reconstruct the DNA sequence from its fragments'
-- application: 'CMOS circuit design to find an optimal logic gate ordering'
-- compare: 'Hamiltonian path problem'
-- if exists, optimal solution for: 'Route inspection problem'
-- domain: "graph theory"
-
-## Route inspection problem
-- also called: 'Chinese postman problem'
-- https://en.wikipedia.org/wiki/Route_inspection_problem
-- http://mathworld.wolfram.com/ChinesePostmanProblem.html
-- domain: "graph theory"
-
-## Closure problem
-- https://en.wikipedia.org/wiki/Closure_problem
-- domain: "graph theory"
-- applications: 'Open pit mining', 'Military targeting', 'Transportation network design', 'Job scheduling'
-- can be reduced to: 'Maximum flow problem'
-
-## Maximum flow problem
-- https://en.wikipedia.org/wiki/Maximum_flow_problem
-- domain: 'graph theory'
-
-## Minimum-cost flow problem
-- https://en.wikipedia.org/wiki/Minimum-cost_flow_problem
-
 ## Shortest pair of edge disjoint paths
 - special case of: 'Minimum-cost flow problem'
 - applications: 'Routing'
-
-## Point location problem
-- https://en.wikipedia.org/wiki/Point_location
-- domain: 'Computational geometry'
-
-## Point-in-polygon problem
-- https://en.wikipedia.org/wiki/Point_in_polygon
-- special case of: 'Point location problem'
-- domain: 'Computational geometry'
-
-## Halfspace intersection problem
-- book: 'Handbook of Discrete and Computational Geometry'
-- implemented in: 'scipy.spatial.HalfspaceIntersection', 'Qhull'
-- https://en.wikipedia.org/wiki/Half-space_(geometry)
-
-## Closest pair of points problem
-- https://en.wikipedia.org/wiki/Closest_pair_of_points_problem
-- domain: 'Computational geometry'
-- brute force time complexity: O(n^2) for a set of points of size n
-
-## Largest empty sphere problem
-- https://en.wikipedia.org/wiki/Largest_empty_sphere
-- domain: 'Computational geometry'
-- special cases can be solved using 'Voronoi diagram' in optimal time O(n log(n))
 
 ## Hierarchical clustering
 - https://en.wikipedia.org/wiki/Hierarchical_clustering
 - applications: 'Data mining', 'Paleoecology'
 - domain: 'Statistics'
 
-## Subset sum problem
-- https://en.wikipedia.org/wiki/Subset_sum_problem
-- hardness: NP-complete
-- special case of: 'Knapsack problem'
-
 ## Minimal Perfect Hashing
 - http://iswsa.acm.org/mphf/index.html
 - https://en.wikipedia.org/wiki/Perfect_hash_function#Minimal_perfect_hash_function
-
-## Maximum cut problem
-- https://en.wikipedia.org/wiki/Maximum_cut
-- hardness: 'NP-complete'
-- is a: 'Decision problem'
-- kind of: 'Partition problem'
-
-## Exact cover problem
-- https://en.wikipedia.org/wiki/Exact_cover
-- hardness: 'NP-complete'
-- kind of: 'Graph coloring problem'
-- is a: 'Decision problem'
-
-## Graph realization problem
-- https://en.wikipedia.org/wiki/Graph_realization_problem
-- is a: 'Decision problem'
-- domain: 'Graph theory'
-
-## Motion planning
-- also called: 'Piano mover's problem'
-- https://en.wikipedia.org/wiki/Motion_planning
-- http://planning.cs.uiuc.edu/node160.html
-- hardness: PSPACE-hard
-
-# Specific problems
-
-## Knight's tour
-- https://en.wikipedia.org/wiki/Knight%27s_tour
-- http://mathworld.wolfram.com/KnightGraph.html
-- its graph is a: 'bipartite graph'
-- solved by 'depth first search' on graph of legal moves, using 'Warnsdorff's Rule' (heuristic) for improved performance
-- version of: 'Hamiltonian path problem'
-
-## Tower of Hanoi
-- https://en.wikipedia.org/wiki/Tower_of_Hanoi
-- http://mathworld.wolfram.com/TowerofHanoi.html
-- applications: 'Backup rotation scheme'
-- isomorphic to finding a 'Hamiltonian path' on an n-hypercube
-
-## Optimal solutions for Rubik's Cube
-- calculate maximal turn numbers by: diameters of the corresponding Cayley graphs of the Rubik's Cube group
-- use 'Korf's algorithm' to calculate optimal solution
-- implementation: http://www.cflmath.com/~reid/Rubik/optimal_solver.html

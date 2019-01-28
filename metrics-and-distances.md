@@ -107,6 +107,7 @@
 - for example defined in paper: 'Approximate string-matching with q-grams and maximal matches'
 
 # Structural similarity
+- also called: 'SSIM'
 - paper: 'Image quality assessment: from error visibility to structural similarity (2004)'
 - https://en.wikipedia.org/wiki/Structural_similarity
 - implemented in: 'Python skimage.measure.compare_ssim'
@@ -116,7 +117,14 @@
 - domain: 'Image processing'
 
 # Visual Information Fidelity
+- also called: 'VIF'
 - https://en.wikipedia.org/wiki/Visual_Information_Fidelity
+- properties: 'full reference'
+- applications: 'Video quality evaluation', 'Image Quality Assessment'
+- domain: 'Image processing'
+
+# Video Multimethod Assessment Fusion
+- also called: 'VMAF'
 - properties: 'full reference'
 - applications: 'Video quality evaluation', 'Image Quality Assessment'
 - domain: 'Image processing'
@@ -129,6 +137,9 @@
 - https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio
 - implemented in: 'Python skimage.measure.compare_psnr'
 
+# Sørensen–Dice coefficient
+- https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
+
 # Earth mover's distance
 - also called: 'Wasserstein metric'
 - https://en.wikipedia.org/wiki/Earth_mover%27s_distance
@@ -136,3 +147,12 @@
 - applications: 'Content-based image retrieval'
 - domain: 'Transportation theory'
 - implemented in: 'scipy.stats.wasserstein_distance'
+
+# Word Mover's Distance
+- also called: 'WMD'
+- paper: 'From Word Embeddings To Document Distances (2015)'
+- based on: 'Earth mover's distance', 'Word embedding'
+- input: two sentences
+- output: semantic distance
+- time complexity (best average case): O(p^3 log p) where p is the number of unique words in the document
+- cheaper variants: 'Word centroid distance' (WCD), 'Relaxed word moving distance' (RWMD)

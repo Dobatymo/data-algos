@@ -112,3 +112,22 @@
 - implemented in: 'sklearn.covariance.EllipticEnvelope'
 - input: 'Normal distributed data' with n_samples > n_features ** 2
 - uses: 'Covariance estimation'
+
+## Conditional random field
+- https://en.wikipedia.org/wiki/Conditional_random_field
+- is a: 'undirected probabilistic graphical model'
+- applications: 'POS tagging', 'shallow parsing', 'named entity recognition', 'object recognition'
+- usually optimized by: 'L-BFGS', 'Stochastic gradient descent'
+- implemented in: 'CRFSuite', 'python-crfsuite'
+
+## Autoregressive–moving-average model
+- also called: 'ARMA'
+- https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model
+- implemented in: 'Python statsmodels.tsa.arima_model.ARMA'
+- applications: 'Time series analysis'
+
+## Autoregressive integrated moving average
+- also called: 'ARIMA'
+- https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average
+- implemented in: 'Python statsmodels.tsa.arima_model.ARIMA'
+- applications: 'Time series analysis'

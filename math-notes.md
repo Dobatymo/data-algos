@@ -6,6 +6,11 @@
 - implemented in: 'Python sklearn.cross_decomposition.CCA', 'SPSS', 'R cancor'
 - domain: 'Multivariate statistics'
 
+## Linear discriminant analysis
+- also called: 'LDA', 'Normal discriminant analysis', 'NDA, 'Discriminant function analysis'
+- https://en.wikipedia.org/wiki/Linear_discriminant_analysis
+- related to: 'Principal component analysis'
+
 ## Minimum Covariance Determinant
 - also called: 'MCD'
 - paper: 'Least Median of Squares Regression (1984)'

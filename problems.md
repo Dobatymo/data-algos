@@ -1,5 +1,18 @@
 # Problems
 
+## Synchronizing word
+- https://en.wikipedia.org/wiki/Synchronizing_word
+- domain: 'Automata theory'
+- solved by: 'David Eppstein's algorithm'
+- related: 'Road coloring problem'
+- hardness of shortest synchronizing word: 'NP-complete'
+
+## Road coloring problem
+- https://en.wikipedia.org/wiki/Road_coloring_theorem
+- http://mathworld.wolfram.com/RoadColoringProblem.html
+- paper: 'Equivalence of topological Markov shifts (1977)'
+- domain: 'Graph theory', 'Automata theory'
+
 ## Travelling salesman problem
 - also called: 'TSP'
 - https://en.wikipedia.org/wiki/Travelling_salesman_problem

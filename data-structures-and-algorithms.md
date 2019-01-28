@@ -213,6 +213,7 @@
 - time complexity (search, insert, delete) (worst): O(n)
 
 ## Finite-state machine
+- also called: 'FSM', 'Finite-state automaton', 'FSA'
 - https://en.wikipedia.org/wiki/Finite-state_machine
 
 ## Finite-state transducer
@@ -220,14 +221,19 @@
 - is a: 'Finite-state machine'
 - implemented in: 'OpenFst'
 
-## Deterministic acyclic finite state automaton
-- also called: 'DAFSA', 'deterministic acyclic finite state acceptor'
-- https://en.wikipedia.org/wiki/Deterministic_acyclic_finite_state_automaton
-- used to implement ordered sets
+# Deterministic finite automaton
+- also called: 'DFA', 'Deterministic finite acceptor', 'Deterministic finite state machine', 'DFSM', 'Deterministic finite state automaton', 'DFSA'
+- https://en.wikipedia.org/wiki/Deterministic_finite_automaton
 - is a: 'Finite-state machine'
 
+## Deterministic acyclic finite state automaton
+- also called: 'DAFSA', 'deterministic acyclic finite state acceptor', 'DAWG'
+- https://en.wikipedia.org/wiki/Deterministic_acyclic_finite_state_automaton
+- used to implement ordered sets
+- is a: 'Deterministic finite automaton'
+
 ## Minimal acyclic finite state automaton
-- also called: 'MAFSA', 'minimal acyclic finite state acceptor'
+- also called: 'MAFSA', 'Minimal acyclic finite state acceptor'
 - https://en.wikipedia.org/wiki/Deterministic_acyclic_finite_state_automaton
 - https://blog.burntsushi.net/transducers/
 - minimal: 'Deterministic acyclic finite state automaton'
@@ -414,6 +420,11 @@
 - https://en.wikipedia.org/wiki/Wavelet_Tree
 - properties: 'succinct'
 - implemented in: 'Succinct Data Structure Library'
+
+## GADDAG
+- https://en.wikipedia.org/wiki/GADDAG
+- uses: 'Directed acyclic graph'
+- applications: 'Scrabble'
 
 # Index data structures
 
@@ -791,6 +802,28 @@
 - space complexity: constant
 - applications: 'Plagiarism detection'
 
+## Bitap algorithm
+- also called: 'shift-or algorithm', 'shift-and algorithm', 'Baeza-Yates–Gonnet algorithm'
+- https://en.wikipedia.org/wiki/Bitap_algorithm
+- solves: 'Approximate string matching'
+
+## Myers' Diff Algorithm
+- paper: 'An O(ND) difference algorithm and its variations (1986)'
+- solves: 'Shortest Edit Script'
+- input: two strings
+- output: 'Shortest Edit Script'
+- implemented by: 'diff', 'git' (Linear space variant)
+- variants: 'Linear space'
+
+## Patience Diff method
+- https://bramcohen.livejournal.com/73318.html
+- requires: 'diff algorithm'
+
+## Non-negative matrix factorization
+- also called: 'NMF', 'NNMF'
+- https://en.wikipedia.org/wiki/Non-negative_matrix_factorization
+- applications: 'Collaborative filtering', 'Dimensionality reduction', 'Text mining'
+
 ## Beam search
 - https://en.wikipedia.org/wiki/Beam_search
 - is a: 'heuristic search algorithm'
@@ -886,7 +919,7 @@
 ## Hunt–McIlroy algorithm
 - https://en.wikipedia.org/wiki/Hunt%E2%80%93McIlroy_algorithm
 - solves: 'Longest common subsequence problem'
-- implemented in: 'diff'
+- implemented by: 'diff'
 - input: 'set of sequences'
 - output: 'Longest common subsequence'
 
@@ -997,6 +1030,14 @@
 - solves: 'Viterbi path'
 - applications: 'Speech recognition', 'Convolutional code', 'Speech synthesis', 'Computational linguistics', 'Bioinformatics'
 - related theory: 'Hidden Markov model'
+- implemented in: 'Python librosa.sequence.viterbi'
+
+## BCJR algorithm
+- https://en.wikipedia.org/wiki/BCJR_algorithm
+- paper: 'Optimal Decoding of Linear Codes for minimizing symbol error rate (1974)'
+- decodes: 'Error correction code'
+- implemented in: 'C++ Susa'
+- related theory: 'maximum a posteriori'
 
 ## Seam carving
 - https://en.wikipedia.org/wiki/Seam_carving
@@ -1350,6 +1391,17 @@
 - output: sample from 'monotone decreasing probability distribution', 'symmetric unimodal distribution'
 - is a: 'Statistical algorithm'
 - domain: 'Random numbers'
+
+## Brooks–Iyengar algorithm
+- https://en.wikipedia.org/wiki/Brooks%E2%80%93Iyengar_algorithm
+- is a: 'distributed algorithm'
+- applications: 'Distributed sensing', 'Fault tolerance'
+
+## Suzuki–Kasami algorithm
+- https://en.wikipedia.org/wiki/Suzuki%E2%80%93Kasami_algorithm
+- paper: 'A distributed mutual exclusion algorithm (1985)'
+- solves: 'mutual exclusion in distributed systems'
+- modificaton of: 'Ricart–Agrawala algorithm'
 
 ## Remez algorithm
 - https://en.wikipedia.org/wiki/Remez_algorithm
@@ -1876,11 +1928,27 @@
 - input: 'matrix over a finite field'
 - output: 'kernel vectors'
 
+## David Eppstein's algorithm for finding the synchronizing word of a DFA
+- paper: 'Reset Sequences for Monotonic Automata (1990)'
+- time complexity O(n^3 + k*n^2). 
+- does not always find the shortest possible synchronizing word
+- input: 'DFA'
+- output: 'Synchronizing word'
+- based on: 'Breadth-first search'
+- applications: 'Parts orienters'
+- supersedes: 'Natarajan's algorithm for finding the reset sequence of a monotoic DFA'
+
+## Apriori algorithm
+- https://en.wikipedia.org/wiki/Apriori_algorithm
+- applications: 'Association rule learning', 'Data mining'
+- based on: 'Breadth-first search'
+
 ## Kalman filter
 - also called: 'linear quadratic estimation'
 - https://en.wikipedia.org/wiki/Kalman_filter
 - http://mathworld.wolfram.com/KalmanFilter.html
 - domain: 'Control theory'
+- implemented in: 'Python statsmodels.tsa.kalmanf.kalmanfilter.KalmanFilter'
 - applications: 'guidance, navigation, and control', 'time series analysis', 'Trajectory optimization', 'Computer vision', 'Object tracking'
 - solves: 'Linear–quadratic–Gaussian control problem'
 

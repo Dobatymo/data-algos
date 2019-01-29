@@ -387,9 +387,10 @@
 
 ## Bloom filter
 - https://en.wikipedia.org/wiki/Bloom_filter
+- paper: 'Space/time trade-offs in hash coding with allowable errors (1970)'
 - properties: 'probabilistic'
 - implements: 'Set'
-- applications: caching strategies, database query optimization, rate-limiting, data synchronization, chemical structure searching
+- applications: 'caching strategies', 'database query optimization', 'rate-limiting', 'data synchronization', 'chemical structure searching'
 
 ## Optimal binary search tree
 - https://en.wikipedia.org/wiki/Optimal_binary_search_tree
@@ -749,6 +750,18 @@
 - paper: 'SimRank: a measure of structural-context similarity (2002)'
 - calculate: 'SimRank'
 
+## De Casteljau's algorithm
+- https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm
+- paper: 'Système d'aide à la définition et à l'usinage de surfaces de carosserie (1971)'
+- evaluate polynomials in Bernstein form or Bézier curves
+- properties: 'numerically stable'
+- applications: 'Computer aided geometric design'
+
+## Clenshaw algorithm
+- also called: 'Clenshaw summation'
+- https://en.wikipedia.org/wiki/Clenshaw_algorithm
+- evaluate polynomials in Chebyshev form
+
 ## Wagner–Fischer algorithm
 - https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm
 - uses method: 'dynamic programming'
@@ -1032,6 +1045,9 @@
 - related theory: 'Hidden Markov model'
 - implemented in: 'Python librosa.sequence.viterbi'
 
+## List Viterbi algorithm
+- also called: 'LVA'
+
 ## BCJR algorithm
 - https://en.wikipedia.org/wiki/BCJR_algorithm
 - paper: 'Optimal Decoding of Linear Codes for minimizing symbol error rate (1974)'
@@ -1048,8 +1064,24 @@
 
 ## Dynamic time warping
 - https://en.wikipedia.org/wiki/Dynamic_time_warping
+- paper: 'Dynamic programming algorithm optimization for spoken word recognition (1978)'
 - applications: 'Time series analysis', 'Speech recognition', 'Speaker recognition', 'Signature recognition', 'Shape matching', 'Correlation power analysis'
-- implemented in: 'Python pydtw'
+- implemented in: 'Python pydtw', 'Python librosa.core.dtw'
+- possibly superseded by: 'Connectionist temporal classification'
+- input: two sequences
+- time complexity: O(n m), where n and m are the lengths of the input sequences
+- space complexity: O(n m), where n and m are the lengths of the input sequences
+
+## Synchronized overlap-add method
+- also called: 'Time-domain harmonic scaling', 'SOLA'
+- paper: 'High quality time-scale modification for speech (1985)'
+- applications: 'Audio pitch scaling'
+
+## Phase vocoder
+- https://en.wikipedia.org/wiki/Phase_vocoder
+- paper: 'Phase vocoder (1966)'
+- applications: 'Audio time stretching and pitch scaling'
+- uses: 'Short-time Fourier transform'
 
 ## De Boor's algorithm
 - https://en.wikipedia.org/wiki/De_Boor%27s_algorithm
@@ -1057,12 +1089,14 @@
 - spline curves in B-spline
 - properties: 'numerically stable'
 - implemented in: 'Python scipy.interpolate.BSpline'
+- generalization of: 'De Casteljau's algorithm'
 
 ## Lucas–Kanade method
 - https://en.wikipedia.org/wiki/Lucas%E2%80%93Kanade_method
 - applications: 'Optical flow estimation', 'aperture problem'
 - local, sparse
 - implemented in: 'opencv::calcOpticalFlowPyrLK', 'opencv::CalcOpticalFlowLK' (obsolete)
+- uses: 'Structure tensor'
 
 ## Horn–Schunck method
 - https://en.wikipedia.org/wiki/Horn%E2%80%93Schunck_method
@@ -1676,6 +1710,13 @@
 - https://en.wikipedia.org/wiki/Faug%C3%A8re%27s_F4_and_F5_algorithms
 - domain: 'Algebra'
 
+## Buchberger's algorithm
+- https://en.wikipedia.org/wiki/Buchberger%27s_algorithm
+- http://mathworld.wolfram.com/BuchbergersAlgorithm.html
+- domain: 'Algebraic geometry', 'Commutative algebra'
+- input: 'set of generators for a polynomial ideal'
+- output: 'Gröbner basis with respect to some monomial order'
+
 ## FGLM algorithm
 - https://en.wikipedia.org/wiki/FGLM_algorithm
 - input: 'Gröbner basis of a zero-dimensional ideal in the ring of polynomials over a field with respect to a monomial order and a second monomial order'
@@ -1730,6 +1771,60 @@
 - https://en.wikipedia.org/wiki/Network_simplex_algorithm
 - solves: 'Minimum-cost flow problem'
 - specialisation of: 'Simplex algorithm'
+
+## Expectation–maximization algorithm
+- https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm
+- is a: 'iterative method'
+- applications: 'Parameter estimation'
+
+## Inside–outside algorithm
+- https://en.wikipedia.org/wiki/Inside%E2%80%93outside_algorithm
+- paper: 'Trainable grammars for speech recognition (1971)'
+- uses?: 'Expectation–maximization algorithm'
+- special case of?: 'Expectation–maximization algorithm'
+- generalization of: 'Forward–backward algorithm'
+- re-estimating production probabilities in a probabilistic context-free grammar
+- applications: 'PCFG'
+
+## Cocke–Younger–Kasami algorithm
+- also called: 'CYK', 'CKY'
+- https://en.wikipedia.org/wiki/CYK_algorithm
+- is a: 'chart parsing algorithm'
+- is a: parsing algorithm for context-free grammars
+- uses techniques: 'bottom-up parsing', 'dynamic programming'
+
+## Earley parser
+- https://en.wikipedia.org/wiki/Earley_parser
+- is a: 'chart parsing algorithm'
+- uses technique: 'Dynamic programming', 'Top-down parsing'
+- is a: algorithm for parsing strings that belong to a given context-free language
+- implemented in: 'Python nltk.parse.earleychart.EarleyChartParser'
+
+## Valiant's algorithm
+- https://en.wikipedia.org/wiki/CYK_algorithm#Valiant's_algorithm
+- variant of: 'Cocke–Younger–Kasami algorithm'
+
+## Shunting-yard algorithm
+- https://en.wikipedia.org/wiki/Shunting-yard_algorithm
+- is a: method for parsing mathematical expressions specified in infix notation
+- generalization: 'Operator-precedence parser'
+
+## Recursive ascent parser
+- https://en.wikipedia.org/wiki/Recursive_ascent_parser
+
+## Recursive descent parser
+- https://en.wikipedia.org/wiki/Recursive_descent_parser
+- uses technique: 'Top-down parsing'
+- implemented in: 'Python nltk.parse.recursivedescent.RecursiveDescentParser'
+
+## LALR parser
+- also called: 'Look-Ahead LR parser'
+- https://en.wikipedia.org/wiki/LALR_parser
+
+## Shift-reduce parser
+- https://en.wikipedia.org/wiki/Shift-reduce_parser
+- uses technique: 'Bottom-up parsing'
+- implemented in: 'Python nltk.parse.shiftreduce.ShiftReduceParser'
 
 ## Baum–Welch algorithm
 - https://en.wikipedia.org/wiki/Baum%E2%80%93Welch_algorithm
@@ -1942,6 +2037,12 @@
 - https://en.wikipedia.org/wiki/Apriori_algorithm
 - applications: 'Association rule learning', 'Data mining'
 - based on: 'Breadth-first search'
+
+## Random sample consensus
+- also called: 'RANSAC'
+- https://en.wikipedia.org/wiki/Random_sample_consensus
+- paper: 'Random sample consensus: a paradigm for model fitting with applications to image analysis and automated cartography (1981)'
+- applications: 'Computer vision', 'Location determination problem'
 
 ## Kalman filter
 - also called: 'linear quadratic estimation'

@@ -1,5 +1,14 @@
 # Problems
 
+## Mellin transform
+- https://en.wikipedia.org/wiki/Mellin_transform
+- function decomposition
+- applications: 'Audio pitch scaling'
+
+## Fourier transform
+- https://en.wikipedia.org/wiki/Fourier_transform
+- function decomposition
+
 ## Synchronizing word
 - https://en.wikipedia.org/wiki/Synchronizing_word
 - domain: 'Automata theory'

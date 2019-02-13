@@ -17,3 +17,11 @@
 - calculate maximal turn numbers by: diameters of the corresponding Cayley graphs of the Rubik's Cube group
 - use 'Korf's algorithm' to calculate optimal solution
 - implementation: http://www.cflmath.com/~reid/Rubik/optimal_solver.html
+
+## Matching parentheses
+- also called: 'Balanced parentheses'
+- properties: 'parallelizable'
+- usually solved using: 'Stack'
+
+## Mandelbrot set
+- properties: 'Embarrassingly parallel'

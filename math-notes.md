@@ -44,17 +44,6 @@
 - applications: 'Numerical integration'
 - implemented in: 'scipy.integrate.newton_cotes'
 
-## Finite difference: central difference
-- https://en.wikipedia.org/wiki/Finite_difference#Forward,_backward,_and_central_differences
-- implemented in: 'scipy.misc.derivative'
-
-## Romberg's method
-- https://en.wikipedia.org/wiki/Romberg%27s_method
-- applications: 'Numerical integration'
-- implemented in: 'scipy.integrate.romberg'
-- input: 'Function and integration boundaries'
-- output: 'Integrated value'
-
 ## Recursive Monotone Stable Quadrature
 - http://mathworld.wolfram.com/RecursiveMonotoneStableQuadrature.html
 

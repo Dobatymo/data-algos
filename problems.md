@@ -1,13 +1,57 @@
 # Problems
 
+## Discrete Shearlet Transform
+- also called: 'DST'
+- paper: 'The Discrete Shearlet Transform: A New Directional Transform and Compactly Supported Shearlet Frames (2010)'
+- applications: 'Image processing', 'Facial Expression Recognition'
+- variant: 'Discrete Separable Shearlet Transform'
+
 ## Mellin transform
 - https://en.wikipedia.org/wiki/Mellin_transform
-- function decomposition
-- applications: 'Audio pitch scaling'
+- is a: 'Integral transform'
+- applications: 'Audio pitch scaling', 'Image recognition'
+- domain: 'Complex analysis'
 
 ## Fourier transform
 - https://en.wikipedia.org/wiki/Fourier_transform
-- function decomposition
+- is a: 'Integral transform'
+- discrete version: 'Discrete Fourier transform'
+- applications: 'Signal processing', 'Analysis of differential equations', 'Quantum mechanics'
+- domain: 'Complex analysis'
+
+## Discrete Fourier transform
+- also called: 'DFT'
+- https://en.wikipedia.org/wiki/Discrete_Fourier_transform
+- applications: 'Signal processing'
+- is a: 'Discrete transform'
+- continuous version: 'Fourier transform'
+- naive time complexity: O(n^2)
+
+## Discrete wavelet transform
+- also called: 'DWT'
+- https://en.wikipedia.org/wiki/Discrete_wavelet_transform
+- is a: 'Discrete transform'
+- applications: 'Image processing'
+
+## Discrete cosine transform
+- also called: 'DCT'
+- https://en.wikipedia.org/wiki/Discrete_cosine_transform
+- is a: 'Discrete transform'
+- applications: 'Lossy compression'
+- used by: 'MP3', 'JPEG'
+- naive time complexity: O(n^2)
+
+## Minimum bounding box
+- https://en.wikipedia.org/wiki/Minimum_bounding_box
+- domain: 'Computational geometry'
+- solved by: 'Freeman-Shapira's minimum bounding box' (for convex polygons)
+- solved by?: 'Convex Hull' -> 'Freeman-Shapira's minimum bounding box' (for any set of points)
+- solved by?: 'Rotating calipers'
+
+## Line segment intersection
+- https://en.wikipedia.org/wiki/Line_segment_intersection
+- naive time complexity: O(n^2)
+- domain: 'Computational geometry'
 
 ## Synchronizing word
 - https://en.wikipedia.org/wiki/Synchronizing_word
@@ -28,12 +72,25 @@
 - solved by: 'Concorde TSP Solver' application
 - solved by: 'Approximate global optimization'
 - hardness: NP-hard
+- is a: 'Combinatorial optimization problem'
+
+## Minimum vertex cover problem
+- https://en.wikipedia.org/wiki/Vertex_cover
+- http://mathworld.wolfram.com/MinimumVertexCover.html
+- solved approximately by: 'Approximate global optimization'
+- hardness: 'NP-hard'
+- implemented in: 'Mathematica FindVertexCover'
+- runtime complexity: polynomial for 'Bipartite Graph', 'Tree Graph'
+- is a: 'Optimization problem'
+- applications: 'dynamic detection of race conditions'
 
 ## Vertex cover problem
 - https://en.wikipedia.org/wiki/Vertex_cover
 - solved approximately by: 'Approximate global optimization'
-- hardness: NP-hard
+- hardness: 'NP-complete'
 - runtime complexity: polynomial for 'Bipartite Graph', 'Tree Graph'
+- is a: 'Decision problem'
+- kind of: 'Independent set problem'
 
 ## Exact cover problem
 - https://en.wikipedia.org/wiki/Exact_cover
@@ -41,14 +98,31 @@
 - kind of: 'Graph coloring problem'
 - is a: 'Decision problem'
 
+## Graph coloring problem (chromatic number)
+- also called: 'GCP', 'Vertex coloring'
+- https://en.wikipedia.org/wiki/Graph_coloring
+- http://mathworld.wolfram.com/MinimumVertexColoring.html
+- solved approximately by: 'Brelaz's heuristic algorithm'
+- implemented in: 'Mathematica MinimumVertexColoring' (exhaustive search)
+- is a: 'Combinatorial optimization problem'
+- domain: 'Graph theory'
+
+## Graph coloring problem (k-coloring)
+- also called: 'GCP', 'Vertex coloring'
+- https://en.wikipedia.org/wiki/Graph_coloring
+- http://mathworld.wolfram.com/VertexColoring.html
+- is a: 'Decision problem'
+- domain: 'Graph theory'
+
 ## Closest pair of points problem
 - https://en.wikipedia.org/wiki/Closest_pair_of_points_problem
 - book: 'Introduction to Algorithms'
 - domain: 'Computational geometry'
-- brute force time complexity: O(n^2) for a set of points of size n
+- naive time complexity: O(n^2) for a set of points of size n
 
 ## Count-distinct problem
 - https://en.wikipedia.org/wiki/Count-distinct_problem
+- naive space complexity: linear in distinct number of elements
 
 ## Single-source shortest path problem
 - https://en.wikipedia.org/wiki/Shortest_path_problem
@@ -80,6 +154,7 @@
 - cf. 'Longest common subsequence problem'
 - properties: 'optimal substructure'
 - solutions: 'Generalized suffix tree'
+- naive time complexity: O((n+m)*m^2) for length n and m of two strings (https://www.techiedelight.com/longest-common-substring-problem/)
 - domain: 'Combinatorics'
 
 ## Longest common subsequence problem
@@ -100,17 +175,17 @@
 - https://en.wikipedia.org/wiki/Shortest_common_supersequence_problem#Shortest_common_superstring
 - book: 'The algorithm design manual'
 - applications: sparse matrix compression
-- domain: 'combinatorics'
+- domain: 'Combinatorics'
 
 ## Hamiltonian path problem
 - https://en.wikipedia.org/wiki/Hamiltonian_path_problem
 - https://www.hackerearth.com/practice/algorithms/graphs/hamiltonian-path/
 - solved by algorithms which solve: 'Boolean satisfiability problem'
-- domain: "graph theory"
+- domain: "Graph theory"
 
 ## Maximum subarray problem
 - https://en.wikipedia.org/wiki/Maximum_subarray_problem
-- applications: 'genomic sequence analysis', 'computer vision', 'data mining'
+- applications: 'Genomic sequence analysis', 'Computer vision', 'Data mining'
 - solved by: 'Kadane's algorithm'
 
 ## Eulerian path problem
@@ -119,24 +194,24 @@
 - application: 'CMOS circuit design to find an optimal logic gate ordering'
 - compare: 'Hamiltonian path problem'
 - if exists, optimal solution for: 'Route inspection problem'
-- domain: "graph theory"
+- domain: 'Graph theory'
 
 ## Route inspection problem
 - also called: 'Chinese postman problem'
 - https://en.wikipedia.org/wiki/Route_inspection_problem
 - http://mathworld.wolfram.com/ChinesePostmanProblem.html
-- domain: "graph theory"
+- domain: 'Graph theory'
 
 ## Closure problem
 - https://en.wikipedia.org/wiki/Closure_problem
-- domain: "graph theory"
+- domain: 'Graph theory'
 - applications: 'Open pit mining', 'Military targeting', 'Transportation network design', 'Job scheduling'
 - can be reduced to: 'Maximum flow problem'
 
 ## Maximum flow problem
 - https://en.wikipedia.org/wiki/Maximum_flow_problem
 - book: 'Introduction to Algorithms'
-- domain: 'graph theory'
+- domain: 'Graph theory'
 
 ## Minimum-cost flow problem
 - also called: 'MCFP'
@@ -175,13 +250,28 @@
 - domain: 'Graph theory'
 
 ## Maximum independent set problem
+- also called: 'MIS'
 - https://en.wikipedia.org/wiki/Independent_set_(graph_theory)#Maximum_independent_sets_and_maximum_cliques
-- solved approximately by: 'networkx.algorithms.approximation.independent_set.maximum_independent_set'
+- solved by: 'Xiao and Nagamochi's algorithm for the maximum independent set'
+- solved approximately by: 'Boppana and Halldórsson's approximation algorithm for the maximum independent set'
+- hardness: 'NP-hard'
+- naive time complexity: O(n^2 * 2^n)
+- domain: 'Graph theory'
+
+## Maximum matching
+- https://en.wikipedia.org/wiki/Matching_(graph_theory)#Maximal_matchings
+- https://brilliant.org/wiki/matching/
+- maximal matching with the maximum number of edges
+- is a: 'Combinatorial optimization problem'
+- domain: 'Graph theory'
 
 ## Boolean satisfiability problem
+- also called: 'SAT'
 - https://en.wikipedia.org/wiki/Boolean_satisfiability_problem
 - solved approximately by: 'Approximate global optimization'
 - hardness: NP-complete
+- domain: 'Computer science'
+- solved by: 'DPLL algorithm'
 
 ## Nurse scheduling problem
 - https://en.wikipedia.org/wiki/Nurse_scheduling_problem
@@ -259,3 +349,57 @@
 - http://mathworld.wolfram.com/PolynomialFactorization.html
 - https://en.wikipedia.org/wiki/Factorization_of_polynomials
 - domain: 'Algebra'
+
+## Nearest neighbor search
+- https://en.wikipedia.org/wiki/Nearest_neighbor_search
+- also called: 'post-office problem'
+- solved exactly by: 'Space partitioning', 'Linear search'
+- solved approximatly by: 'Hierarchical Navigable Small World graphs', 'Locality-sensitive hashing', 'Cover tree', 'Vector quantization'
+- implemented by: 'spotify/annoy', 'C++ ANN', 'nmslib/hnsw', 'nmslib/nmslib'
+
+## Approximate nearest neighbor search
+- book: 'Handbook of Discrete and Computational Geometry'
+- https://en.wikipedia.org/wiki/Nearest_neighbor_search#Approximate_nearest_neighbor
+
+## Approximate string matching
+- https://en.wikipedia.org/wiki/Approximate_string_matching
+- paper: 'Fast Approximate String Matching in a Dictionary'
+- applications: 'spell checking', 'nucleotide sequence matching'
+
+## Optical flow
+- https://en.wikipedia.org/wiki/Optical_flow
+- applications: 'Motion estimation', 'video compression', 'object detection', 'object tracking', 'image dominant plane extraction', 'movement detection', 'robot navigation , 'visual odometry'
+- domain: 'machine vision', 'computer vision'
+
+## Sequence alignment
+- https://en.wikipedia.org/wiki/Sequence_alignment
+
+## Sorting problem
+- https://en.wikipedia.org/wiki/Sorting_algorithm
+
+## Partial sorting
+- https://en.wikipedia.org/wiki/Partial_sorting
+- solved by: 'heaps', 'quickselsort', 'Quickselect'
+- variant of: 'Sorting problem'
+- domain: 'Computer science'
+
+## Incremental sorting
+- https://en.wikipedia.org/wiki/Partial_sorting#Incremental_sorting
+- solved by: 'quickselect', 'heaps'
+- domain: 'Computer science'
+- variant of: 'Sorting problem'
+
+## Shortest pair of edge disjoint paths
+- special case of: 'Minimum-cost flow problem'
+- applications: 'Routing'
+- domain: 'Graph theory'
+
+## Hierarchical clustering
+- https://en.wikipedia.org/wiki/Hierarchical_clustering
+- applications: 'Data mining', 'Paleoecology'
+- domain: 'Statistics'
+
+## Minimal Perfect Hashing
+- http://iswsa.acm.org/mphf/index.html
+- https://en.wikipedia.org/wiki/Perfect_hash_function#Minimal_perfect_hash_function
+- domain: 'Computer science'

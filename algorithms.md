@@ -1,447 +1,3 @@
-# resources
-
-## online books
-- https://bradfieldcs.com/algos/
-- http://interactivepython.org/RkmcZ/courselib/static/pythonds/index.html
-
-## books
-- 'MIT Press', 'Introduction to Algorithms'
-- 'Springer', 'The Algorithm Design Manual'
-- 'Cambridge', 'Algorithms on Strings, Trees, and Sequences'
-- 'Prentice Hall', 'Artificial Intelligence: A Modern Approach'
-
-# Data structures
-
-## Array
-- https://en.wikipedia.org/wiki/Array_data_structure
-- implemented in: 'C++ std::vector', 'Python list, tuple'
-- continuous list of elements in memory. fast to iterate, fast to access by index. slow to find by value, slow to insert/delete within the array (as memory always need to be continuous, they need to be reallocated)
-- usually fast to append/delete at the end or beginning (if there is free memory and depending on exact implementation)
-
-## Linked list
-- https://en.wikipedia.org/wiki/Linked_list
-- single elements in memory which contain a pointer to the next element in the sequence
-- double linked list also contain pointers back to the previous element int the sequence (XOR linked list is a clever optimization)
-- insert and delete can be constant time if pointers are already found. iteration is slow. access by index is not possible, search by value in linear.
-- implemented in: 'C++ std::list, std::forward_list'
-- can be: 'Persistent data structure'
-
-## Rope
-- https://en.wikipedia.org/wiki/Rope_(data_structure)
-- similar to: 'deque', 'Gap buffer'
-- is a: 'Binary tree'
-- can be a: 'Persistent data structure'
-- implemented in: 'libstdc++ rope'
-
-## Gap buffer
-- https://en.wikipedia.org/wiki/Gap_buffer
-- applications: 'Text editor'
-
-## Piece table
-- https://en.wikipedia.org/wiki/Piece_table
-- applications: 'Text editor'
-- similar: 'Gap buffer'
-- implemented by: 'Visual Studio Code'
-
-## Hash table
-- https://en.wikipedia.org/wiki/Hash_table
-- implements: 'Set', 'Multiset', 'Map'
-- used to implement: 'Python dict', 'C++ std::unordered_set', 'C++ std::unordered_multiset', 'C++ std::unordered_map'
-- probably the most important data structure in Python
-- has basically perfect complexity for a good hash function. (Minimal) perfect hashing can be used if the keys are known in advance.
-- ordering depends on implementation (python 3.7 garuantees preservation of insertion order, whereas C++ as the name says does not define any ordering)
-- even though hashing is constant in time, it might still be slow. also the hash consumes space.
-- time complexity (search, insert, delete) (average): O(1)
-- time complexity (search, insert, delete) (worst): O(n)
-- space complexity (average): O(n)
-- space complexity (worst): O(n) # often a lot of padding space is needed...
-
-## Binary search tree
-- https://en.wikipedia.org/wiki/Binary_search_tree
-- implements: 'Set', 'Multiset', 'Map'
-- used to implement: 'C++ std::set', 'C++ std::multiset'
-- is a: 'rooted binary tree'
-- variants: 'Huffman tree'
-
-## Zipper
-- https://en.wikipedia.org/wiki/Zipper_(data_structure)
-- generalization of: 'Gap buffer'
-- more a general technique than a data structure
-
-## Fibonacci heap
-- paper: 'Fibonacci heaps and their uses in improved network optimization algorithms (1987)'
-- https://en.wikipedia.org/wiki/Fibonacci_heap
-- book: 'Introduction to Algorithms'
-- implements: 'Priority queue'
-
-## Pairing heap
-- https://en.wikipedia.org/wiki/Pairing_heap
-- implements: 'Priority queue'
-
-## Binary heap
-- https://en.wikipedia.org/wiki/Binary_heap
-- implements: 'Priority queue'
-- variant implemented in: 'Python heapq', 'C++ std::make_heap, push_heap and pop_heap'
-
-## Binary decision diagram
-- https://en.wikipedia.org/wiki/Binary_decision_diagram
-- compressed representation of sets or relations
-- implements: 'Boolean function'
-- is a: 'rooted, directed, acyclic graph'
-- applications: 'Computer-aided design', 'Formal verification', 'Fault tree analysis', 'Private information retrieval'
-
-## Zero-suppressed decision diagram
-- https://en.wikipedia.org/wiki/Zero-suppressed_decision_diagram
-- type of: 'Binary decision diagram'
-
-## Propositional directed acyclic graph
-- also called: 'PDAG'
-- https://en.wikipedia.org/wiki/Propositional_directed_acyclic_graph
-- implements: 'Boolean function'
-
-## Trie
-- also called: 'digital tree'
-- https://en.wikipedia.org/wiki/Trie
-- tree structure
-- set and map characteristics
-- keys are sequences (eg. strings)
-- allow for prefix search (eg. find all strings that start with 'a', or find the longest prefix of 'asd')
-- if implemented with hashmaps, indexing by key can be done in O(sequence-length) independent of tree size
-- not very space efficient. common prefixed only have to be stored once, but pointers to next element of sequence uses more memory than what is saved.
-- for a more space efficient data structure see MAFST
-
-## WPL tree
-- paper: 'Weighting Without Waiting: the Weighted Path Length Tree (1991)'
-
-## PQ tree
-- paper: 'Testing for the consecutive ones property, interval graphs, and graph planarity using PQ-tree algorithms (1976)'
-- https://en.wikipedia.org/wiki/PQ_tree
-
-## Radix tree
-- https://en.wikipedia.org/wiki/Radix_tree
-- is a: 'Binary trie'
-
-## Quadtree
-- https://en.wikipedia.org/wiki/Quadtree
-- is a: 'Tree', 'Space-partitioning tree'
-- can be implemented as: 'Implicit data structure'
-- variant: 'Region quadtree'
-- applications: 'Image processing', 'Connected-component labeling', 'Mesh generation'
-
-## Red-black tree
-- https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
-- book: 'Introduction to Algorithms'
-- height-balanced binary tree
-- better for insert/delete (compared to 'AVL tree')
-- used to implement: 'C++ std::map', 'Java TreeMap'
-- used by: MySQL
-
-## AVL tree
-- https://en.wikipedia.org/wiki/AVL_tree
-- https://xlinux.nist.gov/dads/HTML/avltree.html
-- is a: 'binary tree'
-- properties: 'height-balanced'
-- stricter balanced and thus better for lookup (compared to 'Red-black tree')
-
-## treap
-- https://en.wikipedia.org/wiki/Treap
-- randomly ordered binary tree
-- log(N) lookup even for insertion of items in non-random order
-- heap like feature
-- used to implement dictionary in LEDA
-
-## BK-tree
-- https://en.wikipedia.org/wiki/BK-tree
-- is a: 'Space-partitioning tree', 'Metric tree'
-- applications: approximate string matching
-
-## Splay tree
-- https://en.wikipedia.org/wiki/Splay_tree
-- is a: 'Binary search tree'
-- properties: 'self-optimizing'
-- applications: 'Caching', 'Garbage collection'
-- disadvantages: even concurrent reads require synchronization
-- unsolved problem: 'Do splay trees perform as well as any other binary search tree algorithm?'
-
-## k-d tree
-- https://en.wikipedia.org/wiki/K-d_tree
-- is a: 'Space-partitioning tree'
-- applications: range searching, nearest neighbor search, kernel density estimation
-- for high dimensions should be: N >> 2^k, where N is the number of nodes and k is the number of dimensions
-- solves 'Recursive partitioning', 'Klee's measure problem', 'Guillotine problem'
-- implemented in: 'Python scipy.spatial.KDTree, sklearn.neighbors.KDTree, Bio.PDB.kdtrees.KDTree'
-
-## Range tree
-- https://en.wikipedia.org/wiki/Range_tree
-- applications: range searching
-
-## B+ tree
-- https://en.wikipedia.org/wiki/B%2B_tree
-- applications: filesystems, range searching, block-oriented data retrieval
-- k-ary tree
-- used by: Relational database management systems like Microsoft SQL Server, Key–value database management systems like CouchDB
-
-## Iliffe vector
-- https://en.wikipedia.org/wiki/Iliffe_vector
-- used to implement multi-dimensional arrays
-
-## Dope vector
-- https://en.wikipedia.org/wiki/Dope_vector
-- used to implement arrays
-
-## van Emde Boas Trees
-- https://en.wikipedia.org/wiki/Van_Emde_Boas_tree
-- book: 'Introduction to Algorithms'
-- Multiway tree
-- implement ordered maps with integer keys
-- implement priority queues
-- see 'Integer sorting'
-
-## Skip list
-- paper: 'Concurrent Maintenance of Skip Lists (1998)'
-- https://en.wikipedia.org/wiki/Skip_list
-- https://xlinux.nist.gov/dads/HTML/skiplist.html
-- is a: 'probabilistic data structure', 'ordered linked list'
-- basically binary trees converted to linked lists with additional information
-- allows for fast search of sorted sequences
-- implemented by: 'Lucence', 'Redis'
-- implemented in: 'Java ConcurrentSkipListMap'
-- applications: 'Moving median'
-- space complexity (average): O(n)
-- space complexity (worst): O(n log n)
-- time complexity (search, insert, delete) (average): O(log n)
-- time complexity (search, insert, delete) (worst): O(n)
-
-## Finite-state machine
-- also called: 'FSM', 'Finite-state automaton', 'FSA'
-- https://en.wikipedia.org/wiki/Finite-state_machine
-
-## Finite-state transducer
-- https://en.wikipedia.org/wiki/Finite-state_transducer
-- is a: 'Finite-state machine'
-- implemented in: 'OpenFst'
-
-# Deterministic finite automaton
-- also called: 'DFA', 'Deterministic finite acceptor', 'Deterministic finite state machine', 'DFSM', 'Deterministic finite state automaton', 'DFSA'
-- https://en.wikipedia.org/wiki/Deterministic_finite_automaton
-- is a: 'Finite-state machine'
-
-## Deterministic acyclic finite state automaton
-- also called: 'DAFSA', 'deterministic acyclic finite state acceptor', 'DAWG'
-- https://en.wikipedia.org/wiki/Deterministic_acyclic_finite_state_automaton
-- used to implement ordered sets
-- is a: 'Deterministic finite automaton'
-
-## Minimal acyclic finite state automaton
-- also called: 'MAFSA', 'Minimal acyclic finite state acceptor'
-- https://en.wikipedia.org/wiki/Deterministic_acyclic_finite_state_automaton
-- https://blog.burntsushi.net/transducers/
-- minimal: 'Deterministic acyclic finite state automaton'
-- space optimized version of tries, with missing map characteristics
-- allow for prefix (and possibly suffix) search
-- more space efficient than tries as common prefixes and suffixes are only stored once and thus the number of pointers is reduced as well
-- for a version with map characteristics see: 'Minimal acyclic finite state transducer'
-- implemented in: 'C++ dawgdic'
-
-## Deterministic acyclic finite state transducer
-- see: 'Minimal acyclic finite state transducer'
-- paper: 'Applications of finite automata representing large vocabularies'
-- https://blog.burntsushi.net/transducers/
-- is a: 'Finite-state transducer'
-
-## Minimal acyclic finite state transducer
-- also called: 'MAFST'
-- https://blog.burntsushi.net/transducers/
-- http://stevehanov.ca/blog/index.php?id=119
-- minimal: 'Deterministic acyclic finite state transducer'
-- MAFSA with map characteristics
-- association of keys with values reduces lookup time from O(sequence-length) to O(sequence-length*log(tree size))???
-- solves: 'Minimal Perfect Hashing'
-- implemented in: 'C++ dawgdic'
-
-## B-tree
-- https://en.wikipedia.org/wiki/B-tree
-- book: 'Introduction to Algorithms'
-- used to implement lots of databases and filesystems
-- self-balancing
-- non-binary
-
-## SS-Tree (Similarity search tree)
-- paper: 'Similarity indexing with the SS-tree'
-- applications: 'Similarity indexing', 'Nearest neighbor search'
-
-## Cover tree
-- https://en.wikipedia.org/wiki/Cover_tree
-- paper: "Cover Trees for Nearest Neighbor"
-- applications: nearest neighbor search
-- is a: Metric tree
-
-## M-tree
-- https://en.wikipedia.org/wiki/M-tree
-- better disk storage characteristics (because shallower) than 'Ball tree'
-- uses: 'nearest neighbor search'
-- is a: 'Space-partitioning tree', 'Metric tree'
-
-## Vantage-point tree
-- https://en.wikipedia.org/wiki/Vantage-point_tree
-- is a: 'Space-partitioning tree', 'Metric tree'
-- specialisation of: 'Multi-vantage-point tree'
-
-## Ball tree
-- https://en.wikipedia.org/wiki/Ball_tree
-- is a: 'Space-partitioning tree', 'Metric tree', 'Binary tree'
-- applications: nearest neighbor search, kernel density estimation, N-point correlation function calculations, generalized N-body Problems.
-- specialisation of: M-Tree
-- similar: Vantage-point tree
-- implemented in: 'sklearn.neighbors.BallTree'
-- algorithms for construction: 'Five Balltree Construction Algorithms'
-
-## Winged edge
-- https://en.wikipedia.org/wiki/Winged_edge
-- applications: 'Computer graphics'
-
-## Adjacency list
-- https://en.wikipedia.org/wiki/Adjacency_list
-- implements: 'Graph'
-- implemented in: 'boost::adjacency_list'
-
-## Incidence matrix
-- https://en.wikipedia.org/wiki/Incidence_matrix
-- implements: 'Graph'
-
-## R-tree
-- https://en.wikipedia.org/wiki/R-tree
-- applications: range searching, nearest neighbor search
-
-## Hash tree
-- is a: 'persistent data structure'
-- implements: 'set', 'map'
-
-## Hash array mapped trie
-- also called: 'HAMT'
-- https://en.wikipedia.org/wiki/Hash_array_mapped_trie
-- specialisation of: 'Hash tree'
-- is a: 'persistent data structure'
-- implements: 'Map'
-
-## Merkle tree
-- also called: 'Hash tree'
-- https://en.wikipedia.org/wiki/Merkle_tree
-- https://xlinux.nist.gov/dads/HTML/MerkleTree.html
-- https://brilliant.org/wiki/merkle-tree/
-- is a: 'Tree'
-- applications: 'Hash-based cryptography', 'peer-to-peer networks'
-- implementation: 'Tiger tree hash'
-
-## Generalized suffix tree
-- https://en.wikipedia.org/wiki/Generalized_suffix_tree
-- build using: 'Ukkonen's algorithm', 'McCreight's algorithm'
-
-## Disjoint-set data structure
-- also called: 'union–find data structure'
-- https://en.wikipedia.org/wiki/Disjoint-set_data_structure
-- book: 'Introduction to Algorithms'
-- is a: 'Multiway tree'
-- applications: connected components of an undirected graph
-- implemented in: 'boost::graph::incremental_components'
-- used for: 'Kruskal's algorithm'
-
-## HAT-trie
-- https://en.wikipedia.org/wiki/HAT-trie
-- implemented in: 'Python pytries/hat-trie'
-- implements: 'Ordered map'
-- variant of: 'radix trie'
-- properties: 'cache friendly'
-
-## Double-Array Trie
-- also called: 'DATrie'
-- paper: 'An Efficient Digital Search Algorithm by Using a Double-Array Structure'
-- implemented in: 'pytries/datrie', 'libdatrie'
-
-## Ternary search tree
-- https://en.wikipedia.org/wiki/Ternary_search_tree
-- type of: 'Trie'
-- applications: 'Nearest neighbor search'
-- implements: 'Map'
-
-## Corner Stitching
-- paper: 'Corner Stitching: a Data Structuring Technique for VLSI Layout Tools (1982)'
-- applications: 'Very Large Scale Integration'
-
-## Difference list
-- https://en.wikipedia.org/wiki/Difference_list
-
-## Soft heap
-- https://en.wikipedia.org/wiki/Soft_heap
-- approximates: 'Priority queue'
-
-## Binomial heap
-- paper: 'A data structure for manipulating priority queues (1978)'
-- https://en.wikipedia.org/wiki/Binomial_heap
-- implements: 'Mergeable heap'
-
-## Brodal queue
-- paper: 'Worst-Case Efficient Priority Queues (1996)'
-- https://en.wikipedia.org/wiki/Brodal_queue
-- implements: 'heap', 'priority queue'
-
-## Bloom filter
-- https://en.wikipedia.org/wiki/Bloom_filter
-- paper: 'Space/time trade-offs in hash coding with allowable errors (1970)'
-- properties: 'probabilistic'
-- implements: 'Set'
-- applications: 'caching strategies', 'database query optimization', 'rate-limiting', 'data synchronization', 'chemical structure searching'
-
-## Optimal binary search tree
-- https://en.wikipedia.org/wiki/Optimal_binary_search_tree
-- is a: 'Binary search tree'
-
-## Order statistic tree
-- https://en.wikipedia.org/wiki/Order_statistic_tree
-- variant of: 'Binary search tree'
-- additional interface: find the i'th smallest element stored in the tree, find the rank of element x in the tree, i.e. its index in the sorted list of elements of the tree
-
-## Exponential tree
-- https://en.wikipedia.org/wiki/Exponential_tree
-- variant of: 'Binary search tree'
-
-## UB-tree
-- https://en.wikipedia.org/wiki/UB-tree
-- is a: 'Self-balancing search tree'
-- based on: 'B+ tree'
-
-## Log-structured merge-tree
-- also called: 'LSM tree'
-- https://en.wikipedia.org/wiki/Log-structured_merge-tree
-- used by: 'Apache Cassandra', 'Apache HBase', 'Bigtable'
-- applications: 'Transaction log'
-
-## Wavelet tree
-- paper: 'High-order entropy-compressed text indexes (2003)'
-- https://en.wikipedia.org/wiki/Wavelet_Tree
-- properties: 'succinct'
-- implemented in: 'Succinct Data Structure Library'
-
-## GADDAG
-- https://en.wikipedia.org/wiki/GADDAG
-- uses: 'Directed acyclic graph'
-- applications: 'Scrabble'
-
-# Index data structures
-
-## Inverted index
-- https://en.wikipedia.org/wiki/Inverted_index
-- used by: 'ElasticSearch', 'Lucene'
-- maps content/text to locations/documents
-- Search engine indexing
-- cf. Back-of-the-book index, Concordance
-- applications: full-text search, sequence assembly
-
-## FM-index
-- https://en.wikipedia.org/wiki/FM-index
-- applications: 'Bioinformatics'
-- is a: 'Substring index'
-
 # Algorithms
 
 ## Breadth-first search
@@ -469,6 +25,7 @@
 - input: 'random access collection'
 
 ## Introselect
+- paper: 'Introspective Sorting and Selection Algorithms'
 - https://en.wikipedia.org/wiki/Introselect
 - implemented in C++ std::nth_element
 - is a: 'Selection algorithm'
@@ -486,11 +43,13 @@
 - https://en.wikipedia.org/wiki/Quickselect
 - is a: 'Selection algorithm'
 - input: 'random access collection'
+- properties: 'parallelizable'
 
 ## Dijkstra's algorithm
+- paper: 'A note on two problems in connexion with graphs (1959)'
 - https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 - http://mathworld.wolfram.com/DijkstrasAlgorithm.html
-- uses method: 'dynamic programming'
+- uses method: 'Dynamic programming'
 - solves 'Shortest path problem' for non-negative weights in directed/undirected graphs in O(v^2) where v is the number of vertices
 - variant implementation with 'Fibonacci heap' runs in O(e * v*log v) where e and v are the number of edges and vertices resp.
 - implemented in: 'Python scipy.sparse.csgraph.shortest_path(method="D")', 'boost::graph::dijkstra_shortest_paths'
@@ -498,6 +57,8 @@
 - input: 'Directed graph with non-negative weights'
 
 ## Bellman–Ford algorithm
+- paper: 'Structure in communication nets (1955)'
+- paper: 'On a routing problem (1958)'
 - https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
 - solves variant of the 'Shortest path problem' for real-valued edge weights in directed graph in O(v*e) where v and e are the number of vertices and edges respectively.
 - negative cycles are detected
@@ -505,6 +66,7 @@
 - input: 'Weighted directed graph'
 
 ## Johnson's algorithm
+- paper: 'Efficient Algorithms for Shortest Paths in Sparse Networks (1977)'
 - https://en.wikipedia.org/wiki/Johnson%27s_algorithm
 - solves 'All-pairs shortest paths problem' for real-valued weights in a directed graph in O(v^2 log v + v*e) where v and e are the number of vertices and edges
 - implemented in: 'Python scipy.sparse.csgraph.shortest_path(method='J')', 'C++ boost::graph::johnson_all_pairs_shortest_paths'
@@ -513,6 +75,7 @@
 - input: 'weighted directed graph without negative cycles'
 
 ## Floyd–Warshall algorithm
+- paper: 'Algorithm 97: Shortest path (1962)'
 - https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
 - http://mathworld.wolfram.com/Floyd-WarshallAlgorithm.html
 - graph algorithm
@@ -532,8 +95,8 @@
 - input: 'Directed graph with non-negative weights'
 
 ## Edge disjoint shortest pair algorithm
-- https://en.wikipedia.org/wiki/Edge_disjoint_shortest_pair_algorithm
 - paper: 'Survivable networks: algorithms for diverse routing'
+- https://en.wikipedia.org/wiki/Edge_disjoint_shortest_pair_algorithm
 - solves: 'Shortest pair of edge disjoint paths'
 - superseded by: 'Suurballe's algorithm'
 - input: 'Weighted directed graph'
@@ -572,13 +135,14 @@
 - superseded by: 'Ukkonen's algorithm'
 
 ## A* search algorithm
+- paper: 'A Formal Basis for the Heuristic Determination of Minimum Cost Paths (1968)'
 - https://en.wikipedia.org/wiki/A*_search_algorithm
 - generalization of 'Dijkstra's algorithm'
 - heuristic search
 - informed search algorithm (best-first search)
-- usually implemented using: 'priority queue'
-- applications: pathfinding, parsing using stochastic grammars in NLP
-- uses method: 'dynamic programming'
+- usually implemented using: 'Priority queue'
+- applications: 'Pathfinding', 'Parsing using stochastic grammars in NLP'
+- uses method: 'Dynamic programming'
 - input: 'Weighted graph'
 
 ## Linear search
@@ -609,12 +173,27 @@
 - find element in sorted infinite list in O(log i) time where i is the position of the element in the list
 - input: 'Sorted list'
 
+## Cumulative sum
+- also called: 'Prefix sum', 'Accumulate', 'Inclusive scan'
+- https://en.wikipedia.org/wiki/Prefix_sum
+- http://mathworld.wolfram.com/CumulativeSum.html
+- implemented in: 'Python numpy.cumsum', 'Mathematica Accumulate'
+- properties: 'parallelizable'
+
+## Wyllie's algorithm
+- thesis: 'The Complexity of Parallel Computations (1979)'
+- solves: 'List ranking'
+- related: 'Cumulative sum'
+- is a: 'Parallel algorithm'
+
 ## Funnelsort
+- paper: 'Cache-oblivious algorithms (1999)'
 - https://en.wikipedia.org/wiki/Funnelsort
 - is a: 'cache-oblivious algorithm', 'external memory algorithm', 'Comparison-based sorting algorithm'
 - input: 'Collection'
 
 ## Quicksort
+- paper: 'Algorithm 64: Quicksort (1961)'
 - https://en.wikipedia.org/wiki/Quicksort
 - http://mathworld.wolfram.com/Quicksort.html
 - book: 'Introduction to Algorithms'
@@ -624,6 +203,7 @@
 - time complexity (worst): O(n^2)
 - space complexity: O(log n) auxiliary
 - input: 'Random access collection'
+- properties: easily parallelizable
 
 ## Radix sort
 - https://en.wikipedia.org/wiki/Radix_sort
@@ -637,6 +217,8 @@
 - properties: 'stable', 'in-place'
 
 ## Gnome sort
+- also called: 'Stupid sort'
+- paper: 'Stupid Sort: A new sorting algorithm'
 - https://en.wikipedia.org/wiki/Gnome_sort
 - time complexity (average, worst): O(n^2)
 - time complexity (best): O(n)
@@ -649,6 +231,7 @@
 - properties: 'comparison based'
 
 ## Cocktail shaker sort
+- paper: 'Sorting by Exchanging (1973)'
 - also called: 'bidirectional bubble sort'
 - https://en.wikipedia.org/wiki/Cocktail_shaker_sort
 - input: 'Bidirectional Collection'
@@ -657,13 +240,19 @@
 - time complexity (average, worst): O(n^2)
 - time complexity (best): O(n)
 
-## Merge Sort
+## Merge sort
 - https://en.wikipedia.org/wiki/Merge_sort
 - is a: 'Sorting algorithm', 'Stable sorting algorithm' (usually), 'Divide and conquer algorithm', 'Comparison-based sorting algorithm'
 - implemented in: 'C++ std::stable_sort (usually)'
 - good for sequential access, can work on 'singly linked lists', external sorting
-- easily parallelizable
+- properties: easily parallelizable
 - input: 'Collection'
+
+## Counting sort
+- thesis: 'Information sorting in the application of electronic digital computers to business operations (1954)' by 'H. H. Seward'
+- https://en.wikipedia.org/wiki/Counting_sort
+- is a: 'Integer sorting algorithm'
+- properties: 'parallelizable'
 
 ## Heapsort
 - https://en.wikipedia.org/wiki/Heapsort
@@ -685,6 +274,7 @@
 - input: 'Random access collection'
 
 ## Introsort
+- paper: 'Introspective Sorting and Selection Algorithms'
 - https://en.wikipedia.org/wiki/Introsort
 - is a: 'Sorting algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
 - implemented in: 'C++ STL std::sort (usually)', '.net sort'
@@ -695,12 +285,27 @@
 - http://mathworld.wolfram.com/SelectionSort.html
 - is a: 'Sorting algorithm', 'In-place algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
 - input: 'Random access collection'
+- properties: 'parallelizable'
 
 ## Insertion sort
 - https://en.wikipedia.org/wiki/Insertion_sort
 - properties: 'stable', 'in-place'
 - input: 'List' (for not-in-place)
 - input: 'bidirectional list' (for in-place)
+- properties: 'parallelizable'
+
+## Bitonic sorter
+- https://en.wikipedia.org/wiki/Bitonic_sorter
+- is a: 'Sorting algorithm', 'Parallel algorithm'
+
+## Batcher odd–even mergesort
+- https://en.wikipedia.org/wiki/Batcher_odd%E2%80%93even_mergesort
+- is a: 'Sorting algorithm', 'Parallel algorithm'
+
+## Pairwise sorting network
+- paper: 'The pairwise sorting network (1992)'
+- https://en.wikipedia.org/wiki/Pairwise_sorting_network
+- is a: 'Sorting algorithm', 'Parallel algorithm'
 
 ## Shellsort
 - https://en.wikipedia.org/wiki/Shellsort
@@ -727,6 +332,12 @@
 - see also: 'Floyd's game'
 - input: 'Collection'
 - input: 'Contigious Collection' (time complexity: O(n log(log(n))), using 'Van Emde Boas tree')
+
+## Sleep sort
+- https://web.archive.org/web/20151231221001/http://bl0ckeduser.github.io/sleepsort/sleep_sort_trimmed.html
+- https://www.cs.princeton.edu/courses/archive/fall13/cos226/lectures/52Tries.pdf
+- time complexity: O(n) (for all theoretical purposes...)
+- applications: 'Integer sorting'
 
 ## Fisher–Yates shuffle
 - https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
@@ -948,6 +559,10 @@
 - input: 'Directed graph'
 - output: 'Strongly connected component'
 
+## Awerbuch-Shiloach algorithm for finding the connected components
+- paper: 'New Connectivity and MSF Algorithms for Shuffle-Exchange Network and PRAM (1987)'
+- is a: 'Parallel algorithm'
+
 ## Tarjan's off-line lowest common ancestors algorithm
 - https://en.wikipedia.org/wiki/Tarjan%27s_off-line_lowest_common_ancestors_algorithm
 - input: 'pairs of nodes in a tree'
@@ -975,12 +590,86 @@
 - very difficult to implement in code
 
 ## Risch semi-algorithm
+- paper: 'On the Integration of Elementary Functions which are built up using Algebraic Operations (1968)'
 - https://en.wikipedia.org/wiki/Risch_algorithm
 - http://mathworld.wolfram.com/RischAlgorithm.html
-- solves: 'indefinite integration'
+- solves: 'Indefinite integration'
 - applications: 'Symbolic computation', 'Computer algebra'
 - implemented in: 'Axiom'
 - very difficult to implement in code
+
+## Romberg's method
+- paper: 'Vereinfachte numerische Integration (1955)'
+- https://en.wikipedia.org/wiki/Romberg%27s_method
+- applications: 'Numerical integration'
+- implemented in: 'Python scipy.integrate.romberg'
+- input: 'Function and integration boundaries'
+- output: 'Integrated value'
+- domain: 'Analysis'
+
+## Brelaz's heuristic algorithm
+- paper: 'New methods to color the vertices of a graph (1979)'
+- http://mathworld.wolfram.com/BrelazsHeuristicAlgorithm.html
+- solves approximately: 'Graph coloring problem'
+- implemented in: 'Mathematica BrelazColoring'
+
+## Local-Ratio algorithm
+- paper: 'A Local-Ratio Theorem for Approximating the Weighted Vertex Cover Problem'
+- implemented in: 'networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover'
+- solves approximately: 'Vertex cover problem'
+- domain: 'Graph theory'
+
+## Hopcroft–Karp algorithm
+- paper: 'An $n^{5/2}$ Algorithm for Maximum Matchings in Bipartite Graphs (1973)'
+- https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
+- https://brilliant.org/wiki/hopcroft-karp/
+- input: 'Bipartite graph'
+- output: 'Maximum matching'
+- time complexity: O(E sqrt(V)) for E edges and V vertices
+- best for sparse, for dense, there are more recent improvements like 'Alt et al. (1991)'
+- domain: 'Graph theory'
+
+## Hungarian Maximum Matching algorithm
+- also called: 'Kuhn-Munkres algorithm'
+- paper: 'The Hungarian method for the assignment problem (1955)'
+- https://en.wikipedia.org/wiki/Hungarian_algorithm
+- http://mathworld.wolfram.com/HungarianMaximumMatchingAlgorithm.html
+- https://brilliant.org/wiki/hungarian-matching/
+- input: 'bipartite graph'
+- output: 'maximum-weight matching'
+- time complexity: O(V^3) for V vertices
+- domain: 'Graph theory', 'Combinatorial optimization'
+
+## Blossom algorithm
+- paper: 'Paths, trees, and flowers (1965)'
+- also called: 'Edmonds' matching algorithm'
+- https://en.wikipedia.org/wiki/Blossom_algorithm
+- http://mathworld.wolfram.com/BlossomAlgorithm.html
+- https://brilliant.org/wiki/blossom-algorithm/
+- domain: 'Graph theory'
+- input: 'Graph'
+- output: 'Maximum matching'
+- time complexity: O(E V^2) for E edges and V vertices
+
+## Xiao and Nagamochi's algorithm for the maximum independent set
+- paper: 'Exact algorithms for maximum independent set (2017)'
+- solves: 'Maximum independent set problem'
+- time complexity: O(1.1996^n)
+- space complexity: polynomial
+- superseeds: 'Robson (1986)'
+
+## Boppana and Halldórsson's approximation algorithm for the maximum independent set
+- paper: 'Approximating maximum independent sets by excluding subgraphs (1992)'
+- solves approximate: 'Maximum independent set problem'
+- implemented in: 'Python networkx.algorithms.approximation.independent_set.maximum_independent_set'
+- time complexity: O(n / (log b)^2)
+
+## DPLL algorithm
+- paper: 'A machine program for theorem-proving (1962)'
+- https://en.wikipedia.org/wiki/DPLL_algorithm
+- also called: 'Davis–Putnam–Logemann–Loveland algorithm'
+- solves: 'Boolean satisfiability problem'
+- applications: 'Automated theorem proving'
 
 ## Canny's Roadmap algorithm
 - http://planning.cs.uiuc.edu/node298.html
@@ -1137,6 +826,7 @@
 - https://en.wikipedia.org/wiki/Marching_squares
 - domain: 'computer graphics', 'cartography'
 - applications: 'contour finding'
+- properties: 'Embarrassingly parallel'
 
 ## Lempel–Ziv–Welch
 - https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch
@@ -1535,20 +1225,40 @@
 ## Fast Fourier transform method
 - https://en.wikipedia.org/wiki/Fast_Fourier_transform
 - output: 'Discrete Fourier transform'
+- implemented in: 'FFTW', 'FFTPACK'
 
 ## Cooley–Tukey FFT algorithm
+- paper: 'An Algorithm for the Machine Calculation of Complex Fourier Series (1965)'
 - https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm
 - variation of: 'Fast Fourier transform'
 - implemented in: 'Python numpy.fft, scipy.fftpack.fft'
 
+## Winograd FFT algorithm
+- also called: 'Multiplicative Fourier transform algorithm'
+- paper: 'On computing the Discrete Fourier Transform (1976)'
+- https://www.encyclopediaofmath.org/index.php/Winograd_Fourier_transform_algorithm
+- minimal multiplications at the cost of more additions
+
+## Rader's FFT algorithm
+- paper: 'Discrete Fourier transforms when the number of data samples is prime (1968)'
+- https://en.wikipedia.org/wiki/Rader%27s_FFT_algorithm
+
+## Fast wavelet transform
+- also called: 'FWT'
+- paper: 'A theory for multiresolution signal decomposition: the wavelet representation (1989)'
+- https://en.wikipedia.org/wiki/Fast_wavelet_transform
+- input: 'waveform'
+- output: 'wavelets'
+
 ## Kirkpatrick–Seidel algorithm
-- https://en.wikipedia.org/wiki/Kirkpatrick%E2%80%93Seidel_algorithm
 - paper: 'The Ultimate Planar Convex Hull Algorithm? (1983)'
+- https://en.wikipedia.org/wiki/Kirkpatrick%E2%80%93Seidel_algorithm
 - input: 'Collection of 2-d points'
 - output: 'Convex hull'
 - properties: 'output-sensitive'
 
 ## Chan's algorithm
+- paper: 'Optimal output-sensitive convex hull algorithms in two and three dimensions (1996)'
 - https://en.wikipedia.org/wiki/Chan%27s_algorithm
 - input: 'Collection of 2-d or 3-d points'
 - output: 'Convex hull'
@@ -1568,6 +1278,7 @@
 - input: 'Collection of points'
 
 ## Hoshen–Kopelman algorithm
+- paper: 'Percolation and cluster distribution. I. Cluster multiple labeling technique and critical concentration algorithm (1976)'
 - https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm
 - is a: 'Cluster analysis algorithm'
 - input: 'regular network of bools'
@@ -1585,12 +1296,33 @@
 - implemented in: 'opencv::connectedComponents'
 
 ## Fortune's algorithm
+- paper: 'A sweepline algorithm for Voronoi diagrams (1986)'
 - https://en.wikipedia.org/wiki/Fortune%27s_algorithm
 - is a: 'Sweep line algorithm'
 - input: 'Collection of points'
 - output: 'Voronoi diagram'
 - time complexity: O(n log n)
 - space complexity: O(n)
+
+## Bentley–Ottmann algorithm
+- paper: 'Algorithms for Reporting and Counting Geometric Intersections (1979)'
+- https://en.wikipedia.org/wiki/Bentley%E2%80%93Ottmann_algorithm
+- is a: 'Sweep line algorithm'
+- solves: 'Line segment intersection'
+- input: 'set of line segments'
+- output: 'crossings'
+- based on: 'Shamos–Hoey algorithm'
+
+## Freeman-Shapira's minimum bounding box
+- paper: 'Determining the minimum-area encasing rectangle for an arbitrary closed curve (1975)'
+- solves: 'Minimum bounding box'
+- input: 'convex polygon'
+- output: 'minimum-area enclosing rectangle'
+- time complexity: O(n)
+
+## Rotating calipers
+- https://en.wikipedia.org/wiki/Rotating_calipers
+- 'Solving Geometric Problems with the Rotating Calipers'?
 
 ## Lloyd's algorithm
 - https://en.wikipedia.org/wiki/Lloyd%27s_algorithm
@@ -2044,6 +1776,240 @@
 - paper: 'Random sample consensus: a paradigm for model fitting with applications to image analysis and automated cartography (1981)'
 - applications: 'Computer vision', 'Location determination problem'
 
+## PACBO
+- also called: 'Probably Approximately Correct Bayesian Online'
+- paper: 'PAC-Bayesian Online Clustering'
+- implemented in: 'R PACBO'
+- related: 'RJMCMC'
+- applications: 'online clustering'
+- domain: 'Game theory', 'Computational learning theory'
+
+## RJMCMC
+- also called: 'Reversible-jump Markov chain Monte Carlo'
+- paper: 'Reversible jump Markov chain Monte Carlo computation and Bayesian model determination (1995)'
+- https://en.wikipedia.org/wiki/Reversible-jump_Markov_chain_Monte_Carlo
+- exntension of: 'Markov chain Monte Carlo'
+
+## Simple moving average
+- also called: 'SMA'
+- https://en.wikipedia.org/wiki/Moving_average#Simple_moving_average
+- applications: 'Time series analysis'
+
+## Exponential moving average
+- also called: 'EMA', 'Exponentially weighted moving average', 'EWMA'
+- https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average
+- applications: 'Time series analysis'
+
+## Weighted moving average
+- also called: 'WMA'
+- https://en.wikipedia.org/wiki/Moving_average#Weighted_moving_average
+- applications: 'Time series analysis'
+
+## Backpropagation through time
+- https://en.wikipedia.org/wiki/Backpropagation_through_time
+- domain: 'Optimization'
+- applications: training certain types of 'Recurrent neural networks'
+
+## Backpropagation through structure
+- https://en.wikipedia.org/wiki/Backpropagation_through_structure
+- domain: 'Optimization'
+- applications: training certain types of 'Recursive neural networks'
+
+## Franceschini-Muthukrishnan-Pătrașcu algorithm
+- paper: 'Radix Sorting With No Extra Space (2007)'
+- applications: 'Integer sorting'
+
+## Approximate Link state algorithm
+- also called: 'XL'
+- paper: 'XL: An Efficient Network Routing Algorithm (2008)'
+- applications: 'Network routing'
+
+## Nicholl–Lee–Nicholl algorithm
+- https://en.wikipedia.org/wiki/Nicholl%E2%80%93Lee%E2%80%93Nicholl_algorithm
+- applications: 'Line clipping'
+
+## Liang–Barsky algorithm
+- https://en.wikipedia.org/wiki/Liang%E2%80%93Barsky_algorithm
+- applications: 'Line clipping'
+
+## C3 linearization
+- paper: 'A Monotonic Superclass Linearization for Dylan'
+- https://en.wikipedia.org/wiki/C3_linearization
+- applications: 'Multiple inheritance', 'Method Resolution Order'
+- used to implement application: 'Python', 'Perl'
+
+## Sethi–Ullman algorithm
+- paper: 'The Generation of Optimal Code for Arithmetic Expressions (1970)'
+- https://en.wikipedia.org/wiki/Sethi%E2%80%93Ullman_algorithm
+- applications: 'Code generation', 'Arithmetic expressions'
+- input: 'Abstract syntax tree'
+- ouput: 'Machine code'
+- domain: 'Graph theory'
+
+## Yarrow algorithm
+- https://en.wikipedia.org/wiki/Yarrow_algorithm
+- is a: 'Cryptographically secure pseudorandom number generator'
+- succeeded by: 'Fortuna'
+- domain: 'Cryptography'
+
+## Fortuna
+- https://en.wikipedia.org/wiki/Fortuna_(PRNG)
+- is a: 'Cryptographically secure pseudorandom number generator'
+- domain: 'Cryptography'
+
+## Blum–Micali algorithm
+- https://en.wikipedia.org/wiki/Blum%E2%80%93Micali_algorithm
+- is a: 'Cryptographically secure pseudorandom number generator'
+- domain: 'Cryptography'
+
+## Double dabble
+- also called: 'shift-and-add-3 algorithm'
+- https://en.wikipedia.org/wiki/Double_dabble
+- input: 'binary numbers'
+- ouput: 'binary-coded decimals'
+- properties: 'hardware friendly'
+
+## BKM algorithm
+- paper: 'BKM: a new hardware algorithm for complex elementary functions (1994)'
+- https://en.wikipedia.org/wiki/BKM_algorithm
+- is a shift-and-add algorithm for computing elementary functions
+- properties: 'hardware friendly'
+
+## CORDIC
+- also called: 'COordinate Rotation DIgital Computer', 'Volder's algorithm'
+- paper: 'The CORDIC Computing Technique (1959)'
+- calculate hyperbolic and trigonometric functions
+- properties: 'Digit-by-digit algorithm', 'hardware friendly'
+- class: 'Shift-and-add algorithm'
+
+## XOR swap algorithm
+- https://en.wikipedia.org/wiki/XOR_swap_algorithm
+- patent: 'US4197590A' (expired)
+
+## Xulvi-Brunet and Sokolov algorithm
+- paper: 'Reshuffling scale-free networks: From random to assortative (2004)'
+- https://en.wikipedia.org/wiki/Xulvi-Brunet_-_Sokolov_algorithm
+- generates networks with chosen degree correlations
+
+## Hash join
+- https://en.wikipedia.org/wiki/Hash_join
+- class: 'Relational join algorithm'
+- requires: 'Equi-join predicate'
+- implemented in: 'T-SQL'
+
+## Sort-merge join
+- also called: 'Merge join'
+- https://en.wikipedia.org/wiki/Sort-merge_join
+- class: 'Relational join algorithm'
+- implemented in: 'T-SQL'
+
+## Berkeley algorithm
+- paper: 'The accuracy of the clock synchronization achieved by TEMPO in Berkeley UNIX 4.3BSD (1989)'
+- https://en.wikipedia.org/wiki/Berkeley_algorithm
+- applications: 'Clock synchronization'
+- is a: 'Distributed algorithm'
+
+## Cristian's algorithm
+- paper: 'Probabilistic clock synchronization (1989)'
+- https://en.wikipedia.org/wiki/Cristian%27s_algorithm
+- applications: 'Clock synchronization'
+- is a: 'Distributed algorithm'
+
+## Marzullo's algorithm
+- thesis: 'Maintaining the time in a distributed system: an example of a loosely-coupled distributed service (1984)'
+- https://en.wikipedia.org/wiki/Marzullo%27s_algorithm
+- superseeded by: 'Intersection algorithm'
+- is a: 'Agreement algorithm'
+- applications: 'Clock synchronization'
+
+## Intersection algorithm
+- also called: 'Clock Select Algorithm'
+- paper: 'Improved algorithms for synchronizing computer network clocks (1995)'
+- https://en.wikipedia.org/wiki/Intersection_algorithm
+- https://www.eecis.udel.edu/~mills/ntp/html/select.html
+- is a: 'Agreement algorithm'
+- used by: 'Network Time Protocol'
+- applications: 'Clock synchronization'
+
+## Nagle's algorithm
+- paper: 'Congestion Control in IP/TCP Internetworks' (RFC896)
+- https://en.wikipedia.org/wiki/Nagle%27s_algorithm
+- used by: 'TCP/IP'
+- applications: 'Congestion Control'
+- domain: 'Networking'
+
+## Segmented string relative ranking
+- book: 'PUBLIC BRAINPOWER: Civil Society and Natural Resource Management'
+- ranking algorithm
+
+## Algorithm for Producing Rankings Based on Expert Surveys
+- paper: 'Algorithm for Producing Rankings Based on Expert Surveys (2019)'
+- based on: 'Segmented string relative ranking'
+- compare: 'PageRank'
+- applications: 'Link analysis'
+
+## SALSA algorithm
+- also called: 'Stochastic Approach for Link-Structure Analysis'
+- paper: 'SALSA: the stochastic approach for link-structure analysis'
+- https://en.wikipedia.org/wiki/SALSA_algorithm
+- applications: 'Link analysis'
+
+## TextRank
+- paper: 'TextRank: Bringing Order into Texts (2004)'
+- based on: 'PageRank'
+- domain: 'Graph Theory'
+- applications: 'Keyword extraction', 'Text summarization'
+
+## HITS algorithm
+- also called: 'Hyperlink-Induced Topic Search'
+- paper: 'Authoritative sources in a hyperlinked environment (1999)'
+- https://en.wikipedia.org/wiki/HITS_algorithm
+- applications: 'Link analysis', 'Search engines', 'Citation analysis'
+
+## Eigenfactor
+- paper: 'Eigenfactor: Measuring the value and prestige of scholarly journals (2007)'
+- https://en.wikipedia.org/wiki/Eigenfactor
+- is a: 'Citation metric'
+
+## Impact factor
+- https://en.wikipedia.org/wiki/Impact_factor
+- is a: 'Citation metric'
+
+## PageRank
+- paper: 'The PageRank Citation Ranking: Bringing Order to the Web'
+- https://en.wikipedia.org/wiki/PageRank
+- domain: 'Graph theory'
+- applications: 'Link analysis', 'Linear algebra'
+- input: 'Google matrix'
+
+## CheiRank
+- https://en.wikipedia.org/wiki/CheiRank
+- input: 'Google matrix'
+- domain: 'Graph theory', 'Linear algebra'
+
+## ObjectRank
+- paper: 'ObjectRank: Authority-Based Keyword Search in Databases'
+- applications: 'Ranking in graphs'
+
+## PathSim
+- paper: 'PathSim: Meta Path-Based Top-K Similarity Search in Heterogeneous Information Networks'
+- applications: 'Similarity search', 'Ranking in graphs'
+
+## RankDex
+- also called: 'Hyperlink Vector Voting method', 'HVV'
+- paper: 'Toward a qualitative search engine (1998)'
+
+## Banker's algorithm
+- paper: 'Een algorithme ter voorkoming van de dodelijke omarming (EWD-108) (1964–1967)'
+- also called: 'detection algorithm'
+- https://en.wikipedia.org/wiki/Banker%27s_algorithm
+- http://www.cs.colostate.edu/~cs551/CourseNotes/Bankers.html
+- applications: 'Resource allocation', 'Deadlock prevention'/'Deadlock avoidance'
+
+## Finite difference: central difference
+- https://en.wikipedia.org/wiki/Finite_difference#Forward,_backward,_and_central_differences
+- implemented in: 'scipy.misc.derivative'
+
 ## Kalman filter
 - also called: 'linear quadratic estimation'
 - https://en.wikipedia.org/wiki/Kalman_filter
@@ -2052,6 +2018,26 @@
 - implemented in: 'Python statsmodels.tsa.kalmanf.kalmanfilter.KalmanFilter'
 - applications: 'guidance, navigation, and control', 'time series analysis', 'Trajectory optimization', 'Computer vision', 'Object tracking'
 - solves: 'Linear–quadratic–Gaussian control problem'
+
+## Ensemble Kalman filter
+- also called: 'EnKF'
+- https://en.wikipedia.org/wiki/Ensemble_Kalman_filter
+- is a: 'Recursive filter'
+- applications: 'Data assimilation', 'Ensemble forecasting'
+
+## Ensemble adjustment Kalman filter
+- also called: 'EAKF'
+- paper: 'An Ensemble Adjustment Kalman Filter for Data Assimilation (2001)'
+
+## PF-PMC-PHD
+- also called: 'Particle Filter–Pairwise Markov Chain–Probability Hypothesis Density'
+- paper: 'Particle Probability Hypothesis Density Filter Based on Pairwise Markov Chains (2019)'
+- applications: 'multi-target tracking system'
+
+## Multichannel affine projection algorithm
+- paper: 'A multichannel affine projection algorithm with applications to multichannel acoustic echo cancellation (1996)'
+- applications: 'Echo cancellation'
+- generalization of: 'Affine projection algorithm'
 
 # Filters
 
@@ -2100,7 +2086,11 @@
 - disadvantages: 'create block artifacts'
 - domain: 'Image processing'
 
-# Methods
+# Methods, patterns and programming models
+
+## Map
+- https://en.wikipedia.org/wiki/Map_(parallel_pattern)
+- parallelizes 'Embarrassingly parallel' problems
 
 ## Locality-sensitive hashing
 - https://en.wikipedia.org/wiki/Locality-sensitive_hashing
@@ -2124,49 +2114,12 @@
 ## Backtracking
 - https://en.wikipedia.org/wiki/Backtracking
 
-# General problems
+## MapReduce
+- https://en.wikipedia.org/wiki/MapReduce
+- implemented by: 'Apache Hadoop'
 
-## Nearest neighbor search
-- https://en.wikipedia.org/wiki/Nearest_neighbor_search
-- also called: 'post-office problem'
-- solved exactly by: 'Space partitioning', 'Linear search'
-- solved approximatly by: 'Hierarchical Navigable Small World graphs', 'Locality-sensitive hashing', 'Cover tree', 'Vector quantization'
-- implemented by: 'spotify/annoy', 'C++ ANN', 'nmslib/hnsw', 'nmslib/nmslib'
-
-## Approximate nearest neighbor search
-- book: 'Handbook of Discrete and Computational Geometry'
-- https://en.wikipedia.org/wiki/Nearest_neighbor_search#Approximate_nearest_neighbor
-
-## Approximate string matching
-- https://en.wikipedia.org/wiki/Approximate_string_matching
-- paper: 'Fast Approximate String Matching in a Dictionary'
-- applications: 'spell checking', 'nucleotide sequence matching'
-
-## Optical flow
-- https://en.wikipedia.org/wiki/Optical_flow
-- applications: 'Motion estimation', 'video compression', 'object detection', 'object tracking', 'image dominant plane extraction', 'movement detection', 'robot navigation , 'visual odometry'
-- domain: 'machine vision', 'computer vision'
-
-## Sequence alignment
-- https://en.wikipedia.org/wiki/Sequence_alignment
-
-## Partial sorting
-- https://en.wikipedia.org/wiki/Partial_sorting
-- solved by: 'heaps', 'quickselsort', 'Quickselect'
-
-## Incremental sorting
-- https://en.wikipedia.org/wiki/Partial_sorting#Incremental_sorting
-- solved by: 'quickselect', 'heaps'
-
-## Shortest pair of edge disjoint paths
-- special case of: 'Minimum-cost flow problem'
-- applications: 'Routing'
-
-## Hierarchical clustering
-- https://en.wikipedia.org/wiki/Hierarchical_clustering
-- applications: 'Data mining', 'Paleoecology'
-- domain: 'Statistics'
-
-## Minimal Perfect Hashing
-- http://iswsa.acm.org/mphf/index.html
-- https://en.wikipedia.org/wiki/Perfect_hash_function#Minimal_perfect_hash_function
+## Ostrich algorithm
+- https://en.wikipedia.org/wiki/Ostrich_algorithm
+- is not really an algorithm, but a strategy
+- just ignore problems
+- used by Windows and Linux to handle deadlocks

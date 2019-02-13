@@ -131,3 +131,14 @@
 - https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average
 - implemented in: 'Python statsmodels.tsa.arima_model.ARIMA'
 - applications: 'Time series analysis'
+
+## Random forest
+- https://en.wikipedia.org/wiki/Random_forest
+- properties: 'Embarrassingly parallel' (Tree growth step)
+
+## Convolutional neural network
+- also called: 'CNN', 'ConvNet'
+- https://en.wikipedia.org/wiki/Convolutional_neural_network
+- properties: 'Embarrassingly parallel'
+- type of: 'Artificial neural network'
+- applications: 'Computer vision', 'Natural language processing'

@@ -6,3 +6,9 @@
 - trained by: 'Expectation–maximization algorithm'
 - is a: 'Model'
 - applications: 'Statistical natural language processing'
+
+## Latent Dirichlet allocation
+- also called: 'LDA'
+- paper: 'Latent Dirichlet allocation (2003)'
+- https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation
+- is a: 'Generative model'

@@ -267,6 +267,11 @@
 - variant works on 'doubly linked lists'
 - input: 'Random access collection'
 
+## Ultimate heapsort
+- paper: 'The Ultimate Heapsort (1998)'
+- variant of: 'Heapsort'
+- comparisons: n log_2 n + O(1)
+
 ## Timsort
 - https://en.wikipedia.org/wiki/Timsort
 - is a: 'Sorting algorithm', 'Stable sorting algorithm', 'Comparison-based sorting algorithm'
@@ -838,6 +843,7 @@
 - applications: 'Integer factorization'
 
 ## Shor's algorithm
+- paper: 'Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer (1994)'
 - https://en.wikipedia.org/wiki/Shor%27s_algorithm
 - is a: 'Quantum algorithm'
 - applications: 'Integer factorization'
@@ -2009,6 +2015,18 @@
 ## Finite difference: central difference
 - https://en.wikipedia.org/wiki/Finite_difference#Forward,_backward,_and_central_differences
 - implemented in: 'scipy.misc.derivative'
+
+## Deutsch–Jozsa algorithm
+- paper: 'Rapid solution of problems by quantum computation (1992)'
+- https://en.wikipedia.org/wiki/Deutsch%E2%80%93Jozsa_algorithm
+- is a: 'Quantum algorithm'
+- properties: 'deterministic'
+
+## Grover's algorithm
+- paper: 'A fast quantum mechanical algorithm for database search (1996)'
+- https://en.wikipedia.org/wiki/Grover%27s_algorithm
+- is a: 'Quantum algorithm'
+- properties: 'probabilistic', 'asymptotically optimal'
 
 ## Kalman filter
 - also called: 'linear quadratic estimation'

@@ -71,6 +71,7 @@
 - solves: 'Nonlinear dimensionality reduction'
 
 ## Self-organizing map
+- also called: 'Kohonen map', 'Kohonen network'
 - https://en.wikipedia.org/wiki/Self-organizing_map
 - type of: 'Artificial neural network'
 - unsupervised
@@ -79,6 +80,12 @@
 - implemented in: 'Python mvpa2.mappers.som.SimpleSOMMapper, Bio.Cluster.somcluster'
 - paradigm: 'Competitive learning'
 
+## Wake-sleep algorithm
+- https://en.wikipedia.org/wiki/Wake-sleep_algorithm
+- is a: 'Unsupervised learning algorithm'
+- properties: 'convergent'
+- trains: 'Helmholtz machine'
+
 ## Autoencoder
 - https://en.wikipedia.org/wiki/Autoencoder
 - type of: 'Artificial neural network'
@@ -86,15 +93,79 @@
 - applications: 'Generative model', 'Feature learning'
 - variants: 'Variational autoencoder', 'Contractive autoencoder'
 - unsupervised
+- similar: 'Principal component analysis'
+
+## Variational autoencoder
+- also called: VAE
+- https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)
+- type of: 'Autoencoder'
+- see: 'Variational Bayesian methods'
 
 ## OneClass SVM
 - solves: 'Novelty detection'
 - implemented in: 'libsvm', 'sklearn.svm.OneClassSVM'
 - uses: 'Support estimation'
 
+## Support-vector machine
+- also called: 'SVM', 'Support-vector network'
+- https://en.wikipedia.org/wiki/Support-vector_machine
+- implemented in: 'LIBLINEAR', 'sklearn.svm.LinearSVC', 'sklearn.svm.SVC'
+- Quadratic Programming problem
+- Linear variant optimized by: 'Coordinate descent', 'newGLMNET'
+
+## Support-vector regression
+- also called: 'SVR'
+- https://en.wikipedia.org/wiki/Support-vector_machine#Regression
+- implemented in: 'LIBLINEAR', 'libsvm', 'Python sklearn.svm.SVR, sklearn.svm.LinearSVR'
+
+## Support-vector clustering
+- also called: 'SVC'
+- paper: 'Support vector clustering' (2001)
+- http://www.scholarpedia.org/article/Support_vector_clustering
+- implemented in: 'RapidMiner'
+
+## ID3 algorithm
+- also called: 'Iterative Dichotomiser 3'
+- https://en.wikipedia.org/wiki/ID3_algorithm
+- is a: 'Decision tree algorithm', 'Classification algorithm'
+
+## C4.5 algorithm
+- book: 'C4.5: Programs for Machine Learning' (1993)
+- https://en.wikipedia.org/wiki/C4.5_algorithm
+- is a: 'Decision tree algorithm', 'Classification algorithm'
+- extension of: 'ID3 algorithm'
+- implemented in: 'Weka'
+
+## Classification and regression tree
+- also called: 'CART'
+- https://en.wikipedia.org/wiki/Predictive_analytics#Classification_and_regression_trees_.28CART.29
+- is a: 'Decision tree algorithm', 'Classification algorithm', 'Regression algorithm'
+- implemented in: 'Python sklearn.tree.DecisionTreeClassifier, sklearn.tree.DecisionTreeRegressor'
+- properties: 'non-parametric'
+
+## DBSCAN
+- also called: 'Density-based spatial clustering of applications with noise'
+- paper: 'A density-based algorithm for discovering clusters in large spatial databases with noise' (1996)
+- https://en.wikipedia.org/wiki/DBSCAN
+- is a: 'Density-based clustering algorithm'
+- implemented in: 'Python sklearn.cluster.dbscan'
+
+## OPTICS algorithm
+- also called: 'Ordering points to identify the clustering structure algorithm'
+- paper: 'OPTICS: Ordering Points To Identify the Clustering Structure' (1999)
+- https://en.wikipedia.org/wiki/OPTICS_algorithm
+- is a: 'Density-based clustering algorithm'
+- generalization of: 'DBSCAN'
+
+## SUBCLU
+- paper: 'Density-Connected Subspace Clustering for High-Dimensional Data' (2004)
+- https://en.wikipedia.org/wiki/SUBCLU
+- variant of: 'DBSCAN'
+- is a: 'Subspace clustering algorithm'
+
 ## Isolation Forest
 - solves: 'Anomaly detection'
-- paper: 'Isolation Forest'
+- paper: 'Isolation Forest' (2008)
 - implemented in: 'sklearn.ensemble.IsolationForest'
 - is a: 'Ensemble method'
 
@@ -142,3 +213,23 @@
 - properties: 'Embarrassingly parallel'
 - type of: 'Artificial neural network'
 - applications: 'Computer vision', 'Natural language processing'
+
+## Recurrent neural network
+- also called: 'RNN'
+- https://en.wikipedia.org/wiki/Recurrent_neural_network
+- type of: 'Artificial neural network'
+- applications: 'Natural language processing', 'Speech recognition'
+
+## Long short-term memory
+- also called: 'LSTM'
+- type of: 'Recurrent neural network'
+- https://en.wikipedia.org/wiki/Long_short-term_memory
+- applications: 'Sequence learning'
+
+## Transformer
+- https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html
+- paper: 'Attention Is All You Need' (2017)
+- type of: 'Artificial neural network'
+- is a: 'Language model'
+- applications: 'Natural language processing', 'Machine translation', 'Question answering'
+- originally optimized by: 'Adam'

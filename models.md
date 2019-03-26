@@ -12,3 +12,7 @@
 - paper: 'Latent Dirichlet allocation (2003)'
 - https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation
 - is a: 'Generative model'
+
+## Helmholtz machine
+- https://en.wikipedia.org/wiki/Helmholtz_machine
+- type of: 'Artificial neural network'

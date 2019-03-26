@@ -389,7 +389,9 @@
 - domain: 'Optimization'
 
 ## Coordinate descent
+- also called: 'CDN'
 - https://en.wikipedia.org/wiki/Coordinate_descent
+- application: 'L1-regularized classification'
 - input: 'Real-valued function of several real variables'
 - input: 'Differentiable real-valued function of several real variables and its gradient' (variant)
 - domain: 'Optimization'
@@ -596,6 +598,18 @@
 - is a: 'heuristic algorithm'
 - implemented by: 'Espresso', 'Minilog'
 - domain: 'Optimization'
+
+## GLMNET
+- paper: 'Regularization Paths for Generalized Linear Models via Coordinate Descent' (2010)
+- applications: 'L1-regularized logistic regression'
+- Newton-type optimizer
+- implemented in: 'R glmnet'
+
+## newGLMNET
+- paper: 'An Improved GLMNET for L1-regularized LogisticRegression' (2012)
+- applications: 'L1-regularized logistic regression'
+- implemented in: 'LIBLINEAR'
+- improved variant of: 'GLMNET'
 
 # Practical theorems
 

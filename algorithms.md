@@ -1009,8 +1009,10 @@
 - implemented in: 'Cilk'
 
 ## k-nearest neighbors algorithm
-- is a: 'machine learning algorithm'
-- properties: 'non-parametric', 'instance-based learning'
+- also called: 'k-NN', 'KNN'
+- https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
+- is a: 'Machine learning algorithm', 'Classification algorithm', 'Regression algorithm'
+- properties: 'non-parametric', 'instance-based learning', 'lazy learning'
 - special case of: 'Variable kernel density estimation'
 - applications: 'Pattern recognition'
 - implemented: 'Python sklearn.neighbors.KNeighborsRegressor, sklearn.neighbors.KNeighborsClassifier'
@@ -1034,6 +1036,7 @@
 - implemented in: 'Python Bio.Cluster.kmedoids'
 
 ## Linde–Buzo–Gray algorithm
+- paper: 'An Algorithm for Vector Quantizer Design' (1980)
 - https://en.wikipedia.org/wiki/Linde%E2%80%93Buzo%E2%80%93Gray_algorithm
 - similar: 'k-means clustering'
 - generalization of: 'Lloyd's algorithm'

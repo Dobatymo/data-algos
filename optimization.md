@@ -88,6 +88,7 @@
 ## Non-linear least squares
 - https://en.wikipedia.org/wiki/Non-linear_least_squares
 - applications: 'Nonlinear regression'
+- solved by: 'Ceres Solver'
 
 ## Orthogonal regression
 - https://en.wikipedia.org/wiki/Deming_regression#Orthogonal_regression
@@ -284,7 +285,7 @@
 - https://en.wikipedia.org/wiki/Broyden–Fletcher–Goldfarb–Shanno_algorithm
 - is a: 'Quasi-Newton method', 'Iterative method'
 - implemented in: 'Python scipy.optimize.minimize(method="BFGS")', 'Mathematica FindMinimum(Method->"QuasiNewton")'
-- implemented in: 'gsl_multimin_fdfminimizer_vector_bfgs2'
+- implemented in: 'gsl_multimin_fdfminimizer_vector_bfgs2', 'Ceres Solver'
 - type: 'Unconstrained nonlinear with first derivative'
 - input: 'Differentiable real-valued function of several real variables and its gradient'
 - domain: 'Optimization'
@@ -294,6 +295,7 @@
 - is a: 'Quasi-Newton method'
 - variant of: 'BFGS' (for large systems with memory optimizations)
 - implemented in: 'Mathematica FindMinimum(Method->"QuasiNewton")', 'Python scipy.minimize(method="L-BFGS-B")' (L-BFGS-B variant)
+- implemented in: 'Ceres Solver'
 - applications: 'Maximum entropy models', 'CRF'
 - input: 'Differentiable real-valued function of several real variables and its gradient'
 - domain: 'Optimization'
@@ -322,6 +324,7 @@
 - applications: 'generic curve-fitting problems'
 - output: 'local extermum'
 - implemented in: 'Mathematica FindMinimum(Method->"LevenbergMarquardt")', 'Python scipy.optimize.least_squares(method="lm"), scipy.optimize.root(method="lm")', 'MINPACK', 'R ONLS'
+- implemented in: 'Ceres Solver'
 - input: 'Sum of squares function and data pairs'
 - variant of: 'Gauss–Newton'
 - domain: 'Optimization'
@@ -559,7 +562,7 @@
 ## Dogleg Method
 - also called: 'Trust-region dogleg'
 - https://optimization.mccormick.northwestern.edu/index.php/Trust-region_methods#Dogleg_Method
-- implemented in: 'Python scipy.optimize.minimize(method="dogleg")'
+- implemented in: 'Python scipy.optimize.minimize(method="dogleg")', 'Ceres Solver'
 - is a: 'Trust region method'
 - domain: 'Optimization'
 

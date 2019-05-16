@@ -17,6 +17,14 @@
 - input: 'List of k-dimensional points'
 - output: 'k-d tree'
 
+## Cluster pruning
+- book: 'Cambridge University Press, Introduction to Information Retrieval' (2008)
+- algorithmic analysis: 'Finding near neighbors through cluster pruning' (2007)
+- properties: 'randomized', 'external io'
+- applications: 'Approximate nearest neighbor search'
+- solutions for exact version: 'Linear scan'
+- cf: 'p-spheres', 'rank aggregation'
+
 ## Median of medians
 - also called: 'Blum-Floyd-Pratt-Rivest-Tarjan partition algorithm', 'BFPRT'
 - paper: 'Time bounds for selection (1973)'
@@ -897,13 +905,6 @@
 - applications: antialiasing
 - input: 'Start and end points'
 - output: 'List of points with associated graylevel'
-
-## MinHash
-- https://en.wikipedia.org/wiki/MinHash
-- properties: 'probabilistic'
-- applications: 'Locality-sensitive hashing', 'Set similarity', 'data mining', 'bioinformatics'
-- implemented in: 'ekzhu/datasketch'
-- approximates: 'Jaccard similarity'
 
 ## Needleman–Wunsch algorithm
 - https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm

@@ -17,6 +17,10 @@
 - implemented in: 'Python sklearn.metrics.hamming_loss'
 - properties: 'Discrete'
 
+## Bit Error Rate
+- also called: 'Normalized hamming distance'
+- https://en.wikipedia.org/wiki/Bit_error_rate
+
 ## Damerau–Levenshtein distance
 - https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance
 - is a: 'edit distance'

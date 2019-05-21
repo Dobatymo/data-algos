@@ -17,6 +17,41 @@
 
 # Machine learning models and algorithms
 
+## DCSCN
+- paper: 'Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network' (2017)
+- applications: 'Single Image Super-Resolution'
+- is a: 'CNN'
+
+## SRGAN
+- paper: 'Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network' (2016)
+- applications: 'Single Image Super-Resolution'
+- is a: 'GAN'
+
+## ESRGAN
+- paper: 'ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks' (2018)
+- is a: 'GAN'
+- applications: 'Single Image Super-Resolution'
+- 1. place in the PIRM2018-SR Challenge
+
+## MSRN
+- paper: 'Multi-scale Residual Network for ImageSuper-Resolution'
+- applications: 'Single Image Super-Resolution'
+
+## SOF-VSR
+- paper: 'Learning for Video Super-Resolution through HR Optical Flow Estimation'
+- applications: 'Video super-resolution'
+- is a: 'CNN'
+
+## ESPCN
+- paper: 'Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network' (2016)
+- applications: 'Single image super-resolution', 'Video super-resolution'
+- is a: 'CNN'
+
+## VSR-DUF
+- paper: 'Deep Video Super-Resolution Network Using Dynamic Upsampling Filters Without Explicit Motion Compensation' (2018)
+- applications: 'Video super-resolution'
+- is a: 'CNN'
+
 ## Automatic Differentiation Variational Inference
 - also called: 'ADVI'
 - paper: 'Automatic Variational Inference in Stan (2015)'

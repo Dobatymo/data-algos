@@ -30,11 +30,22 @@
 
 # Semantic hashes / Perceptual hashes / Approximate Hash Based Matching (AHBM) / Fuzzy Hashing / Fingerprinting
 
+## Smooth inverse frequency
+- also called: 'SIF', 'Smoothed inverse frequency'
+- paper: 'A Simple but Tough-to-Beat Baseline for Sentence Embeddings' (2016)
+- input: 'text'
+
+## Unsupervised smoothed inverse frequency
+- also called: 'uSIF'
+- paper: 'Unsupervised Random Walk Sentence Embeddings: A Strong but Simple Baseline' (2018)
+- poster: http://www.cs.toronto.edu/~kawin/acl2018_usif_poster.pdf
+
 ## Universal sentence encoder
 - paper: 'Universal Sentence Encoder' (2018)
 - applications: 'semantic hashing'
 - machine learning
 - input: 'text'
+- metric: 'Cosine distance'
 
 ##
 - paper: 'Comprehensive feature-based robust video fingerprinting using tensor model' (2016)
@@ -69,6 +80,30 @@
 - based on: 'Computer Vision for Music Identification' (2005), 'Pairwise Boosted Audio Fingerprint' (2009)
 - applications: 'Acoustic fingerprint'
 
+## Average hash
+- also called: 'aHash'
+- http://www.hackerfactor.com/blog/index.php?/archives/432-Looks-Like-It.html
+- implemented in: 'Python ImageHash', 'cv::img_hash::AverageHash'
+
+## Difference hash
+- also called: 'dHash'
+- http://www.hackerfactor.com/blog/index.php?/archives/529-Kind-of-Like-That.html
+- implemented in: 'Python dhash', 'Python ImageHash'
+- metric: 'Hamming distance'
+- variant: 'Median Hash'
+
+## Perception hash
+- also called: 'pHash', 'Perceptual hash'
+- http://www.hackerfactor.com/blog/index.php?/archives/432-Looks-Like-It.html
+- implemented in: 'Python ImageHash', 'cv::img_hash::PHash'
+- based on: 'Discrete Cosine Transformation'
+
+## Wavelet hash
+- also called: 'wHash'
+- https://fullstackml.com/2016/07/02/wavelet-image-hash-in-python/
+- implemented in: 'Python ImageHash'
+- based on: 'Discrete Wavelet Transformation'
+
 ## PhotoDNA
 - paper: 'Robust Image Hashing' (2000)
 - https://www.microsoft.com/en-us/photodna
@@ -76,8 +111,37 @@
 
 ## Invariant moments perceptual hash
 - paper: 'Perceptual Hashing for Color Images Using Invariant Moments' (2011)
+- implemented in: 'cv::img_hash::ColorMomentHash', 'pHash Pro'
 - input: 'image'
 - metric: 'L2 norm'
+
+## Block mean hash
+- also called: 'Blockhash'
+- paper: 'Block Mean Value Based Image Perceptual Hashing' (2006)
+- implemented in: 'cv::img_hash::BlockMeanHash', 'commonsmachinery/blockhash-python', 'pHash Pro'
+- input: 'image'
+- metric: 'Bit Error Rate'
+
+## Marr-Hildreth Operator based hash
+- paper: 'Implementation and benchmarking of perceptual image hash functions' (2010)
+- implemented in: 'cv::img_hash::MarrHildrethHash', 'pHash::ph_mh_imagehash'
+- metric: 'Bit Error Rate'
+- input: 'image'
+
+## Radial hASH
+- also called: 'RASH', 'Radial variance based hash'
+- paper: 'Robust image hashing based on radial variance of pixels' (2005)
+- implemented in: 'cv::img_hash::RadialVarianceHash', 'pHash::ph_image_digest'
+- based on: 'Radon transform'
+- input: 'image'
+- metric: 'Peak of Cross Correlation'
+
+## DCT based hash
+- is this the same as: 'PHash'?
+- paper: 'Robust video hash extraction' (2004)
+- implemented in: 'pHash::ph_dct_imagehash'
+- metric: 'Hamming distance'
+- input: 'image'
 
 ## Compact Fourier Mellin Transform (CFMT)-based hash
 - paper: 'Duplicate Image Detection in Large Scale Databases' (2007)

@@ -15,7 +15,42 @@
 - outliers are included in dataset
 - type of: 'One-class classification'
 
+# ML related, but not really ML
+
+## GPipe
+- paper: 'GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism'
+- applications: 'Neural Network Scaling and Distribution'
+- input: 'Neural network'
+- implemented in: 'GPipe library'
+
 # Machine learning models and algorithms
+
+## Sparse FC
+- paper: 'Kernelized Synaptic Weight Matrices'
+- applications: 'Collaborative Filtering', 'Recommender Systems'
+- compare: 'I-AutoRec', 'CF-NADE', 'I-CFN', 'GC-MC'
+
+## BERT
+- paper: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'
+- applications: 'Natural Language Processing', 'Question Answering', 'Natural Language Inference', 'Sentiment Analysis'
+- is a: 'Language Model'
+- implemented in: 'google-research/bert'
+- trained on: 'Cloze task', 'Next Sentence Prediction'
+- is a: 'Semantic hash', 'Trained hash'
+- based on: 'Transformer'
+
+## DrQA
+- paper: 'Reading Wikipedia to Answer Open-Domain Questions'
+- applications: 'Extractive Question Answering'
+
+## HyperQA
+- paper: 'Hyperbolic Representation Learning for Fast and Efficient Neural Question Answering'
+- applications: 'Multiple Choice Question Answering / Answer selection'
+
+## RMDL
+- paper: 'RMDL: Random Multimodel Deep Learning for Classification' (2018)
+- applications: 'Document Classification', 'Image Classification'
+- implemented in: 'Python kk7nc/RMDL'
 
 ## DCSCN
 - paper: 'Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network' (2017)
@@ -31,14 +66,14 @@
 - paper: 'ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks' (2018)
 - is a: 'GAN'
 - applications: 'Single Image Super-Resolution'
-- 1. place in the PIRM2018-SR Challenge
+- first place in: PIRM2018-SR Challenge
 
 ## MSRN
 - paper: 'Multi-scale Residual Network for ImageSuper-Resolution'
 - applications: 'Single Image Super-Resolution'
 
 ## SOF-VSR
-- paper: 'Learning for Video Super-Resolution through HR Optical Flow Estimation'
+- paper: 'Learning for Video Super-Resolution through HR Optical Flow Estimation' (2018)
 - applications: 'Video super-resolution'
 - is a: 'CNN'
 
@@ -220,6 +255,7 @@
 - uses: 'Covariance estimation'
 
 ## Conditional random field
+- also called: 'CRF'
 - https://en.wikipedia.org/wiki/Conditional_random_field
 - is a: 'undirected probabilistic graphical model'
 - applications: 'POS tagging', 'shallow parsing', 'named entity recognition', 'object recognition'

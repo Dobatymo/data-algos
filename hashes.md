@@ -34,16 +34,18 @@
 - also called: 'SIF', 'Smoothed inverse frequency'
 - paper: 'A Simple but Tough-to-Beat Baseline for Sentence Embeddings' (2016)
 - input: 'text'
+- requires: 'Machine learning'
 
 ## Unsupervised smoothed inverse frequency
 - also called: 'uSIF'
 - paper: 'Unsupervised Random Walk Sentence Embeddings: A Strong but Simple Baseline' (2018)
 - poster: http://www.cs.toronto.edu/~kawin/acl2018_usif_poster.pdf
+- requires: 'Machine learning'
 
 ## Universal sentence encoder
 - paper: 'Universal Sentence Encoder' (2018)
 - applications: 'semantic hashing'
-- machine learning
+- requires: 'Machine learning'
 - input: 'text'
 - metric: 'Cosine distance'
 
@@ -71,7 +73,8 @@
 
 ## Now Playing (Neural Network Fingerprinter)
 - paper: 'Now Playing: Continuous low-power music recognition' (2017)
-- uses: 'Machine learning', 'Vector quantization'
+- uses: 'Vector quantization'
+- requires: 'Machine learning'
 
 ## Chromaprint
 - input: 'Waveform'

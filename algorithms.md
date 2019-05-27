@@ -2061,6 +2061,12 @@
 - applications: 'Echo cancellation'
 - generalization of: 'Affine projection algorithm'
 
+## Damm algorithm
+- https://en.wikipedia.org/wiki/Damm_algorithm
+- book: 'Introduction to Computer Data Representation. Checksums and Error Control'
+- applications: 'Error detection'
+- cf: 'Verhoeff algorithm'
+
 # Filters
 
 ## Wiener filter

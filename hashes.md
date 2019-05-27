@@ -3,6 +3,44 @@
 ## Fowler–Noll–Vo hash function
 - also called: 'FNV-1a hash'
 - https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+- applications: 'hash table', 'checksum'
+- properties: 'non-cryptographic'
+
+## MurmurHash
+- https://en.wikipedia.org/wiki/MurmurHash
+- applications: 'hash table'
+- properties: 'non-cryptographic'
+
+## SpookyHash
+- https://en.wikipedia.org/wiki/Jenkins_hash_function#SpookyHash
+- http://www.burtleburtle.net/bob/hash/spooky.html
+- bits: 128
+- properties: 'non-cryptographic'
+
+## CityHash
+- https://github.com/google/cityhash
+- properties: 'non-cryptographic'
+- applications: 'hash table'
+
+## FarmHash
+- https://github.com/google/farmhash
+- properties: 'non-cryptographic'
+- successor of: 'CityHash'
+
+## Meow hash
+- https://github.com/cmuratori/meow_hash
+- fast for large inputs
+- properties: 'non-cryptographic'
+
+## Metro hash
+- https://github.com/jandrewrogers/MetroHash
+- http://www.jandrewrogers.com/2015/05/27/metrohash/
+- fast for small inputs
+- properties: 'non-cryptographic'
+
+## xxHash
+- https://github.com/Cyan4973/xxHash
+- properties: 'non-cryptographic'
 
 # Cryptographic hashes
 

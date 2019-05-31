@@ -160,16 +160,21 @@
 - https://en.wikipedia.org/wiki/Autoencoder
 - type of: 'Artificial neural network'
 - solves: 'Nonlinear dimensionality reduction'
-- applications: 'Generative model', 'Feature learning'
+- applications: 'Generative model', 'Feature learning', 'Image Compression', 'Image Denoising', 'Image Generation'
 - variants: 'Variational autoencoder', 'Contractive autoencoder'
 - unsupervised
 - similar: 'Principal component analysis'
 
 ## Variational autoencoder
 - also called: VAE
+- paper: 'Auto-Encoding Variational Bayes' (2013)
 - https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)
 - type of: 'Autoencoder'
 - see: 'Variational Bayesian methods'
+
+## Conditional Variational Autoencoder
+- also called: 'CVAE'
+- paper: 'Learning Structured Output Representation using Deep Conditional Generative Models' (2015)
 
 ## OneClass SVM
 - solves: 'Novelty detection'

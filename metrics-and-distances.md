@@ -13,6 +13,7 @@
 
 ## Hamming distance
 - https://en.wikipedia.org/wiki/Hamming_distance
+- is a: 'metric'
 - applications: 'Coding theory', 'Block code', 'Error detection and correction', 'Telecommunication'
 - implemented in: 'Python sklearn.metrics.hamming_loss'
 - properties: 'Discrete'
@@ -157,3 +158,5 @@
 - output: semantic distance
 - time complexity (best average case): O(p^3 log p) where p is the number of unique words in the document
 - cheaper variants: 'Word centroid distance' (WCD), 'Relaxed word moving distance' (RWMD)
+
+## Maximum Mean Discrepancy

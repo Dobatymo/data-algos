@@ -1,5 +1,7 @@
 # Definitions
 
+Pointer Machine, Partial Persistence, Full Persistence, Confluent Persistence, Retroactivity
+
 ## Algorithm
 - is a: 'Effective method'
 - https://en.wikipedia.org/wiki/Algorithm

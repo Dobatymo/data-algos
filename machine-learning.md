@@ -165,8 +165,13 @@
 - unsupervised
 - similar: 'Principal component analysis'
 
+## Recursive autoencoder
+- also called: 'RAE'
+- paper: 'Dynamic Pooling and Unfolding Recursive Autoencoders for Paraphrase Detection' (2011)
+- applications: 'Paraphrase detection'
+
 ## Variational autoencoder
-- also called: VAE
+- also called: 'VAE'
 - paper: 'Auto-Encoding Variational Bayes' (2013)
 - https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)
 - type of: 'Autoencoder'
@@ -309,3 +314,8 @@
 - is a: 'Language model'
 - applications: 'Natural language processing', 'Machine translation', 'Question answering'
 - originally optimized by: 'Adam'
+
+## Multi-Channel Convolutional Neural Network
+- also called: 'MCCNN'
+- paper: 'Question Answering on Freebase via Relation Extraction and Textual Evidence' (2016)
+- applications: 'Relation Extraction'

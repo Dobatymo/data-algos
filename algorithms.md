@@ -677,12 +677,35 @@
 - implemented in: 'Python networkx.algorithms.approximation.independent_set.maximum_independent_set'
 - time complexity: O(n / (log b)^2)
 
+## Davis–Putnam algorithm
+- also called: 'DP algorithm'
+- paper: 'A Computing Procedure for Quantification Theory' (1960)
+- https://en.wikipedia.org/wiki/Davis%E2%80%93Putnam_algorithm
+- solves: 'Boolean satisfiability problem'
+
 ## DPLL algorithm
 - paper: 'A machine program for theorem-proving (1962)'
 - https://en.wikipedia.org/wiki/DPLL_algorithm
 - also called: 'Davis–Putnam–Logemann–Loveland algorithm'
 - solves: 'Boolean satisfiability problem'
 - applications: 'Automated theorem proving'
+- extension of: 'Davis–Putnam algorithm'
+- properties: 'complete', 'sound'
+
+## Conflict-driven clause learning
+- paper: 'GRASP-A new search algorithm for satisfiability'
+- https://en.wikipedia.org/wiki/Conflict-driven_clause_learning
+- solves: 'Boolean satisfiability problem'
+- implemented by: 'MiniSAT', 'Zchaff SAT', 'Z3', 'ManySAT'
+- extension of: 'DPLL algorithm'
+- properties: 'complete', 'sound'
+
+## Literal Block Distance
+- also called: 'LBD'
+- paper: 'Predicting Learnt Clauses Quality in Modern SAT Solver' (2009)
+- is a: 'heuristic'
+- applications: 'Boolean satisfiability problem'
+- implemented by: 'Glucose SAT Solver'
 
 ## Canny's Roadmap algorithm
 - http://planning.cs.uiuc.edu/node298.html
@@ -2019,6 +2042,59 @@
 ## Finite difference: central difference
 - https://en.wikipedia.org/wiki/Finite_difference#Forward,_backward,_and_central_differences
 - implemented in: 'scipy.misc.derivative'
+
+## Synthetic Minority Over-sampling Technique
+- also called: 'SMOTE'
+- paper: 'SMOTE: Synthetic Minority Over-sampling Technique' (2002)
+- applications: 'Class imbalance problem'
+- implemented in: 'imblearn.over_sampling.SMOTE'
+
+## Synthetic Minority Over-sampling Technique for Nominal and Continuous
+- also called: 'SMOTE-NC'
+- paper: 'SMOTE: Synthetic Minority Over-sampling Technique' (2002)
+- variant of: 'Synthetic Minority Over-sampling Technique'
+- applications: 'Class imbalance problem'
+- implemented in: 'mblearn.over_sampling.SMOTENC'
+
+## Borderline-SMOTE
+- paper: 'Borderline-SMOTE: a new over-sampling method in imbalanced data sets learning' (2005)
+- variant of: 'Synthetic Minority Over-sampling Technique'
+- applications: 'Class imbalance problem'
+- implemented in: 'imblearn.over_sampling.BorderlineSMOTE'
+
+## Borderline Over-sampling
+- also called: 'BOS'
+- paper: 'Borderline over-sampling for imbalanced data classification' (2009)
+- variant of: 'Synthetic Minority Over-sampling Technique'
+- applications: 'Class imbalance problem'
+- implemented in: 'imblearn.over_sampling.SVMSMOTE'
+
+## Adaptive synthetic sampling approach
+- also called: 'ADASYN'
+- paper: 'ADASYN: Adaptive synthetic sampling approach for imbalanced learning' (2008)
+- applications: 'Class imbalance problem'
+- implemented in: 'imblearn.over_sampling.ADASYN'
+
+## Condensed nearest neighbours
+- paper: 'The condensed nearest neighbor rule' (1968)
+- applications: 'Class imbalance problem'
+- implemented in: 'imblearn.under_sampling.CondensedNearestNeighbour'
+
+## Edited nearest neighbours
+- also called: 'ENN'
+- paper: 'Asymptotic Properties of Nearest Neighbor Rules Using Edited Data' (1972)
+- applications: 'Class imbalance problem'
+- implemented in: 'imblearn.under_sampling.EditedNearestNeighbours'
+
+## Tomek links
+- paper: 'Two Modifications of CNN' (1976)
+- applications: 'Class imbalance problem'
+- implemented in: 'imblearn.under_sampling.TomekLinks'
+
+## Instance hardness threshold
+- paper: 'An instance level analysis of data complexity' (2014)
+- applications: 'Class imbalance problem'
+- implemented in: 'imblearn.under_sampling.InstanceHardnessThreshold'
 
 ## Deutsch–Jozsa algorithm
 - paper: 'Rapid solution of problems by quantum computation (1992)'

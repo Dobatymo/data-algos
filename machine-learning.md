@@ -25,6 +25,35 @@
 
 # Machine learning models and algorithms
 
+## REINFORCE
+- also called: 'Monto-Carlo policy gradient'
+- paper: 'Simple statistical gradient-following algorithms for connectionist reinforcement learning' (1992)
+- is a: 'Policy gradient algorithm'
+- applications: 'Reinforcement learning'
+
+## Asynchronous advantage actor-critic
+- also called: 'A3C'
+- paper: 'Asynchronous Methods for Deep Reinforcement Learning' (2016)
+- is a: 'Policy gradient algorithm'
+- applications: 'Reinforcement learning'
+
+## Q-learning
+- https://en.wikipedia.org/wiki/Q-learning
+- thesis: 'Learning from delayed rewards' (1989)
+- properties: 'model-free', 'value based'
+- applications: 'Reinforcement learning'
+
+## Deep Q-Networks
+- also called: 'DQN'
+- paper: 'Playing Atari with Deep Reinforcement Learning' (2013)
+- based on: 'Q-learning'
+- properties: 'value based'
+
+## Self-critical sequence training
+- also called: 'SCST'
+- paper: 'Self-critical Sequence Training for Image Captioning' (2016)
+- form of: REINFORCE algorithm
+
 ## Sparse FC
 - paper: 'Kernelized Synaptic Weight Matrices'
 - applications: 'Collaborative Filtering', 'Recommender Systems'

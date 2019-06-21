@@ -19,7 +19,7 @@
 - properties: 'Discrete'
 
 ## Bit Error Rate
-- also called: 'Normalized hamming distance'
+- also called: 'Normalized hamming distance', 'Simple matching coefficient'
 - https://en.wikipedia.org/wiki/Bit_error_rate
 
 ## Damerau–Levenshtein distance

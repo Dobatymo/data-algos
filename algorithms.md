@@ -783,9 +783,18 @@
 ## Seam carving
 - https://en.wikipedia.org/wiki/Seam_carving
 - uses method: 'Dynamic programming'
-- applications: 'Image resizing', 'Image processing'
+- applications: 'Image retargeting'
 - domain: 'computer graphics'
 - implemented in: 'Adobe Photoshop', 'GIMP'
+
+## Multi-operator
+- paper: 'Multi-operator Media Retargeting' (2009)
+- applications: 'Image retargeting'
+
+## Symmetry-Summarization
+- paper: 'Resizing by Symmetry-Summarization' (2010)
+- applications: 'Image retargeting'
+- uses: 'Maximally stable extremal regions', 'Mean shift'
 
 ## Dynamic time warping
 - https://en.wikipedia.org/wiki/Dynamic_time_warping
@@ -2107,6 +2116,20 @@
 - https://en.wikipedia.org/wiki/Grover%27s_algorithm
 - is a: 'Quantum algorithm'
 - properties: 'probabilistic', 'asymptotically optimal'
+
+## Maximally stable extremal regions
+- paper: 'Robust wide baseline stereo from maximally stable extremal regions' (2002)
+- https://en.wikipedia.org/wiki/Maximally_stable_extremal_regions
+- applications: 'Computer vision'
+- implemented in: 'OpenCV::MSER'
+
+## Mean shift
+- also called: 'Adaptive mean shift clustering'
+- paper: 'Mean shift: a robust approach toward feature space analysis' (2002)
+- implemented in: 'sklearn.cluster.MeanShift'
+- is a: adaptive gradient ascent method
+- properties: 'centroid based'
+- applications: 'Clustering'
 
 ## Kalman filter
 - also called: 'linear quadratic estimation'

@@ -41,6 +41,12 @@
 - used by: 'MP3', 'JPEG'
 - naive time complexity: O(n^2)
 
+## Image retargeting
+- also called: 'content-aware image resizing'
+- review paper: 'A Comparative Study of Image Retargeting' (2010)
+- solved by (selection): 'Seam carving'
+- domain: 'Image processing', 'Computer graphics'
+
 ## Minimum bounding box
 - https://en.wikipedia.org/wiki/Minimum_bounding_box
 - domain: 'Computational geometry'

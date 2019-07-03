@@ -31,16 +31,29 @@
 - is a: 'Policy gradient algorithm'
 - applications: 'Reinforcement learning'
 
-## Asynchronous advantage actor-critic
+## Actor-Critic
+- paper: 'Neuronlike adaptive elements that can solve difficult learning control problems' (1983)
+
+## Advantage Actor-Critic
+- also called: 'Actor Advantage Critic', 'A2C'
+
+## Asynchronous Advantage Actor-Critic
 - also called: 'A3C'
 - paper: 'Asynchronous Methods for Deep Reinforcement Learning' (2016)
 - is a: 'Policy gradient algorithm'
 - applications: 'Reinforcement learning'
 
+## Soft Actor-Critic
+- also called: 'SAC'
+- paper: 'Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor' (2018)
+- based on: 'Actor-critic'
+- applications: 'Reinforcement learning'
+- properties: 'off-policy'
+
 ## Q-learning
 - https://en.wikipedia.org/wiki/Q-learning
 - thesis: 'Learning from delayed rewards' (1989)
-- properties: 'model-free', 'value based'
+- properties: 'model-free', 'value based', 'off-policy'
 - applications: 'Reinforcement learning'
 
 ## Deep Q-Networks

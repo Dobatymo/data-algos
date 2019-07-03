@@ -158,5 +158,8 @@
 - output: semantic distance
 - time complexity (best average case): O(p^3 log p) where p is the number of unique words in the document
 - cheaper variants: 'Word centroid distance' (WCD), 'Relaxed word moving distance' (RWMD)
+- implemented in: 'Python gensim.models.Word2Vec.wmdistance'
 
 ## Maximum Mean Discrepancy
+- also called: 'MMD'
+- paper: 'A Kernel Method for the Two-Sample Problem' (2008)

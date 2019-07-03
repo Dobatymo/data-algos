@@ -316,7 +316,7 @@
 
 ## Integer factorization
 - https://en.wikipedia.org/wiki/Integer_factorization
-- applications: 'cryptography'
+- applications: 'Cryptography'
 - domain: 'Number theory'
 
 ## DFA minimization

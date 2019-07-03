@@ -888,12 +888,6 @@
 - is a: 'Quantum algorithm'
 - applications: 'Integer factorization'
 
-## RSA
-- https://en.wikipedia.org/wiki/RSA_(cryptosystem)
-- applications: 'Public-key cryptography'
-- depends on computational hardness of: 'RSA problem'
-- patented
-
 ## Adjusted winner procedure
 - https://en.wikipedia.org/wiki/Adjusted_winner_procedure
 - applications: 'Envy-free item assignment'
@@ -1441,11 +1435,18 @@
 - output: 'Minimal deterministic finite automaton'
 
 ## Brzozowski's algorithm
+- paper: 'Canonical regular expressions and minimal state graphs for definite events' (1962)
 - https://en.wikipedia.org/wiki/DFA_minimization#Brzozowski's_algorithm
 - solves: 'DFA minimization'
 - uses: 'Powerset construction'
 - input: 'Deterministic finite automaton'
 - output: 'Minimal deterministic finite automaton'
+
+## Regular-expression derivatives
+- paper: 'Derivatives of Regular Expressions' (1964)
+- https://en.wikipedia.org/wiki/Brzozowski_derivative
+- input: 'Regular expression'
+- output: 'Deterministic finite automaton'
 
 ## Featherstone's algorithm
 - https://en.wikipedia.org/wiki/Featherstone%27s_algorithm

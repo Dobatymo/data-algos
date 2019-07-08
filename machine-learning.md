@@ -73,12 +73,33 @@
 - compare: 'I-AutoRec', 'CF-NADE', 'I-CFN', 'GC-MC'
 
 ## BERT
+- also called: 'Bidirectional Encoder Representations from Transformers'
 - paper: 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'
 - applications: 'Natural Language Processing', 'Question Answering', 'Natural Language Inference', 'Sentiment Analysis'
-- is a: 'Language Model'
+- is a: 'Masked Language Model', 'Semantic hash', 'Trained hash'
 - implemented in: 'google-research/bert'
 - trained on: 'Cloze task', 'Next Sentence Prediction'
-- is a: 'Semantic hash', 'Trained hash'
+- based on: 'Transformer'
+- domain: 'Unsupervised machine learning'
+
+## OpenAI GPT
+- also called: 'Generative Pre-training Transformer'
+- paper: 'Improving Language Understandingby Generative Pre-Training'
+- based on: 'Transformer'
+- is a: 'Language Model'
+- domain: 'Unsupervised machine learning'
+
+## GPT-2
+- paper: 'Language Models are Unsupervised Multitask Learners'
+- https://openai.com/blog/better-language-models/
+- successor to: 'OpenAI GPT'
+- is a: 'Language Model'
+- based on: 'Transformer'
+- domain: 'Unsupervised machine learning'
+
+## Transformer-XL
+- paper: 'Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context' (2019)
+- is a: 'Language Model'
 - based on: 'Transformer'
 
 ## DrQA
@@ -353,8 +374,7 @@
 - https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html
 - paper: 'Attention Is All You Need' (2017)
 - type of: 'Artificial neural network'
-- is a: 'Language model'
-- applications: 'Natural language processing', 'Machine translation', 'Question answering'
+- applications: 'Language modeling', 'Natural language processing', 'Machine translation', 'Question answering'
 - originally optimized by: 'Adam'
 
 ## Multi-Channel Convolutional Neural Network

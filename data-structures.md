@@ -403,7 +403,7 @@
 ## Log-structured merge-tree
 - also called: 'LSM tree'
 - https://en.wikipedia.org/wiki/Log-structured_merge-tree
-- used by: 'Apache Cassandra', 'Apache HBase', 'Bigtable'
+- used by: 'Apache Cassandra', 'Apache HBase', 'Bigtable', 'RocksDB'
 - applications: 'Transaction log'
 
 ## Wavelet tree

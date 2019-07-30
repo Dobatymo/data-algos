@@ -3,17 +3,20 @@
 ## One-class classification
 - https://en.wikipedia.org/wiki/One-class_classification
 - variants: 'Novelty detection', 'Anomaly detection'
+- domain: 'Machine learning'
 
 ## Novelty detection
 - https://en.wikipedia.org/wiki/Novelty_detection
 - clean dataset
 - type of: 'One-class classification'
+- domain: 'Machine learning'
 
 ## Anomaly detection
 - also called: 'Outlier detection'
 - https://en.wikipedia.org/wiki/Anomaly_detection
 - outliers are included in dataset
 - type of: 'One-class classification'
+- domain: 'Machine learning'
 
 # ML related, but not really ML
 
@@ -97,11 +100,6 @@
 - based on: 'Transformer'
 - domain: 'Unsupervised machine learning'
 
-## Transformer-XL
-- paper: 'Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context' (2019)
-- is a: 'Language Model'
-- based on: 'Transformer'
-
 ## DrQA
 - paper: 'Reading Wikipedia to Answer Open-Domain Questions'
 - applications: 'Extractive Question Answering'
@@ -115,64 +113,15 @@
 - applications: 'Document Classification', 'Image Classification'
 - implemented in: 'Python kk7nc/RMDL'
 
-## DCSCN
-- paper: 'Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network' (2017)
-- applications: 'Single Image Super-Resolution'
-- is a: 'CNN'
-
-## SRGAN
-- paper: 'Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network' (2016)
-- applications: 'Single Image Super-Resolution'
-- is a: 'GAN'
-
-## ESRGAN
-- paper: 'ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks' (2018)
-- is a: 'GAN'
-- applications: 'Single Image Super-Resolution'
-- first place in: PIRM2018-SR Challenge
-
 ## MSRN
 - paper: 'Multi-scale Residual Network for ImageSuper-Resolution'
 - applications: 'Single Image Super-Resolution'
-
-## SOF-VSR
-- paper: 'Learning for Video Super-Resolution through HR Optical Flow Estimation' (2018)
-- applications: 'Video super-resolution'
-- is a: 'CNN'
-
-## ESPCN
-- paper: 'Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network' (2016)
-- applications: 'Single image super-resolution', 'Video super-resolution'
-- is a: 'CNN'
-
-## VSR-DUF
-- paper: 'Deep Video Super-Resolution Network Using Dynamic Upsampling Filters Without Explicit Motion Compensation' (2018)
-- applications: 'Video super-resolution'
-- is a: 'CNN'
 
 ## Automatic Differentiation Variational Inference
 - also called: 'ADVI'
 - paper: 'Automatic Variational Inference in Stan (2015)'
 - implemented in: 'Stan'
 - does: 'approximate Bayesian inference'
-
-## Hamiltonian Monte Carlo
-- also called: 'HMC', 'Hybrid Monte Carlo'
-- https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo
-- paper: 'Hybrid Monte Carlo (1987)'
-- is a: 'Markov chain Monte Carlo algorithm'
-- solves: 'Sampling'
-- input: 'probability distribution'
-- output: 'random samples'
-- applications: 'Lattice QCD'
-- implemented in: 'Stan'
-
-## No-U-Turn Sampler
-- also called: 'NUTS'
-- paper: 'The No-U-Turn Sampler: Adaptively Setting Path Lengths in Hamiltonian Monte Carlo (2011)'
-- extends: 'Hamiltonian Monte Carlo'
-- implemented in: 'Stan'
-- solves: 'Sampling'
 
 ## Gradient Tree Boosting
 - also called: 'Gradient boosting machine' (GBM), 'Gradient boosted regression tree' (GBRT)
@@ -213,32 +162,10 @@
 - implemented in: 'Python mvpa2.mappers.som.SimpleSOMMapper, Bio.Cluster.somcluster'
 - paradigm: 'Competitive learning'
 
-## Wake-sleep algorithm
-- https://en.wikipedia.org/wiki/Wake-sleep_algorithm
-- is a: 'Unsupervised learning algorithm'
-- properties: 'convergent'
-- trains: 'Helmholtz machine'
-
-## Autoencoder
-- https://en.wikipedia.org/wiki/Autoencoder
-- type of: 'Artificial neural network'
-- solves: 'Nonlinear dimensionality reduction'
-- applications: 'Generative model', 'Feature learning', 'Image Compression', 'Image Denoising', 'Image Generation'
-- variants: 'Variational autoencoder', 'Contractive autoencoder'
-- unsupervised
-- similar: 'Principal component analysis'
-
 ## Recursive autoencoder
 - also called: 'RAE'
 - paper: 'Dynamic Pooling and Unfolding Recursive Autoencoders for Paraphrase Detection' (2011)
 - applications: 'Paraphrase detection'
-
-## Variational autoencoder
-- also called: 'VAE'
-- paper: 'Auto-Encoding Variational Bayes' (2013)
-- https://en.wikipedia.org/wiki/Autoencoder#Variational_autoencoder_(VAE)
-- type of: 'Autoencoder'
-- see: 'Variational Bayesian methods'
 
 ## Conditional Variational Autoencoder
 - also called: 'CVAE'
@@ -248,18 +175,6 @@
 - solves: 'Novelty detection'
 - implemented in: 'libsvm', 'sklearn.svm.OneClassSVM'
 - uses: 'Support estimation'
-
-## Support-vector machine
-- also called: 'SVM', 'Support-vector network'
-- https://en.wikipedia.org/wiki/Support-vector_machine
-- implemented in: 'LIBLINEAR', 'sklearn.svm.LinearSVC', 'sklearn.svm.SVC'
-- Quadratic Programming problem
-- Linear variant optimized by: 'Coordinate descent', 'newGLMNET'
-
-## Support-vector regression
-- also called: 'SVR'
-- https://en.wikipedia.org/wiki/Support-vector_machine#Regression
-- implemented in: 'LIBLINEAR', 'libsvm', 'Python sklearn.svm.SVR, sklearn.svm.LinearSVR'
 
 ## Support-vector clustering
 - also called: 'SVC'
@@ -327,14 +242,6 @@
 - input: 'Normal distributed data' with n_samples > n_features ** 2
 - uses: 'Covariance estimation'
 
-## Conditional random field
-- also called: 'CRF'
-- https://en.wikipedia.org/wiki/Conditional_random_field
-- is a: 'undirected probabilistic graphical model'
-- applications: 'POS tagging', 'shallow parsing', 'named entity recognition', 'object recognition'
-- usually optimized by: 'L-BFGS', 'Stochastic gradient descent'
-- implemented in: 'CRFSuite', 'python-crfsuite'
-
 ## Autoregressive–moving-average model
 - also called: 'ARMA'
 - https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model
@@ -350,32 +257,6 @@
 ## Random forest
 - https://en.wikipedia.org/wiki/Random_forest
 - properties: 'Embarrassingly parallel' (Tree growth step)
-
-## Convolutional neural network
-- also called: 'CNN', 'ConvNet'
-- https://en.wikipedia.org/wiki/Convolutional_neural_network
-- properties: 'Embarrassingly parallel'
-- type of: 'Artificial neural network'
-- applications: 'Computer vision', 'Natural language processing'
-
-## Recurrent neural network
-- also called: 'RNN'
-- https://en.wikipedia.org/wiki/Recurrent_neural_network
-- type of: 'Artificial neural network'
-- applications: 'Natural language processing', 'Speech recognition'
-
-## Long short-term memory
-- also called: 'LSTM'
-- type of: 'Recurrent neural network'
-- https://en.wikipedia.org/wiki/Long_short-term_memory
-- applications: 'Sequence learning'
-
-## Transformer
-- https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html
-- paper: 'Attention Is All You Need' (2017)
-- type of: 'Artificial neural network'
-- applications: 'Language modeling', 'Natural language processing', 'Machine translation', 'Question answering'
-- originally optimized by: 'Adam'
 
 ## Multi-Channel Convolutional Neural Network
 - also called: 'MCCNN'

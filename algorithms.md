@@ -1,5 +1,11 @@
 # Algorithms
 
+-- definition:
+	An algorithm is a strict description of a function or process. They mustn't require additional data
+	and free parameters should only be used to directly influence the output (ie. they shouldn't have to be optimized
+	or finetuned based on the input). An algorithm which is not fully specified is called 'method'.
+	They can be 'totally correct' or 'partially correct'.
+
 ## Breadth-first search
 - https://en.wikipedia.org/wiki/Breadth-first_search
 - input: 'Graph'
@@ -1036,15 +1042,6 @@
 - applications: 'Scheduling'
 - implemented in: 'Cilk'
 
-## k-nearest neighbors algorithm
-- also called: 'k-NN', 'KNN'
-- https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
-- is a: 'Machine learning algorithm', 'Classification algorithm', 'Regression algorithm'
-- properties: 'non-parametric', 'instance-based learning', 'lazy learning'
-- special case of: 'Variable kernel density estimation'
-- applications: 'Pattern recognition'
-- implemented: 'Python sklearn.neighbors.KNeighborsRegressor, sklearn.neighbors.KNeighborsClassifier'
-
 ## k-means clustering
 - https://en.wikipedia.org/wiki/K-means_clustering
 - is a: 'Clustering algorithm'
@@ -1130,15 +1127,6 @@
 - similar: 'Nearest centroid classifier'
 - https://en.wikipedia.org/wiki/Rocchio_algorithm
 - applications: 'Relevance feedback'
-
-## Nearest centroid classifier
-- https://en.wikipedia.org/wiki/Nearest_centroid_classifier
-- is a: 'Classification model'
-- input: 'Collection of points with associated labels' (training)
-- input: 'Point' (prediction)
-- output: 'Label'
-- properties: 'reduced data model'
-- relies on: 'Nearest neighbor search'
 
 ## Forsythe's algorithm for sampling generalized exponential distributions
 - paper: 'Von Neumann's Comparison Method for Random Sampling from the Normal and Other Distributions'
@@ -1557,6 +1545,13 @@
 - applications: 'Parameter estimation'
 - properties: 'deterministic'
 
+## Wake-sleep algorithm
+- https://en.wikipedia.org/wiki/Wake-sleep_algorithm
+- is a: 'Unsupervised learning algorithm'
+- properties: 'convergent'
+- trains: 'Helmholtz machine'
+- domain: 'Machine learning'
+
 ## Inside–outside algorithm
 - https://en.wikipedia.org/wiki/Inside%E2%80%93outside_algorithm
 - paper: 'Trainable grammars for speech recognition (1971)'
@@ -1783,7 +1778,7 @@
 - implemented in: 'sklearn.cluster.bicluster.SpectralBiclustering'
 - input: 'Matrix'
 
-## Graphical lasso
+## Graphical lasso ?model or algorithm?
 - https://en.wikipedia.org/wiki/Graphical_lasso
 - solves: 'Covariance matrix estimation'
 - is a: 'Graphical model'
@@ -2152,6 +2147,34 @@
 - https://en.wikipedia.org/wiki/Gibbs_sampling#Collapsed_Gibbs_sampler
 - variant of: 'Gibbs sampling'
 - samples (eg.): 'Latent Dirichlet allocation'
+
+## Hamiltonian Monte Carlo
+- also called: 'HMC', 'Hybrid Monte Carlo'
+- https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo
+- paper: 'Hybrid Monte Carlo (1987)'
+- is a: 'Markov chain Monte Carlo algorithm'
+- solves: 'Sampling'
+- input: 'probability distribution'
+- output: 'random samples'
+- applications: 'Lattice QCD'
+- implemented in: 'Stan'
+
+## No-U-Turn Sampler
+- also called: 'NUTS'
+- paper: 'The No-U-Turn Sampler: Adaptively Setting Path Lengths in Hamiltonian Monte Carlo (2011)'
+- extends: 'Hamiltonian Monte Carlo'
+- implemented in: 'Stan'
+- solves: 'Sampling'
+
+## Swendsen–Wang algorithm
+- https://en.wikipedia.org/wiki/Swendsen%E2%80%93Wang_algorithm
+- is a: 'Monte Carlo method'
+- simulates: 'Ising model'
+
+## Wolff algorithm
+- https://en.wikipedia.org/wiki/Wolff_algorithm
+- is a: 'Monte Carlo method'
+- simulates: 'Ising model'
 
 ## TextTiling
 - paper: 'Multi-paragraph segmentation of expository text' (1994)

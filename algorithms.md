@@ -643,7 +643,7 @@
 - domain: 'Graph theory'
 
 ## Hungarian Maximum Matching algorithm
-- also called: 'Kuhn-Munkres algorithm'
+- also called: 'Kuhn-Munkres algorithm', 'Hungarian method'
 - paper: 'The Hungarian method for the assignment problem (1955)'
 - https://en.wikipedia.org/wiki/Hungarian_algorithm
 - http://mathworld.wolfram.com/HungarianMaximumMatchingAlgorithm.html
@@ -652,6 +652,7 @@
 - output: 'maximum-weight matching'
 - time complexity: O(V^3) for V vertices
 - domain: 'Graph theory', 'Combinatorial optimization'
+- implemented in (libraries): 'Python scipy.optimize.linear_sum_assignment'
 
 ## Blossom algorithm
 - paper: 'Paths, trees, and flowers (1965)'
@@ -1179,6 +1180,7 @@
 - output: 'Polynomial'
 
 ## Bron–Kerbosch algorithm
+- paper: 'Algorithm 457: finding all cliques of an undirected graph' (1973)
 - https://en.wikipedia.org/wiki/Bron%E2%80%93Kerbosch_algorithm
 - http://mathworld.wolfram.com/Bron-KerboschAlgorithm.html
 - input: 'Undirected graph'
@@ -1186,6 +1188,7 @@
 - domain: 'Graph theory'
 - applications: 'Computational chemistry'
 - properties: 'not output-sensitive'
+- implemented in (libraries): 'Python networkx.algorithms.clique.find_cliques'
 
 ## Havel–Hakimi algorithm
 - https://en.wikipedia.org/wiki/Havel%E2%80%93Hakimi_algorithm
@@ -1548,9 +1551,11 @@
 - specialisation of: 'Simplex algorithm'
 
 ## Expectation–maximization algorithm
+- also called: 'EM algorithm'
 - https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm
 - is a: 'iterative method'
 - applications: 'Parameter estimation'
+- properties: 'deterministic'
 
 ## Inside–outside algorithm
 - https://en.wikipedia.org/wiki/Inside%E2%80%93outside_algorithm
@@ -2131,6 +2136,42 @@
 - is a: adaptive gradient ascent method
 - properties: 'centroid based'
 - applications: 'Clustering'
+
+## Variational Bayes
+- also called: 'VB'
+- https://en.wikipedia.org/wiki/Variational_Bayesian_methods
+- applications: 'Statistical inference'
+
+## Gibbs sampling
+- https://en.wikipedia.org/wiki/Gibbs_sampling
+- type of: 'Markov chain Monte Carlo'
+- applications: 'Sampling', 'Statistical inference'
+- properties: 'randomized'
+
+## Collapsed Gibbs sampling
+- https://en.wikipedia.org/wiki/Gibbs_sampling#Collapsed_Gibbs_sampler
+- variant of: 'Gibbs sampling'
+- samples (eg.): 'Latent Dirichlet allocation'
+
+## TextTiling
+- paper: 'Multi-paragraph segmentation of expository text' (1994)
+- paper: 'Text Tiling: Segmenting Text into Multi-paragraph Subtopic Passages' (1997)
+- applications: 'Natural language processing', 'Text Segmentation', 'Topic segmentation'
+- implemented in (libraries): 'Python nltk.tokenize.texttiling.TextTilingTokenizer'
+- input: 'text'
+- output: 'semantic paragraphs'
+
+## TopicTiling
+- paper: 'TopicTiling: A Text Segmentation Algorithm based on LDA' (2012)
+- based on: 'TextTiling'
+- applications: 'Natural language processing', 'Text Segmentation', 'Topic segmentation'
+- input: 'text'
+- output: 'semantic paragraphs'
+- uses: 'Latent Dirichlet Allocation'
+
+## GraphSeg
+- paper: 'Unsupervised Text Segmentation Using Semantic Relatedness Graphs' (2016)
+- applications: 'Natural language processing', 'Text Segmentation', 'Topic segmentation'
 
 ## Kalman filter
 - also called: 'linear quadratic estimation'

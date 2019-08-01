@@ -2176,6 +2176,14 @@
 - is a: 'Monte Carlo method'
 - simulates: 'Ising model'
 
+## KH-99 algorithm
+- paper: 'RNA secondary structure prediction using stochastic context-free grammars and evolutionary history' (1999)
+- applications: 'RNA structure prediction'
+
+## Pfold
+- paper: 'Pfold: RNA secondary structure prediction using stochastic context-free grammars' (2003)
+- applications: 'RNA structure prediction'
+
 ## TextTiling
 - paper: 'Multi-paragraph segmentation of expository text' (1994)
 - paper: 'Text Tiling: Segmenting Text into Multi-paragraph Subtopic Passages' (1997)

@@ -1,5 +1,7 @@
 # Problems
 
+-- eplicit formulation
+
 ## Discrete Shearlet Transform
 - also called: 'DST'
 - paper: 'The Discrete Shearlet Transform: A New Directional Transform and Compactly Supported Shearlet Frames (2010)'
@@ -18,6 +20,8 @@
 - discrete version: 'Discrete Fourier transform'
 - applications: 'Signal processing', 'Analysis of differential equations', 'Quantum mechanics'
 - domain: 'Complex analysis'
+- input: function
+- output: function
 
 ## Discrete Fourier transform
 - also called: 'DFT'
@@ -41,11 +45,12 @@
 - used by: 'MP3', 'JPEG'
 - naive time complexity: O(n^2)
 
-## Image retargeting
-- also called: 'content-aware image resizing'
-- review paper: 'A Comparative Study of Image Retargeting' (2010)
-- solved by (selection): 'Seam carving'
-- domain: 'Image processing', 'Computer graphics'
+## Matrix chain multiplication
+- https://en.wikipedia.org/wiki/Matrix_chain_multiplication
+- optimization problem
+- solved by: 'Hu and Shing algortihm for matrix chain products'
+
+-- implicit or explicit formulation
 
 ## Minimum bounding box
 - https://en.wikipedia.org/wiki/Minimum_bounding_box
@@ -305,11 +310,6 @@
 - https://en.wikipedia.org/wiki/Envy-free_item_assignment
 - type of: 'Fair item assignment', 'Fair division'
 
-## Matrix chain multiplication
-- https://en.wikipedia.org/wiki/Matrix_chain_multiplication
-- optimization problem
-- solved by: 'Hu and Shing algortihm for matrix chain products'
-
 ## RSA problem
 - https://en.wikipedia.org/wiki/RSA_problem
 - see: 'Integer factorization'
@@ -409,3 +409,46 @@
 - http://iswsa.acm.org/mphf/index.html
 - https://en.wikipedia.org/wiki/Perfect_hash_function#Minimal_perfect_hash_function
 - domain: 'Computer science'
+
+## K-server problem
+- https://en.wikipedia.org/wiki/K-server_problem
+- domain: 'Computer science'
+
+## X + Y sorting
+- https://en.wikipedia.org/wiki/X_%2B_Y_sorting
+- domain: 'Computer science'
+- naive time complexity: O(nm log(nm))
+- variant of: 'Sorting problem'
+
+-- problems with approximate solutions only
+
+## Stemming
+- https://en.wikipedia.org/wiki/Stemming
+- domain: 'Computational linguistics', 'Natural language processing'
+
+## Part-of-speech tagging
+- https://en.wikipedia.org/wiki/Part-of-speech_tagging
+- http://nlpprogress.com/english/part-of-speech_tagging.html
+- domain: 'Computational linguistics', 'Natural language processing'
+- metric: 'accuracy'
+- usually solved by: 'machine learning'
+- sota implementations (selection): 'zalandoresearch/flair', 'google/meta_tagger'
+
+-- subjective (no simple objective performance metric)
+
+## Image retargeting
+- also called: 'content-aware image resizing'
+- review paper: 'A Comparative Study of Image Retargeting' (2010)
+- solved by (selection): 'Seam carving'
+- domain: 'Image processing', 'Computer graphics'
+
+## Paraphrase generation
+- metrics (selection): 'BLEU'
+- usually solved by: 'machine learning'
+
+# Machine translation
+- also called: 'MT'
+- https://en.wikipedia.org/wiki/Machine_translation
+- domain: 'Computational linguistics'
+- metrics (selection): 'BLEU', 'ROUGE'
+- usually solved by: 'machine learning'

@@ -242,18 +242,6 @@
 - input: 'Normal distributed data' with n_samples > n_features ** 2
 - uses: 'Covariance estimation'
 
-## Autoregressive–moving-average model
-- also called: 'ARMA'
-- https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model
-- implemented in: 'Python statsmodels.tsa.arima_model.ARMA'
-- applications: 'Time series analysis'
-
-## Autoregressive integrated moving average
-- also called: 'ARIMA'
-- https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average
-- implemented in: 'Python statsmodels.tsa.arima_model.ARIMA'
-- applications: 'Time series analysis'
-
 ## Random forest
 - https://en.wikipedia.org/wiki/Random_forest
 - properties: 'Embarrassingly parallel' (Tree growth step)

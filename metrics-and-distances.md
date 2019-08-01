@@ -163,3 +163,21 @@
 ## Maximum Mean Discrepancy
 - also called: 'MMD'
 - paper: 'A Kernel Method for the Two-Sample Problem' (2008)
+
+## BLEU
+- also called: 'Bilingual evaluation understudy'
+- https://en.wikipedia.org/wiki/BLEU
+- applications: 'Machine translation'
+
+## HyTER
+- paper: 'HyTER: Meaning-Equivalent Semantics for Translation Evaluation' (2012)
+- applications: 'Machine translation'
+
+## ROUGE
+- also called: 'Recall-Oriented Understudy for Gisting Evaluation'
+- https://en.wikipedia.org/wiki/ROUGE_(metric)
+- applications: 'Machine translation', 'Automatic summarization'
+
+## PGD-IL metric (custom name)
+- paper: 'Objective Quality Assessment for Image Retargeting Based on Perceptual Geometric Distortion and Information Loss' (2014)
+- applications: 'Image retargeting'

@@ -184,6 +184,13 @@
 - applications: 'Single Image Super-Resolution'
 - first place in: PIRM2018-SR Challenge
 
+## Deep Convolutional Generative Adversarial Network
+- also called: 'DCGAN'
+- paper: 'Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks' (2015)
+- is a: 'GAN'
+- applications: 'Image generation'
+- implemented in (libraries): 'soumith/dcgan.torch'
+
 ## Convolutional neural network
 - also called: 'CNN', 'ConvNet'
 - https://en.wikipedia.org/wiki/Convolutional_neural_network
@@ -234,6 +241,38 @@
 - paper: 'Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context' (2019)
 - is a: 'Language Model'
 - based on: 'Transformer'
+
+## Autoregressive–moving-average model
+- also called: 'ARMA'
+- https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model
+- implemented in: 'Python statsmodels.tsa.arima_model.ARMA'
+- applications: 'Time series analysis'
+- properties: 'autoregressive', 'linear'
+- commonly estimated by: 'Box–Jenkins method'
+
+## Autoregressive integrated moving average
+- also called: 'ARIMA'
+- https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average
+- implemented in: 'Python statsmodels.tsa.arima_model.ARIMA'
+- applications: 'Time series analysis'
+- properties: 'autoregressive', 'linear'
+- commonly estimated by: 'Box–Jenkins method'
+
+## Autoregressive conditional heteroskedasticity
+- also called: 'ARCH'
+- https://en.wikipedia.org/wiki/Autoregressive_conditional_heteroskedasticity
+- applications: 'Time series analysis'
+- properties: 'autoregressive'
+
+## Probabilistic context-free grammar
+- also called: 'PCFG', 'Stochastic context-free grammar', 'SCFG'
+- https://en.wikipedia.org/wiki/Probabilistic_context-free_grammar
+- applications: 'Computational linguistics', 'RNA structure prediction'
+
+-- Stochastic process
+
+## Ornstein–Uhlenbeck process
+- https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process
 
 -- physical models
 

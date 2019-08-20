@@ -569,9 +569,16 @@
 ## Burrows–Wheeler transform
 - is a: 'transform'
 - properties: 'reversible'
-- applications: 'text compression'
+- applications: 'Text compression'
 - implemented using: 'Suffix array'
 - variant: 'Bijective variant'
+
+## Move-to-front transform
+- also called: 'MTF transform'
+- https://en.wikipedia.org/wiki/Move-to-front_transform
+- is a: 'transform'
+- properties: 'reversible'
+- applications: 'Compression'
 
 ## Tarjan's strongly connected components algorithm
 - https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm
@@ -587,17 +594,66 @@
 - input: 'pairs of nodes in a tree'
 - output: 'Lowest common ancestor'
 
+## Adam7 algorithm
+- https://en.wikipedia.org/wiki/Adam7_algorithm
+- applications: 'Image interlacing'
+- input: 'Raster image'
+- used by (file format): 'Portable Network Graphics'
+- properties: '2-dimensional'
+
+## Lloyd–Max quantization
+- paper: 'Quantizing for minimum distortion' (1960)
+- paper: 'Least squares quantization in PCM' (1982)
+- applications: 'Quantization'
+- domain: 'Signal processing'
+
+## Pyramid Vector Quantization
+- also called: 'PVQ'
+- paper: 'A pyramid vector quantizer' (1986)
+- applications: 'Quantization'
+- domain: 'Signal processing'
+
 ## Default algorithm for Huffman Tree
 - https://en.wikipedia.org/wiki/Huffman_coding#Compression
 - applications: 'Huffman coding'
 - properties: 'greedy'
 - uses 'priority queue'
 
+## Arithmetic coding
+- https://en.wikipedia.org/wiki/Arithmetic_coding
+- form of: 'Entropy encoding'
+- applications: 'Lossless compression'
+- domain: 'Information theory'
+
+## Huffman coding
+- paper: 'A Method for the Construction of Minimum-Redundancy Codes' (1952)
+- https://en.wikipedia.org/wiki/Huffman_coding
+- uses: 'Default algorithm for Huffman Tree'
+- related code: 'Huffman code'
+- domain: 'Information theory', 'Coding theory'
+- form of: 'Entropy encoding'
+
+## Context-adaptive binary arithmetic coding
+- also called: 'CABAC'
+- paper: 'Context-based adaptive binary arithmetic coding in the H.264/AVC video compression standard' (2003)
+- https://en.wikipedia.org/wiki/Context-adaptive_binary_arithmetic_coding
+- based on: 'Arithmetic coding'
+- applications: 'Lossless compression'
+
 ## t-digest
 - whitepaper: 'Computing extremely accurate quantiles using t-digests'
 - Q-digest
 - approximates percentiles
 - is a: 'distributed algorithm'
+
+## Block-matching and 3D filtering
+- also called: 'BM3D'
+- paper: 'Image Denoising by Sparse 3-D Transform-Domain Collaborative Filtering' (2007)
+- http://www.cs.tut.fi/~foi/GCF-BM3D/
+- https://en.wikipedia.org/wiki/Block-matching_and_3D_filtering
+- is a: 'Block-matching algorithm'
+- applications: 'Digital image noise reduction'
+- implemented in: 'gfacciol/bm3d', 'HomeOfVapourSynthEvolution/VapourSynth-BM3D'
 
 ## Chazelle's algorithm for the minimum spanning tree
 - paper: 'A minimum spanning tree algorithm with inverse-Ackermann type complexity (2000)'
@@ -606,7 +662,7 @@
 
 ## Chazelle's polygon triangulation algorithm
 - paper: 'Triangulating a simple polygon in linear time (1991)'
-- very difficult to implement in code
+- properties: 'very difficult to implement in code'
 
 ## Risch semi-algorithm
 - paper: 'On the Integration of Elementary Functions which are built up using Algebraic Operations (1968)'
@@ -615,7 +671,7 @@
 - solves: 'Indefinite integration'
 - applications: 'Symbolic computation', 'Computer algebra'
 - implemented in: 'Axiom'
-- very difficult to implement in code
+- properties: 'very difficult to implement in code'
 
 ## Romberg's method
 - paper: 'Vereinfachte numerische Integration (1955)'
@@ -716,7 +772,7 @@
 
 ## Canny's Roadmap algorithm
 - http://planning.cs.uiuc.edu/node298.html
-- very difficult to implement in code
+- properties: 'very difficult to implement in code'
 - domain: 'Computational algebraic geometry'
 - solves: 'Motion planning'
 
@@ -786,6 +842,29 @@
 - decodes: 'Error correction code'
 - implemented in: 'C++ Susa'
 - related theory: 'maximum a posteriori'
+
+## Hashlife
+- paper: 'Exploiting Regularities in Large Cellular Spaces' (1984)
+- https://en.wikipedia.org/wiki/Hashlife
+- uses: 'Memoization', 'Quadtree'
+- solves: 'Conway's Game of Life'
+- implemented in (application): 'Golly'
+
+## Diamond-square algorithm
+- also called: 'random midpoint displacement fractal', 'cloud fractal', 'plasma fractal'
+- paper: 'Computer rendering of stochastic models' (1982)
+- https://en.wikipedia.org/wiki/Diamond-square_algorithm
+- variants: 'Lewis algorithm'
+- applications: 'Heightmap generation', 'Procedural textures'
+- domain: 'Computer graphics'
+- implemented in (applications): 'Terragen'
+- books: 'The Science of Fractal Images' (1988)
+
+## Lewis algorithm
+- paper: 'Generalized stochastic subdivision' (1987)
+- variant of: 'Diamond-square algorithm'
+- applications: 'Heightmap generation', 'Procedural textures'
+- domain: 'Computer graphics'
 
 ## Seam carving
 - https://en.wikipedia.org/wiki/Seam_carving
@@ -1060,11 +1139,19 @@
 - output: 'Collection of cluster indices'
 - implemented in: 'Python Bio.Cluster.kmedoids'
 
+## Lloyd's algorithm
+- https://en.wikipedia.org/wiki/Lloyd%27s_algorithm
+- is a: 'Iterative method'
+- input: 'Collection of points'
+- output: 'Voronoi diagram'
+- approximates: 'Centroidal Voronoi tessellation'
+
 ## Linde–Buzo–Gray algorithm
 - paper: 'An Algorithm for Vector Quantizer Design' (1980)
 - https://en.wikipedia.org/wiki/Linde%E2%80%93Buzo%E2%80%93Gray_algorithm
 - similar: 'k-means clustering'
 - generalization of: 'Lloyd's algorithm'
+- applications: 'Vector quantization'
 
 ## Single-linkage clustering method
 - also called: 'single-link cluster method', 'Nearest Point Algorithm'
@@ -1127,6 +1214,312 @@
 - similar: 'Nearest centroid classifier'
 - https://en.wikipedia.org/wiki/Rocchio_algorithm
 - applications: 'Relevance feedback'
+
+## MUSIC
+- also called: 'MUltiple SIgnal Classification'
+- https://en.wikipedia.org/wiki/MUSIC_(algorithm)
+- applications: 'Frequency estimation', 'Direction finding'
+
+## SAMV
+- also called: 'Iterative sparse asymptotic minimum variance'
+- paper: 'Iterative Sparse Asymptotic Minimum Variance Based Approaches for Array Processing' (2012)
+- https://en.wikipedia.org/wiki/SAMV_(algorithm)
+- solves: 'Super-resolution imaging'
+- applications: 'Synthetic-aperture radar', 'Computed tomography', 'Magnetic resonance imaging'
+- properties: 'parameter-free'
+
+## Nearest-neighbor interpolation
+- also called: 'Proximal interpolation', 'Point sampling'
+- https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation
+- applications: 'Multivariate interpolation', 'Image scaling'
+
+--- move these to models.md 
+
+## Bilinear interpolation
+- https://en.wikipedia.org/wiki/Bilinear_interpolation
+- applications: 'Multivariate interpolation', 'Image scaling'
+- optimized by: analytically
+
+## Bilinear filtering
+- also called: 'Bilinear texture mapping'
+- https://en.wikipedia.org/wiki/Bilinear_filtering
+- applications: 'Image scaling', 'Texture filtering', 'Texture mapping'
+- domain: 'Computer vision', 'Digital image processing'
+- uses: 'Bilinear interpolation'
+
+## Trilinear interpolation
+- https://en.wikipedia.org/wiki/Trilinear_interpolation
+- applications: 'Multivariate interpolation'
+- extension of: 'Bilinear interpolation'
+- optimized by: analytically
+
+## Trilinear filtering
+- extension of: 'Bilinear filtering' (betweens mipmaps, not time)
+- https://en.wikipedia.org/wiki/Trilinear_filtering
+- uses: 'Mipmap'
+- applications: 'Texture filtering', 'Texture mapping'
+
+## Anisotropic filtering
+- also called: 'AF'
+- https://en.wikipedia.org/wiki/Anisotropic_filtering
+- descritpion: 'perspectively weighted sampling'
+
+## Bicubic interpolation
+- https://en.wikipedia.org/wiki/Bicubic_interpolation
+- extension of: 'Cubic interpolation'
+- applications: 'Image scaling', 'Multivariate interpolation'
+- domain: 'Digital image processing'
+
+## Tricubic interpolation
+- https://en.wikipedia.org/wiki/Tricubic_interpolation
+- applications: 'Multivariate interpolation'
+- implemented in (libraries): 'DurhamDecLab/ARBInterp'
+
+## Spline interpolation
+- https://en.wikipedia.org/wiki/Spline_interpolation
+- avoids: 'Runge's phenomenon'
+- implemented in (libraries): 'scipy.interpolate', 'FITPACK'
+
+## Lanczos resampling
+- https://en.wikipedia.org/wiki/Lanczos_resampling
+- applications: 'Multivariate interpolation'
+- uses: 'Sinc function'
+
+## Lanczos3
+- see: 'Lanczos resampling'
+- implemented in (applications): 'GIMP'
+
+## Spline36
+- see: 'Spline interpolation'
+- implemented in (applications): 'AviSynth'
+
+## Elliptical Weighted Average Filter
+- also called: 'EWA'
+- paper: 'Creating Raster Omnimax Images from Multiple Perspective Views Using the Elliptical Weighted Average Filter' (1986)
+- paper: 'High quality elliptical texture filtering on GPU' (2011)
+- applications: 'Texture filtering'
+
+## SSimSuperRes
+- also called: 'SSSR'
+- https://gist.github.com/igv/2364ffa6e81540f29cb7ab4c9bc05b6b
+- applications: 'Super resolution', 'Luma upscaling'
+
+## SSimDownscaler
+- applications: 'Luma downscaling', 'Real-time image processing'
+- https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10
+- Sota: 'Real-time luma downscaling'
+
+## KrigBilateral
+- applications: 'Chroma upscaling', 'Chroma downscaling'
+- Sota: 'Chroma upscaling', 'Chroma downscaling'
+- https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637
+
+## NGU
+- http://madvr.com/
+- properties: 'proprietary'
+- applications: 'Image scaling'
+- implemented in (applications): 'madVR'
+
+## waifu2x
+- https://en.wikipedia.org/wiki/Waifu2x
+- official website: http://waifu2x.udp.jp/
+- inspired by: 'SRCNN'
+- implemented in (applications): 'nagadomi/waifu2x'
+- uses: 'CNN'
+- applications: 'Single image super-resolution'
+
+## Anime4K
+- https://github.com/bloc97/Anime4K
+- applications: 'Single image super-resolution', 'Real-time image processing'
+- implemented in (applications): 'bloc97/Anime4K'
+
+## New edge-directed interpolation
+- also called: 'NEDI'
+- paper: 'New edge-directed interpolation' (2001)
+
+## Edge-guided image interpolation
+- also called: 'EGGI'
+- paper: 'An edge-guided image interpolation algorithm via directional filtering and data fusion' (2006)
+
+## Iterative Curvature-Based Interpolation
+- also called: 'ICBI'
+- paper: 'Enlargement of Image Based Upon Interpolation Techniques' (2013)
+
+## Directional cubic convolution interpolation
+- also called: 'DCCI'
+- paper: 'Image zooming using directional cubic convolution interpolation' (2012)
+
+## hqx
+- https://en.wikipedia.org/wiki/Hqx
+- applications: 'Pixel-art scaling'
+- implemented in (libraries): 'libretro'
+- variants: 'hq2x', 'hq3x', 'hq4x'
+
+## scalehq
+- applications: 'Pixel-art scaling'
+- implemented in (libraries): 'libretro'
+
+## xBR algorithm
+- also called: 'scale by rules'
+- https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms#xBR_family
+- implemented in (libraries): 'libretro'
+
+## Eagle
+- https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms#Eagle
+- applications: 'Pixel-art scaling'
+
+## 2×SaI
+- also called: '2× Scale and Interpolation engine'
+- https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms#2.C3.97SaI
+- inspired by: 'Eagle'
+- implemented in (applications): 'DosBox'
+- applications: 'Pixel-art scaling'
+
+## RotSprite
+- https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms#RotSprite
+- applications: 'Pixel-art scaling'
+
+## Kopf–Lischinski algorithm
+- paper: 'Depixelizing pixel art' (2011)
+- applications: 'Image tracing'
+
+## Unsharp masking
+- also called: 'USM'
+- https://en.wikipedia.org/wiki/Unsharp_masking
+- applications: 'Image sharpening'
+- domain: 'Digital image processing'
+
+## Deep Learning Super Sampling
+- also called: 'DLSS'
+- properties: 'proprietary'
+- applications: 'Image scaling'
+
+## Super sampling anti-aliasing
+- also called: 'Supersampling', 'SSAA', 'Full-scene anti-aliasing', 'FSAA'
+- https://en.wikipedia.org/wiki/Supersampling
+- applications: 'Spatial anti-aliasing'
+
+## Multisample anti-aliasing
+- also called: 'MSAA'
+- https://en.wikipedia.org/wiki/Multisample_anti-aliasing
+- applications: 'Spatial anti-aliasing'
+- special case of: 'Supersampling'
+- properties: 'doesn't support deferred shading'
+
+## Fast approximate anti-aliasing
+- also called: 'FXAA', 'Fast sample anti-aliasing', 'FSAA'
+- https://en.wikipedia.org/wiki/Fast_approximate_anti-aliasing
+- applications: 'Spatial anti-aliasing'
+- implemented in (libraries): 'Unity'
+
+## Intel's MLAA
+- also called: 'Morphological anti-aliasing', 'MLAA'
+- paper: 'Morphological antialiasing' (2009)
+- applications: 'Real-time anti-aliasing'
+- properties: 'CPU based', 'supports deferred shading'
+
+## Jimenez's MLAA
+- also called: 'Morphological anti-aliasing', 'MLAA'
+- book: 'GPU Pro 2'
+- http://iryoku.com/mlaa/
+- applications: 'Real-time anti-aliasing'
+- properties: 'GPU based'
+
+## Enhanced subpixel morphological antialiasing
+- also called: 'SMAA'
+- http://www.iryoku.com/smaa/
+- paper: 'SMAA: Enhanced Morphological Antialiasing' (2012)
+- applications: 'Real-time anti-aliasing'
+- implemented in: 'iryoku/smaa'
+- implemented in (libraries): 'Unity'
+
+## Subpixel reconstruction anti-aliasing
+- also called: 'SRAA'
+- https://research.nvidia.com/publication/subpixel-reconstruction-antialiasing
+- paper: 'Subpixel reconstruction antialiasing for deferred shading' (2011)
+- applications: 'Real-time anti-aliasing'
+
+## Directionally localized anti-aliasing
+- also called: 'DLAA'
+
+## Temporal Anti-aliasing
+- also called: 'TAA'
+- implemented in (libraries): 'Unity'
+
+## Screen space ambient occlusion
+- also called: 'SSAO'
+- https://en.wikipedia.org/wiki/Screen_space_ambient_occlusion
+- approximates: 'Ambient occlusion'
+
+## SSAO+
+- approximates: 'Ambient occlusion'
+
+## Horizon-based ambient occlusion
+- also called: 'HBAO"
+- paper: 'Image-space horizon-based ambient occlusion' (2008)
+
+## HBAO+
+- https://www.geforce.com/hardware/technology/hbao-plus
+- improvement of: 'Horizon-based ambient occlusion'
+
+## Ray traced ambient occlusion
+- also called: 'RTAO'
+- approximates: 'Ambient occlusion'
+
+--- models end
+
+## Variable Number of Gradients
+- also called: 'VNG'
+- implemented in (applications): 'dcraw'
+- applications: 'Demosaicing'
+
+## Pixel Grouping
+- also called: 'PPG', 'Patterned Pixel Grouping'
+- implemented in (applications): 'dcraw'
+- applications: 'Demosaicing'
+
+## Adaptive Homogeneity-Directed
+- also called: 'AHD'
+- implemented in (applications): 'dcraw'
+- applications: 'Demosaicing'
+
+## Aliasing Minimization and Zipper Elimination
+- also called: 'AMaZE'
+- implemented in (applications): 'RawTherapee'
+- applications: 'Demosaicing'
+
+## CLEAN
+- https://en.wikipedia.org/wiki/CLEAN_(algorithm)
+- paper: 'Aperture Synthesis with a Non-Regular Distribution of Interferometer Baselines' (1974)
+- applications: 'Radio astronomy', 'Deconvolution'
+- domain: 'Digital image processing'
+
+## Richardson–Lucy deconvolution
+- also called: 'R–L algorithm'
+- https://en.wikipedia.org/wiki/Richardson%E2%80%93Lucy_deconvolution
+- applications: 'Deconvolution'
+- domain: 'Digital image processing'
+- implemented in (applications): 'RawTherapee'
+- uses: 'expectation-maximization algorithm'
+- assumes distribution: 'Poisson noise'
+
+## Richardson–Lucy deconvolution (blind variant)
+- paper: 'Blind deconvolution by means of the Richardson–Lucy algorithm' (1995)
+- based on: 'Richardson–Lucy deconvolution'
+- applications: 'Blind deconvolution'
+
+## Ayers–Dainty algorithm
+
+## Davey–Lane–Bates algorithm
+
+## Van-Cittert deconvolution
+- also called: 'Van-Cittert iteration'
+- https://de.wikipedia.org/wiki/Van-Cittert-Dekonvolution
+- applications: 'Deconvolution'
+- domain: 'Digital image processing'
+
+## SeDDaRA
+- applications: 'Blind deconvolution'
 
 ## Forsythe's algorithm for sampling generalized exponential distributions
 - paper: 'Von Neumann's Comparison Method for Random Sampling from the Normal and Other Distributions'
@@ -1350,13 +1743,6 @@
 ## Rotating calipers
 - https://en.wikipedia.org/wiki/Rotating_calipers
 - 'Solving Geometric Problems with the Rotating Calipers'?
-
-## Lloyd's algorithm
-- https://en.wikipedia.org/wiki/Lloyd%27s_algorithm
-- is a: 'Iterative method'
-- input: 'Collection of points'
-- output: 'Voronoi diagram'
-- approximates: 'Centroidal Voronoi tessellation'
 
 ## Bowyer–Watson algorithm
 - also called: 'Bowyer algorithm', 'Watson algorithm'
@@ -1980,6 +2366,11 @@
 - used by: 'TCP/IP'
 - applications: 'Congestion Control'
 - domain: 'Networking'
+
+## EigenTrust
+- paper: 'The Eigentrust algorithm for reputation management in P2P networks' (2003)
+- https://en.wikipedia.org/wiki/EigenTrust
+- applications: 'Reputation management', 'Peer-to-peer networking'
 
 ## Segmented string relative ranking
 - book: 'PUBLIC BRAINPOWER: Civil Society and Natural Resource Management'

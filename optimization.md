@@ -1,4 +1,4 @@
-# Problems
+# Problems 
 
 ## Sparse approximation
 - https://en.wikipedia.org/wiki/Sparse_approximation
@@ -10,6 +10,76 @@
 - https://en.wikipedia.org/wiki/Logic_optimization
 - solved by: 'Mathematica BooleanMinimize'
 - domain: 'Optimization'
+
+## Convex optimization
+- https://en.wikipedia.org/wiki/Convex_optimization
+- domain: 'Optimization'
+
+## Unconstrained nonlinear optimization without derivatives
+- also called: 'black box', 'direct search'
+- https://en.wikipedia.org/wiki/Derivative-free_optimization
+- https://en.wikipedia.org/wiki/Nonlinear_programming
+- mainly used for: 'functions which are not continuous or differentiable'
+- domain: 'Optimization'
+
+## Unconstrained nonlinear optimization with first derivative
+- https://en.wikipedia.org/wiki/Nonlinear_programming
+- domain: 'Optimization'
+
+## Combinatorial optimization
+- https://en.wikipedia.org/wiki/Combinatorial_optimization
+- example problems: 'Travelling salesman problem', 'Minimum spanning tree', 'Set cover problem'
+- domain: 'Optimization'
+
+## Nonlinear dimensionality reduction
+- https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction
+
+-- Model + Loss
+
+## Ordinary least squares
+- also called: 'Linear least squares', 'OLS', 'LLS'
+- https://en.wikipedia.org/wiki/Ordinary_least_squares
+- https://en.wikipedia.org/wiki/Linear_least_squares
+- http://mlwiki.org/index.php/OLS_Regression
+- solves: 'Linear least squares'
+- input: 'Parameterized linear function'
+- domain: 'Optimization'
+- solved by (libraries): 'Python numpy.linalg.lstsq', 'Python scipy.optimize.minimize(method="trust-krylov")'
+- solved by (applications): 'Mathematica LeastSquares(Method->"Direct"), LeastSquares(Method->"IterativeRefinement"), LeastSquares(Method->"Krylov")'
+
+## Constrained linear least squares
+- solved by (libraries): 'scipy.optimize.lsq_linear'
+
+## Non-negative linear least-squares problem
+- also called: 'NNLS'
+- https://en.wikipedia.org/wiki/Non-negative_least_squares
+- solved by: 'Matlab lsqnonneg', 'Python scipy.optimize.nnls'
+- variant of: 'Ordinary least squares'
+- specialization of: 'Quadratic programming'
+
+## Bounded-variable least squares
+- also called: 'BVLS'
+- variant of: 'Ordinary least squares'
+- specialization of: 'Quadratic programming'
+
+## Orthogonal regression
+- https://en.wikipedia.org/wiki/Deming_regression#Orthogonal_regression
+- http://www.nlreg.com/orthogonal.htm
+- also called: 'Orthogonal distance regression', 'Orthogonal non-linear least squares'
+- implemented by: 'scipy.odr', 'ODRPACK', 'R ONLS'
+
+## Total least squares
+- https://en.wikipedia.org/wiki/Total_least_squares
+- generalization of: 'Deming regression', 'Orthogonal regression'
+- is a: 'Errors-in-variables model'
+- similar: 'PCA'
+- solved by (algorithms): 'SVD'
+- solved by (libraries): 'netlib/vanhuffel'
+
+## Non-linear least squares
+- https://en.wikipedia.org/wiki/Non-linear_least_squares
+- applications: 'Nonlinear regression'
+- solved by (libraries): 'scipy.optimize.least_squares', 'Ceres Solver'
 
 ## Linear programming
 - also called: 'LP', 'Linear optimization', 'Constrained linear optimization'
@@ -39,21 +109,6 @@
 - also called: 'MILP'
 - implemented by: 'lp_solve', 'APOPT'
 
-## Convex optimization
-- https://en.wikipedia.org/wiki/Convex_optimization
-- domain: 'Optimization'
-
-## Unconstrained nonlinear optimization without derivatives
-- also called: 'black box', 'direct search'
-- https://en.wikipedia.org/wiki/Derivative-free_optimization
-- https://en.wikipedia.org/wiki/Nonlinear_programming
-- mainly used for: 'functions which are not continuous or differentiable'
-- domain: 'Optimization'
-
-## Unconstrained nonlinear optimization with first derivative
-- https://en.wikipedia.org/wiki/Nonlinear_programming
-- domain: 'Optimization'
-
 ## Nonlinear programming
 - also called: 'NLP', 'Constrained nonlinear optimization'
 - https://en.wikipedia.org/wiki/Nonlinear_programming
@@ -66,35 +121,6 @@
 - also called: 'MINLP'
 - https://neos-guide.org/content/mixed-integer-nonlinear-programming
 - implemented in: 'Artelys Knitro'
-
-## Combinatorial optimization
-- https://en.wikipedia.org/wiki/Combinatorial_optimization
-- example problems: 'Travelling salesman problem', 'Minimum spanning tree', 'Set cover problem'
-- domain: 'Optimization'
-
-## Nonlinear dimensionality reduction
-- https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction
-
-## Linear least squares
-- https://en.wikipedia.org/wiki/Linear_least_squares
-- implemented in: 'Mathematica LeastSquares(Method->"Direct"), LeastSquares(Method->"IterativeRefinement"), LeastSquares(Method->"Krylov")'
-- implemented in: 'Python scipy.optimize.minimize(method="trust-krylov")'
-
-## Total least squares
-- https://en.wikipedia.org/wiki/Total_least_squares
-- generalization of: 'Deming regression', 'Orthogonal regression'
-- is a: 'Errors-in-variables model'
-
-## Non-linear least squares
-- https://en.wikipedia.org/wiki/Non-linear_least_squares
-- applications: 'Nonlinear regression'
-- solved by: 'Ceres Solver'
-
-## Orthogonal regression
-- https://en.wikipedia.org/wiki/Deming_regression#Orthogonal_regression
-- http://www.nlreg.com/orthogonal.htm
-- also called: 'Orthogonal distance regression', 'Orthogonal non-linear least squares'
-- implemented by: 'scipy.odr', 'ODRPACK', 'R ONLS'
 
 # Optimization algorithms
 
@@ -126,12 +152,6 @@
 
 ## Outer approximation algorithm
 - solves: 'Mixed Integer Nonlinear Programming'
-- domain: 'Optimization'
-
-## Ordinary least squares method
-- https://en.wikipedia.org/wiki/Ordinary_least_squares
-- solves: 'Linear least squares'
-- input: 'Parameterized linear function'
 - domain: 'Optimization'
 
 ## Karmarkar's algorithm
@@ -323,7 +343,7 @@
 - is a: 'iterative method'
 - applications: 'generic curve-fitting problems'
 - output: 'local extermum'
-- implemented in: 'Mathematica FindMinimum(Method->"LevenbergMarquardt")', 'Python scipy.optimize.least_squares(method="lm"), scipy.optimize.root(method="lm")', 'MINPACK', 'R ONLS'
+- implemented in: 'Mathematica FindMinimum(Method->"LevenbergMarquardt")', 'Python scipy.optimize.least_squares(method="lm"), scipy.optimize.root(method="lm")', 'scipy.optimize.leastsq', 'MINPACK', 'R ONLS'
 - implemented in: 'Ceres Solver'
 - input: 'Sum of squares function and data pairs'
 - variant of: 'Gauss–Newton'
@@ -374,7 +394,7 @@
 ## Gauss–Newton algorithm
 - https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm
 - applications: 'Non-linear least squares'
-- type: 'Unconstrained nonlinear with first derivative'
+- solves: 'Unconstrained nonlinear with first derivative'
 - input: 'sum of squares function'
 - domain: 'Optimization'
 
@@ -383,8 +403,19 @@
 - https://en.wikipedia.org/wiki/Trust_region
 - https://optimization.mccormick.northwestern.edu/index.php/Trust-region_methods
 - http://www.applied-mathematics.net/optimization/optimizationIntro.html
-- type: 'Unconstrained nonlinear with first derivative'
+- solves: 'Unconstrained nonlinear with first derivative'
 - domain: 'Optimization'
+
+## Trust Region Reflective
+- paper: 'A Subspace, Interior, and Conjugate Gradient Method for Large-Scale Bound-Constrained Minimization Problems' (1999)
+- https://www.mathworks.com/help/optim/ug/least-squares-model-fitting-algorithms.html
+- implemented in: 'Python scipy.optimize.least_squares(method="trf")', 'scipy.optimize.lsq_linear(method="trf")'
+- solves: 'Non-linear least squares', ''Linear least squares''
+
+## Bounded-variable least-squares algorithm
+- paper: 'Bounded-Variable Least-Squares: an Algorithm and Applications' (1995)
+- implemented in: 'scipy.optimize.lsq_linear(method="bvls")'
+- solves: 'Linear least squares'
 
 ## Proximal gradient method
 - https://en.wikipedia.org/wiki/Proximal_gradient_method
@@ -430,6 +461,12 @@
 - variant of: 'Stochastic gradient descent'
 - domain: 'Optimization'
 
+## RAdam
+- also called: 'Rectified Adam'
+- paper: 'On the Variance of the Adaptive Learning Rate and Beyond' (2019)
+- variant of: 'Adam'
+- domain: 'Optimization'
+
 ## RMSProp
 - also called: 'Root Mean Square Propagation'
 - implemented in: 'tf.train.RMSPropOptimizer, keras.optimizers.RMSprop'
@@ -457,26 +494,45 @@
 - input: 'Convex real-valued function of several real variables'
 - domain: 'Optimization'
 
-## Sequential Least SQuares Programming
-- also called: 'SLSQP'
-- implemented in: 'Python scipy.optimize.minimize(method="SLSQP")'
-- type of: 'Sequential quadratic programming'
+## Successive linear programming
+- also called: 'SLP', 'Sequential Linear Programming'
+- https://en.wikipedia.org/wiki/Successive_linear_programming
+- solves: 'Nonlinear programming'
+- applications: 'Petrochemical industry'
+- input: 'Nonlinear program'
 - domain: 'Optimization'
 
 ## Sequential quadratic programming
 - also called: 'SQP'
 - https://en.wikipedia.org/wiki/Sequential_quadratic_programming
-- type: 'Nonlinear programming' for 'twice continuously differentiable functions'
+- solves: 'Nonlinear programming' for 'twice continuously differentiable functions'
 - implemented in: 'Artelys Knitro'
 - domain: 'Optimization'
 
-## Successive linear programming
-- also called: 'SLP', 'Sequential Linear Programming'
-- https://en.wikipedia.org/wiki/Successive_linear_programming
-- type: 'Nonlinear programming'
-- applications: 'Petrochemical industry'
-- input: 'Nonlinear program'
+## Han–Powell
+- variant of: 'Sequential quadratic programming'
 - domain: 'Optimization'
+
+## NLPQL
+- paper: 'NLPQL: A fortran subroutine solving constrained nonlinear programming problems' (1986)
+- variant of: 'Sequential quadratic programming'
+- implemented in: 'Fortran NLPQL'
+- domain: 'Optimization'
+
+## NLPQLP
+- https://en.wikipedia.org/wiki/NLPQLP
+- report: 'NLPQLP: A Fortran implementation of a sequential quadratic programming algorithm with distributed and non-monotone line search'
+- variant of: 'Sequential quadratic programming'
+- solves: 'Nonlinear programming' for 'twice continuously differentiable functions'
+- implemented in: 'Fortran NLPQLP'
+- domain: 'Optimization'
+
+## Sequential Least SQuares Programming
+- also called: 'SLSQP'
+- implemented in: 'Python scipy.optimize.minimize(method="SLSQP")'
+- domain: 'Optimization'
+- uses: 'Han–Powell'
+- variant of: 'Sequential quadratic programming'
 
 ## Frank–Wolfe algorithm
 - also called: 'conditional gradient method', 'reduced gradient algorithm', 'convex combination algorithm'
@@ -562,7 +618,7 @@
 ## Dogleg Method
 - also called: 'Trust-region dogleg'
 - https://optimization.mccormick.northwestern.edu/index.php/Trust-region_methods#Dogleg_Method
-- implemented in: 'Python scipy.optimize.minimize(method="dogleg")', 'Ceres Solver'
+- implemented in: 'Python scipy.optimize.minimize(method="dogleg")', 'scipy.optimize.least_squares(method="dogbox")', 'Ceres Solver'
 - is a: 'Trust region method'
 - domain: 'Optimization'
 

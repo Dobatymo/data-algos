@@ -1,6 +1,6 @@
 # Problems
 
--- eplicit formulation
+-- explicit formulation
 
 ## Discrete Shearlet Transform
 - also called: 'DST'
@@ -420,7 +420,7 @@
 - naive time complexity: O(nm log(nm))
 - variant of: 'Sorting problem'
 
--- problems with approximate solutions only
+-- problems with approximate solutions only (no known way to have 100% perfect results. doesn't include cases where the approximate cases approaches 100% in the limit of unlimited space/runtime)
 
 ## Stemming
 - https://en.wikipedia.org/wiki/Stemming
@@ -434,7 +434,49 @@
 - usually solved by: 'machine learning'
 - sota implementations (selection): 'zalandoresearch/flair', 'google/meta_tagger'
 
+## Multivariate interpolation
+- also called: 'Spatial interpolation'
+
+## Image scaling
+- also called: 'Super resolution', 'SR', 'Super-resolution reconstruction', 'SRR'
+- https://en.wikipedia.org/wiki/Image_scaling
+- https://en.wikipedia.org/wiki/Super-resolution_imaging
+- metrics: 'PSNR', 'SSIM', 'IW-SSIM'
+- special case of: 'Multivariate interpolation'
+
+## Single image super-resolution
+- also called: 'SISR'
+
+## Pixel-art scaling
+- https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms
+- subfield of: 'Image scaling'
+
+## Demosaicing
+- https://en.wikipedia.org/wiki/Demosaicing
+- related problem: 'Image scaling'
+
+## Blind deconvolution
+- https://en.wikipedia.org/wiki/Blind_deconvolution
+- related problems: 'Dereverberation', 'Deblurring'
+- applications: 'Astronomical imaging', 'Medical imaging'
+
+## Direction finding
+- also called: 'DF', Radio direction finding', 'RDF'
+
+## Frequency estimation
+- https://en.wikipedia.org/wiki/Spectral_density_estimation#Frequency_estimation
+
 -- subjective (no simple objective performance metric)
+
+## Image tracing
+- also called: 'raster-to-vector conversion', 'vectorization'
+- domain: 'computer graphics'
+- related problems: 'Image scaling'
+- applications: 'Potrace', 'CorelDRAW PowerTRACE'
+
+## Terrain generation
+- also called: 'Heightmap generation'
+- https://en.wikipedia.org/wiki/Scenery_generator
 
 ## Image retargeting
 - also called: 'content-aware image resizing'

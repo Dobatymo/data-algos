@@ -1,4 +1,4 @@
-# Metrics, Measures, Distances, Similarities, Losses and Costs
+# Metrics, Distances, Measures, Similarities, Losses and Costs
 
 ## SimRank
 - https://en.wikipedia.org/wiki/SimRank
@@ -42,6 +42,7 @@
 - implemented in: 'Python sklearn.metrics.jaccard_similarity_score'
 
 ## Taxicab metric
+- also called: 'rectilinear distance', 'L1 distance', 'Manhattan distance'
 - https://en.wikipedia.org/wiki/Taxicab_geometry
 - is a: 'metric'
 - applications: 'Regression analysis', 'LASSO'
@@ -60,12 +61,13 @@
 - properties: 'Convex', 'Continuous'
 
 ## Root-mean-square deviation
+- also called: 'root-mean-square error', 'RMSD', 'RMSE'
 - https://en.wikipedia.org/wiki/Root-mean-square_deviation
-- also called: 'root-mean-square error'
 - implemented in: 'Python skimage.measure.compare_nrmse'
 - properties: 'Convex', 'Continuous'
 
 ## Mean squared error
+- also called: 'mean squared deviation', 'MSD', 'MSE'
 - https://en.wikipedia.org/wiki/Mean_squared_error
 - applications: 'Statistical model', 'Linear regression'
 - implemented in: 'Python sklearn.metrics.mean_squared_error, tf.metrics.mean_squared_error, skimage.measure.compare_mse'
@@ -109,7 +111,7 @@
 - for example defined in paper: 'Approximate string-matching with q-grams and maximal matches'
 
 ## Structural similarity
-- also called: 'SSIM'
+- also called: 'SSIM', 'Structural similarity index'
 - paper: 'Image quality assessment: from error visibility to structural similarity (2004)'
 - https://en.wikipedia.org/wiki/Structural_similarity
 - implemented in: 'Python skimage.measure.compare_ssim'
@@ -117,6 +119,10 @@
 - corresponding distance: 'Structural Dissimilarity' (not a metric)
 - applications: 'Video quality evaluation', 'Image Quality Assessment'
 - domain: 'Image processing'
+
+## IW-SSIM
+- also called: 'Information Content Weighted Structural Similarity Index'
+- paper: 'Information Content Weighting for Perceptual Image Quality Assessment' (2010)
 
 ## Visual Information Fidelity
 - also called: 'VIF'
@@ -131,11 +137,19 @@
 - applications: 'Video quality evaluation', 'Image Quality Assessment'
 - domain: 'Image processing'
 
-## Shannon entropy
-- https://en.wikipedia.org/wiki/Entropy_(information_theory)
-- implemented in: 'Python skimage.measure.shannon_entropy'
+## Variation of information
+- https://en.wikipedia.org/wiki/Variation_of_information
+- is a: 'metric'
+- domain: 'Probability theory', 'Information theory'
+
+## Jensen-Shannon distance
+- https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence
+- is a: 'metric'
+- domain: 'Probability theory', 'Information theory'
+- applications: 'Bioinformatics', 'Machine learning'
 
 ## Peak signal-to-noise ratio
+- also called: 'PSNR'
 - https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio
 - implemented in: 'Python skimage.measure.compare_psnr'
 
@@ -181,3 +195,60 @@
 ## PGD-IL metric (custom name)
 - paper: 'Objective Quality Assessment for Image Retargeting Based on Perceptual Geometric Distortion and Information Loss' (2014)
 - applications: 'Image retargeting'
+
+## Łukaszyk–Karmowski metric
+- https://en.wikipedia.org/wiki/%C5%81ukaszyk%E2%80%93Karmowski_metric
+- is not: 'metric'
+
+## Adjusted Rand index
+- also called: 'ARI'
+- https://en.wikipedia.org/wiki/Rand_index#Adjusted_Rand_index
+- implemented in (libraries): 'sklearn.metrics.adjusted_rand_score'
+- applications: 'External evaluation of cluster analysis'
+
+## Mutual Information
+- also called: 'MI'
+- implemented in (libraries): 'sklearn.metrics.mutual_info_score'
+- applications: 'External evaluation of cluster analysis'
+
+## Normalized Mutual Information
+- also called: 'NMI'
+- https://en.wikipedia.org/wiki/Mutual_information#Normalized_variants
+- implemented in (libraries): 'sklearn.metrics.normalized_mutual_info_score'
+- applications: 'External evaluation of cluster analysis'
+
+## Adjusted Mutual Information
+- also called: 'AMI'
+- https://en.wikipedia.org/wiki/Adjusted_mutual_information
+- implemented in (libraries): 'sklearn.metrics.adjusted_mutual_info_score'
+- applications: 'External evaluation of cluster analysis'
+
+## Fowlkes–Mallows index
+- https://en.wikipedia.org/wiki/Fowlkes%E2%80%93Mallows_index
+- applications: 'External evaluation of cluster analysis'
+
+## Silhouette value
+- also called: 'Silhouette coefficient'
+- https://en.wikipedia.org/wiki/Silhouette_(clustering)
+- implemented in (libraries): 'sklearn.metrics.silhouette_score'
+- applications: 'Internal evaluation of cluster analysis'
+
+## Calinski–Harabasz index
+- also called: 'Variance ratio criterion'
+- paper: 'A dendrite method for cluster analysis' (1972)
+- implemented in (libraries): 'sklearn.metrics.calinski_harabasz_score'
+
+-- Norms and measures
+
+## Shannon entropy
+- paper: 'A mathematical theory of communication' (1948)
+- https://en.wikipedia.org/wiki/Entropy_(information_theory)
+- implemented in: 'Python skimage.measure.shannon_entropy'
+- is a: 'Expected value'
+
+## Euclidean norm
+- https://en.wikipedia.org/wiki/Norm_(mathematics)#Euclidean_norm
+
+## Taxicab norm
+- also called: 'Manhattan norm'
+- https://en.wikipedia.org/wiki/Norm_(mathematics)#Taxicab_norm_or_Manhattan_norm

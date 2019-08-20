@@ -48,6 +48,10 @@
 - https://github.com/facebookresearch/asynchronousratchetingtree
 - is a: 'Cryptographic protocol'
 
+## TreeKEM
+- also called: 'MLS ratchet tree'
+- based on: 'Asynchronous Ratcheting Tree'
+
 ## Double Ratchet algorithm
 - also called: 'Axolotl Ratchet'
 - whitepaper: 'The Double Ratchet Algorithm' (2016)
@@ -92,3 +96,27 @@
 - is a: 'Message authentication code'
 - RFC: 7539, 8439
 - implemented in: 'Crypto++', 'C OpenSSL', 'C NaCl'
+
+-- key derivation function
+
+## Lyra2
+- https://en.wikipedia.org/wiki/Lyra2
+- is a: 'Key derivation function'
+- applications: 'Proof of work', 'Cryptocurrency'
+
+## scrypt
+- https://en.wikipedia.org/wiki/Scrypt
+- is a: 'Key derivation function'
+- applications: 'Proof of work', 'Cryptocurrency'
+- RFC: 7914
+
+## PBKDF2
+- also called: 'Password-Based Key Derivation Function 2'
+- https://en.wikipedia.org/wiki/PBKDF2
+- is a: 'Key derivation function'
+- recommended by: 'PKCS #5'
+
+## Argon2
+- https://en.wikipedia.org/wiki/Argon2
+- is a: 'Key derivation function'
+- winner of: 'Password Hashing Competition' (2015)

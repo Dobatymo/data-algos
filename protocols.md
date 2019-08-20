@@ -107,6 +107,14 @@
 - implemented by (applications): 'ChatSecure', 'Psi', 'Conversations'
 - implemented in (libraries): 'C libomemo', 'python-omemo'
 
+## Messaging Layer Security
+- also called: 'MLS'
+- https://messaginglayersecurity.rocks/
+- https://en.wikipedia.org/wiki/Messaging_Layer_Security
+- properties: 'draft'
+- uses: 'TreeKEM'
+- primitives: 'SHA-256', 'Curve25519', 'AES-128-GCM'
+
 ## MTProto
 - https://core.telegram.org/mtproto
 - implemented by (applications): 'Telegram'

@@ -63,7 +63,23 @@
 - paper: 'Topic models conditioned on arbitrary features with Dirichlet-multinomial regression' (2012)
 - implemented in (libraries): 'Python tomotopy.DMRModel'
 
+-- uncategorized models
+
+## Maximum entropy spectral estimation
+- https://en.wikipedia.org/wiki/Maximum_entropy_spectral_estimation
+- applications: 'Spectral density estimation'
+- uses method: 'Principle of maximum entropy'
+- domain: 'Information theory'
+
 -- classification or regression models:
+
+## Linear prediction
+- also called: 'Linear predictive coding', 'LPC'
+- https://en.wikipedia.org/wiki/Linear_prediction
+- applications: 'Audio compression'
+- file formats: 'Shorten', 'FLAC', 'MPEG-4 ALS'
+- used by standards: 'GSM'
+- commonly used loss: 'Root-mean-square deviation'
 
 ## Logistic regression
 - also called: 'logistic model', 'logit model'
@@ -202,6 +218,23 @@
 - paper: 'Fast and Accurate Image Super Resolution by Deep CNN with Skip Connection and Network in Network' (2017)
 - applications: 'Single Image Super-Resolution'
 - is a: 'CNN'
+
+## SRCNN
+- also called: 'Super-Resolution Convolutional Neural Network'
+- http://mmlab.ie.cuhk.edu.hk/projects/SRCNN.html
+- paper: 'Image Super-Resolution Using Deep Convolutional Networks' (2014)
+- uses: 'CNN'
+
+## FSRCNN
+- paper: 'Accelerating the Super-Resolution Convolutional Neural Network' (2016)
+- applications: 'Single image super-resolution', 'Luma upscaling'
+- reference metric: 'mean square error'
+- reference optimizer: 'Stochastic gradient descent'
+- based on: 'SRCNN'
+
+## FSRCNNX
+- implemented in: 'igv/FSRCNN-TensorFlow'
+- based on: 'FSRCNN'
 
 ## SOF-VSR
 - paper: 'Learning for Video Super-Resolution through HR Optical Flow Estimation' (2018)

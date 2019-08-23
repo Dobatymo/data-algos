@@ -238,6 +238,11 @@
 - paper: 'A dendrite method for cluster analysis' (1972)
 - implemented in (libraries): 'sklearn.metrics.calinski_harabasz_score'
 
+## Consensus score
+- paper: 'FABIA: factor analysis for bicluster acquisition' (2010)
+- implemented in (libraries): 'sklearn.metrics.consensus_score'
+- applications: 'Internal evaluation of bicluster analysis'
+
 -- Norms and measures
 
 ## Shannon entropy

@@ -16,6 +16,10 @@
 - input: 'Graph'
 - implemented in: 'boost::graph::depth_first_search'
 
+## Branch and bound search
+- implemented in (libraries): 'google/or-tools'
+- commonly used to solve: '0-1 knapsack problem'
+
 ## k-d tree construction algorithm using sliding midpoint rule
 - example paper: Maneewongvatana and Mount 1999
 - constructs: 'k-d tree'
@@ -520,15 +524,35 @@
 
 ## Push–relabel maximum flow algorithm
 - https://en.wikipedia.org/wiki/Push–relabel_maximum_flow_algorithm
-- solves: 'Maximum flow problem', 'Minimum-cost flow problem'
-- implemented in: 'boost::graph::push_relabel_max_flow'
+- solves: 'Maximum flow problem'
+- implemented in: 'boost::graph::push_relabel_max_flow', 'google/or-tools::max_flow'
+
+## Successive approximation push-relabel method
+- also called: 'Cost scaling', 'Cost-scaling push-relabel algorithm'
+- paper: 'Finding Minimum-Cost Circulations by Successive Approximation' (1990)
+- solves: 'Minimum-cost circulation problem', 'Minimum-cost flow problem'
+- implemented in: 'google/or-tools::min_cost_flow'
+
+## Extension of Push–relabel for minimum cost flows
+- paper: 'An Efficient Implementation of a Scaling Minimum-Cost Flow Algorithm' (1997)
+- solves: 'Minimum-cost flow problem'
+
+## Cost-scaling push-relabel algorithm for the assignment problem
+- paper: 'An efficient cost scaling algorithm for the assignment problem' (1995)
+- solves: 'Linear assignment problem'
+- implemented in (libraries): 'google/or-tools::linear_assignment'
+
+## Darga–Sakallah–Markov symmetry-discovery algorithm
+- paper: 'Faster symmetry discovery using sparsity of symmetries' (2008)
+- implemented in (libraries): 'google/or-tools::find_graph_symmetries'
+- solves: 'Graph automorphism problem'
 
 ## Kruskal's algorithm
 - https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
 - http://mathworld.wolfram.com/KruskalsAlgorithm.html
 - output: 'Minimum spanning tree'
 - properties: 'greedy'
-- implemented in: 'C++ boost::graph::kruskal_minimum_spanning_tree'
+- implemented in: 'C++ boost::graph::kruskal_minimum_spanning_tree', 'google/or-tools::minimum_spanning_tree'
 - book: 'Introduction to Algorithms'
 
 ## Prim's algorithm
@@ -584,6 +608,14 @@
 - https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm
 - input: 'Directed graph'
 - output: 'Strongly connected component'
+- solves: 'Strongly connected component finding'
+- implemented in (libraries): 'google/or-tools::graph::strongly_connected_components'
+
+## Kosaraju's algorithm
+- also called: 'Kosaraju–Sharir algorithm'
+- paper: 'A strong-connectivity algorithm and its applications in data flow analysis' (1981)
+- https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm
+- solves: 'Strongly connected component finding'
 
 ## Awerbuch-Shiloach algorithm for finding the connected components
 - paper: 'New Connectivity and MSF Algorithms for Shuffle-Exchange Network and PRAM (1987)'
@@ -714,7 +746,66 @@
 - output: 'maximum-weight matching'
 - time complexity: O(V^3) for V vertices
 - domain: 'Graph theory', 'Combinatorial optimization'
-- implemented in (libraries): 'Python scipy.optimize.linear_sum_assignment'
+- implemented in (libraries): 'bmc/munkres'
+
+## Jonker-Volgenant algorithm
+- paper: 'A shortest augmenting path algorithm for dense and sparse linear assignment problems' (1987)
+- solves: 'Linear assignment problem'
+- implemented in (libraries): 'src-d/lapjv', 'Python scipy.optimize.linear_sum_assignment' (in new versions)
+- improvement of: 'Hungarian Maximum Matching algorithm'
+
+## Vogel's approximation method
+- also called: 'VAM'
+- book: 'Pearson', 'Introduction to Management Science' (Module B)
+- https://www.linearprogramming.info/vogel-approximation-method-transportation-algorithm-in-linear-programming/
+- https://businessjargons.com/vogels-approximation-method.html
+- solves partly: 'Transportation problem'
+- type: 'Initial feasible solution'
+
+## Northwest corner method
+- also called: 'NWCM'
+- book: 'Pearson', 'Introduction to Management Science' (Module B)
+- https://www.linearprogramming.info/northwest-corner-method-transportation-algorithm-in-linear-programming/
+- https://businessjargons.com/north-west-corner-rule.html
+- solves partly: 'Transportation problem'
+- is a: 'heuristic'
+- type: 'Initial feasible solution'
+
+## Minimum cell cost method
+- also called: 'Least cost method', 'LCM'
+- book: 'Pearson', 'Introduction to Management Science' (Module B)
+- https://study.com/academy/lesson/using-the-minimum-cost-method-to-solve-transportation-problems.html
+- https://businessjargons.com/least-cost-method.html
+- solves partly: 'Transportation problem'
+- type: 'Initial feasible solution'
+
+## Stepping Stone Method
+- book: 'Pearson', 'Introduction to Management Science' (Module B)
+- https://businessjargons.com/stepping-stone-method.html
+- solves partly: 'Transportation problem'
+- type: 'Optimality check'
+
+## Modified Distribution Method
+- book: 'Pearson', 'Introduction to Management Science' (Module B)
+- also called: 'MODI'
+- https://businessjargons.com/modified-distribution-method.html
+- solves partly: 'Transportation problem'
+- type: 'Optimality check'
+
+## Transportation simplex algorithm
+- solves: 'Transportation problem'
+
+## Auction algorithm
+- paper: 'A distributed algorithm for the assignment problem' (1979)
+- https://en.wikipedia.org/wiki/Auction_algorithm
+- domain: 'Combinatorial optimization'
+- solves: 'Maximum weight matching'
+- implemented in: 'maxdan94/auction'
+
+## Roth-Peranson matching algorithm
+- paper: 'The Redesign of the Matching Market for American Physicians: Some Engineering Aspects of Economic Design' (1999)
+- implemented in: 'J-DM/Roth-Peranson'
+- applications: 'National Resident Matching Program'
 
 ## Blossom algorithm
 - paper: 'Paths, trees, and flowers (1965)'
@@ -1566,10 +1657,11 @@
 - http://mathworld.wolfram.com/Bron-KerboschAlgorithm.html
 - input: 'Undirected graph'
 - output: all 'Maximal Clique'
-- domain: 'Graph theory'
+- solves: 'Finding all maximal cliques'
 - applications: 'Computational chemistry'
 - properties: 'not output-sensitive'
-- implemented in (libraries): 'Python networkx.algorithms.clique.find_cliques'
+- implemented in (libraries): 'Python networkx.algorithms.clique.find_cliques', 'google/or-tools::graph::cliques::BronKerboschAlgorithm'
+- domain: 'Graph theory'
 
 ## Havel–Hakimi algorithm
 - https://en.wikipedia.org/wiki/Havel%E2%80%93Hakimi_algorithm
@@ -1697,17 +1789,23 @@
 - properties: 'randomized'
 - input: 'Collection of points'
 
+## Union-find algorithm
+- https://www.algorithmist.com/index.php/Union_Find
+- uses: 'Disjoint-set data structure'
+- solves: 'Connected-component finding'
+
 ## Hoshen–Kopelman algorithm
 - paper: 'Percolation and cluster distribution. I. Cluster multiple labeling technique and critical concentration algorithm (1976)'
 - https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm
 - is a: 'Cluster analysis algorithm'
 - input: 'regular network of bools'
+- solves: 'Connected-component labeling'
 
 ## Fiorio's algorithm for connected-component labeling
 - paper: 'Two linear time Union-Find strategies for image processing (1996)'
 - solves: 'Connected-component labeling'
 - implemented in: 'Python skimage.measure.label'
-- version of: 'union-find algorithm'
+- version of: 'Union-find algorithm'
 - properties: 'two pass'
 
 ## Wu's algorithm for connected-component labeling
@@ -1923,6 +2021,7 @@
 - https://en.wikipedia.org/wiki/Network_simplex_algorithm
 - solves: 'Minimum-cost flow problem'
 - specialisation of: 'Simplex algorithm'
+- implemented in (libraries): 'networkx.algorithms.flow.min_cost_flow'
 
 ## Expectation–maximization algorithm
 - also called: 'EM algorithm'

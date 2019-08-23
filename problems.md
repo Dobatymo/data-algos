@@ -1,5 +1,46 @@
 # Problems
 
+-- implicit formulation
+
+## Linear assignment problem
+- also called: 'Assignment problem'
+- special case of: 'Linear programming', 'Maximum weight matching'
+- solved by (libraries): 'google/or-tools'
+
+## Transportation problem
+- also called: 'Monge–Kantorovich transportation problem', 'Hitchcock–Koopmans transportation problem'
+- https://rosettacode.org/wiki/Transportation_problem
+- special case of: 'Linear programming', 'Minimum-cost flow problem'
+- commonly used heuristics: 'Northwest Corner Method'
+- solved by (algorithms): 'Network simplex algorithm'
+
+## Maximum flow problem
+- https://en.wikipedia.org/wiki/Maximum_flow_problem
+- book: 'Introduction to Algorithms'
+- domain: 'Graph theory'
+- solved by (libraries): 'google/or-tools'
+
+## Minimum-cost flow problem
+- also called: 'MCFP'
+- https://en.wikipedia.org/wiki/Minimum-cost_flow_problem
+- generalization of: 'Maximum flow problem', 'Shortest path problem'
+- specialization of: 'Minimum-cost circulation problem'
+- solved by: 'Linear programming'
+- solved by (libraries): 'google/or-tools'
+
+## Minimum-cost circulation problem
+- https://en.wikipedia.org/wiki/Circulation_problem
+
+## 0-1 knapsack problem
+- https://en.wikipedia.org/wiki/Knapsack_problem
+
+## Graph isomorphism
+- https://en.wikipedia.org/wiki/Graph_isomorphism
+
+## Graph automorphism problem
+- https://en.wikipedia.org/wiki/Graph_automorphism
+- special case of: 'Graph isomorphism'
+
 -- explicit formulation
 
 ## Discrete Shearlet Transform
@@ -51,6 +92,22 @@
 - solved by: 'Hu and Shing algortihm for matrix chain products'
 
 -- implicit or explicit formulation
+
+## Connected-component finding ?rename, doesn't sound good'
+- https://en.wikipedia.org/wiki/Component_(graph_theory)
+- https://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/
+- domain: 'Graph theory'
+- commonly solved using: 'Depth-first search'
+
+## Strongly connected component finding
+- https://en.wikipedia.org/wiki/Strongly_connected_component
+- solved by (algorithms): 'Depth-first search', 'Tarjan's strongly connected components algorithm'
+
+## Connected-component labeling
+- book: 'The algorithm design manual'
+- https://en.wikipedia.org/wiki/Connected-component_labeling
+- domain: 'Graph theory'
+- applications: 'Computer vision'
 
 ## Minimum bounding box
 - https://en.wikipedia.org/wiki/Minimum_bounding_box
@@ -206,6 +263,7 @@
 - compare: 'Hamiltonian path problem'
 - if exists, optimal solution for: 'Route inspection problem'
 - domain: 'Graph theory'
+- solved by (libraries): 'google/or-tools'
 
 ## Route inspection problem
 - also called: 'Chinese postman problem'
@@ -218,17 +276,6 @@
 - domain: 'Graph theory'
 - applications: 'Open pit mining', 'Military targeting', 'Transportation network design', 'Job scheduling'
 - can be reduced to: 'Maximum flow problem'
-
-## Maximum flow problem
-- https://en.wikipedia.org/wiki/Maximum_flow_problem
-- book: 'Introduction to Algorithms'
-- domain: 'Graph theory'
-
-## Minimum-cost flow problem
-- also called: 'MCFP'
-- https://en.wikipedia.org/wiki/Minimum-cost_flow_problem
-- generalization of: 'Maximum flow problem'
-- solved by: 'Linear programming'
 
 ## Point location problem
 - https://en.wikipedia.org/wiki/Point_location
@@ -268,6 +315,12 @@
 - hardness: 'NP-hard'
 - naive time complexity: O(n^2 * 2^n)
 - domain: 'Graph theory'
+
+## Finding all maximal cliques
+- https://en.wikipedia.org/wiki/Clique_problem#Listing_all_maximal_cliques
+- http://mathworld.wolfram.com/MaximalClique.html
+- solved by (algorithms): 'Bron–Kerbosch algorithm'
+- solved by (libraries): 'google/or-tools'
 
 ## Maximum matching
 - https://en.wikipedia.org/wiki/Matching_(graph_theory)#Maximal_matchings
@@ -322,12 +375,6 @@
 ## DFA minimization
 - https://en.wikipedia.org/wiki/DFA_minimization
 - domain: 'Automata theory'
-
-## Connected-component labeling
-- book: 'The algorithm design manual'
-- https://en.wikipedia.org/wiki/Connected-component_labeling
-- domain: 'Graph theory'
-- applications: 'Computer vision'
 
 ## Topological sorting
 - https://en.wikipedia.org/wiki/Topological_sorting

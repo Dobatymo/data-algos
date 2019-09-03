@@ -138,9 +138,52 @@
 - domain: 'Image processing'
 
 ## Variation of information
+- also called: 'Meila's variation index', 'VI'
 - https://en.wikipedia.org/wiki/Variation_of_information
-- is a: 'metric'
+- is a: 'metric', 'Information theoretic index'
 - domain: 'Probability theory', 'Information theory'
+- applications: 'External evaluation of cluster analysis'
+- implemented in: 'josemarialuna/ExternalValidity'
+
+## Van Dongen index
+- also called: 'Van Dongen measure'
+- paper: 'Performance criteria for graph clustering and Markov cluster experiments' (2000)
+- is a: 'Set matching index'
+
+## Normalized Van Dongen index
+- also called: 'NVD'
+- paper: 'Performance criteria for graph clustering and Markov cluster experiments' (2000)
+- is a: 'Point-level index'
+- uses: 'Matching' (to match clusters)
+
+## Purity
+- https://nlp.stanford.edu/IR-book/html/htmledition/evaluation-of-clustering-1.html#fig:clustfg3
+- https://en.wikipedia.org/wiki/Cluster_analysis#External_evaluation
+- is a: 'External validity index'
+- uses: 'Matching' (to match clusters)
+- implemented in: 'josemarialuna/ExternalValidity'
+
+## F-measure
+- also called: 'FM'
+- uses: 'Matching' (to match clusters)
+- implemented in: 'josemarialuna/ExternalValidity'
+
+## Reverse normalized Van Dongen index
+- also called: 'rNVD',
+- is a: 'Set matching index'
+- properties: 'symmetric'
+- implemented in: 'FloFlo93/rNVD'
+
+## Centroid index
+- also called: 'CI'
+- paper: 'Centroid index: Cluster level similarity measure' (2014)
+- is a: 'Cluster-level similarity index', 'Cluster-level index'
+- uses: 'Matching' (to match clusters)
+
+## Centroid similarity index [20]
+- also called: 'CSI'
+- is a: 'Point-level index'
+- uses: 'Matching' (to match clusters)
 
 ## Jensen-Shannon distance
 - https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence
@@ -183,6 +226,16 @@
 - https://en.wikipedia.org/wiki/BLEU
 - applications: 'Machine translation'
 
+## NIST
+- https://en.wikipedia.org/wiki/NIST_(metric)
+- applications: 'Machine translation'
+- based on: 'BLEU'
+
+## METEOR
+- also called: 'Metric for Evaluation of Translation with Explicit ORdering'
+- https://en.wikipedia.org/wiki/METEOR
+- applications: 'Machine translation'
+
 ## HyTER
 - paper: 'HyTER: Meaning-Equivalent Semantics for Translation Evaluation' (2012)
 - applications: 'Machine translation'
@@ -200,32 +253,80 @@
 - https://en.wikipedia.org/wiki/%C5%81ukaszyk%E2%80%93Karmowski_metric
 - is not: 'metric'
 
+## Rand index
+- https://en.wikipedia.org/wiki/Rand_index
+- paper: 'Objective Criteria for the Evaluation of Clustering Methods' (1971)
+- is a: 'Pair-counting measure', 'External validity index'
+- applications: 'External evaluation of cluster analysis'
+
 ## Adjusted Rand index
 - also called: 'ARI'
+- paper: 'Comparing partitions' (1985)
 - https://en.wikipedia.org/wiki/Rand_index#Adjusted_Rand_index
 - implemented in (libraries): 'sklearn.metrics.adjusted_rand_score'
+- implemented in: 'josemarialuna/ExternalValidity'
 - applications: 'External evaluation of cluster analysis'
+- is a: 'Pair-counting measure', 'External validity index'
+- properties: 'corrected for chance'
 
 ## Mutual Information
 - also called: 'MI'
 - implemented in (libraries): 'sklearn.metrics.mutual_info_score'
 - applications: 'External evaluation of cluster analysis'
+- is a: 'Information theoretic index'
 
 ## Normalized Mutual Information
 - also called: 'NMI'
 - https://en.wikipedia.org/wiki/Mutual_information#Normalized_variants
 - implemented in (libraries): 'sklearn.metrics.normalized_mutual_info_score'
 - applications: 'External evaluation of cluster analysis'
+- is a: 'Information theoretic index'
+- same as: 'V-Measure' (for arithmetic averaging)
+
+## V-Measure
+- paper: 'V-Measure: A Conditional Entropy-Based External Cluster Evaluation Measure' (2007)
+- implemented in (libraries): 'sklearn.metrics.v_measure_score', 'JuliaStats/Clustering.jl'
+- applications: 'External evaluation of cluster analysis'
+- is a: 'External validity index'
 
 ## Adjusted Mutual Information
 - also called: 'AMI'
 - https://en.wikipedia.org/wiki/Adjusted_mutual_information
 - implemented in (libraries): 'sklearn.metrics.adjusted_mutual_info_score'
 - applications: 'External evaluation of cluster analysis'
+- is a: 'External validity index'
+
+## Pair Sets Index
+- also called: 'PSI'
+- paper: 'Set Matching Measures for External Cluster Validity' (2016)
+- applications: 'External evaluation of cluster analysis'
+- is a: 'External validity index'
+- uses: 'Hungarian algorithm', 'Optimal pairing'
+- properties: 'corrected for chance'
+
+## Simplified form of PSI
+- based on: 'Pair Sets Index'
+- paper: 'Set Matching Measures for External Cluster Validity' (2016)
+- is a: 'metric'
+
+## Criterion H
+- also called: 'CH'
+- paper: 'An Experimental Comparison of Model-Based Clustering Methods' (2001)
+- is a: 'Point-level index'
+- uses: 'Greedy pairing' (to match clusters)
+- implemented in: 'josemarialuna/ExternalValidity'
+
+## Centroid Ratio
+- also called: 'CR'
+- paper: 'Centroid Ratio for a Pairwise Random Swap Clustering Algorithm' (2014)
+- uses: 'Greedy pairing' (to match clusters)
 
 ## Fowlkes–Mallows index
 - https://en.wikipedia.org/wiki/Fowlkes%E2%80%93Mallows_index
 - applications: 'External evaluation of cluster analysis'
+- is a: 'Pair-counting measure'
+- implemented in (libraries): 'sklearn.metrics.fowlkes_mallows_score'
+- is a: 'External validity index'
 
 ## Silhouette value
 - also called: 'Silhouette coefficient'

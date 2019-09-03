@@ -27,6 +27,70 @@
 - input: 'List of k-dimensional points'
 - output: 'k-d tree'
 
+## Alternating-least-squares with weighted-λ-regularization
+- also called: 'ALS-WR', 'Alternating-least-squares', 'ALS'
+- paper: 'Large-Scale Parallel Collaborative Filtering for the Netflix Prize' (2008)
+- article: 'Matrix Factorization Techniques for Recommender Systems' (2009)
+- optimizes: 'Tensor rank decomposition'
+- implemented in (libraries): 'Apache Spark MLlib', 'libFM'
+- applications: 'Recommender system', 'Collaborative filtering'
+
+## Alternating slice-wise diagonalization
+- also called: 'ASD'
+- paper: 'Three-way data resolution by alternating slice-wise diagonalization (ASD) method' (2000)
+- optimizes: 'Tensor rank decomposition'
+
+## Positive Matrix Factorisation for 3 way arrays
+- also called: 'PMF3'
+- paper: 'A weighted non-negative least squares algorithm for three-way ‘PARAFAC’ factor analysis' (1997)
+- optimizes: 'Tensor rank decomposition'
+
+## Direct trilinear decomposition
+- also called: 'DTLD', 'DTD'
+- paper: 'Tensorial resolution: A direct trilinear decomposition' (1990)
+- optimizes: 'Tensor rank decomposition'
+
+## Generalised Rank Annihilation Method
+- also called: 'GRAM'
+- paper: 'Generalized rank annihilation factor analysis' (1986)
+- optimizes: 'Tensor rank decomposition'
+
+## Multivariate curve resolution-alternating least squares
+- also called: 'MCR-ALS'
+
+## Newton's method
+- also called: 'Newton–Raphson method'
+- https://en.wikipedia.org/wiki/Newton%27s_method
+- approximates: 'Root-finding'
+- solves (badly): 'System of polynomial equations'
+
+## Aberth method
+- also called: 'Aberth–Ehrlich method'
+- https://en.wikipedia.org/wiki/Aberth_method
+- input: 'univariate polynomial'
+- output: 'roots'
+- approximates: 'Root-finding'
+- implemented in (application): 'MPSolve (Multiprecision Polynomial Solver)'
+
+## Brent's method
+- also called: 'van Wijngaarden-Dekker-Brent method'
+- https://en.wikipedia.org/wiki/Brent%27s_method
+- http://mathworld.wolfram.com/BrentsMethod.html
+- book: 'Algorithms for Minimization without Derivatives', 'Chapter 4: An Algorithm with Guaranteed Convergence for Finding a Zero of a Function' (1973)
+- uses: 'Bisection method', 'Secant method', 'Inverse quadratic interpolation'
+- implemented in (libraries): 'Netlib', 'scipy.optimize.brentq', 'boost::brent_find_minima'
+- approximates (globally): 'Root-finding'
+
+## Jenkins–Traub algorithm for polynomial zeros
+- https://en.wikipedia.org/wiki/Jenkins%E2%80%93Traub_algorithm
+- paper: 'Algorithm 493: Zeros of a Real Polynomial' (1975)
+
+## Homotopy continuation
+- https://en.wikipedia.org/wiki/System_of_polynomial_equations#Homotopy_continuation_method
+- https://en.wikipedia.org/wiki/Numerical_algebraic_geometry
+- optimizes: 'Tensor rank decomposition'
+- solves: 'System of polynomial equations'
+
 ## Cluster pruning
 - book: 'Cambridge University Press, Introduction to Information Retrieval' (2008)
 - algorithmic analysis: 'Finding near neighbors through cluster pruning' (2007)
@@ -547,6 +611,16 @@
 - implemented in (libraries): 'google/or-tools::find_graph_symmetries'
 - solves: 'Graph automorphism problem'
 
+## Gale–Shapley algorithm
+- also called: 'Deferred-acceptance algorithm'
+- https://www.britannica.com/science/Gale-Shapley-algorithm
+- solves: 'Stable marriage problem'
+
+## Floyd's cycle-finding algorithm
+- also called: 'Floyd's Tortoise and Hare'
+- https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare
+- solves: 'Cycle detection'
+
 ## Kruskal's algorithm
 - https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
 - http://mathworld.wolfram.com/KruskalsAlgorithm.html
@@ -748,6 +822,33 @@
 - domain: 'Graph theory', 'Combinatorial optimization'
 - implemented in (libraries): 'bmc/munkres'
 
+## Kuhn–Munkres algorithm with backtracking
+- also called: 'KM_B algorithm'
+- paper: 'Solving the Many to Many assignment problem by improving the Kuhn–Munkres algorithm with backtracking' (2015)
+- solves: 'Many-to-many assignment problem'
+
+## Cuthill–McKee algorithm
+- paper: 'Reducing the bandwidth of sparse symmetric matrices' (1969)
+- https://en.wikipedia.org/wiki/Cuthill%E2%80%93McKee_algorithm
+- http://ciprian-zavoianu.blogspot.com/2009/01/project-bandwidth-reduction.html
+- domain: 'Numerical linear algebra'
+- solves approximately: 'Bandwidth reduction problem'
+- is a: 'Heuristic algorithm'
+- variant of: 'Breadth-first search'
+- implemented in (libraries): 'boost::cuthill_mckee_ordering', 'networkx.utils.rcm.cuthill_mckee_ordering'
+
+## Reverse Cuthill–McKee algorithm
+- also called: 'RCM'
+- https://en.wikipedia.org/wiki/Cuthill%E2%80%93McKee_algorithm
+- domain: 'Numerical linear algebra'
+- variant of: 'Cuthill–McKee algorithm'
+- implemented in (libraries): 'networkx.utils.rcm.reverse_cuthill_mckee_ordering', 'scipy.sparse.csgraph.reverse_cuthill_mckee'
+
+## GPS algorithm
+- also called: 'Gibbs-Poole-Stockmeyer algorithm'
+- paper: 'An Algorithm for Reducing the Bandwidth and Profile of a Sparse Matrix' (1976)
+- solves approximately: 'Bandwidth reduction problem'
+
 ## Jonker-Volgenant algorithm
 - paper: 'A shortest augmenting path algorithm for dense and sparse linear assignment problems' (1987)
 - solves: 'Linear assignment problem'
@@ -807,9 +908,22 @@
 - implemented in: 'J-DM/Roth-Peranson'
 - applications: 'National Resident Matching Program'
 
+## MaxCliqueDyn maximum clique algorithm
+- paper: 'An improved branch and bound algorithm for the maximum clique problem' (2007)
+- https://en.wikipedia.org/wiki/MaxCliqueDyn_maximum_clique_algorithm
+- solves: 'Maximum clique'
+
+## Edmonds' algorithm
+- also called: 'Chu–Liu/Edmonds' algorithm'
+- paper: 'On the Shortest Arborescence of a Directed Graph' (1965)
+- paper: 'Optimum Branchings' (1967)
+- https://en.wikipedia.org/wiki/Edmonds%27_algorithm
+- solves: 'Optimum branching AKA Minimum spanning arborescence'
+- implemented in (libraries): 'networkx.algorithms.tree.branchings.Edmonds'
+
 ## Blossom algorithm
-- paper: 'Paths, trees, and flowers (1965)'
 - also called: 'Edmonds' matching algorithm'
+- paper: 'Paths, trees, and flowers (1965)'
 - https://en.wikipedia.org/wiki/Blossom_algorithm
 - http://mathworld.wolfram.com/BlossomAlgorithm.html
 - https://brilliant.org/wiki/blossom-algorithm/
@@ -818,12 +932,27 @@
 - output: 'Maximum matching'
 - time complexity: O(E V^2) for E edges and V vertices
 
+## Micali and Vazirani's matching algorithm
+- runtime complexity: O(sqrt(n) m) for n vertices and m edges
+- paper: 'An O(sqrt(|v|) |E|) algoithm for finding maximum matching in general graphs' (1980)
+- exposition paper: 'The general maximum matching algorithm of micali and vazirani' (1988)
+
 ## Xiao and Nagamochi's algorithm for the maximum independent set
 - paper: 'Exact algorithms for maximum independent set (2017)'
 - solves: 'Maximum independent set problem'
 - time complexity: O(1.1996^n)
 - space complexity: polynomial
 - superseeds: 'Robson (1986)'
+
+## Luby's algorithm
+- https://en.wikipedia.org/wiki/Maximal_independent_set
+- also called: 'Random-selection parallel algorithm'
+- solves: 'Finding a maximal independent set'
+
+## Blelloch's algorithm
+- https://en.wikipedia.org/wiki/Maximal_independent_set
+- also called: 'Random-permutation parallel algorithm'
+- solves: 'Finding a maximal independent set'
 
 ## Boppana and Halldórsson's approximation algorithm for the maximum independent set
 - paper: 'Approximating maximum independent sets by excluding subgraphs (1992)'
@@ -1164,6 +1293,11 @@
 - implemented by: 'Edmonds–Karp algorithm'
 - input: 'Flow network'
 - output: 'Maximum flow'
+
+## Dinic's algorithm
+- also called: 'Dinitz's algorithm'
+- https://en.wikipedia.org/wiki/Dinic%27s_algorithm
+- solves: 'Maximum flow problem'
 
 ## Edmonds–Karp algorithm
 - https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm
@@ -1539,7 +1673,9 @@
 
 ## Screen space ambient occlusion
 - also called: 'SSAO'
+- paper: 'Finding next gen: CryEngine 2' (2007)
 - https://en.wikipedia.org/wiki/Screen_space_ambient_occlusion
+- https://learnopengl.com/Advanced-Lighting/SSAO
 - approximates: 'Ambient occlusion'
 
 ## SSAO+
@@ -1822,6 +1958,13 @@
 - time complexity: O(n log n)
 - space complexity: O(n)
 
+## Ruppert's algorithm
+- also called: 'Delaunay refinement'
+- paper: 'A Delaunay Refinement Algorithm for Quality 2-Dimensional Mesh Generation' (1995)
+- https://en.wikipedia.org/wiki/Ruppert%27s_algorithm
+- output: 'Delaunay triangulation'
+- applications: 'Computational fluid dynamics', 'Finite element analysis'
+
 ## Bentley–Ottmann algorithm
 - paper: 'Algorithms for Reporting and Counting Geometric Intersections (1979)'
 - https://en.wikipedia.org/wiki/Bentley%E2%80%93Ottmann_algorithm
@@ -1994,9 +2137,11 @@
 - input: 'pair of images'
 
 ## Knuth's Algorithm X
-- also called: 'DLX' with implemented using 'Dancing Links'
-- solves: 'Exact cover'
+- also called: 'DLX' implemented using 'Dancing Links'
+- https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X
+- solves: 'Exact cover problem'
 - applications: 'Sudoku', 'Tessellation', 'Eight queens puzzle'
+- properties: 'nondeterministic'
 
 ## Badouel intersection algorithm
 - https://en.wikipedia.org/wiki/Badouel_intersection_algorithm
@@ -2102,6 +2247,11 @@
 - applications: 'Random number generation'
 - input: 'Seed'
 - output: 'Random number and its factorization'
+
+## Gaussian elimination
+- https://en.wikipedia.org/wiki/Gaussian_elimination
+- http://mathworld.wolfram.com/GaussianElimination.html
+- solves: 'System of linear equations', 'Determinant', 'Matrix inversion'
 
 ## Bareiss algorithm
 - https://en.wikipedia.org/wiki/Bareiss_algorithm
@@ -2723,11 +2873,34 @@
 - applications: 'Echo cancellation'
 - generalization of: 'Affine projection algorithm'
 
+## Verhoeff algorithm
+- paper: 'Error Detecting Decimal Codes' (1969)
+- https://en.wikipedia.org/wiki/Verhoeff_algorithm
+- applications: 'Error detection', 'Checksum'
+
 ## Damm algorithm
 - https://en.wikipedia.org/wiki/Damm_algorithm
 - book: 'Introduction to Computer Data Representation. Checksums and Error Control'
 - applications: 'Error detection'
 - cf: 'Verhoeff algorithm'
+
+## Luhn algorithm
+- also called: 'Luhn formula', 'modulus 10', 'mod 10 algorithm'
+- https://en.wikipedia.org/wiki/Luhn_algorithm
+- applications: 'Error detection', 'Checksum', 'Identification numbers validation'
+
+## Neuroevolution of augmenting topologies
+- also called: 'NEAT'
+- https://en.wikipedia.org/wiki/Neuroevolution_of_augmenting_topologies
+- http://nn.cs.utexas.edu/?stanley:ec02
+- is a: 'Genetic algorithm'
+- applications: 'Neuroevolution', 'Machine learning'
+
+## Evolutionary acquisition of neural topologies
+- also called: 'EANT', 'EANT2'
+- https://en.wikipedia.org/wiki/Evolutionary_acquisition_of_neural_topologies
+- applications: 'Neuroevolution', 'Machine learning', 'Reinforcement learning'
+- is a: 'Evolutionary algorithm'
 
 # Filters
 

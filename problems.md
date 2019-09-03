@@ -6,6 +6,48 @@
 - also called: 'Assignment problem'
 - special case of: 'Linear programming', 'Maximum weight matching'
 - solved by (libraries): 'google/or-tools'
+- review paper: 'Assignment problems: A golden anniversary survey' (2007)
+
+## Quadratic assignment problem
+- also called: 'QAP'
+- https://en.wikipedia.org/wiki/Quadratic_assignment_problem
+- domain: 'Operations research', 'Combinatorial optimization'
+- hardness: 'NP-hard'
+
+## Linear bottleneck assignment problem
+- also called: 'LBAP'
+- https://en.wikipedia.org/wiki/Linear_bottleneck_assignment_problem
+
+## Quadratic bottleneck assignment problem
+- also called: 'QBAP'
+- https://en.wikipedia.org/wiki/Quadratic_bottleneck_assignment_problem
+- domain: 'Operations research', 'Combinatorial optimization'
+- hardness: 'NP-hard'
+
+## Generalized assignment problem
+- also called: 'One-to-many assignment problem'
+
+## Many-to-many assignment problem
+- solved by (algorithm): 'Kuhn–Munkres algorithm with backtracking'
+
+## Bandwidth reduction problem
+- also called: 'Graph bandwidth minimization problem', 'Matrix bandwidth minimization problem'
+- https://en.wikipedia.org/wiki/Graph_bandwidth
+- http://algorist.com/problems/Bandwidth_Reduction.html
+- http://www.csc.kth.se/~viggo/wwwcompendium/node53.html
+- hardness: 'NP-complete'?
+- hardness: 'NP-hard'?
+- applications: 'System of linear equations'
+- special case of: 'Quadratic bottleneck assignment problem'
+
+## Matrix inversion
+- https://en.wikipedia.org/wiki/Invertible_matrix
+- http://mathworld.wolfram.com/MatrixInverse.html
+- solved by: 'Mathematica Inverse'
+
+## System of linear equations
+- https://en.wikipedia.org/wiki/System_of_linear_equations
+- http://algorist.com/problems/Solving_Linear_Equations.html
 
 ## Transportation problem
 - also called: 'Monge–Kantorovich transportation problem', 'Hitchcock–Koopmans transportation problem'
@@ -142,17 +184,19 @@
 - hardness: NP-hard
 - is a: 'Combinatorial optimization problem'
 
-## Minimum vertex cover problem
+## Vertex cover problem
+- also called: 'Minimum vertex cover'
 - https://en.wikipedia.org/wiki/Vertex_cover
 - http://mathworld.wolfram.com/MinimumVertexCover.html
 - solved approximately by: 'Approximate global optimization'
-- hardness: 'NP-hard'
+- hardness: 'NP-hard', 'APX-complete'
 - implemented in: 'Mathematica FindVertexCover'
 - runtime complexity: polynomial for 'Bipartite Graph', 'Tree Graph'
 - is a: 'Optimization problem'
 - applications: 'dynamic detection of race conditions'
+- properties: 'fixed-parameter tractable'
 
-## Vertex cover problem
+## Vertex cover decision problem
 - https://en.wikipedia.org/wiki/Vertex_cover
 - solved approximately by: 'Approximate global optimization'
 - hardness: 'NP-complete'
@@ -161,6 +205,12 @@
 - kind of: 'Independent set problem'
 
 ## Exact cover problem
+- also called: 'Minimum exact cover'
+- https://en.wikipedia.org/wiki/Exact_cover
+- http://www.csc.kth.se/~viggo/wwwcompendium/node147.html
+- solved by (algorithm): 'Knuth's Algorithm X'
+
+## Exact cover decision problem
 - https://en.wikipedia.org/wiki/Exact_cover
 - hardness: 'NP-complete'
 - kind of: 'Graph coloring problem'
@@ -307,6 +357,22 @@
 - is a: 'Decision problem'
 - domain: 'Graph theory'
 
+## Independent set decision problem
+- https://en.wikipedia.org/wiki/Independent_set_(graph_theory)
+- is a: 'Decision problem'
+- hardness: 'NP-complete'
+
+## Finding a maximal independent set
+- also called: 'MIS', 'Maximal stable set'
+- https://en.wikipedia.org/wiki/Maximal_independent_set
+- https://en.wikipedia.org/wiki/Maximal_independent_set#Finding_a_single_maximal_independent_set
+- solved by (algorithms): 'Luby's algorithm', 'Blelloch's algorithm'
+
+## Finding all maximal independent sets
+- also called: 'MIS', 'Maximal stable set'
+- https://en.wikipedia.org/wiki/Maximal_independent_set
+- https://en.wikipedia.org/wiki/Maximal_independent_set#Listing_all_maximal_independent_sets
+
 ## Maximum independent set problem
 - also called: 'MIS'
 - https://en.wikipedia.org/wiki/Independent_set_(graph_theory)#Maximum_independent_sets_and_maximum_cliques
@@ -315,6 +381,15 @@
 - hardness: 'NP-hard'
 - naive time complexity: O(n^2 * 2^n)
 - domain: 'Graph theory'
+- is a: 'Optimization problem'
+
+## Finding a maximum clique
+- https://en.wikipedia.org/wiki/Clique_problem#Finding_maximum_cliques_in_arbitrary_graphs
+- properties: 'fixed-parameter intractable', 'hard to approximate'
+
+## Finding a maximum weight clique
+- https://en.wikipedia.org/wiki/Clique_problem
+- generalization of: 'Finding a maximum clique'
 
 ## Finding all maximal cliques
 - https://en.wikipedia.org/wiki/Clique_problem#Listing_all_maximal_cliques
@@ -322,12 +397,54 @@
 - solved by (algorithms): 'Bron–Kerbosch algorithm'
 - solved by (libraries): 'google/or-tools'
 
-## Maximum matching
+## Clique decision problem
+- https://en.wikipedia.org/wiki/Clique_problem
+- https://courses.cs.washington.edu/courses/csep521/99sp/lectures/lecture04/sld018.htm
+- is a: 'Decision problem'
+- hardness: 'NP-complete'
+
+## Edge dominating set decision problem
+- hardness: 'NP-complete'
+- is a: 'Decision problem'
+
+## Edge dominating set
+- https://en.wikipedia.org/wiki/Edge_dominating_set
+
+## Minimum edge dominating set
+- https://en.wikipedia.org/wiki/Edge_dominating_set
+- http://www.nada.kth.se/~viggo/wwwcompendium/node13.html
+- hardness: 'NP-hard'
+
+## Set cover decision problem
+- https://en.wikipedia.org/wiki/Set_cover_problem
+- hardness: 'NP-complete'
+- is a: 'Decision problem'
+
+## Set cover problem
+- also called: 'Minimum set cover'
+- https://en.wikipedia.org/wiki/Set_cover_problem
+- http://www.csc.kth.se/~viggo/wwwcompendium/node146.html
+- hardness: 'NP-hard'
+- special case of: 'Integer linear programming'
+
+## Weighted set cover problem
+- https://en.wikipedia.org/wiki/Set_cover_problem#Weighted_set_cover
+
+## Maximal matching
 - https://en.wikipedia.org/wiki/Matching_(graph_theory)#Maximal_matchings
+
+## Maximum matching
+- https://en.wikipedia.org/wiki/Matching_(graph_theory)#Maximum_matching
 - https://brilliant.org/wiki/matching/
 - maximal matching with the maximum number of edges
 - is a: 'Combinatorial optimization problem'
 - domain: 'Graph theory'
+- solved by (algorithm): 'Blossom algorithm', 'Micali and Vazirani's matching algorithm'
+
+## Minimum maximal matching
+- https://en.wikipedia.org/wiki/Matching_(graph_theory)
+- maximal matching with the minimum number of edges
+- same as: Minimum edge dominating set'
 
 ## Boolean satisfiability problem
 - also called: 'SAT'
@@ -467,7 +584,7 @@
 - naive time complexity: O(nm log(nm))
 - variant of: 'Sorting problem'
 
--- problems with approximate solutions only (no known way to have 100% perfect results. doesn't include cases where the approximate cases approaches 100% in the limit of unlimited space/runtime)
+-- problems with approximate solutions only (no known way to have 100% perfect results)
 
 ## Stemming
 - https://en.wikipedia.org/wiki/Stemming
@@ -514,6 +631,14 @@
 - https://en.wikipedia.org/wiki/Spectral_density_estimation#Frequency_estimation
 
 -- subjective (no simple objective performance metric)
+
+## Image registration
+- also called: 'Image stitching'?is there any difference?'
+- https://en.wikipedia.org/wiki/Image_registration
+- https://en.wikipedia.org/wiki/Image_stitching
+- solved by (applications): '3DSlicer'
+- applications: 'Medical imaging', 'Neuroimaging', 'Astrophotography', 'Panoramic image creation'
+- related problems: 'Image rectification'
 
 ## Image tracing
 - also called: 'raster-to-vector conversion', 'vectorization'

@@ -29,9 +29,36 @@
 - paper: 'Latent Dirichlet allocation (2003)'
 - https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation
 - is a: 'Topic model'
-- implemented in (libraries): 'Python gensim.models.ldamodel.LdaModel'
+- implemented in (libraries): 'Python gensim.models.ldamodel.LdaModel', 'tomotopy.LDAModel'
 - commonly sampled by: 'variational inference', 'Collapsed Gibbs sampling'
 - properties: 'generative', 'stochastic'
+
+## Supervised latent Dirichlet allocation
+- also called: 'sLDA'
+- paper: 'Supervised Topic Models' (2008)
+- implemented in (libraries): 'tomotopy.SLDAModel'
+- is a: 'Topic model'
+- variant of: 'Latent Dirichlet allocation'
+
+## Labeled LDA
+- paper: 'Labeled LDA: a supervised topic model for credit attribution in multi-labeled corpora' (2009)
+- variant of: 'Latent Dirichlet allocation'
+
+## Partially Labeled Dirichlet Allocation
+- also called: 'PLDA'
+- paper: 'Partially Labeled Topic Models for Interpretable Text Mining' (2011)
+- variant of: 'Latent Dirichlet allocation'
+
+## Partially Labeled Dirichlet Process
+- also called: 'PLDP'
+- paper: 'Partially Labeled Topic Models for Interpretable Text Mining' (2011)
+- implemented in: 'soberqian/TopicModel4J'
+
+## SeededLDA
+- also called: 'Guided LDA'?
+- paper: 'Incorporating Lexical Priors into Topic Models' (2012)
+- variant of: 'Latent Dirichlet allocation'
+- implemented in: 'vi3k6i5/GuidedLDA'
 
 ## Hierarchical Dirichlet process
 - also called: 'HDP'
@@ -52,6 +79,13 @@
 - also called: 'HPA'
 - paper: 'Mixtures of hierarchical topics with pachinko allocation' (2007)
 - implemented in (libraries): 'Python tomotopy.HPAModel'
+- is a: 'Topic model'
+
+## Hierarchical Latent Tree Analysis
+- also called: 'HLTA'
+- paper: 'Hierarchical Latent Tree Analysis for Topic Detection' (2014)
+- implemented in: 'kmpoon/hlta'
+- is a: 'Topic model', 'Probabilistic graphical model'
 
 ## Correlated topic model
 - also called: 'CTM'
@@ -62,6 +96,7 @@
 - also called: 'DMR'
 - paper: 'Topic models conditioned on arbitrary features with Dirichlet-multinomial regression' (2012)
 - implemented in (libraries): 'Python tomotopy.DMRModel'
+- is a: 'Topic model'
 
 -- uncategorized models
 
@@ -72,6 +107,11 @@
 - domain: 'Information theory'
 
 -- classification or regression models:
+
+## Tensor rank decomposition
+- also called: 'Canonical polyadic decomposition', 'CPD', 'PARAFAC model', 'PARallel FACtor analysis', 'CANDECOMP'
+- paper: 'The Expression of a Tensor or a Polyadic as a Sum of Products' (1927)
+- https://en.wikipedia.org/wiki/Tensor_rank_decomposition
 
 ## Linear prediction
 - also called: 'Linear predictive coding', 'LPC'

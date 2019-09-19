@@ -50,6 +50,7 @@
 ## Secure Shell
 - also called: 'SSH'
 - https://en.wikipedia.org/wiki/Secure_Shell
+- implemented in (applications): 'OpenSSH'
 
 ## Secure Sockets Layer
 - also called: 'SSL'
@@ -67,6 +68,21 @@
 - also called: 'DTLS'
 - https://en.wikipedia.org/wiki/Datagram_Transport_Layer_Security
 - variant of: 'Transport Layer Security'
+
+## OpenVPN
+- https://en.wikipedia.org/wiki/OpenVPN
+- applications: 'Virtual private network', 'Tunneling'
+- implemented in (applications): 'OpenVPN', 'SoftEther VPN'
+
+## IPSec IKEv2
+
+## WireGuard
+- whitepaper: 'WireGuard: Next Generation Kernel Network Tunnel' (2017)
+- https://en.wikipedia.org/wiki/WireGuard
+- applications: 'Virtual private network', 'Tunneling'
+- implemented in (applications): 'WireGuard'
+- uses: 'ChaCha20', 'Curve25519', 'BLAKE2s', 'SipHash24', 'HKDF'
+- note: currently has privacy problems due to static ip assignment
 
 ## Silent Circle Instant Messaging Protocol
 - also called: 'SCIMP'

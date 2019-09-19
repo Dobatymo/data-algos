@@ -291,6 +291,17 @@
 - applications: 'Video super-resolution'
 - is a: 'CNN'
 
+## GCN
+- also called: 'Graph Convolutional Network'
+- paper: 'Semi-Supervised Classification with Graph Convolutional Networks' (2017)
+- implemented in: 'tkipf/gcn'
+
+## DCGCN
+- also called: 'Densely Connected Graph Convolutional Network'
+- paper: 'Densely Connected Graph Convolutional Networks for Graph-to-Sequence Learning' (2019)
+- implemented in: 'Cartus/DCGCN'
+- applications: 'AMR-to-text', 'Neural machine translation', 'graph-to-sequence learning'
+
 ## Recurrent neural network
 - also called: 'RNN'
 - https://en.wikipedia.org/wiki/Recurrent_neural_network

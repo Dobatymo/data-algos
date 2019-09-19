@@ -245,6 +245,10 @@
 - https://en.wikipedia.org/wiki/ROUGE_(metric)
 - applications: 'Machine translation', 'Automatic summarization'
 
+## SARI
+- paper: 'Optimizing Statistical Machine Translation for Text Simplification' (2016)
+- applications: 'Machine translation', 'Sentence simplification'
+
 ## PGD-IL metric (custom name)
 - paper: 'Objective Quality Assessment for Image Retargeting Based on Perceptual Geometric Distortion and Information Loss' (2014)
 - applications: 'Image retargeting'

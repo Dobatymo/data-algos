@@ -83,7 +83,15 @@
 - https://en.wikipedia.org/wiki/Graph_automorphism
 - special case of: 'Graph isomorphism'
 
+## Graph classification
+- https://github.com/benedekrozemberczki/awesome-graph-classification
+
 -- explicit formulation
+
+## Hamming weight
+- also called: 'population count', 'popcount', 'sideways sum', 'bit summation'
+- https://en.wikipedia.org/wiki/Hamming_weight
+- implemented in: 'std::bitset::count', 'gmpy.popcount'
 
 ## Discrete Shearlet Transform
 - also called: 'DST'

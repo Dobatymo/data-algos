@@ -27,6 +27,10 @@
 - input: 'List of k-dimensional points'
 - output: 'k-d tree'
 
+## Relooper algorithm
+- paper: 'Emscripten: an LLVM-to-JavaScript compiler' (2011)
+- http://mozakai.blogspot.com/2012/05/reloop-all-blocks.html
+
 ## Alternating-least-squares with weighted-λ-regularization
 - also called: 'ALS-WR', 'Alternating-least-squares', 'ALS'
 - paper: 'Large-Scale Parallel Collaborative Filtering for the Netflix Prize' (2008)
@@ -90,6 +94,18 @@
 - https://en.wikipedia.org/wiki/Numerical_algebraic_geometry
 - optimizes: 'Tensor rank decomposition'
 - solves: 'System of polynomial equations'
+
+## Weisfeiler-Lehman algorithm
+- original paper: 'A reduction of a graph to a canonical form and an algebra arising during this reduction' (1968)
+- analysis paper: 'The Weisfeiler-Lehman Method and Graph Isomorphism Testing' (2011)
+- https://blog.smola.org/post/33412570425/the-weisfeiler-lehman-algorithm-and-estimation-on
+- solves sometimes: 'Graph isomorphism problem'
+- applications: 'Graph classification'
+
+## Harley-Seal algorithm
+- book: 'O'Reilly', 'Beautiful Code (2007)
+- applications: 'Hamming weight'
+- is a: 'Carry-save adder'
 
 ## Cluster pruning
 - book: 'Cambridge University Press, Introduction to Information Retrieval' (2008)
@@ -2887,7 +2903,12 @@
 ## Luhn algorithm
 - also called: 'Luhn formula', 'modulus 10', 'mod 10 algorithm'
 - https://en.wikipedia.org/wiki/Luhn_algorithm
+- https://patents.google.com/patent/US2950048
 - applications: 'Error detection', 'Checksum', 'Identification numbers validation'
+
+## Luhn's algorithm
+- paper: 'The Automatic Creation of Literature Abstracts' (1958)
+- applications: 'Extractive text summarization'
 
 ## Neuroevolution of augmenting topologies
 - also called: 'NEAT'

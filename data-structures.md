@@ -19,7 +19,14 @@
 - similar to: 'deque', 'Gap buffer'
 - is a: 'Binary tree'
 - can be a: 'Persistent data structure'
-- implemented in: 'libstdc++ rope'
+- implemented in (libraries): 'libstdc++ rope'
+
+## Threaded binary tree
+- also called: 'TBST'
+- https://en.wikipedia.org/wiki/Threaded_binary_tree
+- is a: 'Binary tree'
+- properties: 'can be traversed in-order in constant space'
+- implemented in (libraries): 'libavl'
 
 ## Gap buffer
 - https://en.wikipedia.org/wiki/Gap_buffer
@@ -29,7 +36,7 @@
 - https://en.wikipedia.org/wiki/Piece_table
 - applications: 'Text editor'
 - similar: 'Gap buffer'
-- implemented by: 'Visual Studio Code'
+- implemented by (applications): 'Visual Studio Code'
 
 ## Hash table
 - https://en.wikipedia.org/wiki/Hash_table

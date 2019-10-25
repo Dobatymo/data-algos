@@ -1362,6 +1362,18 @@
 - applications: 'Scheduling'
 - implemented in: 'Cilk'
 
+## Louvain algorithm
+- paper: 'Fast unfolding of communities in large networks' (2008)
+- https://en.wikipedia.org/wiki/Louvain_modularity#Algorithm
+- applications: 'Community detection'
+- domain: 'Network theory'
+
+## Leiden algorithm
+- paper: 'From Louvain to Leiden: guaranteeing well-connected communities' (2018)
+- created as improvement of: 'Louvain algorithm'
+- applications: 'Community detection'
+- domain: 'Network theory'
+
 ## k-means clustering
 - https://en.wikipedia.org/wiki/K-means_clustering
 - is a: 'Clustering algorithm'

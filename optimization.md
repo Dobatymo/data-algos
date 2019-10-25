@@ -86,7 +86,7 @@
 - https://en.wikipedia.org/wiki/Linear_programming
 - implemented by: 'Mathematica LinearProgramming'
 - implemented by: 'Mathematica FindMinimum(Method->"LinearProgramming")' (what is the algorithm here?)
-- implemented by: 'Artelys Knitro'
+- implemented by: 'Artelys Knitro', 'GNU Linear Programming Kit'
 
 ## Quadratic programming
 - also called: 'QP'
@@ -107,7 +107,7 @@
 
 ## Mixed Integer Linear Programming
 - also called: 'MILP'
-- implemented by: 'lp_solve', 'APOPT'
+- implemented by: 'lp_solve', 'APOPT', 'GNU Linear Programming Kit'
 
 ## Nonlinear programming
 - also called: 'NLP', 'Constrained nonlinear optimization'

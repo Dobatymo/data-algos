@@ -3,7 +3,7 @@
 -- implicit formulation
 
 ## Linear assignment problem
-- also called: 'Assignment problem'
+- also called: 'Assignment problem', 'Cost minimizing assignment problem'
 - special case of: 'Linear programming', 'Maximum weight matching'
 - solved by (libraries): 'google/or-tools'
 - review paper: 'Assignment problems: A golden anniversary survey' (2007)
@@ -15,8 +15,28 @@
 - hardness: 'NP-hard'
 
 ## Linear bottleneck assignment problem
-- also called: 'LBAP'
+- also called: 'LBAP', 'Time minimizing assignment problem', 'TMAP'
 - https://en.wikipedia.org/wiki/Linear_bottleneck_assignment_problem
+
+## Categorized assignment problem
+
+## Imbalanced time minimizing assignment problem
+- also called: 'ITMAP'
+- variant of: 'Linear bottleneck assignment problem', 'Categorized assignment problem'
+- original paper: 'A variant of time minimizing assignment problem' (1998)
+- paper: 'Exact Algorithms for the Imbalanced Time Minimizing Assignment Problem' (2001)
+- review paper: 'Assignment problems: A golden anniversary survey' (2007)
+- almost same problem: 'Agent Bottleneck Generalized Assignment Problem'
+- each machine must do at least one job
+- special case of: 'Mixed integer linear programming'
+
+## Agent Bottleneck Generalized Assignment Problem
+- also called: 'ABGAP'
+- original paper: 'Bottleneck generalized assignment problems' (1988)
+- paper: 'The multi-resource agent bottleneck generalised assignment problem' (2010)
+- almost same problem: 'Imbalanced time minimizing assignment problem'
+- no constraints on how many jobs per machine
+- special case of: 'Mixed integer linear programming'
 
 ## Quadratic bottleneck assignment problem
 - also called: 'QBAP'
@@ -55,6 +75,10 @@
 - special case of: 'Linear programming', 'Minimum-cost flow problem'
 - commonly used heuristics: 'Northwest Corner Method'
 - solved by (algorithms): 'Network simplex algorithm'
+
+## Job shop scheduling
+- also called: 'Job-shop problem', 'JSP'
+- https://en.wikipedia.org/wiki/Job_shop_scheduling
 
 ## Maximum flow problem
 - https://en.wikipedia.org/wiki/Maximum_flow_problem

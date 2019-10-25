@@ -225,6 +225,27 @@
 - also called: 'Bilingual evaluation understudy'
 - https://en.wikipedia.org/wiki/BLEU
 - applications: 'Machine translation'
+- implemented in: 'gcunhase/NLPMetrics'
+
+## GLEU
+- also called: 'Google-BLEU'
+- paper: 'Google’s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation' (2016)
+- implemented in: 'gcunhase/NLPMetrics'
+- applications: 'Machine translation'
+
+## Generalized BLEU
+- also called: 'GLEU', 'Generalized Language Evaluation Understanding'
+
+## Word Error Rate
+- also called: 'WER', 'Length normalized edit distance'
+- https://en.wikipedia.org/wiki/Word_error_rate
+- implemented in: 'gcunhase/NLPMetrics'
+- applications: 'Transcription accuracy', 'Machine translation'
+
+## Translation Edit Rate
+- also called: 'TER'
+- paper: 'A Study of Translation Edit Rate with Targeted Human Annotation' (2006)
+- implemented in: 'gcunhase/NLPMetrics'
 
 ## NIST
 - https://en.wikipedia.org/wiki/NIST_(metric)
@@ -233,8 +254,10 @@
 
 ## METEOR
 - also called: 'Metric for Evaluation of Translation with Explicit ORdering'
+- paper: 'Meteor: An Automatic Metric for MT Evaluation with High Levels of Correlation with Human Judgments' (2007)
 - https://en.wikipedia.org/wiki/METEOR
 - applications: 'Machine translation'
+- implemented in: 'gcunhase/NLPMetrics'
 
 ## HyTER
 - paper: 'HyTER: Meaning-Equivalent Semantics for Translation Evaluation' (2012)
@@ -242,8 +265,16 @@
 
 ## ROUGE
 - also called: 'Recall-Oriented Understudy for Gisting Evaluation'
+- paper: 'ROUGE: A Package for Automatic Evaluation of Summaries' (2004)
 - https://en.wikipedia.org/wiki/ROUGE_(metric)
 - applications: 'Machine translation', 'Automatic summarization'
+- implemented in: 'gcunhase/NLPMetrics'
+
+## CIDEr
+- also called: 'Consensus-based Image Description Evaluation'
+- paper: 'CIDEr: Consensus-based Image Description Evaluation' (2015)
+- applications: 'Image caption quality'
+- implemented in: 'gcunhase/NLPMetrics'
 
 ## SARI
 - paper: 'Optimizing Statistical Machine Translation for Text Simplification' (2016)

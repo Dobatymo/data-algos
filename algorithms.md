@@ -1383,6 +1383,12 @@
 - input: 'Collection of points' & 'Positive integer k'
 - output: 'Collection of cluster indices'
 
+## PQk-means
+- also called: 'Product-quantized k-means'
+- paper: 'PQk-means: Billion-scale Clustering for Product-quantized Codes' (2017)
+- implemented in (libraries): 'Python pqkmeans'
+- approximation of: 'k-means clustering'
+
 ## k-medoids algorithm
 - also called: 'Partitioning Around Medoids'
 - https://en.wikipedia.org/wiki/K-medoids

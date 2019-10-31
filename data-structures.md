@@ -34,6 +34,7 @@
 
 ## Piece table
 - https://en.wikipedia.org/wiki/Piece_table
+- survey paper: 'Data Structures for Text Sequences' (1998)
 - applications: 'Text editor'
 - similar: 'Gap buffer'
 - implemented by (applications): 'Visual Studio Code'
@@ -59,17 +60,19 @@
 - variants: 'Huffman tree'
 
 ## Zipper
+- original paper: 'FUNCTIONAL PEARL: The Zipper' (1997)
 - https://en.wikipedia.org/wiki/Zipper_(data_structure)
 - generalization of: 'Gap buffer'
 - more a general technique than a data structure
 
 ## Fibonacci heap
-- paper: 'Fibonacci heaps and their uses in improved network optimization algorithms (1987)'
+- paper: 'Fibonacci heaps and their uses in improved network optimization algorithms' (1987)
 - https://en.wikipedia.org/wiki/Fibonacci_heap
 - book: 'Introduction to Algorithms'
 - implements: 'Priority queue'
 
 ## Pairing heap
+- original paper: 'The pairing heap: A new form of self-adjusting heap' (1986)
 - https://en.wikipedia.org/wiki/Pairing_heap
 - implements: 'Priority queue'
 
@@ -106,10 +109,10 @@
 - for a more space efficient data structure see MAFST
 
 ## WPL tree
-- paper: 'Weighting Without Waiting: the Weighted Path Length Tree (1991)'
+- paper: 'Weighting Without Waiting: the Weighted Path Length Tree' (1991)
 
 ## PQ tree
-- paper: 'Testing for the consecutive ones property, interval graphs, and graph planarity using PQ-tree algorithms (1976)'
+- paper: 'Testing for the consecutive ones property, interval graphs, and graph planarity using PQ-tree algorithms' (1976)
 - https://en.wikipedia.org/wiki/PQ_tree
 
 ## Radix tree
@@ -133,6 +136,7 @@
 - used by: MySQL
 
 ## AVL tree
+- original paper: 'An algorithm for the organization of information' (1962)
 - https://en.wikipedia.org/wiki/AVL_tree
 - https://xlinux.nist.gov/dads/HTML/avltree.html
 - is a: 'binary tree'
@@ -140,18 +144,31 @@
 - stricter balanced and thus better for lookup (compared to 'Red-black tree')
 
 ## treap
+- original paper: 'Randomized search trees' (1989)
 - https://en.wikipedia.org/wiki/Treap
+- book: 'Open Data Structures'
 - randomly ordered binary tree
 - log(N) lookup even for insertion of items in non-random order
 - heap like feature
 - used to implement dictionary in LEDA
 
+## Scapegoat tree
+- also called: 'General balanced tree'
+- paper: 'Improving partial rebuilding by using simple balance criteria' (1989)
+- paper: 'Scapegoat trees' (1993)
+- https://en.wikipedia.org/wiki/Scapegoat_tree
+- book: 'Open Data Structures'
+- is a: 'Binary search tree'
+- properties: 'Self-balancing'
+
 ## BK-tree
+- original paper: 'Some approaches to best-match file searching' (1973)
 - https://en.wikipedia.org/wiki/BK-tree
 - is a: 'Space-partitioning tree', 'Metric tree'
 - applications: approximate string matching
 
 ## Splay tree
+- original paper: 'Self-adjusting binary search trees' (1985)
 - https://en.wikipedia.org/wiki/Splay_tree
 - is a: 'Binary search tree'
 - properties: 'self-optimizing'
@@ -173,6 +190,7 @@
 
 ## B+ tree
 - https://en.wikipedia.org/wiki/B%2B_tree
+- https://xlinux.nist.gov/dads/HTML/bplustree.html
 - applications: filesystems, range searching, block-oriented data retrieval
 - k-ary tree
 - used by: Relational database management systems like Microsoft SQL Server, Key–value database management systems like CouchDB
@@ -185,8 +203,11 @@
 - https://en.wikipedia.org/wiki/Dope_vector
 - used to implement arrays
 
-## van Emde Boas Trees
+## van Emde Boas tree
+- also called: 'vEB tree', 'van Emde Boas priority queue'
+- paper: 'Preserving order in a forest in less than logarithmic time' (1975)
 - https://en.wikipedia.org/wiki/Van_Emde_Boas_tree
+- https://xlinux.nist.gov/dads/HTML/vanemdeboas.html
 - book: 'Introduction to Algorithms'
 - Multiway tree
 - implement ordered maps with integer keys
@@ -194,7 +215,7 @@
 - see 'Integer sorting'
 
 ## Skip list
-- paper: 'Concurrent Maintenance of Skip Lists (1998)'
+- paper: 'Concurrent Maintenance of Skip Lists' (1998)
 - https://en.wikipedia.org/wiki/Skip_list
 - https://xlinux.nist.gov/dads/HTML/skiplist.html
 - is a: 'probabilistic data structure', 'ordered linked list'
@@ -257,6 +278,7 @@
 
 ## B-tree
 - https://en.wikipedia.org/wiki/B-tree
+- https://xlinux.nist.gov/dads/HTML/btree.html
 - book: 'Introduction to Algorithms'
 - used to implement lots of databases and filesystems
 - self-balancing
@@ -273,12 +295,15 @@
 - is a: Metric tree
 
 ## M-tree
+- paper: 'M-tree: An Efficient Access Method for Similarity Search in Metric Spaces' (1997)
 - https://en.wikipedia.org/wiki/M-tree
 - better disk storage characteristics (because shallower) than 'Ball tree'
 - uses: 'nearest neighbor search'
 - is a: 'Space-partitioning tree', 'Metric tree'
 
 ## Vantage-point tree
+- original paper: 'Satisfying general proximity / similarity queries with metric trees' (1991)
+- paper: 'Data structures and algorithms for nearest neighbor search in general metric spaces' (1993)
 - https://en.wikipedia.org/wiki/Vantage-point_tree
 - is a: 'Space-partitioning tree', 'Metric tree'
 - specialisation of: 'Multi-vantage-point tree'
@@ -293,11 +318,13 @@
 - algorithms for construction: 'Five Balltree Construction Algorithms'
 
 ## Winged edge
+- paper: 'A polyhedron representation for computer vision' (1975)
 - https://en.wikipedia.org/wiki/Winged_edge
-- applications: 'Computer graphics'
+- applications: 'Computer graphics', 'Boundary representation'
 
 ## Adjacency list
 - https://en.wikipedia.org/wiki/Adjacency_list
+- book: 'Open Data Structures'
 - implements: 'Graph'
 - implemented in: 'boost::adjacency_list'
 
@@ -306,8 +333,21 @@
 - implements: 'Graph'
 
 ## R-tree
+- paper: 'R-trees: a dynamic index structure for spatial searching' (1984)
 - https://en.wikipedia.org/wiki/R-tree
 - applications: 'Spatial index', 'Range searching', 'Nearest neighbor search'
+
+## R+ tree
+- paper: 'The R+-Tree: A Dynamic Index for Multi-Dimensional Objects' (1987)
+- https://en.wikipedia.org/wiki/R%2B_tree
+- variant of: 'R-tree'
+- applications: 'Spatial index'
+
+## R* tree
+- paper: 'The R*-tree: an efficient and robust access method for points and rectangles' (1990)
+- https://en.wikipedia.org/wiki/R*_tree
+- variant of: 'R-tree'
+- applications: 'Spatial index'
 
 ## Hash tree
 - https://en.wikipedia.org/wiki/Hash_tree_(persistent_data_structure)
@@ -323,6 +363,7 @@
 
 ## Merkle tree
 - also called: 'Hash tree'
+- paper: 'A Digital Signature Based on a Conventional Encryption Function' (1987)
 - https://en.wikipedia.org/wiki/Merkle_tree
 - https://xlinux.nist.gov/dads/HTML/MerkleTree.html
 - https://brilliant.org/wiki/merkle-tree/
@@ -344,6 +385,7 @@
 - used for: 'Kruskal's algorithm'
 
 ## HAT-trie
+- paper: 'HAT-trie: a cache-conscious trie-based data structure for strings' (2007)
 - https://en.wikipedia.org/wiki/HAT-trie
 - implemented in: 'Python pytries/hat-trie'
 - implements: 'Ordered map'
@@ -352,7 +394,7 @@
 
 ## Double-Array Trie
 - also called: 'DATrie'
-- paper: 'An Efficient Digital Search Algorithm by Using a Double-Array Structure'
+- paper: 'An Efficient Digital Search Algorithm by Using a Double-Array Structure' (1989)
 - implemented in: 'pytries/datrie', 'libdatrie'
 
 ## Ternary search tree
@@ -367,6 +409,7 @@
 
 ## Difference list
 - https://en.wikipedia.org/wiki/Difference_list
+- implemented in: 'Haskell'
 
 ## Soft heap
 - https://en.wikipedia.org/wiki/Soft_heap
@@ -383,8 +426,8 @@
 - implements: 'heap', 'priority queue'
 
 ## Bloom filter
-- https://en.wikipedia.org/wiki/Bloom_filter
 - paper: 'Space/time trade-offs in hash coding with allowable errors (1970)'
+- https://en.wikipedia.org/wiki/Bloom_filter
 - properties: 'probabilistic'
 - implements: 'Set'
 - applications: 'caching strategies', 'database query optimization', 'rate-limiting', 'data synchronization', 'chemical structure searching'
@@ -399,16 +442,22 @@
 - additional interface: find the i'th smallest element stored in the tree, find the rank of element x in the tree, i.e. its index in the sorted list of elements of the tree
 
 ## Exponential tree
+- original paper: 'Faster deterministic sorting and searching in linear space' (1996)
 - https://en.wikipedia.org/wiki/Exponential_tree
 - variant of: 'Binary search tree'
 
 ## UB-tree
+- also called: 'Universal B-Tree'
+- original paper: 'The Universal B-Tree for Multidimensional Indexing: general Concepts' (1997)
+- paper: 'Integrating the UB-Tree into a Database System Kernel' (2000)
 - https://en.wikipedia.org/wiki/UB-tree
+- https://xlinux.nist.gov/dads/HTML/universalBTree.html
 - is a: 'Self-balancing search tree'
 - based on: 'B+ tree'
 
 ## Log-structured merge-tree
 - also called: 'LSM tree'
+- original paper: 'The log-structured merge-tree (LSM-tree)' (1996)
 - https://en.wikipedia.org/wiki/Log-structured_merge-tree
 - used by: 'Apache Cassandra', 'Apache HBase', 'Bigtable', 'RocksDB'
 - applications: 'Transaction log'
@@ -420,9 +469,26 @@
 - implemented in: 'Succinct Data Structure Library'
 
 ## GADDAG
+- paper: 'A faster scrabble move generation algorithm' (1994)
 - https://en.wikipedia.org/wiki/GADDAG
 - uses: 'Directed acyclic graph'
 - applications: 'Scrabble'
+- implemented in (applications): 'Quackle'
+
+## BD-tree
+- original paper: 'The BD-tree - A new N-dimensional data structure with highly efficient dynamic characteristics' (1983)
+- survey paper: 'Multidimensional access methods' (1998)
+- https://xlinux.nist.gov/dads/HTML/bdtree.html
+
+## MD-tree
+- also called: 'Multidimensional tree'
+- original paper: 'A Balanced Hierarchical Data Structure for Multidimensional Data with Highly Efficient Dynamic Characteristics' (1993)
+- properties: 'height balanced'
+
+## Bounded deformation tree
+- also called: 'BD-tree'
+- paper: 'BD-tree: output-sensitive collision detection for reduced deformable models'
+- http://graphics.cs.cmu.edu/projects/bdtree/
 
 ## Chord
 - paper: 'Chord: A scalable peer-to-peer lookup service for internet applications (2001)'
@@ -475,6 +541,7 @@
 
 ## Inverted index
 - https://en.wikipedia.org/wiki/Inverted_index
+- https://xlinux.nist.gov/dads/HTML/invertedIndex.html
 - used by: 'ElasticSearch', 'Lucene'
 - maps content/text to locations/documents
 - Search engine indexing

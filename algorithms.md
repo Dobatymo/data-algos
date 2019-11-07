@@ -16,6 +16,11 @@
 - input: 'Graph'
 - implemented in: 'boost::graph::depth_first_search'
 
+## Depth-first search for topological sorting
+- paper: 'Edge-disjoint spanning trees and depth-first search' (1976)
+- https://en.wikipedia.org/wiki/Topological_sorting#Depth-first_search
+- applications: 'topological sorting', 'Strongly connected component'
+
 ## Branch and bound search
 - implemented in (libraries): 'google/or-tools'
 - commonly used to solve: '0-1 knapsack problem'
@@ -116,32 +121,34 @@
 - cf: 'p-spheres', 'rank aggregation'
 
 ## Median of medians
-- also called: 'Blum-Floyd-Pratt-Rivest-Tarjan partition algorithm', 'BFPRT'
+- also called: 'PICK', Blum-Floyd-Pratt-Rivest-Tarjan partition algorithm', 'BFPRT'
 - paper: 'Time bounds for selection (1973)'
 - https://en.wikipedia.org/wiki/Median_of_medians
-- selection algorithm
+- solves: 'Selection problem'
 - input: 'random access collection'
+- properties: 'deterministic'
 
 ## Introselect
 - paper: 'Introspective Sorting and Selection Algorithms'
 - https://en.wikipedia.org/wiki/Introselect
-- implemented in C++ std::nth_element
-- is a: 'Selection algorithm'
+- implemented in: 'C++ std::nth_element, 'numpy.partition'
+- solves: 'Selection problem'
 - input: 'random access collection'
 
 ## Floyd–Rivest algorithm
 - paper: 'Algorithm 489: the algorithm SELECT—for finding the ith smallest of n elements [M1] (1975)'
 - https://en.wikipedia.org/wiki/Floyd%E2%80%93Rivest_algorithm
-- is a: 'Selection algorithm', 'Divide and conquer algorithm'
+- solves: 'Selection problem'
+- is a: 'Divide and conquer algorithm'
 - input: 'random access collection'
 
 ## Quickselect
 - also called: 'Hoare's selection algorithm'
 - paper: 'Algorithm 65: find (1961)'
 - https://en.wikipedia.org/wiki/Quickselect
-- is a: 'Selection algorithm'
+- solves: 'Selection problem'
 - input: 'random access collection'
-- properties: 'parallelizable'
+- properties: 'parallelizable', 'randomized'
 
 ## Dijkstra's algorithm
 - paper: 'A note on two problems in connexion with graphs (1959)'
@@ -212,6 +219,7 @@
 - https://en.wikipedia.org/wiki/Collaborative_diffusion
 - applications: 'pathfinding'
 - time complexity: constant in the number of agents
+- implemented in: 'C glouw/pather'
 
 ## Ukkonen's algorithm
 - https://en.wikipedia.org/wiki/Ukkonen%27s_algorithm
@@ -235,6 +243,7 @@
 ## A* search algorithm
 - paper: 'A Formal Basis for the Heuristic Determination of Minimum Cost Paths (1968)'
 - https://en.wikipedia.org/wiki/A*_search_algorithm
+- tutorial: https://www.redblobgames.com/pathfinding/a-star/implementation.htmll
 - generalization of 'Dijkstra's algorithm'
 - heuristic search
 - informed search algorithm (best-first search)
@@ -443,6 +452,7 @@
 - applications: 'Integer sorting'
 
 ## Fisher–Yates shuffle
+- also called: 'Knuth shuffle'
 - https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 - is a: 'Shuffling algorithm', 'In-place algorithm'
 - unbiased
@@ -489,7 +499,8 @@
 - https://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_algorithm
 - https://xlinux.nist.gov/dads/HTML/ahoCorasick.html
 - multiple *string searching*
-- implemented in: original fgrep
+- implemented in (applications): original fgrep
+- implemented in (libraries): 'pyahocorasick'
 - (pre)constructs 'Finite-state machine' from set of search strings
 - applications: virus signature detection
 - paper 'Efficient string matching: An aid to bibliographic search'
@@ -502,13 +513,14 @@
 - https://en.wikipedia.org/wiki/Commentz-Walter_algorithm
 - multiple *string searching*
 - classification 'match suffix first'
-- implemented in: grep (variant)
+- implemented in (applications): grep (variant)
 
 ## Boyer–Moore string-search algorithm
 - https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm
 - single *string searching*
-- implemented in: 'grep', 'C++ std::boyer_moore_searcher'
-- implemented in: 'Python str' (variant)
+- implemented in (applications): 'grep'
+- implemented in (libraries): 'C++ std::boyer_moore_searcher'
+- implemented in (languages): 'Python str' (variant)
 - better for large alphabets like text than: 'Knuth–Morris–Pratt algorithm'
 - paper: 'A Fast String Searching Algorithm'
 
@@ -516,7 +528,7 @@
 - https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
 - book: 'Introduction to Algorithms'
 - single *string searching*
-- implemented in: 'grep'
+- implemented in (applications): 'grep'
 - better for small alphabets like DNA than: 'Boyer–Moore string-search algorithm'
 
 ## Rabin–Karp algorithm
@@ -533,9 +545,10 @@
 - also called: 'shift-or algorithm', 'shift-and algorithm', 'Baeza-Yates–Gonnet algorithm'
 - https://en.wikipedia.org/wiki/Bitap_algorithm
 - solves: 'Approximate string matching'
+- implemented in (applications): 'agrep'
 
 ## Myers' Diff Algorithm
-- paper: 'An O(ND) difference algorithm and its variations (1986)'
+- paper: 'An O(ND) difference algorithm and its variations' (1986)
 - solves: 'Shortest Edit Script'
 - input: two strings
 - output: 'Shortest Edit Script'
@@ -550,6 +563,7 @@
 - also called: 'NMF', 'NNMF'
 - https://en.wikipedia.org/wiki/Non-negative_matrix_factorization
 - applications: 'Collaborative filtering', 'Dimensionality reduction', 'Text mining'
+- implemented in (libraries): 'Python sklearn.decomposition.NMF'
 
 ## Beam search
 - https://en.wikipedia.org/wiki/Beam_search
@@ -664,19 +678,16 @@
 - https://en.wikipedia.org/wiki/Topological_sorting#Kahn's_algorithm
 - applications: 'topological sorting'
 
-## Depth-first search
-- https://en.wikipedia.org/wiki/Topological_sorting#Depth-first_search
-- applications: 'topological sorting', 'Strongly connected component'
-
 ## HyperLogLog++
 - https://en.wikipedia.org/wiki/HyperLogLog
 - solves approximately: 'Count-distinct problem'
-- implemented by: 'Lucence'
+- implemented by (libraries): 'Lucence'
 
 ## Hunt–McIlroy algorithm
 - https://en.wikipedia.org/wiki/Hunt%E2%80%93McIlroy_algorithm
 - solves: 'Longest common subsequence problem'
-- implemented by: 'diff'
+- technical report: 'An Algorithm for Differential File Comparison'
+- implemented by (application): 'diff'
 - input: 'set of sequences'
 - output: 'Longest common subsequence'
 
@@ -712,6 +723,8 @@
 - is a: 'Parallel algorithm'
 
 ## Tarjan's off-line lowest common ancestors algorithm
+- original paper: 'Applications of Path Compression on Balanced Trees' (1979)
+- paper (refined version): 'A linear-time algorithm for a special case of disjoint set union' (1983)
 - https://en.wikipedia.org/wiki/Tarjan%27s_off-line_lowest_common_ancestors_algorithm
 - input: 'pairs of nodes in a tree'
 - output: 'Lowest common ancestor'
@@ -825,6 +838,7 @@
 - time complexity: O(E sqrt(V)) for E edges and V vertices
 - best for sparse, for dense, there are more recent improvements like 'Alt et al. (1991)'
 - domain: 'Graph theory'
+- implemented in: 'Python networkx.algorithms.bipartite.matching.hopcroft_karp_matching', 'sofiatolaosebikan/hopcroftkarp'
 
 ## Hungarian Maximum Matching algorithm
 - also called: 'Kuhn-Munkres algorithm', 'Hungarian method'
@@ -836,7 +850,9 @@
 - output: 'maximum-weight matching'
 - time complexity: O(V^3) for V vertices
 - domain: 'Graph theory', 'Combinatorial optimization'
-- implemented in (libraries): 'bmc/munkres'
+- implemented in (libraries): 'bmc/munkres', 'scipy.optimize.linear_sum_assignment' (older versions)
+- solves: 'Linear assignment problem'
+- variants: 'Jonker-Volgenant algorithm'
 
 ## Kuhn–Munkres algorithm with backtracking
 - also called: 'KM_B algorithm'
@@ -947,26 +963,27 @@
 - input: 'Graph'
 - output: 'Maximum matching'
 - time complexity: O(E V^2) for E edges and V vertices
+- implemented in: 'networkx.algorithms.matching.max_weight_matching'
 
 ## Micali and Vazirani's matching algorithm
 - runtime complexity: O(sqrt(n) m) for n vertices and m edges
-- paper: 'An O(sqrt(|v|) |E|) algoithm for finding maximum matching in general graphs' (1980)
+- original paper: 'An O(sqrt(|v|) |E|) algoithm for finding maximum matching in general graphs' (1980)
 - exposition paper: 'The general maximum matching algorithm of micali and vazirani' (1988)
 
 ## Xiao and Nagamochi's algorithm for the maximum independent set
-- paper: 'Exact algorithms for maximum independent set (2017)'
+- paper: 'Exact algorithms for maximum independent set' (2017)
 - solves: 'Maximum independent set problem'
 - time complexity: O(1.1996^n)
 - space complexity: polynomial
 - superseeds: 'Robson (1986)'
 
 ## Luby's algorithm
-- https://en.wikipedia.org/wiki/Maximal_independent_set
+- https://en.wikipedia.org/wiki/Maximal_independent_set#Random-selection_parallel_algorithm_[Luby's_Algorithm]
 - also called: 'Random-selection parallel algorithm'
 - solves: 'Finding a maximal independent set'
 
 ## Blelloch's algorithm
-- https://en.wikipedia.org/wiki/Maximal_independent_set
+- https://en.wikipedia.org/wiki/Maximal_independent_set#Random-permutation_parallel_algorithm_[Blelloch's_Algorithm]
 - also called: 'Random-permutation parallel algorithm'
 - solves: 'Finding a maximal independent set'
 
@@ -1013,12 +1030,14 @@
 - solves: 'Motion planning'
 
 ## Fan and Su algortihm for multiple pattern match
-- paper 'An Efficient Algorithm for Matching Multiple Patterns'
+- paper: 'An efficient algorithm for matching multiple patterns' (1993)
 - "combines the concept of deterministic finite state automata (DFSA) and Boyer-Moore’s algorithm"
 
 ## Hu and Shing algortihm for matrix chain products
-- paper 'Computation of Matrix Chain Products'
-- solves 'Matrix chain multiplication' in O(n log n) where n is the number of matrices
+- paper: 'Computation of Matrix Chain Products. Part I' (1982)
+- paper: 'Computation of Matrix Chain Products. Part II' (1984)
+- solves: Matrix chain multiplication'
+- time complexity: O(n log n) where n is the number of matrices
 
 ## Long multiplication
 - https://en.wikipedia.org/wiki/Multiplication_algorithm#Long_multiplication
@@ -1130,12 +1149,12 @@
 
 ## Synchronized overlap-add method
 - also called: 'Time-domain harmonic scaling', 'SOLA'
-- paper: 'High quality time-scale modification for speech (1985)'
+- paper: 'High quality time-scale modification for speech' (1985)
 - applications: 'Audio pitch scaling'
 
 ## Phase vocoder
 - https://en.wikipedia.org/wiki/Phase_vocoder
-- paper: 'Phase vocoder (1966)'
+- paper: 'Phase vocoder' (1966)
 - applications: 'Audio time stretching and pitch scaling'
 - uses: 'Short-time Fourier transform'
 
@@ -1148,6 +1167,7 @@
 - generalization of: 'De Casteljau's algorithm'
 
 ## Lucas–Kanade method
+- paper: 'An iterative image registration technique with an application to stereo vision' (1981)
 - https://en.wikipedia.org/wiki/Lucas%E2%80%93Kanade_method
 - applications: 'Optical flow estimation', 'aperture problem'
 - local, sparse
@@ -1155,10 +1175,10 @@
 - uses: 'Structure tensor'
 
 ## Horn–Schunck method
+- paper: 'Determining Optical Flow' (1981)
 - https://en.wikipedia.org/wiki/Horn%E2%80%93Schunck_method
-- paper: 'Determining Optical Flow'
 - applications: 'Optical flow estimation', 'aperture problem'
-- implemented in: ''opencv::CalcOpticalFlowHS' (obsolete, should be replaced with calcOpticalFlowPyrLK or calcOpticalFlowFarneback according to opencv docs)
+- implemented in: 'opencv::CalcOpticalFlowHS' (obsolete, should be replaced with calcOpticalFlowPyrLK or calcOpticalFlowFarneback according to opencv docs)
 - global
 
 ## Gunnar-Farneback algorithm
@@ -1168,8 +1188,9 @@
 - dense
 
 ## SimpleFlow algorithm
-- paper: 'SimpleFlow: A Non-iterative, Sublinear Optical Flow Algorithm'
+- paper: 'SimpleFlow: A Non-iterative, Sublinear Optical Flow Algorithm' (2012)
 - implemented in: 'opencv::calcOpticalFlowSF'
+- applications: 'Optical flow estimation'
 
 ## Kadane's algorithm
 - https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm
@@ -1184,10 +1205,11 @@
 - basis for: 'Camshift'
 
 ## Scale-invariant feature transform
+- paper: 'Object recognition from local scale-invariant features' (1999)
 - https://en.wikipedia.org/wiki/Scale-invariant_feature_transform
 - is a: 'feature detection algorithm'
 - applications: 'object recognition', 'robotic mapping and navigation', 'image stitching', '3D modeling', 'gesture recognition', 'video tracking'
-- patented
+- patent: US6711293
 
 ## Marching squares
 - https://en.wikipedia.org/wiki/Marching_squares
@@ -1200,9 +1222,17 @@
 - applications: 'Lossless compression'
 - was patented
 
+## Trajkovic-Hedley corner detector
+- paper: 'Fast corner detection' (1998)
+- https://en.wikipedia.org/wiki/Corner_detection#The_Trajkovic_and_Hedley_corner_detector
+- applications: 'Corner detection'
+- domain: 'Computer vision'
+
 ## General number field sieve
+- also called: 'GNFS'
 - https://en.wikipedia.org/wiki/General_number_field_sieve
 - applications: 'Integer factorization'
+- implemented in (applications): 'msieve', 'GGNFS'
 
 ## Shor's algorithm
 - paper: 'Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer (1994)'
@@ -1246,8 +1276,8 @@
 - output (variant 2): 'minimal polynomial of a linearly recurrent sequence'
 
 ## Xiaolin Wu's line algorithm
+- paper: 'An efficient antialiasing technique' (1991)
 - https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm
-- paper: 'An efficient antialiasing technique'
 - is a: Line drawing algorithm, Anti-aliasing algorithm
 - domain: computer graphics
 - applications: antialiasing
@@ -1255,6 +1285,7 @@
 - output: 'List of points with associated graylevel'
 
 ## Needleman–Wunsch algorithm
+- original paper: 'A general method applicable to the search for similarities in the amino acid sequence of two proteins' (1970)
 - https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm
 - applications: 'Sequence alignment' (global), 'Computer stereo vision'
 - time complexity: O(m n)
@@ -1265,6 +1296,7 @@
 - output: 'Optimal global alignment'
 
 ## Smith–Waterman algorithm
+- original paper: 'Identification of common molecular subsequences' (1981)
 - https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm
 - applications: 'Sequence alignment' (local)
 - time complexity: O(m n)
@@ -1275,6 +1307,7 @@
 - output: 'Optimal local alignment'
 
 ## Hirschberg's algorithm
+- paper: 'A linear space algorithm for computing maximal common subsequences' (1975)
 - https://en.wikipedia.org/wiki/Hirschberg%27s_algorithm
 - applications: 'Sequence alignment' (global)
 - uses method: 'Dynamic programming'
@@ -1291,7 +1324,7 @@
 - improved by: 'Karger–Stein algorithm'
 
 ## Boykov-Kolmogorov algorithm
-- paper: 'An experimental comparison of min-cut/max- flow algorithms for energy minimization in vision'
+- paper: 'An experimental comparison of min-cut/max- flow algorithms for energy minimization in vision' (2004)
 - implemented in: 'Python networkx.algorithms.flow.boykov_kolmogorov', 'boost::graph::boykov_kolmogorov_max_flow'
 
 ## Stoer and Wagner's minimum cut algorithm
@@ -1302,6 +1335,7 @@
 - domain: 'Graph theory'
 
 ## Ford–Fulkerson method
+- paper: 'Maximal Flow Through a Network' (1956)
 - https://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm
 - https://brilliant.org/wiki/ford-fulkerson-algorithm/
 - properties: 'greedy', 'incomplete'
@@ -1314,8 +1348,10 @@
 - also called: 'Dinitz's algorithm'
 - https://en.wikipedia.org/wiki/Dinic%27s_algorithm
 - solves: 'Maximum flow problem'
+- similar: 'Edmonds–Karp algorithm'
 
 ## Edmonds–Karp algorithm
+- paper: 'Theoretical Improvements in Algorithmic Efficiency for Network Flow Problems' (1972)
 - https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm
 - https://brilliant.org/wiki/edmonds-karp-algorithm/
 - implements: 'Ford–Fulkerson method'
@@ -1325,6 +1361,7 @@
 - input: 'Flow network'
 - output: 'Maximum flow'
 - book: 'Introduction to Algorithms'
+- similar: 'Dinic's algorithm'
 
 ## Marr–Hildreth algorithm
 - https://en.wikipedia.org/wiki/Marr%E2%80%93Hildreth_algorithm
@@ -1351,7 +1388,7 @@
 - https://en.wikipedia.org/wiki/Match_rating_approach
 - is a: 'Phonetic algorithm'
 - applications: 'Indexing', 'Phonetic encoding', 'Phonetic comparison'
-- is a: 'Similarity measure'
+- is a: 'Similarity measure' # should this go to metrics-and-distances.md?
 
 ## Chamfer matching
 - paper: 'Parametric correspondence and chamfer matching: two new techniques for image matching'
@@ -1932,6 +1969,22 @@
 - input: 'waveform'
 - output: 'wavelets'
 
+## Embedded Zerotrees of Wavelet transforms
+- also called: 'EZW'
+- paper: 'Embedded image coding using zerotrees of wavelet coefficients' (1993)
+- https://en.wikipedia.org/wiki/Embedded_Zerotrees_of_Wavelet_transforms#See_also
+- applications: 'Lossy image compression'
+- involves subproblems: 'Discrete wavelet transform', 'Zerotree coding', 'Arithmetic coding'
+
+## Set partitioning in hierarchical trees
+- also called: 'SPIHT'
+- paper: 'A new, fast, and efficient image codec based on set partitioning in hierarchical trees' (1996)
+- https://en.wikipedia.org/wiki/Set_partitioning_in_hierarchical_trees
+- applications: 'Lossy image compression'
+- involves subproblem: 'Discrete wavelet transform'
+- superseeds: 'Embedded Zerotrees of Wavelet transforms'
+- related evaluation metric: 'PSNR'
+
 ## Kirkpatrick–Seidel algorithm
 - paper: 'The Ultimate Planar Convex Hull Algorithm? (1983)'
 - https://en.wikipedia.org/wiki/Kirkpatrick%E2%80%93Seidel_algorithm
@@ -1984,7 +2037,7 @@
 - implemented in: 'opencv::connectedComponents'
 
 ## Fortune's algorithm
-- paper: 'A sweepline algorithm for Voronoi diagrams (1986)'
+- paper: 'A sweepline algorithm for Voronoi diagrams' (1986)
 - https://en.wikipedia.org/wiki/Fortune%27s_algorithm
 - is a: 'Sweep line algorithm'
 - input: 'Collection of points'
@@ -2000,16 +2053,17 @@
 - applications: 'Computational fluid dynamics', 'Finite element analysis'
 
 ## Bentley–Ottmann algorithm
-- paper: 'Algorithms for Reporting and Counting Geometric Intersections (1979)'
+- paper: 'Algorithms for Reporting and Counting Geometric Intersections' (1979)
 - https://en.wikipedia.org/wiki/Bentley%E2%80%93Ottmann_algorithm
 - is a: 'Sweep line algorithm'
 - solves: 'Line segment intersection'
 - input: 'set of line segments'
 - output: 'crossings'
 - based on: 'Shamos–Hoey algorithm'
+- implemented in: 'ideasman42/isect_segments-bentley_ottmann'
 
 ## Freeman-Shapira's minimum bounding box
-- paper: 'Determining the minimum-area encasing rectangle for an arbitrary closed curve (1975)'
+- paper: 'Determining the minimum-area encasing rectangle for an arbitrary closed curve' (1975)
 - solves: 'Minimum bounding box'
 - input: 'convex polygon'
 - output: 'minimum-area enclosing rectangle'
@@ -2030,7 +2084,7 @@
 
 ## Quickhull algorithm
 - https://en.wikipedia.org/wiki/Quickhull
-- paper: 'The quickhull algorithm for convex hulls (1996)' (modern version)
+- paper: 'The quickhull algorithm for convex hulls' (1996) (modern version)
 - implemented in: 'Qhull'
 - input: 'Collection of points'
 - output: 'Convex hull'
@@ -2108,12 +2162,6 @@
 - cf. 'Lagrange multiplier method'
 - input: 'Kinematic chain' (Collection of points and constraints)
 
-## Fireworks algorithm
-- https://en.wikipedia.org/wiki/Fireworks_algorithm
-- see: 'Swarm intelligence'
-- domain: 'mathematical optimization'
-- input: 'Function'
-
 ## Sequence step algorithm
 - https://en.wikipedia.org/wiki/Sequence_step_algorithm
 - https://www.planopedia.com/sequence-step-algorithm/
@@ -2121,7 +2169,7 @@
 
 ## Fast folding algorithm
 - https://en.wikipedia.org/wiki/Fast_folding_algorithm
-- paper: 'Fast folding algorithm for detection of periodic pulse trains (1969)'
+- paper: 'Fast folding algorithm for detection of periodic pulse trains' (1969)
 - applications: 'Time series analysis', 'Pulsar detection'
 - domain: 'Signal processing'
 - input: 'Buffered list of floats'?
@@ -2153,22 +2201,24 @@
 
 ## Hirschberg–Sinclair algorithm
 - https://en.wikipedia.org/wiki/Hirschberg%E2%80%93Sinclair_algorithm
-- paper: 'Decentralized extrema-finding in circular configurations of processors'
+- paper: 'Decentralized extrema-finding in circular configurations of processors' (1980)
 - solves: 'Leader election problem'
 - properties: 'distributed'
 
 ## Gale–Church alignment algorithm
 - https://en.wikipedia.org/wiki/Gale%E2%80%93Church_alignment_algorithm
-- paper: 'A Program for Aligning Sentences in Bilingual Corpora'
+- paper: 'A Program for Aligning Sentences in Bilingual Corpora' (1993)
 - domain: 'Computational linguistics'
 - applications: 'Sentence alignment'
 - input: 'pair of list of sentences'
 
 ## Beier–Neely morphing algorithm
+- paper: 'Feature-based image metamorphosis' (1992)
 - https://en.wikipedia.org/wiki/Beier%E2%80%93Neely_morphing_algorithm
-- applications: 'Image processing'
+- applications: 'Image processing', 'Image morphing'
 - domain: 'Computer graphics'
 - input: 'pair of images'
+- implemented in: 'JS blendmaster/reexpress'
 
 ## Knuth's Algorithm X
 - also called: 'DLX' implemented using 'Dancing Links'
@@ -2188,6 +2238,7 @@
 - is a: 'Pattern matching algorithm'
 
 ## Hilltop algorithm
+- article: 'Hilltop: A Search Engine based on Expert Documents'
 - https://en.wikipedia.org/wiki/Hilltop_algorithm
 
 ## Out-of-kilter algorithm
@@ -2204,6 +2255,7 @@
 
 ## Expectation–maximization algorithm
 - also called: 'EM algorithm'
+- paper: 'Maximum Likelihood from Incomplete Data via the EM Algorithm' (1977)
 - https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm
 - is a: 'iterative method'
 - applications: 'Parameter estimation'
@@ -2270,13 +2322,15 @@
 - uses: 'Forward–backward algorithm', 'Expectation–maximization algorithm'
 - input: 'Hidden Markov model'
 - output: 'HMM parameters'
+- applications: 'Speech recognition', 'Cryptanalysis', 'Copy-number variation'
+- implemented in (libraries): 'GHMM'
 
 ## WINEPI
 - https://en.wikipedia.org/wiki/WINEPI
 - applications: 'Data mining', 'Time series analysis', 'Association rule learning'
 
 ## Bach's algorithm
-- paper: 'How to generate factored random numbers (1988)'
+- paper: 'How to generate factored random numbers' (1988)
 - https://en.wikipedia.org/wiki/Bach%27s_algorithm
 - applications: 'Random number generation'
 - input: 'Seed'
@@ -2297,11 +2351,11 @@
 ## Odlyzko–Schönhage algorithm
 - https://en.wikipedia.org/wiki/Odlyzko%E2%80%93Sch%C3%B6nhage_algorithm
 - evaluates: Riemann zeta function
-- properties: vectorized
+- properties: 'vectorized'
 - uses: 'Fast Fourier transform'
 
 ## Principal component analysis
-- also called: PCA, 'Karhunen–Loève transform', KLT, Hotelling transform,
+- also called: 'PCA', 'Karhunen–Loève transform', 'KLT', 'Hotelling transform'
 - https://en.wikipedia.org/wiki/Principal_component_analysis
 - applications: 'Dimensionality reduction', 'Exploratory data analysis'
 - implemented in: 'LAPACK', 'ARPACK', 'Python sklearn.decomposition.PCA, Bio.Cluster.pca'
@@ -2371,7 +2425,7 @@
 - output: 'zero-suppressed decision diagram (ZDD) representing all simple paths between two vertices'
 
 ## Zeilberger's algorithm
-- paper: 'A fast algorithm for proving terminating hypergeometric identities (1990)'
+- paper: 'A fast algorithm for proving terminating hypergeometric identities' (1990)
 - http://mathworld.wolfram.com/ZeilbergersAlgorithm.html
 - https://archive.lib.msu.edu/crcmath/math/math/z/z020.htm
 - input: 'Terminating Hypergeometric Identities of a certain form'
@@ -2420,6 +2474,7 @@
 - output: 'Eulerian cycle' or 'Eulerian trail'
 
 ## Blankinship algorithm
+- paper: 'A New Version of the Euclidean Algorithm' (1963)
 - http://mathworld.wolfram.com/BlankinshipAlgorithm.html
 - finds: 'Greatest common divisor'
 - properties: 'vectorized'
@@ -2447,7 +2502,7 @@
 - implemented in: 'sklearn.cluster.bicluster.SpectralBiclustering'
 - input: 'Matrix'
 
-## Graphical lasso ?model or algorithm?
+## Graphical lasso # ?model or algorithm?
 - https://en.wikipedia.org/wiki/Graphical_lasso
 - solves: 'Covariance matrix estimation'
 - is a: 'Graphical model'
@@ -2468,7 +2523,7 @@
 - output: 'kernel vectors'
 
 ## David Eppstein's algorithm for finding the synchronizing word of a DFA
-- paper: 'Reset Sequences for Monotonic Automata (1990)'
+- paper: 'Reset Sequences for Monotonic Automata' (1990)
 - time complexity O(n^3 + k*n^2). 
 - does not always find the shortest possible synchronizing word
 - input: 'DFA'
@@ -2485,12 +2540,12 @@
 ## Random sample consensus
 - also called: 'RANSAC'
 - https://en.wikipedia.org/wiki/Random_sample_consensus
-- paper: 'Random sample consensus: a paradigm for model fitting with applications to image analysis and automated cartography (1981)'
+- paper: 'Random sample consensus: a paradigm for model fitting with applications to image analysis and automated cartography' (1981)
 - applications: 'Computer vision', 'Location determination problem'
 
 ## PACBO
 - also called: 'Probably Approximately Correct Bayesian Online'
-- paper: 'PAC-Bayesian Online Clustering'
+- paper: 'PAC-Bayesian Online Clustering' (2016)
 - implemented in: 'R PACBO'
 - related: 'RJMCMC'
 - applications: 'online clustering'
@@ -2498,7 +2553,7 @@
 
 ## RJMCMC
 - also called: 'Reversible-jump Markov chain Monte Carlo'
-- paper: 'Reversible jump Markov chain Monte Carlo computation and Bayesian model determination (1995)'
+- paper: 'Reversible jump Markov chain Monte Carlo computation and Bayesian model determination' (1995)
 - https://en.wikipedia.org/wiki/Reversible-jump_Markov_chain_Monte_Carlo
 - exntension of: 'Markov chain Monte Carlo'
 
@@ -2528,12 +2583,12 @@
 - applications: training certain types of 'Recursive neural networks'
 
 ## Franceschini-Muthukrishnan-Pătrașcu algorithm
-- paper: 'Radix Sorting With No Extra Space (2007)'
+- paper: 'Radix Sorting With No Extra Space' (2007)
 - applications: 'Integer sorting'
 
 ## Approximate Link state algorithm
 - also called: 'XL'
-- paper: 'XL: An Efficient Network Routing Algorithm (2008)'
+- paper: 'XL: An Efficient Network Routing Algorithm' (2008)
 - applications: 'Network routing'
 
 ## Nicholl–Lee–Nicholl algorithm
@@ -2545,13 +2600,13 @@
 - applications: 'Line clipping'
 
 ## C3 linearization
-- paper: 'A Monotonic Superclass Linearization for Dylan'
+- paper: 'A Monotonic Superclass Linearization for Dylan' (1996)
 - https://en.wikipedia.org/wiki/C3_linearization
 - applications: 'Multiple inheritance', 'Method Resolution Order'
 - used to implement application: 'Python', 'Perl'
 
 ## Sethi–Ullman algorithm
-- paper: 'The Generation of Optimal Code for Arithmetic Expressions (1970)'
+- paper: 'The Generation of Optimal Code for Arithmetic Expressions' (1970)
 - https://en.wikipedia.org/wiki/Sethi%E2%80%93Ullman_algorithm
 - applications: 'Code generation', 'Arithmetic expressions'
 - input: 'Abstract syntax tree'
@@ -2599,7 +2654,7 @@
 - patent: 'US4197590A' (expired)
 
 ## Xulvi-Brunet and Sokolov algorithm
-- paper: 'Reshuffling scale-free networks: From random to assortative (2004)'
+- paper: 'Reshuffling scale-free networks: From random to assortative' (2004)
 - https://en.wikipedia.org/wiki/Xulvi-Brunet_-_Sokolov_algorithm
 - generates networks with chosen degree correlations
 
@@ -2616,7 +2671,7 @@
 - implemented in: 'T-SQL'
 
 ## Berkeley algorithm
-- paper: 'The accuracy of the clock synchronization achieved by TEMPO in Berkeley UNIX 4.3BSD (1989)'
+- paper: 'The accuracy of the clock synchronization achieved by TEMPO in Berkeley UNIX 4.3BSD' (1989)
 - https://en.wikipedia.org/wiki/Berkeley_algorithm
 - applications: 'Clock synchronization'
 - is a: 'Distributed algorithm'
@@ -2628,7 +2683,7 @@
 - is a: 'Distributed algorithm'
 
 ## Marzullo's algorithm
-- thesis: 'Maintaining the time in a distributed system: an example of a loosely-coupled distributed service (1984)'
+- thesis: 'Maintaining the time in a distributed system: an example of a loosely-coupled distributed service' (1984)
 - https://en.wikipedia.org/wiki/Marzullo%27s_algorithm
 - superseeded by: 'Intersection algorithm'
 - is a: 'Agreement algorithm'
@@ -2636,7 +2691,7 @@
 
 ## Intersection algorithm
 - also called: 'Clock Select Algorithm'
-- paper: 'Improved algorithms for synchronizing computer network clocks (1995)'
+- paper: 'Improved algorithms for synchronizing computer network clocks' (1995)
 - https://en.wikipedia.org/wiki/Intersection_algorithm
 - https://www.eecis.udel.edu/~mills/ntp/html/select.html
 - is a: 'Agreement algorithm'
@@ -2660,31 +2715,31 @@
 - ranking algorithm
 
 ## Algorithm for Producing Rankings Based on Expert Surveys
-- paper: 'Algorithm for Producing Rankings Based on Expert Surveys (2019)'
+- paper: 'Algorithm for Producing Rankings Based on Expert Surveys' (2019)
 - based on: 'Segmented string relative ranking'
 - compare: 'PageRank'
 - applications: 'Link analysis'
 
 ## SALSA algorithm
 - also called: 'Stochastic Approach for Link-Structure Analysis'
-- paper: 'SALSA: the stochastic approach for link-structure analysis'
+- paper: 'SALSA: the stochastic approach for link-structure analysis' (2000)
 - https://en.wikipedia.org/wiki/SALSA_algorithm
 - applications: 'Link analysis'
 
 ## TextRank
-- paper: 'TextRank: Bringing Order into Texts (2004)'
+- paper: 'TextRank: Bringing Order into Texts' (2004)
 - based on: 'PageRank'
 - domain: 'Graph Theory'
 - applications: 'Keyword extraction', 'Text summarization'
 
 ## HITS algorithm
 - also called: 'Hyperlink-Induced Topic Search'
-- paper: 'Authoritative sources in a hyperlinked environment (1999)'
+- paper: 'Authoritative sources in a hyperlinked environment' (1999)
 - https://en.wikipedia.org/wiki/HITS_algorithm
 - applications: 'Link analysis', 'Search engines', 'Citation analysis'
 
 ## Eigenfactor
-- paper: 'Eigenfactor: Measuring the value and prestige of scholarly journals (2007)'
+- paper: 'Eigenfactor: Measuring the value and prestige of scholarly journals' (2007)
 - https://en.wikipedia.org/wiki/Eigenfactor
 - is a: 'Citation metric'
 
@@ -2693,7 +2748,7 @@
 - is a: 'Citation metric'
 
 ## PageRank
-- paper: 'The PageRank Citation Ranking: Bringing Order to the Web'
+- paper: 'The PageRank Citation Ranking: Bringing Order to the Web' (1999)
 - https://en.wikipedia.org/wiki/PageRank
 - domain: 'Graph theory'
 - applications: 'Link analysis', 'Linear algebra'
@@ -2705,19 +2760,19 @@
 - domain: 'Graph theory', 'Linear algebra'
 
 ## ObjectRank
-- paper: 'ObjectRank: Authority-Based Keyword Search in Databases'
+- paper: 'ObjectRank: Authority-Based Keyword Search in Databases' (2004)
 - applications: 'Ranking in graphs'
 
 ## PathSim
-- paper: 'PathSim: Meta Path-Based Top-K Similarity Search in Heterogeneous Information Networks'
+- paper: 'PathSim: Meta Path-Based Top-K Similarity Search in Heterogeneous Information Networks' (2011)
 - applications: 'Similarity search', 'Ranking in graphs'
 
 ## RankDex
 - also called: 'Hyperlink Vector Voting method', 'HVV'
-- paper: 'Toward a qualitative search engine (1998)'
+- paper: 'Toward a qualitative search engine' (1998)
 
 ## Banker's algorithm
-- paper: 'Een algorithme ter voorkoming van de dodelijke omarming (EWD-108) (1964–1967)'
+- paper: 'Een algorithme ter voorkoming van de dodelijke omarming (EWD-108') (1964–1967)
 - also called: 'detection algorithm'
 - https://en.wikipedia.org/wiki/Banker%27s_algorithm
 - http://www.cs.colostate.edu/~cs551/CourseNotes/Bankers.html
@@ -2738,7 +2793,7 @@
 - paper: 'SMOTE: Synthetic Minority Over-sampling Technique' (2002)
 - variant of: 'Synthetic Minority Over-sampling Technique'
 - applications: 'Class imbalance problem'
-- implemented in: 'mblearn.over_sampling.SMOTENC'
+- implemented in: 'imblearn.over_sampling.SMOTENC'
 
 ## Borderline-SMOTE
 - paper: 'Borderline-SMOTE: a new over-sampling method in imbalanced data sets learning' (2005)
@@ -2781,13 +2836,13 @@
 - implemented in: 'imblearn.under_sampling.InstanceHardnessThreshold'
 
 ## Deutsch–Jozsa algorithm
-- paper: 'Rapid solution of problems by quantum computation (1992)'
+- paper: 'Rapid solution of problems by quantum computation' (1992)
 - https://en.wikipedia.org/wiki/Deutsch%E2%80%93Jozsa_algorithm
 - is a: 'Quantum algorithm'
 - properties: 'deterministic'
 
 ## Grover's algorithm
-- paper: 'A fast quantum mechanical algorithm for database search (1996)'
+- paper: 'A fast quantum mechanical algorithm for database search' (1996)
 - https://en.wikipedia.org/wiki/Grover%27s_algorithm
 - is a: 'Quantum algorithm'
 - properties: 'probabilistic', 'asymptotically optimal'
@@ -2810,6 +2865,7 @@
 - also called: 'VB'
 - https://en.wikipedia.org/wiki/Variational_Bayesian_methods
 - applications: 'Statistical inference'
+- properties: 'deterministic'
 
 ## Gibbs sampling
 - https://en.wikipedia.org/wiki/Gibbs_sampling
@@ -2820,12 +2876,13 @@
 ## Collapsed Gibbs sampling
 - https://en.wikipedia.org/wiki/Gibbs_sampling#Collapsed_Gibbs_sampler
 - variant of: 'Gibbs sampling'
-- samples (eg.): 'Latent Dirichlet allocation'
+- samples (examples): 'Latent Dirichlet allocation'
+- properties: 'randomized'
 
 ## Hamiltonian Monte Carlo
 - also called: 'HMC', 'Hybrid Monte Carlo'
 - https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo
-- paper: 'Hybrid Monte Carlo (1987)'
+- paper: 'Hybrid Monte Carlo' (1987)
 - is a: 'Markov chain Monte Carlo algorithm'
 - solves: 'Sampling'
 - input: 'probability distribution'
@@ -2835,7 +2892,7 @@
 
 ## No-U-Turn Sampler
 - also called: 'NUTS'
-- paper: 'The No-U-Turn Sampler: Adaptively Setting Path Lengths in Hamiltonian Monte Carlo (2011)'
+- paper: 'The No-U-Turn Sampler: Adaptively Setting Path Lengths in Hamiltonian Monte Carlo' (2011)
 - extends: 'Hamiltonian Monte Carlo'
 - implemented in: 'Stan'
 - solves: 'Sampling'
@@ -2895,15 +2952,15 @@
 
 ## Ensemble adjustment Kalman filter
 - also called: 'EAKF'
-- paper: 'An Ensemble Adjustment Kalman Filter for Data Assimilation (2001)'
+- paper: 'An Ensemble Adjustment Kalman Filter for Data Assimilation' (2001)
 
 ## PF-PMC-PHD
 - also called: 'Particle Filter–Pairwise Markov Chain–Probability Hypothesis Density'
-- paper: 'Particle Probability Hypothesis Density Filter Based on Pairwise Markov Chains (2019)'
+- paper: 'Particle Probability Hypothesis Density Filter Based on Pairwise Markov Chains' (2019)
 - applications: 'multi-target tracking system'
 
 ## Multichannel affine projection algorithm
-- paper: 'A multichannel affine projection algorithm with applications to multichannel acoustic echo cancellation (1996)'
+- paper: 'A multichannel affine projection algorithm with applications to multichannel acoustic echo cancellation' (1996)
 - applications: 'Echo cancellation'
 - generalization of: 'Affine projection algorithm'
 
@@ -2921,7 +2978,7 @@
 ## Luhn algorithm
 - also called: 'Luhn formula', 'modulus 10', 'mod 10 algorithm'
 - https://en.wikipedia.org/wiki/Luhn_algorithm
-- https://patents.google.com/patent/US2950048
+- patent: 'US2950048'
 - applications: 'Error detection', 'Checksum', 'Identification numbers validation'
 
 ## Luhn's algorithm

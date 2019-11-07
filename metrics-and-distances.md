@@ -1,5 +1,12 @@
 # Metrics, Distances, Measures, Similarities, Losses and Costs
 
+## Endpoint error
+- also called: 'EPE', 'End-to-end point error'
+- used to evaluate: 'Optical flow'
+
+## Average angular error
+- used to evaluate: 'Optical flow'
+
 ## SimRank
 - https://en.wikipedia.org/wiki/SimRank
 - paper: 'SimRank: a measure of structural-context similarity (2002)'

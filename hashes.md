@@ -145,6 +145,15 @@
 - implemented in: 'Python ImageHash'
 - based on: 'Discrete Wavelet Transformation'
 
+## PDQ hash
+- implemented in: 'Python pdqhash'
+- whitepaper: 'The TMK+PDQF video-hashing algorithm and the PDQ image-hashing algorithm'
+- metric: 'Hamming distance'
+- inspired by: 'pHash'
+- uses: 'Discrete cosine transform'
+- bits: 256
+- input: 'image'
+
 ## PhotoDNA
 - paper: 'Robust Image Hashing' (2000)
 - https://www.microsoft.com/en-us/photodna
@@ -178,11 +187,12 @@
 - metric: 'Peak of Cross Correlation'
 
 ## DCT based hash
-- is this the same as: 'PHash'?
+- is this the same as: 'pHash'?
 - paper: 'Robust video hash extraction' (2004)
 - implemented in: 'pHash::ph_dct_imagehash'
 - metric: 'Hamming distance'
 - input: 'image'
+- review thesis: 'Implementation and Benchmarking of Perceptual Image Hash Functions' (2010)
 
 ## Compact Fourier Mellin Transform (CFMT)-based hash
 - paper: 'Duplicate Image Detection in Large Scale Databases' (2007)

@@ -600,6 +600,14 @@
 - is a: 'Metaheuristic'
 - domain: 'Optimization'
 
+## Fireworks algorithm
+- also called: 'FWA', 'FA'
+- paper: 'Fireworks Algorithm for Optimization' (2010)
+- https://en.wikipedia.org/wiki/Fireworks_algorithm
+- see: 'Swarm intelligence'
+- domain: 'mathematical optimization'
+- input: 'Function'
+
 ## Estimation of distribution algorithms
 - https://en.wikipedia.org/wiki/Estimation_of_distribution_algorithm
 - is a: 'Stochastic optimization method', 'Evolutionary algorithm'

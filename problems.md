@@ -1,6 +1,12 @@
 # Problems
 
--- implicit formulation
+-- implicit formulation with clear solutions
+
+Solution is given by constraints which must be fullfilled, an equation to be solved.
+
+## Greatest common divisor
+- https://en.wikipedia.org/wiki/Greatest_common_divisor
+- domain: 'Number theory'
 
 ## Linear assignment problem
 - also called: 'Assignment problem', 'Cost minimizing assignment problem'
@@ -110,7 +116,9 @@
 ## Graph classification
 - https://github.com/benedekrozemberczki/awesome-graph-classification
 
--- explicit formulation
+-- explicit formulation with clear solutions
+
+Solution is given by mathematical formula or naive computation method.
 
 ## Hamming weight
 - also called: 'population count', 'popcount', 'sideways sum', 'bit summation'
@@ -151,6 +159,7 @@
 - https://en.wikipedia.org/wiki/Discrete_wavelet_transform
 - is a: 'Discrete transform'
 - applications: 'Image processing'
+- solved by (libraries): 'PyWavelets'
 
 ## Discrete cosine transform
 - also called: 'DCT'
@@ -165,7 +174,7 @@
 - optimization problem
 - solved by: 'Hu and Shing algortihm for matrix chain products'
 
--- implicit or explicit formulation
+-- implicit or explicit formulation with clear solutions
 
 ## Connected-component finding ?rename, doesn't sound good'
 - https://en.wikipedia.org/wiki/Component_(graph_theory)
@@ -534,19 +543,6 @@
 - solved by: 'Depth-first search"
 - domain: 'Graph theory'
 
-## Motion planning
-- also called: 'Piano mover's problem'
-- https://en.wikipedia.org/wiki/Motion_planning
-- http://planning.cs.uiuc.edu/node160.html
-- book: 'The algorithm design manual'
-- hardness: PSPACE-hard
-
-## Biclustering
-- https://en.wikipedia.org/wiki/Biclustering
-
-## Covariance matrix estimation
-- https://en.wikipedia.org/wiki/Estimation_of_covariance_matrices
-
 ## Polynomial factorization
 - http://mathworld.wolfram.com/PolynomialFactorization.html
 - https://en.wikipedia.org/wiki/Factorization_of_polynomials
@@ -563,21 +559,11 @@
 - book: 'Handbook of Discrete and Computational Geometry'
 - https://en.wikipedia.org/wiki/Nearest_neighbor_search#Approximate_nearest_neighbor
 
-## Approximate string matching
-- https://en.wikipedia.org/wiki/Approximate_string_matching
-- paper: 'Fast Approximate String Matching in a Dictionary'
-- applications: 'spell checking', 'nucleotide sequence matching'
-
-## Optical flow
-- https://en.wikipedia.org/wiki/Optical_flow
-- applications: 'Motion estimation', 'video compression', 'object detection', 'object tracking', 'image dominant plane extraction', 'movement detection', 'robot navigation , 'visual odometry'
-- domain: 'machine vision', 'computer vision'
-
-## Sequence alignment
-- https://en.wikipedia.org/wiki/Sequence_alignment
-
 ## Sorting problem
 - https://en.wikipedia.org/wiki/Sorting_algorithm
+
+## Selection problem
+- https://en.wikipedia.org/wiki/Selection_algorithm
 
 ## Partial sorting
 - https://en.wikipedia.org/wiki/Partial_sorting
@@ -596,11 +582,6 @@
 - applications: 'Routing'
 - domain: 'Graph theory'
 
-## Hierarchical clustering
-- https://en.wikipedia.org/wiki/Hierarchical_clustering
-- applications: 'Data mining', 'Paleoecology'
-- domain: 'Statistics'
-
 ## Minimal Perfect Hashing
 - http://iswsa.acm.org/mphf/index.html
 - https://en.wikipedia.org/wiki/Perfect_hash_function#Minimal_perfect_hash_function
@@ -609,6 +590,7 @@
 ## K-server problem
 - https://en.wikipedia.org/wiki/K-server_problem
 - domain: 'Computer science'
+- there exists a related unsolved problem
 
 ## X + Y sorting
 - https://en.wikipedia.org/wiki/X_%2B_Y_sorting
@@ -616,7 +598,44 @@
 - naive time complexity: O(nm log(nm))
 - variant of: 'Sorting problem'
 
+## Motion planning
+- also called: 'Piano mover's problem'
+- https://en.wikipedia.org/wiki/Motion_planning
+- http://planning.cs.uiuc.edu/node160.html
+- book: 'The algorithm design manual'
+- hardness: PSPACE-hard
+
+## Covariance matrix estimation
+- https://en.wikipedia.org/wiki/Estimation_of_covariance_matrices
+
+-- problems with clear solutions for simple metrics (multiple metrics possible)
+
+## Biclustering
+- https://en.wikipedia.org/wiki/Biclustering
+
+## Sequence alignment
+- https://en.wikipedia.org/wiki/Sequence_alignment
+
+## Hierarchical clustering
+- https://en.wikipedia.org/wiki/Hierarchical_clustering
+- applications: 'Data mining', 'Paleoecology'
+- domain: 'Statistics'
+
+## Approximate string matching
+- https://en.wikipedia.org/wiki/Approximate_string_matching
+- paper: 'Fast Approximate String Matching in a Dictionary'
+- applications: 'spell checking', 'nucleotide sequence matching'
+
 -- problems with approximate solutions only (no known way to have 100% perfect results)
+
+Evaluation is usually empirical, based on metrics inpired by human perception or compared to groundtruth based on some metric.
+
+## Optical flow
+- https://en.wikipedia.org/wiki/Optical_flow
+- http://vision.middlebury.edu/flow/eval/
+- applications: 'Motion estimation', 'video compression', 'object detection', 'object tracking', 'image dominant plane extraction', 'movement detection', 'robot navigation , 'visual odometry'
+- domain: 'machine vision', 'computer vision'
+- metrics: 'Endpoint error', 'Average angular error'
 
 ## Stemming
 - https://en.wikipedia.org/wiki/Stemming
@@ -663,6 +682,8 @@
 - https://en.wikipedia.org/wiki/Spectral_density_estimation#Frequency_estimation
 
 -- subjective (no simple objective performance metric)
+
+Empirical evaluation or based on "dumb" metrics. Even comparison to groundtruth is not easily possible.
 
 ## Image registration
 - also called: 'Image stitching'?is there any difference?'

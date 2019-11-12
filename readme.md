@@ -2,10 +2,6 @@
 
 # Resources
 
-## Online books
-- https://bradfieldcs.com/algos/
-- http://interactivepython.org/RkmcZ/courselib/static/pythonds/index.html
-
 ## Books
 
 ### Data structures and algorithms
@@ -23,7 +19,6 @@
 ### Management science / Operations research
 - 'Pearson', 'Introduction to Management Science' by 'Bernard W. Taylor'
 
-## Papers
-
-### Metrics and distances
-- 'Distance functions on digital pictures (1968)' (for images)
+## Online books
+- https://bradfieldcs.com/algos/
+- http://interactivepython.org/RkmcZ/courselib/static/pythonds/index.html

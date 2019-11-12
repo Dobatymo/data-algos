@@ -36,8 +36,15 @@
 - paper: 'Emscripten: an LLVM-to-JavaScript compiler' (2011)
 - http://mozakai.blogspot.com/2012/05/reloop-all-blocks.html
 
+## Alternating least squares
+- also called: 'Alternating-least-squares', 'ALS'
+- paper: 'Analysis of individual differences in multidimensional scaling via an n-way generalization of “Eckart-Young” decomposition' (1970)
+- paper: 'Foundations of the PARAFAC procedure : Models and conditions for an "explanatory" multi-mode factor analysis' (1970)
+- optimizes: 'Tensor rank decomposition'
+- implemented in (libraries): 'tensorly.decomposition.parafac', 'tensortools.cp_als'
+
 ## Alternating-least-squares with weighted-λ-regularization
-- also called: 'ALS-WR', 'Alternating-least-squares', 'ALS'
+- also called: 'ALS-WR'
 - paper: 'Large-Scale Parallel Collaborative Filtering for the Netflix Prize' (2008)
 - article: 'Matrix Factorization Techniques for Recommender Systems' (2009)
 - optimizes: 'Tensor rank decomposition'
@@ -72,6 +79,7 @@
 - https://en.wikipedia.org/wiki/Newton%27s_method
 - approximates: 'Root-finding'
 - solves (badly): 'System of polynomial equations'
+- implemented in (libraries): 'scipy.optimize.newton'
 
 ## Aberth method
 - also called: 'Aberth–Ehrlich method'
@@ -80,6 +88,7 @@
 - output: 'roots'
 - approximates: 'Root-finding'
 - implemented in (application): 'MPSolve (Multiprecision Polynomial Solver)'
+- implemented in: 'afoures/aberth-method'
 
 ## Brent's method
 - also called: 'van Wijngaarden-Dekker-Brent method'
@@ -92,13 +101,16 @@
 
 ## Jenkins–Traub algorithm for polynomial zeros
 - https://en.wikipedia.org/wiki/Jenkins%E2%80%93Traub_algorithm
+- original paper: 'A Three-Stage Algorithm for Real Polynomials Using Quadratic Iteration' (1970)
 - paper: 'Algorithm 493: Zeros of a Real Polynomial' (1975)
+- implemented in (libraries): 'sweeneychris/RpolyPlusPlus'
 
 ## Homotopy continuation
 - https://en.wikipedia.org/wiki/System_of_polynomial_equations#Homotopy_continuation_method
 - https://en.wikipedia.org/wiki/Numerical_algebraic_geometry
 - optimizes: 'Tensor rank decomposition'
 - solves: 'System of polynomial equations'
+- implemented in: 'janverschelde/PHCpack', 'phcpy'
 
 ## Weisfeiler-Lehman algorithm
 - original paper: 'A reduction of a graph to a canonical form and an algebra arising during this reduction' (1968)
@@ -106,11 +118,13 @@
 - https://blog.smola.org/post/33412570425/the-weisfeiler-lehman-algorithm-and-estimation-on
 - solves sometimes: 'Graph isomorphism problem'
 - applications: 'Graph classification'
+- implemented in: 'grakel.WeisfeilerLehman'
 
 ## Harley-Seal algorithm
 - book: 'O'Reilly', 'Beautiful Code (2007)
 - applications: 'Hamming weight'
 - is a: 'Carry-save adder'
+- implemented in: 'WojciechMula/sse-popcount'
 
 ## Cluster pruning
 - book: 'Cambridge University Press, Introduction to Information Retrieval' (2008)
@@ -152,6 +166,7 @@
 
 ## Dijkstra's algorithm
 - paper: 'A note on two problems in connexion with graphs (1959)'
+- book: 'MIT Press', 'Introduction to Algorithms'
 - https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 - http://mathworld.wolfram.com/DijkstrasAlgorithm.html
 - uses method: 'Dynamic programming'
@@ -162,8 +177,9 @@
 - input: 'Directed graph with non-negative weights'
 
 ## Bellman–Ford algorithm
-- paper: 'Structure in communication nets (1955)'
-- paper: 'On a routing problem (1958)'
+- paper: 'Structure in communication nets' (1955)
+- paper: 'On a routing problem' (1958)
+- book: 'MIT Press', 'Introduction to Algorithms'
 - https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
 - solves variant of the 'Shortest path problem' for real-valued edge weights in directed graph in O(v*e) where v and e are the number of vertices and edges respectively.
 - negative cycles are detected
@@ -183,12 +199,12 @@
 - paper: 'Algorithm 97: Shortest path (1962)'
 - https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
 - http://mathworld.wolfram.com/Floyd-WarshallAlgorithm.html
-- graph algorithm
+- domain: 'Graph theory'
 - solves 'All-pairs shortest paths problem' for real-valued weights for directed/undirected graphs in O(v^3) where v is the number of vertices
 - negative cycles are not allowed
 - uses method: 'dynamic programming'
-- implemented in: 'python scipy.sparse.csgraph.shortest_path(method='FW')', 'c++ boost::graph::floyd_warshall_all_pairs_shortest_paths'
-- is faster then 'Johnson's algorithm' for dense graphs
+- implemented in: 'python scipy.sparse.csgraph.shortest_path(method='FW')', 'c++ boost::graph::floyd_warshall_all_pairs_shortest_paths', 'networkx.algorithms.shortest_paths.dense.floyd_warshall'
+- is faster than 'Johnson's algorithm' for dense graphs
 - operates in: 'weighted directed graph without negative cycles'
 
 ## Suurballe's algorithm
@@ -207,11 +223,14 @@
 - input: 'Weighted directed graph'
 
 ## Reaching algorithm
+- also called: 'DAG-Shortest-Paths'
 - http://mathworld.wolfram.com/ReachingAlgorithm.html
 - solves: 'Shortest path problem'
+- book: 'MIT Press', 'Introduction to Algorithms'
 - time complexity: O(n), where n is the number of edges
-- where does the name come from? is this the same as using topological sorting?
-- input: 'Acyclic directed graph'
+- input: 'Directed acyclic graph'
+- uses: 'Breadth-first search', 'Dynamic programming', 'Topological sort'
+- implemented in: 'boost::graph::dag_shortest_paths'
 
 ## Collaborative diffusion
 - also called: 'Dijkstra flow maps'
@@ -223,15 +242,16 @@
 
 ## Ukkonen's algorithm
 - https://en.wikipedia.org/wiki/Ukkonen%27s_algorithm
-- paper: 'On-line construction of suffix trees'
+- paper: 'On-line construction of suffix trees' (1995)
 - book: 'Algorithms on Strings, Trees, and Sequences'
 - output: 'suffix tree'
 - properties: 'online'
 - time complexity: O(n), where n is the length of the string
 - input: 'List of strings'
+- implemented in: 'C++ adamserafini/suffix-tree', 'Python kasramvd/SuffixTree', 'Python mutux/Ukkonen-s-Suffix-Tree-Algorithm'
 
 ## Weiner's linear-time suffix tree algorithm
-- book: 'Algorithms on Strings, Trees, and Sequences'
+- book: 'Cambridge', 'Algorithms on Strings, Trees, and Sequences'
 - output: 'suffix tree'
 - superseded by: 'Ukkonen's algorithm'
 
@@ -251,6 +271,7 @@
 - applications: 'Pathfinding', 'Parsing using stochastic grammars in NLP'
 - uses method: 'Dynamic programming'
 - input: 'Weighted graph'
+- implemented in: 'networkx.algorithms.shortest_paths.astar.astar_path'
 
 ## Linear search
 - https://en.wikipedia.org/wiki/Linear_search
@@ -258,7 +279,7 @@
 - works on: 'Linked list', 'Array', 'List'
 - has an advantage when sequential access is fast compared to random access
 - O(1) for list with geometric distributed values
-- implemented in c++ std::find (impl. dependent), python list.index
+- implemented in: 'C++ std::find (impl. dependent)', 'Python list.index'
 - input: 'List'
 
 ## Binary search algorithm
@@ -266,7 +287,7 @@
 - find element in sorted finite list in O(log n) time where n is the number of elements in list
 - requires: 'Random access'
 - variants: 'Exponential search'
-- implemented in 'C++ std::binary_search', 'python bisect'
+- implemented in: 'C++ std::binary_search', 'Python bisect'
 - input: 'Sorted list'
 
 ## Naïve string-search algorithm
@@ -276,6 +297,8 @@
 - input: 'Buffered list'
 
 ## Exponential search
+- also called: 'Algorithm U', 'doubling search', 'galloping search', 'Struzik search'
+- paper: 'An almost optimal algorithm for unbounded searching' (1976)
 - https://en.wikipedia.org/wiki/Exponential_search
 - find element in sorted infinite list in O(log i) time where i is the position of the element in the list
 - input: 'Sorted list'
@@ -288,19 +311,40 @@
 - properties: 'parallelizable'
 
 ## Wyllie's algorithm
-- thesis: 'The Complexity of Parallel Computations (1979)'
+- thesis: 'The Complexity of Parallel Computations' (1979)
 - solves: 'List ranking'
 - related: 'Cumulative sum'
 - is a: 'Parallel algorithm'
+- time complexity: O(log n) on n processors in parallel
+- succeeded by: 'Anderson–Miller algorithm'
+
+## Anderson–Miller algorithm
+- paper: 'Deterministic parallel list ranking' (1988)
+- solves: 'List ranking'
+- is a: 'Parallel algorithm'
+- properties: 'optimal', 'deterministic'
+- time complexity: O(log n) on n/log(n) processors in parallel
+- abstract machine: 'EREW PRAM'
+
+## Reid-Miller–Blelloch algorithm
+- paper: 'List Ranking and List Scan on the CRAYC90' (1996)
+- solves: 'List ranking'
+- is a: 'Parallel algorithm'
+- time complexity: O(log^2 n)
+
+## Helman–JáJá algorithm
+- paper: 'Designing Practical Efficient Algorithms for Symmetric Multiprocessors' (1999)
+- solves: 'List ranking'
+- is a: 'Parallel algorithm'
 
 ## Funnelsort
-- paper: 'Cache-oblivious algorithms (1999)'
+- paper: 'Cache-oblivious algorithms' (1999)
 - https://en.wikipedia.org/wiki/Funnelsort
 - is a: 'cache-oblivious algorithm', 'external memory algorithm', 'Comparison-based sorting algorithm'
 - input: 'Collection'
 
 ## Quicksort
-- paper: 'Algorithm 64: Quicksort (1961)'
+- paper: 'Algorithm 64: Quicksort' (1961)
 - https://en.wikipedia.org/wiki/Quicksort
 - http://mathworld.wolfram.com/Quicksort.html
 - book: 'Introduction to Algorithms'
@@ -311,9 +355,12 @@
 - space complexity: O(log n) auxiliary
 - input: 'Random access collection'
 - properties: easily parallelizable
+- implemented in: 'C qsort'
 
 ## Radix sort
+- also called: 'Bucket sort', 'Digital sort'
 - https://en.wikipedia.org/wiki/Radix_sort
+- http://opendatastructures.org/ods-cpp/11_2_Counting_Sort_Radix_So.html#SECTION001522000000000000000
 - input: 'Collection of integers'
 
 ## Bubble sort
@@ -356,7 +403,7 @@
 - input: 'Collection'
 
 ## Counting sort
-- thesis: 'Information sorting in the application of electronic digital computers to business operations (1954)' by 'H. H. Seward'
+- thesis: 'Information sorting in the application of electronic digital computers to business operations' (1954) by 'H. H. Seward'
 - https://en.wikipedia.org/wiki/Counting_sort
 - is a: 'Integer sorting algorithm'
 - properties: 'parallelizable'
@@ -375,7 +422,7 @@
 - input: 'Random access collection'
 
 ## Ultimate heapsort
-- paper: 'The Ultimate Heapsort (1998)'
+- paper: 'The Ultimate Heapsort' (1998)
 - variant of: 'Heapsort'
 - comparisons: n log_2 n + O(1)
 
@@ -386,7 +433,7 @@
 - input: 'Random access collection'
 
 ## Introsort
-- paper: 'Introspective Sorting and Selection Algorithms'
+- paper: 'Introspective Sorting and Selection Algorithms' (1997)
 - https://en.wikipedia.org/wiki/Introsort
 - is a: 'Sorting algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
 - implemented in: 'C++ STL std::sort (usually)', '.net sort'
@@ -415,7 +462,7 @@
 - is a: 'Sorting algorithm', 'Parallel algorithm'
 
 ## Pairwise sorting network
-- paper: 'The pairwise sorting network (1992)'
+- paper: 'The pairwise sorting network' (1992)
 - https://en.wikipedia.org/wiki/Pairwise_sorting_network
 - is a: 'Sorting algorithm', 'Parallel algorithm'
 
@@ -471,20 +518,22 @@
 - cache-oblivious algorithm
 
 ## Naive Method for SimRank by Jeh and Widom
-- paper: 'SimRank: a measure of structural-context similarity (2002)'
+- paper: 'SimRank: a measure of structural-context similarity' (2002)
 - calculate: 'SimRank'
 
 ## De Casteljau's algorithm
 - https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm
-- paper: 'Système d'aide à la définition et à l'usinage de surfaces de carosserie (1971)'
+- paper: 'Système d'aide à la définition et à l'usinage de surfaces de carosserie' (1971)
 - evaluate polynomials in Bernstein form or Bézier curves
 - properties: 'numerically stable'
 - applications: 'Computer aided geometric design'
+- implemented in: 'dhermes/bezier'
 
 ## Clenshaw algorithm
 - also called: 'Clenshaw summation'
 - https://en.wikipedia.org/wiki/Clenshaw_algorithm
 - evaluate polynomials in Chebyshev form
+- implemented in: 'orthopy.clenshaw'
 
 ## Wagner–Fischer algorithm
 - https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm
@@ -552,7 +601,7 @@
 - solves: 'Shortest Edit Script'
 - input: two strings
 - output: 'Shortest Edit Script'
-- implemented by: 'diff', 'git' (Linear space variant)
+- implemented by (applications): 'diff', 'git' (Linear space variant)
 - variants: 'Linear space'
 
 ## Patience Diff method
@@ -575,22 +624,24 @@
 - approximate solution
 
 ## Hu–Tucker algorithm
+- paper: 'Optimal Computer Search Trees and Variable-Length Alphabetical Codes' (1971)
 - superseded by: 'Garsia–Wachs algorithm'
 
 ## Garsia–Wachs algorithm
+- paper: 'A New Algorithm for Minimum Cost Binary Trees' (1977)
 - https://en.wikipedia.org/wiki/Garsia%E2%80%93Wachs_algorithm
 - input: 'List of non-negative reals'
 - output: 'Optimal binary search tree' (special case)
 
 ## Knuth's optimal binary search tree algorithm
 - https://en.wikipedia.org/wiki/Optimal_binary_search_tree#Knuth%27s_dynamic_programming_algorithm
-- paper: 'Optimum binary search trees'
-- uses method: 'dynamic programming'
+- paper: 'Optimum binary search trees' (1971) <https://doi.org/10.1007/BF00264289>
+- uses method: 'dynamic programming'  
 - output: 'Optimal binary search tree'
 - time comlexity: O(n^2)
 
 ## Mehlhorn's nearly optimal binary search tree algorithm
-- paper 'Nearly optimal binary search trees'
+- paper 'Nearly optimal binary search trees' (1975) <https://doi.org/10.1007/BF00264563>
 - output approximatly: 'Optimal binary search tree'
 - time complexity: O(n)
 
@@ -608,6 +659,8 @@
 - local *Maze solving* algorithm for simply connected mazes
 
 ## Held–Karp algorithm
+- paper: 'Dynamic Programming Treatment of the Travelling Salesman Problem' (1962) <https://doi.org/10.1145/321105.321111>
+- paper: 'A Dynamic Programming Approach to Sequencing Problems' (1962) <https://doi.org/10.1137/0110015>
 - https://en.wikipedia.org/wiki/Held%E2%80%93Karp_algorithm
 - uses method: 'dynamic programming'
 - solves: 'Travelling salesman problem'
@@ -615,8 +668,12 @@
 ## Christofides algorithm
 - https://en.wikipedia.org/wiki/Christofides_algorithm
 - solves approximately: 'Travelling salesman problem' (for metric distances)
+- implemented in: 'google/or-tools::ChristofidesPathSolver'
+- report: 'Worst-case analysis of a new heuristic for the travelling salesman problem' (1976)
 
 ## Push–relabel maximum flow algorithm
+- paper: 'A new approach to the maximum flow problem' (1986) <https://doi.org/10.1145/12130.12144>
+- paper: 'A new approach to the maximum-flow problem' (1988) <https://doi.org/10.1145/48014.61051>
 - https://en.wikipedia.org/wiki/Push–relabel_maximum_flow_algorithm
 - solves: 'Maximum flow problem'
 - implemented in: 'boost::graph::push_relabel_max_flow', 'google/or-tools::max_flow'
@@ -643,7 +700,7 @@
 
 ## Gale–Shapley algorithm
 - also called: 'Deferred-acceptance algorithm'
-- https://www.britannica.com/science/Gale-Shapley-algorithm
+- paper: 'College Admissions and the Stability of Marriage' (1962) <https://doi.org/10.1080/00029890.1962.11989827> <https://doi.org/10.2307/2312726>
 - solves: 'Stable marriage problem'
 
 ## Floyd's cycle-finding algorithm

@@ -286,6 +286,7 @@ Solution is given by mathematical formula or naive computation method.
 ## Single-source shortest path problem
 - https://en.wikipedia.org/wiki/Shortest_path_problem
 - book: 'Introduction to Algorithms'
+- survey paper: 'A Survey of Shortest-Path Algorithms' (2017)
 - find shortest path in graph so that the sum of edge weights is minimized
 - is a: 'optimization problem'
 - solved by 'Breadth-first search' for unweighted graphs
@@ -576,6 +577,10 @@ Solution is given by mathematical formula or naive computation method.
 - solved by: 'quickselect', 'heaps'
 - domain: 'Computer science'
 - variant of: 'Sorting problem'
+
+## List ranking
+- https://en.wikipedia.org/wiki/List_ranking
+- domain: 'Parallel computing'
 
 ## Shortest pair of edge disjoint paths
 - special case of: 'Minimum-cost flow problem'

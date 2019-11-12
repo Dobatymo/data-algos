@@ -54,11 +54,35 @@
 - is a: 'metric'
 - applications: 'Regression analysis', 'LASSO'
 
+## City block distance (for images)
+- is a: 'metric'
+- see: 'Taxicab metric'
+- paper: 'Distance functions on digital pictures '(1968)
+- input: 'discrete 2d space'
+
+## Square distance
+- is a: 'metric'
+- paper: 'Distance functions on digital pictures '(1968)
+- input: 'discrete 2d space'
+
+## Hexagonal distance
+- is a: 'metric'
+- paper: 'Distance functions on digital pictures '(1968)
+- input: 'discrete 2d space'
+
+## Octagonal distance
+- is a: 'metric'
+- paper: 'Distance functions on digital pictures '(1968)
+- input: 'discrete 2d space'
+- approximates: 'Euclidean distance'
+- applications: 'Cluster detection', 'Elongated part detection', 'Regularity detection'
+
 ## Cosine similarity
 - https://en.wikipedia.org/wiki/Cosine_similarity
 - is not: 'metric'
 - applications: 'natural language processing', 'data mining'
 - metric version: 'angular distance'
+- implemented in: 'sklearn.metrics.pairwise.cosine_similarity'
 
 ## Logistic loss
 - also called: 'Log loss', 'Cross entropy loss'
@@ -70,14 +94,14 @@
 ## Root-mean-square deviation
 - also called: 'root-mean-square error', 'RMSD', 'RMSE'
 - https://en.wikipedia.org/wiki/Root-mean-square_deviation
-- implemented in: 'Python skimage.measure.compare_nrmse'
+- implemented in: 'Python skimage.measure.compare_nrmse', 'andrewekhalel/sewar'
 - properties: 'Convex', 'Continuous'
 
 ## Mean squared error
 - also called: 'mean squared deviation', 'MSD', 'MSE'
 - https://en.wikipedia.org/wiki/Mean_squared_error
 - applications: 'Statistical model', 'Linear regression'
-- implemented in: 'Python sklearn.metrics.mean_squared_error, tf.metrics.mean_squared_error, skimage.measure.compare_mse'
+- implemented in: 'Python sklearn.metrics.mean_squared_error, tf.metrics.mean_squared_error, skimage.measure.compare_mse', 'andrewekhalel/sewar'
 - properties: 'Continuous'
 
 ## Mean absolute error
@@ -93,6 +117,7 @@
 ## Explained variation
 - https://en.wikipedia.org/wiki/Explained_variation
 - applications: 'Regression analysis'
+- implemented in: 'sklearn.metrics.explained_variance_score'
 
 ## Algebraic distance
 - https://en.wikipedia.org/wiki/Distance#Algebraic_distance
@@ -103,25 +128,28 @@
 ## Chamfer distance
 - paper: 'Sequential Operations in Digital Picture Processing (1966)'
 - applications: 'Computer vision', 'Image similarity'
-- approximate: 'Euclidean distance'
+- approximates: 'Euclidean distance'
 
 ## Hausdorff distance
 - https://en.wikipedia.org/wiki/Hausdorff_distance
 - domain: 'Set theory'
 - applications: 'Computer vision'
+- implemented in: 'scipy.spatial.distance.directed_hausdorff'
 
 ## Mahalanobis distance
 - https://en.wikipedia.org/wiki/Mahalanobis_distance
 - applications: 'Cluster analysis', 'Anomaly detection'
+- implemented in: 'scipy.spatial.distance.mahalanobis'
 
 ## q-gram distance
 - for example defined in paper: 'Approximate string-matching with q-grams and maximal matches'
+- implemented in: 'R markvanderloo/stringdist'
 
 ## Structural similarity
 - also called: 'SSIM', 'Structural similarity index'
 - paper: 'Image quality assessment: from error visibility to structural similarity (2004)'
 - https://en.wikipedia.org/wiki/Structural_similarity
-- implemented in: 'Python skimage.measure.compare_ssim'
+- implemented in: 'Python skimage.measure.compare_ssim', 'tf.image.ssim', 'aizvorski/video-quality', 'sewar.full_ref.ssim'
 - properties: 'full reference'
 - corresponding distance: 'Structural Dissimilarity' (not a metric)
 - applications: 'Video quality evaluation', 'Image Quality Assessment'
@@ -131,12 +159,45 @@
 - also called: 'Information Content Weighted Structural Similarity Index'
 - paper: 'Information Content Weighting for Perceptual Image Quality Assessment' (2010)
 
+## MS-SSIM
+- also called: 'Multi-scale Structural Similarity Index'
+- paper: 'Multiscale structural similarity for image quality assessment' (2003)
+- implemented in: 'sewar.full_ref.msssim'
+- properties: 'full reference'
+
 ## Visual Information Fidelity
 - also called: 'VIF'
+- paper: 'Image information and visual quality' (2006)
 - https://en.wikipedia.org/wiki/Visual_Information_Fidelity
 - properties: 'full reference'
 - applications: 'Video quality evaluation', 'Image Quality Assessment'
 - domain: 'Image processing'
+- implemented in: 'aizvorski/video-quality', 'Python andrewekhalel/sewar'
+
+## ERGAS
+- also called: 'Erreur Relative Globale Adimensionnelle de Synthèse' ()
+- paper: 'Quality of high resolution synthesised images: Is there a simple criterion ?' (2000)
+- implemented in: 'Python andrewekhalel/sewar'
+- properties: 'full reference'
+
+## Spatial Correlation Coefficient
+- also called: 'SCC'
+- paper: 'A wavelet transform method to merge Landsat TM and SPOT panchromatic data' (2010)
+- implemented in: 'sewar.full_ref.scc'
+- properties: 'full reference'
+
+## Relative Average Spectral Error
+- also called: 'RASE'
+- paper: 'Fusion of high spatial and spectral resolution images: The ARSIS concept and its implementation' (2000)
+- implemented in: 'sewar.full_ref.rase'
+- properties: 'full reference'
+
+## Spectral Angle Mapper
+- also called: 'SAM'
+- same as: 'Cosine similarity'
+- paper: 'Discrimination among semi-arid landscape endmembers using the Spectral Angle Mapper (SAM) algorithm'
+- implemented in: 'sewar.full_ref.sam'
+- properties: 'full reference'
 
 ## Video Multimethod Assessment Fusion
 - also called: 'VMAF'
@@ -201,7 +262,59 @@
 ## Peak signal-to-noise ratio
 - also called: 'PSNR'
 - https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio
-- implemented in: 'Python skimage.measure.compare_psnr'
+- implemented in: 'Python skimage.measure.compare_psnr', 'aizvorski/video-quality', 'sewar.full_ref.psnr'
+
+## Polar edge coherence
+- also called: 'PEC'
+- paper: 'The polar edge coherence: A quasi blind metric for video quality assessment' (2009)
+- applications: 'Video quality assessment'
+
+## Relative polar edge coherence
+- also called: 'RECO'
+- paper: 'The polar edge coherence: A quasi blind metric for video quality assessment' (2009)
+- implemented in: 'aizvorski/video-quality'
+- applications: 'Video quality assessment'
+
+## Natural Image Quality Evaluator
+- also called: 'NIQE'
+- paper: 'Making a “Completely Blind” Image Quality Analyzer' (2012)
+- properties: 'no-reference'
+- implemented in: 'Matlab niqe', 'aizvorski/video-quality'
+
+## Universal Quality Image Index
+- also called: 'Quality Index Q', 'UQI'
+- paper: 'A universal image quality index' (2002)
+- applications: 'Image quality assessment'
+- implemented in: 'sewar.full_ref.uqi'
+
+## Spectral Distortion Inde
+- paper: 'Multispectral and Panchromatic Data Fusion Assessment Without Reference' (2008)
+- implemented in: 'sewar.no_ref.d_lambda'
+
+## Spatial Distortion Index
+- paper: 'Multispectral and Panchromatic Data Fusion Assessment Without Reference' (2008)
+- implemented in: 'sewar.no_ref.d_s'
+
+## Quality with No Reference
+- also called: 'QNR'
+- paper: 'Multispectral and Panchromatic Data Fusion Assessment Without Reference' (2008)
+- properties: 'no-reference'
+- implemented in: 'sewar.no_ref.qnr'
+- applications: 'Multispectral imaging'
+
+## Gotoh score
+- paper: 'An improved algorithm for matching biological sequences' (1982)
+- implemented in: 'abydos.distance.Gotoh', 'life4/textdistance'
+
+## MLIPNS
+- also called: 'Modified Language-Independent Product Name Search'
+- paper: 'Using product similarity for adding business' (2010)
+- implemented in: 'abydos.distance.MLIPNS'
+- Phonetic distance
+
+## Indel
+- like Levenshtein, but with inserts and deletes only
+- implemented in: 'abydos.distance.Indel'
 
 ## Sørensen–Dice coefficient
 - https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient

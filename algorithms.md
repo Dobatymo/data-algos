@@ -170,9 +170,10 @@
 - https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 - http://mathworld.wolfram.com/DijkstrasAlgorithm.html
 - uses method: 'Dynamic programming'
-- solves 'Shortest path problem' for non-negative weights in directed/undirected graphs in O(v^2) where v is the number of vertices
+- solves 'Single-source shortest path problem' for non-negative weights in directed/undirected graphs in O(v^2) where v is the number of vertices
 - variant implementation with 'Fibonacci heap' runs in O(e * v*log v) where e and v are the number of edges and vertices resp.
-- implemented in: 'Python scipy.sparse.csgraph.shortest_path(method="D")', 'boost::graph::dijkstra_shortest_paths'
+- implemented in (libraries): 'Python scipy.sparse.csgraph.shortest_path(method="D")', 'boost::graph::dijkstra_shortest_paths'
+- implemented in (lattice variant): 'skimage.graph.MCP'
 - Fibonacci implementation is the asymptotically the fastest known single-source shortest-path algorithm for arbitrary directed graphs with unbounded non-negative weights.
 - input: 'Directed graph with non-negative weights'
 
@@ -347,7 +348,7 @@
 - paper: 'Algorithm 64: Quicksort' (1961)
 - https://en.wikipedia.org/wiki/Quicksort
 - http://mathworld.wolfram.com/Quicksort.html
-- book: 'Introduction to Algorithms'
+- book: 'MIT Press', 'Introduction to Algorithms'
 - is a: 'Sorting algorithm', 'Unstable sorting algorithm', 'In-place algorithm', 'Divide and conquer algorithm', 'Comparison-based sorting algorithm'
 - time complexity (best): O(n log n)
 - time complexity (average): O(n log n)
@@ -411,7 +412,7 @@
 ## Heapsort
 - https://en.wikipedia.org/wiki/Heapsort
 - http://mathworld.wolfram.com/Heapsort.html
-- book: 'Introduction to Algorithms'
+- book: 'MIT Press', 'Introduction to Algorithms'
 - is a: 'Sorting algorithm', 'In-place algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
 - solves: 'Partial sorting'
 - time complexity (average, best, worst): O(n log n)
@@ -575,7 +576,7 @@
 
 ## Knuth–Morris–Pratt algorithm
 - https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
-- book: 'Introduction to Algorithms'
+- book: 'MIT Press', 'Introduction to Algorithms'
 - single *string searching*
 - implemented in (applications): 'grep'
 - better for small alphabets like DNA than: 'Boyer–Moore string-search algorithm'
@@ -583,7 +584,7 @@
 ## Rabin–Karp algorithm
 - also called: 'Karp–Rabin algorithm'
 - https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm
-- book: 'Introduction to Algorithms'
+- book: 'MIT Press', 'Introduction to Algorithms'
 - is a: 'String-searching algorithm'
 - single/multiple *string searching*
 - time complexity (worst): O(m+n)
@@ -636,7 +637,7 @@
 ## Knuth's optimal binary search tree algorithm
 - https://en.wikipedia.org/wiki/Optimal_binary_search_tree#Knuth%27s_dynamic_programming_algorithm
 - paper: 'Optimum binary search trees' (1971) <https://doi.org/10.1007/BF00264289>
-- uses method: 'dynamic programming'  
+- uses method: 'dynamic programming'
 - output: 'Optimal binary search tree'
 - time comlexity: O(n^2)
 
@@ -714,7 +715,7 @@
 - output: 'Minimum spanning tree'
 - properties: 'greedy'
 - implemented in: 'C++ boost::graph::kruskal_minimum_spanning_tree', 'google/or-tools::minimum_spanning_tree'
-- book: 'Introduction to Algorithms'
+- book: 'MIT Press', 'Introduction to Algorithms'
 
 ## Prim's algorithm
 - https://en.wikipedia.org/wiki/Prim%27s_algorithm
@@ -722,7 +723,7 @@
 - properties: 'greedy'
 - implemented in 'C++ boost::graph::prim_minimum_spanning_tree'
 - time complexity depends on used data structures
-- book: 'Introduction to Algorithms'
+- book: 'MIT Press', 'Introduction to Algorithms'
 
 ## Hierholzer's algorithm
 - https://en.wikipedia.org/wiki/Eulerian_path#Hierholzer's_algorithm
@@ -1080,11 +1081,68 @@
 - applications: 'Boolean satisfiability problem'
 - implemented by: 'Glucose SAT Solver'
 
+## Ramer–Douglas–Peucker algorithm
+- also called: 'Iterative end-point fit algorithm', 'Duda–Hart split-and-merge algorithm'
+- paper: 'An iterative procedure for the polygonal approximation of plane curves' (1972) <https://doi.org/10.1016/S0146-664X(72)80017-0>
+- https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm
+- implemented in: 'skimage.measure.approximate_polygon', 'psimpl'
+- applications: 'Downsampling'
+- runtime complexity: O(n log n)
+- runtime complexity (worst case): O(n^2)
+
+## Visvalingam–Whyatt algorithm
+- discussion paper: 'Line generalisation by repeated elimination of the smallest area ' (1992) <https://hull-repository.worktribe.com/output/459275>
+- applications: 'Downsampling'
+- properties: 'area based'
+
+## Reumann–Witkam algorithm
+- paper: 'Optimizing curve segmentation in computer graphics' (1974) <>
+- implemented in: 'psimpl'
+- applications: 'Downsampling'
+
+## Sleeve-fitting polyline simplification algorithm
+- also called: 'Zhao–Saalfeld algorithm'
+- paper: 'Linear-Time Sleeve-Fitting Polyline Simplification Algorithms' (1997) <>
+- applications: 'Downsampling'
+
+## Opheim simplification algorithm
+- paper: 'Smoothing a digitized curve by data reduction methods' (1981) <https://doi.org/10.2312/eg.19811012>
+- applications: 'Downsampling'
+- implemented in: 'psimpl'
+
+## Lang simplification algorithm
+- paper: 'Rules for robot draughtsmen' (1969) <>
+- applications: 'Downsampling'
+- implemented in: 'psimpl'
+
 ## Canny's Roadmap algorithm
 - http://planning.cs.uiuc.edu/node298.html
 - properties: 'very difficult to implement in code'
 - domain: 'Computational algebraic geometry'
 - solves: 'Motion planning'
+
+## Rapidly-exploring random tree
+- also called: 'RRT'
+- report: 'Rapidly-exploring random trees: A new tool for path planning' (1998)
+- https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree
+- solves: 'Motion planning'
+- implemented in (libraries): 'PythonRobotics', 'ompl::geometric::RRT'
+- domain: 'Robotics'
+- properties: 'single-query', 'geometric'
+
+## Probabilistic roadmap
+- also called: 'PRM'
+- paper: 'Probabilistic roadmaps for path planning in high-dimensional configuration spaces' (1996) <https://doi.org/10.1109/70.508439>
+- https://en.wikipedia.org/wiki/Probabilistic_roadmap
+- solves: 'Motion planning'
+- implemented in (libraries): 'PythonRobotics', 'ompl::geometric::PRM'
+- domain: 'Robotics'
+- properties: 'multi-query', 'geometric'
+
+## LazyPRM
+- variant of: 'Probabilistic roadmap'
+- implemented in (libraries): 'ompl::geometric::LazyPRM'
+- properties: 'multi-query', 'geometric'
 
 ## Fan and Su algortihm for multiple pattern match
 - paper: 'An efficient algorithm for matching multiple patterns' (1993)
@@ -1227,39 +1285,46 @@
 - paper: 'An iterative image registration technique with an application to stereo vision' (1981)
 - https://en.wikipedia.org/wiki/Lucas%E2%80%93Kanade_method
 - applications: 'Optical flow estimation', 'aperture problem'
-- local, sparse
 - implemented in: 'opencv::calcOpticalFlowPyrLK', 'opencv::CalcOpticalFlowLK' (obsolete)
 - uses: 'Structure tensor'
+- properties: 'local', 'sparse'
 
 ## Horn–Schunck method
 - paper: 'Determining Optical Flow' (1981)
 - https://en.wikipedia.org/wiki/Horn%E2%80%93Schunck_method
 - applications: 'Optical flow estimation', 'aperture problem'
 - implemented in: 'opencv::CalcOpticalFlowHS' (obsolete, should be replaced with calcOpticalFlowPyrLK or calcOpticalFlowFarneback according to opencv docs)
-- global
+- properties: 'global'
 
 ## Gunnar-Farneback algorithm
 - paper: 'Two-frame motion estimation based on polynomial expansion'
 - applications: 'Optical flow estimation'
 - implemented in: 'opencv::calcOpticalFlowFarneback'
-- dense
+- properties: 'dense'
 
 ## SimpleFlow algorithm
 - paper: 'SimpleFlow: A Non-iterative, Sublinear Optical Flow Algorithm' (2012)
 - implemented in: 'opencv::calcOpticalFlowSF'
 - applications: 'Optical flow estimation'
 
+## TV-L1
+- original paper: 'A Duality Based Approach for Realtime TV-L1 Optical Flow' (2007) <https://doi.org/10.1007/978-3-540-74936-3_22>
+- applications: 'Optical flow estimation'
+- properties: 'dense'
+
+## Improved TV-L1
+- paper: 'An Improved Algorithm for TV-L1 Optical Flow' (2009) <https://doi.org/10.1007/978-3-642-03061-1_2>
+- implementation paper: 'TV-L1 Optical Flow Estimation' (2013) <https://doi.org/10.5201/ipol.2013.26>
+- improved variant of: 'TV-L1'
+- applications: 'Optical flow estimation'
+- implemented in (libraries): 'cv::DualTVL1OpticalFlow', 'skimage.registration.optical_flow_tvl1'
+- properties: 'dense'
+
 ## Kadane's algorithm
 - https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm
 - applications: 'Maximum subarray problem'
 - time complexity: O(n)
 - uses method: 'Dynamic programming'
-
-## Mean shift
-- https://en.wikipedia.org/wiki/Mean_shift
-- is a: 'mode-seeking algorithm'
-- applications: 'cluster analysis', 'visual tracking', 'image smoothing'
-- basis for: 'Camshift'
 
 ## Scale-invariant feature transform
 - paper: 'Object recognition from local scale-invariant features' (1999)
@@ -1268,22 +1333,39 @@
 - applications: 'object recognition', 'robotic mapping and navigation', 'image stitching', '3D modeling', 'gesture recognition', 'video tracking'
 - patent: US6711293
 
+## Marching cubes
+- https://en.wikipedia.org/wiki/Marching_cubes
+- paper: 'Marching cubes: A high resolution 3D surface construction algorithm' (1987) <https://doi.org/10.1145/37402.37422>
+- domain: 'Computer graphics'
+- applications: 'Medical imaging', 'Mesh generation'
+- implemented in: 'skimage.measure.marching_cubes_classic'
+
+## Lewiner's marching cubes
+- paper: 'Efficient Implementation of Marching Cubes' Cases with Topological Guarantees' (2003) <https://doi.org/10.1080/10867651.2003.10487582>
+- improved variant of: 'Marching cubes'
+- implemented in: 'skimage.measure.marching_cubes_lewiner'
+- domain: 'Computer graphics'
+
+## Naive calculation of image moments
+- solves special case of: 'Image moments'
+- implemented in: 'skimage.measure.moments'
+
+## Naive calculation of Hu moment invariants
+- solves special case of: 'Image moments'
+- implemented in: 'skimage.measure.moments_hu'
+
 ## Marching squares
 - https://en.wikipedia.org/wiki/Marching_squares
-- domain: 'computer graphics', 'cartography'
+- domain: 'Computer graphics', 'Cartography'
 - applications: 'contour finding'
 - properties: 'Embarrassingly parallel'
+- implemented in (libraries): 'skimage.measure.find_contours'
+- special case of: 'Marching cubes'
 
 ## Lempel–Ziv–Welch
 - https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch
 - applications: 'Lossless compression'
 - was patented
-
-## Trajkovic-Hedley corner detector
-- paper: 'Fast corner detection' (1998)
-- https://en.wikipedia.org/wiki/Corner_detection#The_Trajkovic_and_Hedley_corner_detector
-- applications: 'Corner detection'
-- domain: 'Computer vision'
 
 ## General number field sieve
 - also called: 'GNFS'
@@ -1417,7 +1499,7 @@
 - solves: 'Maximum flow problem'
 - input: 'Flow network'
 - output: 'Maximum flow'
-- book: 'Introduction to Algorithms'
+- book: 'MIT Press', 'Introduction to Algorithms'
 - similar: 'Dinic's algorithm'
 
 ## Marr–Hildreth algorithm
@@ -1429,12 +1511,23 @@
 - output: 'Binary image'
 
 ## Otsu's method
+- paper: 'A Threshold Selection Method from Gray-Level Histograms' (1979) <https://doi.org/10.1109/TSMC.1979.4310076>
 - https://en.wikipedia.org/wiki/Otsu%27s_method
-- applications: 'Image thresholding'
+- solves: 'Image binarization'
 - domain: 'Image processing'
-- implemented in: 'cv::threshold(type=THRESH_OTSU)'
+- implemented in: 'cv::threshold(type=THRESH_OTSU)', 'skimage.filters.threshold_otsu'
 - input: 'Grayscale image'
 - output: 'Binary image'
+- properties: 'global'
+
+## Otsu's method (local variant)
+- solves: 'Image binarization'
+- domain: 'Image processing'
+- implemented in (libraries): 'skimage.filters.rank.otsu'
+- input: 'Grayscale image'
+- output: 'Binary image'
+- properties: 'local'
+- variant of: 'Otsu's method'
 
 ## Soundex
 - https://en.wikipedia.org/wiki/Soundex
@@ -1586,7 +1679,7 @@
 - https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation
 - applications: 'Multivariate interpolation', 'Image scaling'
 
---- move these to models.md 
+--- move these to models.md
 
 ## Bilinear interpolation
 - https://en.wikipedia.org/wiki/Bilinear_interpolation
@@ -2081,12 +2174,18 @@
 - input: 'regular network of bools'
 - solves: 'Connected-component labeling'
 
-## Fiorio's algorithm for connected-component labeling
-- paper: 'Two linear time Union-Find strategies for image processing (1996)'
-- solves: 'Connected-component labeling'
+## Fiorio's algorithm for linear time restricted Union-Find
+- paper: 'Two linear time Union-Find strategies for image processing' (1996) <https://doi.org/10.1016/0304-3975(94)00262-2>
 - implemented in: 'Python skimage.measure.label'
-- version of: 'Union-find algorithm'
+- solves special case of: 'Disjoint set union problem'
 - properties: 'two pass'
+- solves: 'Image segmentation'
+
+## Improved variant of Fiorio's algorithm for connected-component labeling
+- paper: 'Optimizing connected component labeling algorithms' (2005) <https://doi.org/10.1117/12.596105>
+- based on: 'Fiorio's algorithm for linear time restricted Union-Find'
+- implemented in (libraries): 'skimage.measure.label'
+- solves: 'Connected-component labeling'
 
 ## Wu's algorithm for connected-component labeling
 - paper: 'Two Strategies to Speed up Connected Component Labeling Algorithms (2005)'
@@ -2581,7 +2680,7 @@
 
 ## David Eppstein's algorithm for finding the synchronizing word of a DFA
 - paper: 'Reset Sequences for Monotonic Automata' (1990)
-- time complexity O(n^3 + k*n^2). 
+- time complexity O(n^3 + k*n^2).
 - does not always find the shortest possible synchronizing word
 - input: 'DFA'
 - output: 'Synchronizing word'
@@ -2599,6 +2698,7 @@
 - https://en.wikipedia.org/wiki/Random_sample_consensus
 - paper: 'Random sample consensus: a paradigm for model fitting with applications to image analysis and automated cartography' (1981)
 - applications: 'Computer vision', 'Location determination problem'
+- implemented in: 'skimage.measure.ransac'
 
 ## PACBO
 - also called: 'Probably Approximately Correct Bayesian Online'
@@ -2742,7 +2842,7 @@
 ## Marzullo's algorithm
 - thesis: 'Maintaining the time in a distributed system: an example of a loosely-coupled distributed service' (1984)
 - https://en.wikipedia.org/wiki/Marzullo%27s_algorithm
-- superseeded by: 'Intersection algorithm'
+- superseded by: 'Intersection algorithm'
 - is a: 'Agreement algorithm'
 - applications: 'Clock synchronization'
 
@@ -2911,12 +3011,22 @@
 - implemented in: 'OpenCV::MSER'
 
 ## Mean shift
+- original paper: 'The estimation of the gradient of a density function, with applications in pattern recognition' (1975) <https://doi.org/10.1109/TIT.1975.1055330>
+- rediscovery paper: 'Mean shift, mode seeking, and clustering' (1995) <https://doi.org/10.1109/34.400568>
+- https://en.wikipedia.org/wiki/Mean_shift
+- is a: 'mode-seeking algorithm'
+- applications: 'Cluster analysis', 'visual tracking', 'image smoothing'
+- basis for: 'Camshift'
+
+## Mean shift for feature space analysis
 - also called: 'Adaptive mean shift clustering'
-- paper: 'Mean shift: a robust approach toward feature space analysis' (2002)
+- variant of: 'Mean shift'
+- paper: 'Mean shift: a robust approach toward feature space analysis' (2002) <https://doi.org/10.1109/34.1000236>
 - implemented in: 'sklearn.cluster.MeanShift'
 - is a: adaptive gradient ascent method
 - properties: 'centroid based'
 - applications: 'Clustering'
+- domain: 'Computer vision'
 
 ## Variational Bayes
 - also called: 'VB'
@@ -3055,7 +3165,507 @@
 - applications: 'Neuroevolution', 'Machine learning', 'Reinforcement learning'
 - is a: 'Evolutionary algorithm'
 
+## Line integral convolution
+- paper: 'Imaging vector fields using line integral convolution' (1993) <https://doi.org/10.1145/166117.166151>
+- https://en.wikipedia.org/wiki/Line_integral_convolution#Algorithm
+- implemented in: 'lime::LIC'
+- domain: 'Scientific visualization'
+- visualizes: 'vector field'
+
+## Meyer's flooding algorithm
+- https://en.wikipedia.org/wiki/Watershed_(image_processing)#Meyer's_flooding_algorithm
+- solves: 'Watershed transformation'
+- input: 'Grayscale image'
+- applications: 'Image segmentation'
+- superseded by: 'Priority-Flood'
+
+## Priority-Flood
+- paper: 'Priority-flood: An optimal depression-filling and watershed-labeling algorithm for digital elevation models' (2014) <https://doi.org/10.1016/j.cageo.2013.04.024>
+- solves: 'Watershed transformation'
+- input: 'Grayscale image'
+- applications: 'Image segmentation'
+
+## SKImage's watershed algorithm
+- implemented in: 'skimage.segmentation.watershed'
+- solves: 'Watershed transformation'
+- input: 'Grayscale image'
+- applications: 'Image segmentation'
+
+## Active contour model
+- paper: 'Snakes: Active contour models' (1988) <https://doi.org/10.1007/BF00133570>
+- implemented in: 'skimage.segmentation.active_contour'
+- applications: 'Image segmentation'
+
+## Chan-Vese segmentation algorithm
+- paper: 'An Active Contour Model without Edges' (1999) <https://doi.org/10.1007/3-540-48236-9_13>
+- implemented in: 'skimage.segmentation.chan_vese'
+- applications: 'Image segmentation'
+
+## Morphological geodesic active contours
+- also called: 'MorphGAC'
+- paper: 'A Morphological Approach to Curvature-Based Evolution of Curves and Surfaces' (2013) <https://doi.org/10.1109/TPAMI.2013.106>
+- implemented in: 'skimage.segmentation.morphological_geodesic_active_contour'
+
+## Morphological Active Contours without Edges
+- also called: 'MorphACWE'
+- paper: 'A Morphological Approach to Curvature-Based Evolution of Curves and Surfaces' (2013) <https://doi.org/10.1109/TPAMI.2013.106>
+- implemented in: 'skimage.segmentation.morphological_chan_vese'
+
+## Anisotropic diffusion
+- also called: 'Perona–Malik diffusion'
+- paper: 'Scale-space and edge detection using anisotropic diffusion' (1990) <https://doi.org/10.1109/34.56205>
+- https://en.wikipedia.org/wiki/Anisotropic_diffusion
+- applications: 'Noise reduction', 'Edge-preserving smoothing'
+- implemented in: 'cv::ximgproc::anisotropicDiffusion'
+
+## Reich's edge-preserving filter
+- also called: 'EPF'
+- paper: 'A Real-Time Edge-Preserving Denoising Filter' (2018) <https://doi.org/10.5220/0006509000850094>
+- implemented in: 'cv::ximgproc::edgePreservingFilter'
+
+## Bilateral filter
+- paper: 'Bilateral filtering for gray and color images' (1998) <https://doi.org/10.1109/ICCV.1998.710815>
+- https://en.wikipedia.org/wiki/Bilateral_filter
+- applications: 'Noise reduction', 'Edge-preserving smoothing'
+- implemented in: 'skimage.restoration.denoise_bilateral', 'Avisynth TBilateral'
+- properties: 'non-linear'
+
+## SPTWO
+- original paper: 'Patch-Based Video Denoising With Optical Flow Estimation' (2016) <https://doi.org/10.1109/TIP.2016.2551639>
+- implementation paper: 'Video Denoising with Optical Flow Estimation' (2018) <https://doi.org/10.5201/ipol.2018.224>
+- applications: 'Video denoising'
+- properties: 'patch based'
+
+## Video non-local Bayes
+- also called: 'VNLB'
+- http://dev.ipol.im/~pariasm/video_nlbayes/
+- paper: 'Video Denoising via Empirical Bayesian Estimation of Space-Time Patches' (2018) <https://doi.org/10.1007/s10851-017-0742-4>
+- applications: 'Video denoising'
+- properties: 'patch based'
+- implemented in: 'pariasm/vnlb'
+
+## Pei-Lin normalization
+- paper: 'Image normalization for pattern recognition' (1995) <https://doi.org/10.1016/0262-8856(95)98753-G>
+- implemented in: 'cv.ximgproc.PeiLinNormalization'
+
+## Structured forests edge detection
+- paper: 'Structured Forests for Fast Edge Detection' (2013) <https://doi.org/10.1109/ICCV.2013.231>
+- applications: 'Edge detection'
+- implemented in: 'cv::ximgproc::StructuredEdgeDetection'
+
+## Zhang-Suen thinning algorithm
+- paper: 'A fast parallel algorithm for thinning digital patterns' (1984) <https://doi.org/10.1145/357994.358023>
+- implemented in: 'cv::ximgproc::thinning'
+- input: 'Binary image'
+- output: 'Binary image'
+
+## Edge Boxes
+- paper: 'Edge Boxes: Locating Object Proposals from Edges' (2014) <https://doi.org/10.1007/978-3-319-10602-1_26>
+- implemented in (libraries): 'cv::ximgproc::EdgeBoxes'
+- applications: 'Object detection'
+- domain: 'Computer vision'
+
+## Contrast Limited Adaptive Histogram Equalization
+- also called: 'CLAHE'
+- book: 'Morgan Kaufmann', 'Graphics Gems IV' (1994) <https://doi.org/10.1016/C2013-0-07360-4>
+- https://en.wikipedia.org/wiki/Adaptive_histogram_equalization#Contrast_Limited_AHE
+- implemented in (libraries): 'skimage.exposure.equalize_adapthist'
+
+## Niblack's binarization
+- book: 'Prentice Hall', 'An introduction to digital image processing' (1986)
+- implemented in: 'cv::ximgproc::niBlackThreshold', 'skimage.filters.threshold_niblack'
+- solves: 'Image binarization'
+- domain: 'Image processing'
+- properties: 'local'
+
+## Sauvola binarization
+- paper: 'Adaptive document image binarization' (2000) <https://doi.org/10.1016/S0031-3203(99)00055-2>
+- based on: 'Niblack's binarization'
+- implemented in: 'skimage.filters.threshold_sauvola'
+- solves: 'Image binarization'
+- domain: 'Image processing'
+- properties: 'local'
+
+## Phansalkar binarization
+- paper: 'Adaptive local thresholding for detection of nuclei in diversity stained cytology images' (2011) <https://doi.org/10.1109/ICCSP.2011.5739305>
+- based on: 'Sauvola binarization'
+- solves: 'Image binarization'
+- domain: 'Image processing'
+- properties: 'local'
+
+## Bernsen binarization
+- paper: 'Dynamic Thresholding of Grey-Level Images' (1986) <>
+- solves: 'Image binarization'
+- domain: 'Image processing'
+- properties: 'local'
+
+## ISODATA thresholding
+- also called: 'Ridler-Calvard method', 'Inter-means'
+- paper: 'Picture Thresholding Using an Iterative Selection Method' (1978) <https://doi.org/10.1109/TSMC.1978.4310039>
+- solves: 'Image binarization'
+- domain: 'Image processing'
+- properties: 'histogram-based', 'global'
+- implemented in (libraries): 'skimage.filters.threshold_isodata'
+- implamented in (applications): 'ImageJ'
+
+## Li's iterative minimum cross entropy method
+- paper: 'An iterative algorithm for minimum cross entropy thresholding' (1998) <https://doi.org/10.1016/S0167-8655(98)00057-9>
+- solves: 'Image binarization'
+- domain: 'Image processing'
+- implemented in (libraries): 'skimage.filters.threshold_li'
+- properties: 'global'
+
+## Mean thresholding
+- paper: 'An Analysis of Histogram-Based Thresholding Algorithms' (1993) <https://doi.org/10.1006/cgip.1993.1040>
+- solves: 'Image binarization'
+- domain: 'Image processing'
+- implemented in (libraries): 'skimage.filters.threshold_mean'
+- properties: 'global'
+
+## Minimum thresholding
+- paper: 'The Analysis of Cell Images' (1966) <https://doi.org/10.1111/j.1749-6632.1965.tb11715.x>
+- solves: 'Image binarization'
+- domain: 'Image processing'
+- implemented in (libraries): 'skimage.filters.threshold_minimum'
+- properties: 'global'
+
+## Triangle thresholding
+- paper: 'Automatic measurement of sister chromatid exchange frequency' (1977) <https://doi.org/10.1177%2F25.7.70454>
+- solves: 'Image binarization'
+- domain: 'Image processing'
+- implemented in: 'skimage.filters.threshold_triangle'
+- properties: 'global'
+
+## Yen's thresholding method
+- paper: 'A new criterion for automatic multilevel thresholding' (1995) <https://doi.org/10.1109/83.366472>
+- solves: 'Image binarization'
+- domain: 'Image processing'
+- implemented in: 'skimage.filters.threshold_yen'
+- properties: 'global'
+
+## Felzenszwalb-Huttenlocher
+- paper: 'Efficient graph-based image segmentation' (2004) <https://doi.org/10.1023/B:VISI.0000022288.19776.77>
+- applications: 'Image segmentation'
+- implemented in: 'skimage.segmentation.felzenszwalb'
+
+## Quickshift
+- paper: 'Quick Shift and Kernel Methods for Mode Seeking' (2008) <https://doi.org/10.1007/978-3-540-88693-8_52>
+- implemented in: 'skimage.segmentation.quickshift'
+- applications: 'Image segmentation'
+
+## Simple linear iterative clustering
+- also called: 'SLIC'
+- paper: 'SLIC Superpixels Compared to State-of-the-Art Superpixel Methods' (2012) <https://doi.org/10.1109/TPAMI.2012.120>
+- is a: 'superpixel algorithm'
+- implemented in: 'skimage.segmentation.slic', 'cv::ximgproc::SuperpixelSLIC'
+- uses: 'k-means clustering'
+
+## Linear spectral clustering
+- also called: 'LSC'
+- paper: 'Superpixel segmentation using Linear Spectral Clustering' (2015) <https://doi.org/10.1109/CVPR.2015.7298741>
+- implemented in: 'cv::ximgproc::SuperpixelLSC'
+
+## SEEDS
+- also called: 'Superpixels extracted via energy-driven sampling'
+- paper: 'SEEDS: Superpixels Extracted Via Energy-Driven Sampling' (2015) <https://doi.org/10.1007/s11263-014-0744-2>
+- implemented in: 'cv::ximgproc::SuperpixelSEEDS'
+
+## Random walker algorithm
+- paper: 'Random Walks for Image Segmentation' (2006) <https://doi.org/10.1109/TPAMI.2006.233>
+- https://en.wikipedia.org/wiki/Random_walker_algorithm
+- applications: 'Image segmentation'
+- solves: 'Combinatorial Dirichlet problem'
+- implemented in: 'skimage.segmentation.random_walker'
+
+## Difference of Gaussians
+- also called: 'DoG'
+- https://en.wikipedia.org/wiki/Difference_of_Gaussians
+- domain: 'Imaging science'
+- implemented in (libraries): 'lime::edgeDoG', 'skimage.feature.blob_dog'
+- is a: 'Band-pass filter'
+- applications: 'Edge detection', 'Blob detection'
+
+## Determinant of Hessian method
+- also called: 'DoH'
+- https://en.wikipedia.org/wiki/Blob_detection#The_determinant_of_the_Hessian
+- implemented in (libraries): 'skimage.feature.blob_doh'
+- applications: 'Blob detection'
+
+## Laplacian of Gaussian
+- also called: 'LoG'
+- https://en.wikipedia.org/wiki/Blob_detection#The_Laplacian_of_Gaussian
+- applications: 'Blob detection'
+- implemented in (libraries): 'skimage.feature.blob_log'
+
+## Difference of Box
+- also called: 'DoB'
+
+## Horn's algorithm
+- paper: 'Determining lightness from an image' (1974) <https://doi.org/10.1016/0146-664X(74)90022-7>
+- implemented in: 'lime::colorConstancy(tpye=CONSTANCY_HORN)'
+- applications: 'Color constancy'
+
+## Rahman's algorithm
+- patent: 'Method of improving a digital image' (1999) <US5991456A>
+- implemented in: 'lime::colorConstancy(tpye=CONSTANCY_RAHMAN)'
+- applications: 'Color constancy'
+- properties: 'patent expired'
+
+## Faugeras's algorithm
+- paper: 'Digital color image processing within the framework of a human visual model' (1979) <https://doi.org/10.1109/TASSP.1979.1163262>
+- implemented in: 'lime::colorConstancy(tpye=CONSTANCY_FAUGERAS)'
+- applications: 'Color constancy'
+
+## Image inpainting by biharmonic functions
+- paper: 'On surface completion and image inpainting by biharmonic functions: Numerical aspects' (2017) <https://arxiv.org/abs/1707.06567>
+- implemented in: 'skimage.restoration.inpaint_biharmonic'
+- solves: 'Inpainting'
+
+## Canny edge detector
+- also called: 'Hysteresis thresholding'
+- paper: 'A Computational Approach to Edge Detection' (1986) <https://doi.org/10.1109/TPAMI.1986.4767851>
+- https://en.wikipedia.org/wiki/Canny_edge_detector
+- domain: 'image processing'
+- applications: 'Edge detection'
+- implemented in (libraries): 'cv::Canny', 'skimage.feature.canny'
+- uses: 'Hysteresis thresholding'
+
+## Moravec corner detection algorithm
+- https://en.wikipedia.org/wiki/Corner_detection#Moravec_corner_detection_algorithm
+- thesis: 'Obstacle avoidance and navigation in the real world by a seeing robot rover' (1980) <https://www.ri.cmu.edu/publications/obstacle-avoidance-and-navigation-in-the-real-world-by-a-seeing-robot-rover/>
+- implemented in (libraries): 'skimage.feature.corner_moravec'
+- applications: 'Corner detection'
+
+## Förstner corner detector
+- paper: 'A Fast Operator for Detection and Precise Location of Distinct Points, Corners and Centers of Circular Features' (1987) <>
+- https://en.wikipedia.org/wiki/Corner_detection#The_F%C3%B6rstner_corner_detector
+- implemented in (libraries): 'skimage.feature.corner_foerstner'
+- applications: 'Corner detection'
+
+## Harris-Stephens corner detector
+- paper: 'A combined corner and edge detector' (1988) <>
+- https://en.wikipedia.org/wiki/Corner_detection#The_Harris_&_Stephens_/_Plessey_/_Shi%E2%80%93Tomasi_corner_detection_algorithms
+- applications: 'Corner detection'
+- implemented in (libraries): 'skimage.feature.corner_harris', 'cv::cornerHarris'
+
+## Shi-Tomasi corner detector
+- also called: 'Kanade-Tomasi corner detector'
+- paper: 'Good features to track' (1994) <https://doi.org/10.1109/CVPR.1994.323794>
+- https://en.wikipedia.org/wiki/Corner_detection#The_Harris_&_Stephens_/_Plessey_/_Shi%E2%80%93Tomasi_corner_detection_algorithms
+- implemented in (libraries): 'skimage.feature.corner_shi_tomasi', 'cv::goodFeaturesToTrack'
+- based on: 'Harris-Stephens corner detector'
+
+## Trajkovic-Hedley corner detector
+- paper: 'Fast corner detection' (1998) <https://doi.org/10.1016/S0262-8856(97)00056-5>
+- https://en.wikipedia.org/wiki/Corner_detection#The_Trajkovic_and_Hedley_corner_detector
+- applications: 'Corner detection'
+- domain: 'Computer vision'
+
+## Kitchen-Rosenfeld corner detector
+- paper: 'Gray-level corner detection' (1982) <https://doi.org/10.1016/0167-8655(82)90020-4>
+- implemented in (libraries): 'skimage.feature.corner_kitchen_rosenfeld'
+- applications: 'Corner detection'
+- domain: 'Computer vision'
+
+## Features from accelerated segment test
+- also called: 'FAST'
+- paper: 'Machine Learning for High-Speed Corner Detection' (2006) <https://doi.org/10.1007/11744023_34>
+- https://en.wikipedia.org/wiki/Features_from_accelerated_segment_test
+- implemented in (libraries): 'skimage.feature.corner_fast'
+- applications: 'Corner detection'
+
+## DAISY descriptor
+- paper: 'A fast local descriptor for dense matching' (2008) <https://doi.org/10.1109/CVPR.2008.4587673>
+- paper: 'DAISY: An Efficient Dense Descriptor Applied to Wide-Baseline Stereo' (2009) <https://doi.org/10.1109/TPAMI.2009.77>
+- implemented in (libraries): 'skimage.feature.daisy'
+- properties: 'local'
+- applications: 'Feature detection'
+
+## Haar-like feature
+- paper: 'Rapid object detection using a boosted cascade of simple features' (2001) <https://doi.org/10.1109/CVPR.2001.990517>
+- https://scikit-image.org/docs/dev/api/skimage.feature.html#ra19a7aed16ca-1
+- implemented in (libraries): 'skimage.feature.haar_like_feature'
+- domain: 'Computer vision'
+- applications: 'Feature detection'
+
+## Histogram of oriented gradients
+- also called: 'HOG'
+- patent: 'Method of and apparatus for pattern recognition' (1982) <https://patents.google.com/patent/US4567610>
+- https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients
+- domain: 'Computer vision'
+- implemented in (libraries): 'skimage.feature.hog'
+- applications: 'Feature detection'
+- properties: 'patent expired'
+
+## Scale-invariant feature transform
+- also called: 'SIFT'
+- patent: 'Method and apparatus for identifying scale invariant features in an image and use of same for locating an object in an image' (2000) <https://patents.google.com/patent/US6711293>
+- https://en.wikipedia.org/wiki/Scale-invariant_feature_transform
+- applications: 'Feature detection'
+- domain: 'Computer vision'
+
+## GLOH
+- also called: 'Gradient Location and Orientation Histogram'
+- paper: 'A performance evaluation of local descriptors' (2005) <https://doi.org/10.1109/TPAMI.2005.188>
+- https://en.wikipedia.org/wiki/GLOH
+- applications: 'Feature detection'
+- domain: 'Computer vision'
+
+## Local binary patterns
+- also called: 'LBP'
+- paper: 'A comparative study of texture measures with classification based on featured distributions' (1996) <https://doi.org/10.1016/0031-3203(95)00067-4>
+- https://en.wikipedia.org/wiki/Local_binary_patterns
+- http://www.scholarpedia.org/article/Local_Binary_Patterns
+- implemented in (libraries): 'skimage.feature.local_binary_pattern', 'mahotas.features.lbp.lbp'
+- applications: 'Feature detection'
+- domain: 'Computer vision'
+
+## Multi-block local binary pattern
+- also called: 'MB-LBP'
+- paper: 'Face Detection Based on Multi-Block LBP Representation' (2007) <https://doi.org/10.1007/978-3-540-74549-5_2>
+- implemented in (libraries): 'skimage.feature.multiblock_lbp'
+- applications: 'Feature detection'
+- domain: 'Computer vision'
+
+## Speeded up robust features
+- also called: 'SURF'
+- patent: 'Robust interest point detector and descriptor ' (2006) <https://patents.google.com/patent/US20090238460A1/en>
+- https://en.wikipedia.org/wiki/Speeded_up_robust_features
+- applications: 'Feature detection'
+- domain: 'Computer vision'
+- implemented in (libraries): 'mahotas.features.surf.surf'
+
+## Binary Robust Independent Elementary Features
+- also called: 'BRIEF'
+- paper: 'BRIEF: Binary Robust Independent Elementary Features' (2010) <https://doi.org/10.1007/978-3-642-15561-1_56>
+- implemented in (libraries): 'skimage.feature.BRIEF'
+- applications: 'Feature detection'
+- domain: 'Computer vision'
+
+## ORB
+- also called: 'Oriented FAST and rotated BRIEF'
+- paper: 'ORB: An efficient alternative to SIFT or SURF' (2011) <https://doi.org/10.1109/ICCV.2011.6126544>
+- implemented in (libraries): 'skimage.feature.ORB'
+- applications: 'Feature detection'
+- domain: 'Computer vision'
+- based on: 'Features from accelerated segment test', 'Binary Robust Independent Elementary Features'
+
+## CenSurE keypoint detector
+- paper: 'CenSurE: Center Surround Extremas for Realtime Feature Detection and Matching' (2008) <https://doi.org/10.1007/978-3-540-88693-8_8>
+- implemented in (libraries): 'skimage.feature.CENSURE'
+- applications: 'Feature detection'
+- domain: 'Computer vision'
+
+## Fast normalized cross-correlation
+- solves: 'Normalized cross-correlation'
+- paper: 'Fast Normalized Cross-Correlation' (1995) <>
+- implemented in: 'Matlab normxcorr2'
+
+## Fast normalized cross-correlation
+- solves: 'Normalized cross-correlation'
+- paper: 'Template matching using fast normalized cross correlation' (2001) <https://doi.org/10.1117/12.421129>
+
+## Image registration by cross-correlation
+- paper: 'Efficient subpixel image registration algorithms' (2008) <https://doi.org/10.1364/OL.33.000156>
+- implemented in: 'skimage.feature.register_translation'
+- applications: 'Image registration'
+- domain: 'Computer vision'
+
+## Image registration by masked normalized cross-correlation
+- paper: 'Masked Object Registration in the Fourier Domain' (2011) <https://doi.org/10.1109/TIP.2011.2181402>
+- implemented in: 'skimage.feature.masked_register_translation'
+- applications: 'Image registration'
+- domain: 'Computer vision'
+- uses: 'Masked normalized cross-correlation'
+
+## Template Matching using Fast Normalized Cross Correlation
+- paper: 'Template matching using fast normalized cross correlation' (2001) <https://doi.org/10.1117/12.421129>
+- solves: 'Template matching'
+- domain: 'Computer vision'
+- implemented in: 'skimage.feature.match_template'
+
+## Normalized cuts
+- also called: 'Normalized graph cuts'
+- paper: 'Normalized cuts and image segmentation' (2000) <https://doi.org/10.1109/34.868688>
+- https://en.wikipedia.org/wiki/Segmentation-based_object_categorization#Normalized_cuts
+- implemented in: 'skimage.future.graph.cut_normalized'
+- applications: 'Image segmentation', 'Medical imaging'
+- domain: 'Computer vision', 'Graph theory'
+- properties: 'block based', 'region based'
+
+## ncut algorithm
+- https://en.wikipedia.org/wiki/Segmentation-based_object_categorization#The_ncut_algorithm
+- paper: 'Normalized cuts and image segmentation' (2000) <https://doi.org/10.1109/34.868688>
+- implemented in (libraries): 'skimage.future.graph.ncut'
+- domain: 'Computer vision'
+- applications: 'Image segmentation'
+
+## OBJ CUT
+- paper: 'OBJ CUT' (2005) <https://doi.org/10.1109/CVPR.2005.249>
+- https://en.wikipedia.org/wiki/Segmentation-based_object_categorization#OBJ_CUT
+- domain: 'Computer vision'
+- applications: 'Image segmentation'
+
+## LOBPCG
+- also called: 'Locally Optimal Block Preconditioned Conjugate Gradient'
+- properties: 'Matrix-free'
+- solves (partly): 'Generalized eigenvalue problem'
+- implemented in (libraries): 'scipy.sparse.linalg.lobpcg'
+
+## Hysteresis thresholding
+- paper: 'A Computational Approach to Edge Detection' (1986) <https://doi.org/10.1109/TPAMI.1986.4767851>
+- implemented in (libraries): 'skimage.filters.apply_hysteresis_threshold'
+- domain: 'Image processing'
+
 # Filters
+
+## Discrete Gaussian kernel
+- https://en.wikipedia.org/wiki/Scale_space_implementation#The_discrete_Gaussian_kernel
+- also called: 'Gaussian blur', 'Gaussian smoothing'
+- is a: 'Low-pass filter'
+- implemented in: 'scipy.ndimage.gaussian_filter', 'skimage.filters.gaussian'
+
+## Laplace filter
+- also called: 'Discrete Laplace operator', 'Laplacian matrix'
+- https://en.wikipedia.org/wiki/Discrete_Laplace_operator
+- implemented in: 'scipy.ndimage.laplace', 'skimage.filters.laplace'
+
+## Median filter
+- https://en.wikipedia.org/wiki/Median_filter
+- implemented in: 'scipy.ndimage.median_filter', 'skimage.filters.median', 'skimage.filters.rank.median'
+- domain: 'Image processing'
+- properties: 'non-separable'
+- applications: 'Salt-and-pepper noise reduction', 'Speckle reduction'
+
+## Lulu smoothing
+- paper: 'Idempotent one-sided approximation of median smoothers' (1989) <https://doi.org/10.1016/0021-9045(89)90017-8>
+- https://en.wikipedia.org/wiki/Lulu_smoothing
+- properties: 'idempotent'
+- applications: 'Time series smoothing'
+
+## Meijering neuriteness filter
+- paper: 'Design and validation of a tool for neurite tracing and analysis in fluorescence microscopy images' (2004) <https://doi.org/10.1002/cyto.a.20022>
+- implemented in: 'skimage.filters.meijering'
+- applications: 'Neurite tracing'
+
+## Kirsch operator
+- paper: 'Computer determination of the constituent structure of biological images' (1971) <https://doi.org/10.1016/0010-4809(71)90034-6>
+- https://en.wikipedia.org/wiki/Kirsch_operator
+- applications: 'Edge detection'
+- properties: 'non-linear'
+
+## Roberts cross operator
+- thesis: 'Machine perception of three-dimensional solids' (1963) <http://hdl.handle.net/1721.1/11589>
+- https://en.wikipedia.org/wiki/Roberts_cross
+- implemented in: 'skimage.filters.roberts'
+- domain: 'Image processing'
+- applications: 'Edge detection'
+- is a: 'difference operator'
+
+## Sato tubeness filter
+- paper: 'Three-dimensional multi-scale line filter for segmentation and visualization of curvilinear structures in medical images' (1998) <https://doi.org/10.1016/S1361-8415(98)80009-1>
+- implemented in: 'skimage.filters.sato'
+- domain: 'Image processing', 'Medical imaging'
 
 ## Wiener filter
 - https://en.wikipedia.org/wiki/Wiener_filter
@@ -3064,35 +3674,37 @@
 - applications: 'System identification', 'Deconvolution', 'Noise reduction', 'Signal detection'
 - is a: 'Linear filter'
 
-## Canny edge detector
-- https://en.wikipedia.org/wiki/Canny_edge_detector
-- domain: 'image processing'
-- applications: 'Edge detection'
-
 ## Gabor filter
 - https://en.wikipedia.org/wiki/Gabor_filter
 - is a: 'Linear filter'
 - domain: 'Image processing'
 - applications: 'localize and extract text-only regions', 'facial expression recognition', 'pattern analysis'
+- implemented in: 'skimage.filters.gabor', 'skimage.filters.gabor_kernel'
+
+## Frangi vesselness filter
+- paper: 'Multiscale vessel enhancement filtering' (1998) <https://doi.org/10.1007/BFb0056195>
+- implemented in: 'skimage.filters.frangi'
 
 ## Sobel operator
 - https://en.wikipedia.org/wiki/Sobel_operator
 - is a: 'Discrete differentiation operator'
 - domain: 'Image processing'
 - applications: 'Edge detection'
-- implemented in: 'scipy.ndimage.sobel'
+- implemented in: 'scipy.ndimage.sobel', 'skimage.filters.sobel'
 
 ## Prewitt operator
 - https://en.wikipedia.org/wiki/Prewitt_operator
-- implemented in: 'scipy.ndimage.prewitt'
+- implemented in: 'scipy.ndimage.prewitt', 'skimage.filters.prewitt'
 - applications: 'Edge detection'
 - domain: 'Image processing'
 - is a: 'Discrete differentiation operator'
 
 ## Scharr operator
-- dissertation: 'Optimale Operatoren in der Digitalen Bildverarbeitung'
+- thesis: 'Optimale Operatoren in der Digitalen Bildverarbeitung' (2000) <http://doi.org/10.11588/heidok.00000962>
 - domain: 'Image processing'
 - applications: 'Edge detection'
+- implemented in: 'skimage.filters.scharr'
+- better rotational invariance than 'Sobel' or 'Prewitt'
 
 ## Kuwahara filter
 - https://en.wikipedia.org/wiki/Kuwahara_filter
@@ -3101,10 +3713,42 @@
 - applications: 'adaptive noise reduction', 'medical imaging', 'fine-art photography'
 - disadvantages: 'create block artifacts'
 - domain: 'Image processing'
+- implemented in: 'lime::kuwaharaFilter'
+
+## Erosion
+- https://en.wikipedia.org/wiki/Erosion_(morphology)
+- implemented in: 'lime::morphFilter(type=MORPH_ERODE)', 'cv::erode'
+- domain: 'Mathematical morphology'
+- input: 'Binary image'
+- output: 'Binary image'
+
+## Dilation
+- https://en.wikipedia.org/wiki/Dilation_(morphology)
+- implemented in: 'lime::morphFilter(type=MORPH_DILATE)', 'cv::dilate'
+- domain: 'Mathematical morphology'
+- input: 'Binary image'
+- output: 'Binary image'
+
+## Opening
+- https://en.wikipedia.org/wiki/Opening_(morphology)
+- implemented in: 'lime::morphFilter(type=MORPH_OPEN)', 'cv::morphologyEx(op=MORPH_OPEN)'
+- domain: 'Mathematical morphology'
+- input: 'Binary image'
+- output: 'Binary image'
+- applications: 'Noise reduction'
+
+## Closing
+- https://en.wikipedia.org/wiki/Closing_(morphology)
+- implemented in: 'lime::morphFilter(type=MORPH_CLOSE)', 'cv::morphologyEx(op=MORPH_CLOSE)'
+- domain: 'Mathematical morphology'
+- input: 'Binary image'
+- output: 'Binary image'
+- applications: 'Noise reduction'
 
 # Methods, patterns and programming models
 
 ## Map
+- also called: 'parallel for loop'
 - https://en.wikipedia.org/wiki/Map_(parallel_pattern)
 - parallelizes 'Embarrassingly parallel' problems
 

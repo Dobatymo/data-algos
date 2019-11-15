@@ -169,12 +169,24 @@ Solution is given by mathematical formula or naive computation method.
 - used by: 'MP3', 'JPEG'
 - naive time complexity: O(n^2)
 
+## Normalized cross-correlation
+- also called: 'NCC'
+- https://en.wikipedia.org/wiki/Cross-correlation#Normalized_cross-correlation_(NCC)
+
+## Image moments
+- https://en.wikipedia.org/wiki/Image_moment
+
 ## Matrix chain multiplication
 - https://en.wikipedia.org/wiki/Matrix_chain_multiplication
 - optimization problem
 - solved by: 'Hu and Shing algortihm for matrix chain products'
 
 -- implicit or explicit formulation with clear solutions
+
+## Disjoint set union problem
+
+## Watershed transformation
+- https://en.wikipedia.org/wiki/Watershed_(image_processing)
 
 ## Connected-component finding ?rename, doesn't sound good'
 - https://en.wikipedia.org/wiki/Component_(graph_theory)
@@ -284,6 +296,7 @@ Solution is given by mathematical formula or naive computation method.
 - naive space complexity: linear in distinct number of elements
 
 ## Single-source shortest path problem
+- also called: 'Least cost path'
 - https://en.wikipedia.org/wiki/Shortest_path_problem
 - book: 'Introduction to Algorithms'
 - survey paper: 'A Survey of Shortest-Path Algorithms' (2017)
@@ -511,6 +524,12 @@ Solution is given by mathematical formula or naive computation method.
 - is a: 'Decision problem'
 - kind of: 'Partition problem'
 
+## Normalized Cut
+- also called: 'NCUT'
+- hardness: 'NP-complete'
+- paper: 'Normalized cuts and image segmentation' (2000) <https://doi.org/10.1109/34.868688>
+- kind of: 'Partition problem'
+
 ## Spanning-tree verification
 - book: 'Introduction to Algorithms'
 - related to: 'Minimum spanning tree'
@@ -604,22 +623,32 @@ Solution is given by mathematical formula or naive computation method.
 - variant of: 'Sorting problem'
 
 ## Motion planning
-- also called: 'Piano mover's problem'
+- also called: 'Navigation problem', 'Piano mover's problem'
 - https://en.wikipedia.org/wiki/Motion_planning
 - http://planning.cs.uiuc.edu/node160.html
 - book: 'The algorithm design manual'
 - hardness: PSPACE-hard
+- domain: 'Robotics'
 
 ## Covariance matrix estimation
 - https://en.wikipedia.org/wiki/Estimation_of_covariance_matrices
 
 -- problems with clear solutions for simple metrics (multiple metrics possible)
 
+## Downsampling
+- also called: 'Decimation', 'Line simplification', 'Smoothing'
+- https://en.wikipedia.org/wiki/Downsampling_(signal_processing)
+- domain: 'Signal processing'
+- survey paper: 'Performance Evaluation of Line Simplification Algorithms for Vector Generalization' (2013) <https://doi.org/10.1179/000870406X93490>
+
 ## Biclustering
 - https://en.wikipedia.org/wiki/Biclustering
 
 ## Sequence alignment
 - https://en.wikipedia.org/wiki/Sequence_alignment
+
+## Template matching
+- https://en.wikipedia.org/wiki/Template_matching
 
 ## Hierarchical clustering
 - https://en.wikipedia.org/wiki/Hierarchical_clustering
@@ -641,6 +670,28 @@ Evaluation is usually empirical, based on metrics inpired by human perception or
 - applications: 'Motion estimation', 'video compression', 'object detection', 'object tracking', 'image dominant plane extraction', 'movement detection', 'robot navigation , 'visual odometry'
 - domain: 'machine vision', 'computer vision'
 - metrics: 'Endpoint error', 'Average angular error'
+
+## Video denoising
+- https://en.wikipedia.org/wiki/Video_denoising
+- https://paperswithcode.com/task/video-denoising
+
+## Image segmentation
+- https://en.wikipedia.org/wiki/Image_segmentation
+- survey paper: 'Survey on Image Segmentation Techniques' (2015) <https://doi.org/10.1016/j.procs.2015.09.027>
+- benchmark: http://mosaic.utia.cas.cz/
+- benchmark: https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/
+- sota: https://paperswithcode.com/area/computer-vision/semantic-segmentation
+
+## Superpixel
+- survey paper: 'Superpixels: An evaluation of the state-of-the-art' (2016) <https://doi.org/10.1016/j.cviu.2017.03.007>
+- http://davidstutz.de/projects/superpixel-benchmark/
+- metrics: 'Boundary Recall', 'Undersegmentation Error', 'Explained variation'
+
+## Image binarization
+- also called: 'Adaptive image binarization', 'Image thresholding'
+- https://en.wikipedia.org/wiki/Thresholding_(image_processing)
+- survey paper: 'Survey over image thresholding techniques and quantitative performance evaluation' (2004) <https://doi.org/10.1117/1.1631315>
+- solved by: 'Sauvola binarization', 'Otsu's method'
 
 ## Stemming
 - https://en.wikipedia.org/wiki/Stemming
@@ -697,6 +748,9 @@ Empirical evaluation or based on "dumb" metrics. Even comparison to groundtruth 
 - solved by (applications): '3DSlicer'
 - applications: 'Medical imaging', 'Neuroimaging', 'Astrophotography', 'Panoramic image creation'
 - related problems: 'Image rectification'
+
+## Inpainting
+- https://en.wikipedia.org/wiki/Inpainting
 
 ## Image tracing
 - also called: 'raster-to-vector conversion', 'vectorization'

@@ -43,10 +43,16 @@
 - properties: 'Discrete'
 
 ## Jaccard index
+- also called: 'Intersection-over-Union', 'IoU', 'Jaccard similarity coefficient'
 - https://en.wikipedia.org/wiki/Jaccard_index
 - is a: 'metric', 'edit distance'
 - properties: 'Discrete'
-- implemented in: 'Python sklearn.metrics.jaccard_similarity_score'
+- implemented in: 'Python sklearn.metrics.jaccard_score'
+- properties: 'set based'
+
+## Mean IoU
+- variant of: 'Jaccard index'
+- used to evaluate: 'Image segmentation'
 
 ## Taxicab metric
 - also called: 'rectilinear distance', 'L1 distance', 'Manhattan distance'
@@ -94,11 +100,16 @@
 ## Root-mean-square deviation
 - also called: 'root-mean-square error', 'RMSD', 'RMSE'
 - https://en.wikipedia.org/wiki/Root-mean-square_deviation
-- implemented in: 'Python skimage.measure.compare_nrmse', 'andrewekhalel/sewar'
+- implemented in: 'andrewekhalel/sewar'
 - properties: 'Convex', 'Continuous'
 
+## Normalized root-mean-square error
+- also called: 'NRMSE', 'NRMSD'
+- https://en.wikipedia.org/wiki/Root-mean-square_deviation#Normalized_root-mean-square_deviation
+- implemented in: 'Python skimage.metrics.normalized_root_mse'
+
 ## Mean squared error
-- also called: 'mean squared deviation', 'MSD', 'MSE'
+- also called: 'Mean-squared error', 'mean squared deviation', 'MSD', 'MSE'
 - https://en.wikipedia.org/wiki/Mean_squared_error
 - applications: 'Statistical model', 'Linear regression'
 - implemented in: 'Python sklearn.metrics.mean_squared_error, tf.metrics.mean_squared_error, skimage.measure.compare_mse', 'andrewekhalel/sewar'
@@ -149,7 +160,7 @@
 - also called: 'SSIM', 'Structural similarity index'
 - paper: 'Image quality assessment: from error visibility to structural similarity (2004)'
 - https://en.wikipedia.org/wiki/Structural_similarity
-- implemented in: 'Python skimage.measure.compare_ssim', 'tf.image.ssim', 'aizvorski/video-quality', 'sewar.full_ref.ssim'
+- implemented in: 'Python skimage.metrics.structural_similarity', 'tf.image.ssim', 'aizvorski/video-quality', 'sewar.full_ref.ssim'
 - properties: 'full reference'
 - corresponding distance: 'Structural Dissimilarity' (not a metric)
 - applications: 'Video quality evaluation', 'Image Quality Assessment'
@@ -211,7 +222,7 @@
 - is a: 'metric', 'Information theoretic index'
 - domain: 'Probability theory', 'Information theory'
 - applications: 'External evaluation of cluster analysis'
-- implemented in: 'josemarialuna/ExternalValidity'
+- implemented in: 'skimage.metrics.variation_of_information', 'josemarialuna/ExternalValidity'
 
 ## Van Dongen index
 - also called: 'Van Dongen measure'
@@ -262,7 +273,7 @@
 ## Peak signal-to-noise ratio
 - also called: 'PSNR'
 - https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio
-- implemented in: 'Python skimage.measure.compare_psnr', 'aizvorski/video-quality', 'sewar.full_ref.psnr'
+- implemented in: 'Python skimage.metrics.peak_signal_noise_ratio', 'aizvorski/video-quality', 'sewar.full_ref.psnr'
 
 ## Polar edge coherence
 - also called: 'PEC'
@@ -302,6 +313,19 @@
 - implemented in: 'sewar.no_ref.qnr'
 - applications: 'Multispectral imaging'
 
+## Boundary Recall
+- paper: 'TurboPixels: Fast Superpixels Using Geometric Flows' (2009) <https://doi.org/10.1109/TPAMI.2009.96>
+- used to evaluate: 'Superpixel'
+
+## Undersegmentation Error
+- paper: 'TurboPixels: Fast Superpixels Using Geometric Flows' (2009) <https://doi.org/10.1109/TPAMI.2009.96>
+- used to evaluate: 'Superpixel'
+
+## NRMSE based image reconstruction metric
+- based on: 'Normalized root-mean-square error'
+- paper: 'Invariant error metrics for image reconstruction' (1997) <https://doi.org/10.1364/AO.36.008352>
+- used to evaluate: 'Image registration'
+
 ## Gotoh score
 - paper: 'An improved algorithm for matching biological sequences' (1982)
 - implemented in: 'abydos.distance.Gotoh', 'life4/textdistance'
@@ -317,7 +341,11 @@
 - implemented in: 'abydos.distance.Indel'
 
 ## Sørensen–Dice coefficient
+- also called: 'Dice's coefficient', 'Dice similarity coefficient', 'DSC'
+- also called (binary classification): 'F1 score'
 - https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
+- properties: 'set based'
+- implemented in: 'sklearn.metrics.f1_score'
 
 ## Earth mover's distance
 - also called: 'Wasserstein metric'
@@ -423,6 +451,10 @@
 - applications: 'External evaluation of cluster analysis'
 - is a: 'Pair-counting measure', 'External validity index'
 - properties: 'corrected for chance'
+
+## Adapted Rand error
+- paper: 'Crowdsourcing the creation of image segmentation algorithms for connectomics' (2015) <https://doi.org/10.3389/fnana.2015.00142>
+- implemented in (libraries): 'skimage.metrics.adapted_rand_error'
 
 ## Mutual Information
 - also called: 'MI'

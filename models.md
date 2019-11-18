@@ -46,8 +46,9 @@
 
 ## Partially Labeled Dirichlet Allocation
 - also called: 'PLDA'
-- paper: 'Partially Labeled Topic Models for Interpretable Text Mining' (2011)
+- paper: 'Partially Labeled Topic Models for Interpretable Text Mining' (2011) <https://doi.org/10.1145/2020408.2020481>
 - variant of: 'Latent Dirichlet allocation'
+- implemented in: 'tomotopy::PLDAModel'
 
 ## Partially Labeled Dirichlet Process
 - also called: 'PLDP'
@@ -352,6 +353,18 @@
 - also called: 'PCFG', 'Stochastic context-free grammar', 'SCFG'
 - https://en.wikipedia.org/wiki/Probabilistic_context-free_grammar
 - applications: 'Computational linguistics', 'RNA structure prediction'
+
+## PixelCNN
+- paper: 'Conditional image generation with PixelCNN decoders' (2016) <https://arxiv.org/abs/1606.05328>
+- properties: 'generativ', 'autoregressive'
+
+## WaveNet
+- paper: 'WaveNet: A Generative Model for Raw Audio' (2016) <https://arxiv.org/abs/1609.03499>
+- https://en.wikipedia.org/wiki/WaveNet
+- type of: 'Artificial neural network'
+- applications: 'Audio generation', 'Voice cloning', 'Text-to-speech'
+- properties: 'generativ', 'probabilistic', 'autoregressive'
+- based on: 'PixelCNN'
 
 -- Stochastic process
 

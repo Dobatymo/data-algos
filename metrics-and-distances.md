@@ -22,12 +22,12 @@
 - https://en.wikipedia.org/wiki/Hamming_distance
 - is a: 'metric'
 - applications: 'Coding theory', 'Block code', 'Error detection and correction', 'Telecommunication'
-- implemented in: 'Python sklearn.metrics.hamming_loss'
 - properties: 'Discrete'
 
 ## Bit Error Rate
 - also called: 'Normalized hamming distance', 'Simple matching coefficient'
 - https://en.wikipedia.org/wiki/Bit_error_rate
+- implemented in: 'Python sklearn.metrics.hamming_loss'
 
 ## Damerau–Levenshtein distance
 - https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance
@@ -47,7 +47,7 @@
 - https://en.wikipedia.org/wiki/Jaccard_index
 - is a: 'metric', 'edit distance'
 - properties: 'Discrete'
-- implemented in: 'Python sklearn.metrics.jaccard_score'
+- implemented in: 'Python sklearn.metrics.jaccard_score', 'adtk.metrics.iou'
 - properties: 'set based'
 
 ## Mean IoU
@@ -345,7 +345,29 @@
 - also called (binary classification): 'F1 score'
 - https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
 - properties: 'set based'
-- implemented in: 'sklearn.metrics.f1_score'
+- implemented in: 'sklearn.metrics.f1_score', 'adtk.metrics.f1_score'
+
+## Recall
+- also called: 'Sensitivity', 'True positive rate'
+- https://en.wikipedia.org/wiki/Sensitivity_and_specificity
+- https://en.wikipedia.org/wiki/Precision_and_recall
+- implemented in (libraries): 'sklearn.metrics.recall_score', 'adtk.metrics.recall'
+- applications: 'Binary classification'
+
+## Specificity
+- also called: 'Selectivity', 'True negative rate'
+- https://en.wikipedia.org/wiki/Sensitivity_and_specificity
+
+## Precision
+- also called: 'Positive predictive value'
+- https://en.wikipedia.org/wiki/Precision_and_recall
+- implemented in (libraries): 'sklearn.metrics.precision_score', 'adtk.metrics.precision'
+- applications: 'Binary classification'
+
+## Accuracy
+- also called: 'Fraction correct'
+- https://en.wikipedia.org/wiki/Evaluation_of_binary_classifiers
+- implemented in (libraries): 'sklearn.metrics.accuracy_score'
 
 ## Earth mover's distance
 - also called: 'Wasserstein metric'

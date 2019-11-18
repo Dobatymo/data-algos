@@ -1262,16 +1262,87 @@
 - time complexity: O(n m), where n and m are the lengths of the input sequences
 - space complexity: O(n m), where n and m are the lengths of the input sequences
 
+## Grubbs's test for outliers
+- also called: 'Maximum normalized residual test', 'Extreme studentized deviate test'
+- paper: 'Sample Criteria for Testing Outlying Observations' (1950) <https://doi.org/10.1214/aoms/1177729885>
+- https://en.wikipedia.org/wiki/Grubbs%27s_test_for_outliers
+- applications: 'Outlier detection'
+
+## Generalized ESD test
+- also called: 'Generalized extreme Studentized deviate test'
+- paper: 'Percentage Points for a Generalized ESD Many-Outlier Procedure' (1983) <https://doi.org/10.2307/1268549>
+- https://www.itl.nist.gov/div898/software/dataplot/refman1/auxillar/esd.htm
+- https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h3.htm
+- implemented in (libraries): 'PyAstronomy.pyasl.generalizedESD', 'adtk.detector.GeneralizedESDTestAD', 'PyAstronomy.pyasl.pointDistGESD'
+- applications: 'Outlier detection'
+- domain: 'Statistics'
+
+## STL decomposition
+- paper: 'STL: A Seasonal-Trend Decomposition Procedure Based on Loess' (1990) <>
+- implemented in (libraries): 'R stl', 'Python adtk.transformer.STLDecomposition', 'statsmodels.tsa.seasonal.STL'
+- applications: 'Decomposition of time series'
+
+## Baxter-King bandpass filter
+- paper: 'Measuring Business Cycles Approximate Band-Pass Filters for Economic Time Series' (1995) <https://doi.org/10.3386/w5022>
+- applications: 'Time series analysis'
+- implemented in (libraries): 'statsmodels.tsa.filters.bk_filter.bkfilter', 'R mFilter/bkfilter'
+
+## Kwiatkowski-Phillips-Schmidt-Shin test
+- also called: 'KPSS test', 'Kwiatkowski-Phillips-Schmidt-Shin test for stationarity'
+- paper: 'Testing the null hypothesis of stationarity against the alternative of a unit root' (1992) <https://doi.org/10.1016/0304-4076(92)90104-Y>
+- https://en.wikipedia.org/wiki/KPSS_test
+- applications: 'Time series analysis', 'Trend stationary testing'
+- implemented in (libraries): 'statsmodels.tsa.stattools.kpss'
+- domain: 'Econometrics'
+
+## Savitzky–Golay filter
+- also called: 'LOESS', 'Locally estimated scatterplot smoothing'
+- paper: 'Smoothing and Differentiation of Data by Simplified Least Squares Procedures' (1964) <https://doi.org/10.1021/ac60214a047>
+- rediscovery paper: 'Robust Locally Weighted Regression and Smoothing Scatterplots' (1979) <https://doi.org/10.2307/2286407>
+- https://en.wikipedia.org/wiki/Local_regression
+- https://en.wikipedia.org/wiki/Savitzky%E2%80%93Golay_filter
+- implemented in: 'scipy.signal.savgol_filter'
+- properties: 'Nonparametric'
+- applications: 'Smoothing'
+
+## LOWESS
+- paper: 'LOWESS: A Program for Smoothing Scatterplots by Robust Locally Weighted Regression' (1981) <https://doi.org/10.2307/2683591>
+- https://en.wikipedia.org/wiki/Local_regression
+- also called: 'Locally weighted scatterplot smoothing'
+- properties: 'Nonparametric'
+- based on: 'Savitzky–Golay filter'
+- implemented in: 'statsmodels.nonparametric.smoothers_lowess.lowess'
+- applications: 'Smoothing'
+
 ## Synchronized overlap-add method
 - also called: 'Time-domain harmonic scaling', 'SOLA'
-- paper: 'High quality time-scale modification for speech' (1985)
-- applications: 'Audio pitch scaling'
+- paper: 'High quality time-scale modification for speech' (1985) <https://doi.org/10.1109/ICASSP.1985.1168381>
+- solves: 'Audio time stretching and pitch scaling'
+
+## PSOLA
+- also called: 'Pitch Synchronous Overlap and Add'
+- paper: 'Diphone synthesis using an overlap-add technique for speech waveforms concatenation' (1986) <https://doi.org/10.1109/ICASSP.1986.1168657>
+- https://en.wikipedia.org/wiki/PSOLA
+- based on: 'Short-time Fourier transform'
+- solves: 'Audio time stretching and pitch scaling'
+
+## TD-PSOLA
+- also called: 'Time-domain pitch-synchronous overlap-and-add'
+- paper: 'A diphone synthesis system based on time-domain prosodic modifications of speech' (1989) <https://doi.org/10.1109/ICASSP.1989.266409>
+- based on: 'PSOLA'
+- implemented in: 'diguo2046/psola'
+- solves: 'Audio time stretching and pitch scaling'
+
+## ESOLA
+- also called: 'Epoch-Synchronous Overlap-Add'
+- paper: 'Epoch-Synchronous Overlap-Add (ESOLA) for Time- and Pitch-Scale Modification of Speech Signals' (2018) <https://arxiv.org/abs/1801.06492>
+- solves: 'Audio time stretching and pitch scaling'
 
 ## Phase vocoder
 - https://en.wikipedia.org/wiki/Phase_vocoder
-- paper: 'Phase vocoder' (1966)
-- applications: 'Audio time stretching and pitch scaling'
+- paper: 'Phase vocoder' (1966) <https://doi.org/10.1002/j.1538-7305.1966.tb01706.x>
 - uses: 'Short-time Fourier transform'
+- solves: 'Audio time stretching and pitch scaling'
 
 ## De Boor's algorithm
 - https://en.wikipedia.org/wiki/De_Boor%27s_algorithm
@@ -3330,7 +3401,7 @@
 - properties: 'global'
 
 ## Triangle thresholding
-- paper: 'Automatic measurement of sister chromatid exchange frequency' (1977) <https://doi.org/10.1177%2F25.7.70454>
+- paper: 'Automatic measurement of sister chromatid exchange frequency' (1977) <https://doi.org/10.1177/25.7.70454>
 - solves: 'Image binarization'
 - domain: 'Image processing'
 - implemented in: 'skimage.filters.threshold_triangle'

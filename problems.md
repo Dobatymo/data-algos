@@ -664,6 +664,9 @@ Solution is given by mathematical formula or naive computation method.
 
 Evaluation is usually empirical, based on metrics inpired by human perception or compared to groundtruth based on some metric.
 
+## Audio time stretching and pitch scaling
+- https://en.wikipedia.org/wiki/Audio_time_stretching_and_pitch_scaling
+
 ## Optical flow
 - https://en.wikipedia.org/wiki/Optical_flow
 - http://vision.middlebury.edu/flow/eval/
@@ -674,6 +677,13 @@ Evaluation is usually empirical, based on metrics inpired by human perception or
 ## Video denoising
 - https://en.wikipedia.org/wiki/Video_denoising
 - https://paperswithcode.com/task/video-denoising
+
+## Music source separation
+- also called: 'Signal separation'
+- https://en.wikipedia.org/wiki/Signal_separation
+- https://paperswithcode.com/task/music-source-separation
+- applications: 'Music information retrieval', 'Music transcription'
+- libraries: 'Spleeter'
 
 ## Image segmentation
 - https://en.wikipedia.org/wiki/Image_segmentation

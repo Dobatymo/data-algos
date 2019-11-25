@@ -354,9 +354,13 @@
 - https://en.wikipedia.org/wiki/Probabilistic_context-free_grammar
 - applications: 'Computational linguistics', 'RNA structure prediction'
 
+## PixelRNN
+- paper: 'Pixel Recurrent Neural Networks' (2016) <https://arxiv.org/abs/1601.06759>
+
 ## PixelCNN
 - paper: 'Conditional image generation with PixelCNN decoders' (2016) <https://arxiv.org/abs/1606.05328>
 - properties: 'generativ', 'autoregressive'
+- based on: 'PixelRNN'
 
 ## WaveNet
 - paper: 'WaveNet: A Generative Model for Raw Audio' (2016) <https://arxiv.org/abs/1609.03499>

@@ -20,6 +20,8 @@
 - is a: 'Binary tree'
 - can be a: 'Persistent data structure'
 - implemented in (libraries): 'libstdc++ rope'
+- applications: 'Constant folding'
+- domain: 'Compiler'
 
 ## Threaded binary tree
 - also called: 'TBST'
@@ -336,6 +338,7 @@
 - paper: 'R-trees: a dynamic index structure for spatial searching' (1984)
 - https://en.wikipedia.org/wiki/R-tree
 - applications: 'Spatial index', 'Range searching', 'Nearest neighbor search'
+- used by (applications): 'IBM Informix'
 
 ## R+ tree
 - paper: 'The R+-Tree: A Dynamic Index for Multi-Dimensional Objects' (1987)

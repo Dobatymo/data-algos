@@ -120,3 +120,91 @@
 - https://en.wikipedia.org/wiki/Argon2
 - is a: 'Key derivation function'
 - winner of: 'Password Hashing Competition' (2015)
+
+-- block cipher modes of operation
+
+## ECB
+- also called: 'Electronic Codebook'
+- susceptible to: 'replay attacks'
+- encryption parallelizable: Yes
+- decryption parallelizable: Yes
+- random read access: Yes
+- don't use
+
+## CBC
+- also called: 'Cipher-block chaining'
+- patent: 'Message verification and transmission error detection by block chaining' (1976)
+- https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#CBC
+- encryption parallelizable: No
+- decryption parallelizable: Yes
+- random read access: Yes
+- susceptible to: 'padding oracle attacks', 'malleability attacks'
+
+## CFB
+- also called: 'Cipher Feedback'
+- encryption parallelizable: No
+- decryption parallelizable: Yes
+- random read access: Yes
+
+## CTR
+- also called: 'Counter'
+- paper: 'Privacy and authentication: An introduction to cryptography' (1979)
+- encryption parallelizable: Yes
+- decryption parallelizable: Yes
+- random read access: Yes
+- susceptible to: 'malleability attacks'
+
+## XTS
+- also called: 'XEX-based tweaked-codebook mode with ciphertext stealing'
+- paper: '1619-2007 - IEEE Standard for Cryptographic Protection of Data on Block-Oriented Storage Devices' (2008)
+- https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_(XTS)
+- applications: 'Full disk encryption'
+- authentication: no
+- implemented by (applications): 'VeraCrypt', 'Android', 'dm-crypt'
+
+## CMC
+- also called: 'CBC–mask–CBC'
+
+## EME
+- also called: 'ECB–mask–ECB', 'ECB-Mix-ECB', 'Encrypt-Mix-Encrypt'
+- paper: 'A Parallelizable Enciphering Mode' (2003)
+- patent: 'Block cipher mode of operation for constructing a wide-blocksize block cipher from a conventional block cipher' (2003)
+- wide-block encryption
+
+## EME*
+- also called: 'EME2'
+- paper: 'EME*: Extending EME to Handle Arbitrary-Length Messages with Associated Data' (2004)
+- wide-block encryption
+- refinement of: 'EME'
+
+## XCB
+- also called: 'Extended codebook mode'
+- paper: 'The Extended Codebook (XCB) Mode of Operation' (2004)
+- analysis paper: 'The Security of the Extended Codebook (XCB) Mode of Operation' (2007)
+
+-- Authenticated block cipher modes of operation
+
+## GCM
+- also called: 'Galios/Counter Mode'
+- https://en.wikipedia.org/wiki/Galois/Counter_Mode
+
+## CCM
+- also called: 'Counter with CBC-MAC'
+- https://en.wikipedia.org/wiki/CCM_mode
+
+## CCM*
+- variant of: 'CCM'
+- used by: 'ZigBee'
+
+## EAX
+- also called: 'Encrypt-then-authenticate-then-translate mode'
+- https://en.wikipedia.org/wiki/EAX_mode
+
+## OCB
+- also called: 'Offset codebook mode'
+- https://en.wikipedia.org/wiki/OCB_mode
+- patented
+
+## CWC
+- also called: 'Carter–Wegman + CTR mode'
+- https://en.wikipedia.org/wiki/CWC_mode

@@ -38,14 +38,14 @@
 
 ## Alternating least squares
 - also called: 'Alternating-least-squares', 'ALS'
-- paper: 'Analysis of individual differences in multidimensional scaling via an n-way generalization of “Eckart-Young” decomposition' (1970)
+- paper: 'Analysis of individual differences in multidimensional scaling via an n-way generalization of “Eckart-Young” decomposition' (1970) <https://doi.org/10.1007/BF02310791>
 - paper: 'Foundations of the PARAFAC procedure : Models and conditions for an "explanatory" multi-mode factor analysis' (1970)
 - optimizes: 'Tensor rank decomposition'
 - implemented in (libraries): 'tensorly.decomposition.parafac', 'tensortools.cp_als'
 
 ## Alternating-least-squares with weighted-λ-regularization
 - also called: 'ALS-WR'
-- paper: 'Large-Scale Parallel Collaborative Filtering for the Netflix Prize' (2008)
+- paper: 'Large-Scale Parallel Collaborative Filtering for the Netflix Prize' (2008) <https://doi.org/10.1007/978-3-540-68880-8_32>
 - article: 'Matrix Factorization Techniques for Recommender Systems' (2009)
 - optimizes: 'Tensor rank decomposition'
 - implemented in (libraries): 'Apache Spark MLlib', 'libFM'
@@ -53,22 +53,22 @@
 
 ## Alternating slice-wise diagonalization
 - also called: 'ASD'
-- paper: 'Three-way data resolution by alternating slice-wise diagonalization (ASD) method' (2000)
+- paper: 'Three-way data resolution by alternating slice-wise diagonalization (ASD) method' (2000) <https://doi.org/10.1002/(SICI)1099-128X(200001/02)14:1%3C15::AID-CEM571%3E3.0.CO;2-Z>
 - optimizes: 'Tensor rank decomposition'
 
 ## Positive Matrix Factorisation for 3 way arrays
 - also called: 'PMF3'
-- paper: 'A weighted non-negative least squares algorithm for three-way ‘PARAFAC’ factor analysis' (1997)
+- paper: 'A weighted non-negative least squares algorithm for three-way ‘PARAFAC’ factor analysis' (1997) <https://doi.org/10.1016/S0169-7439(97)00031-2>
 - optimizes: 'Tensor rank decomposition'
 
 ## Direct trilinear decomposition
 - also called: 'DTLD', 'DTD'
-- paper: 'Tensorial resolution: A direct trilinear decomposition' (1990)
+- paper: 'Tensorial resolution: A direct trilinear decomposition' (1990) <https://doi.org/10.1002/cem.1180040105>
 - optimizes: 'Tensor rank decomposition'
 
 ## Generalised Rank Annihilation Method
 - also called: 'GRAM'
-- paper: 'Generalized rank annihilation factor analysis' (1986)
+- paper: 'Generalized rank annihilation factor analysis' (1986) <https://doi.org/10.1021/ac00293a054>
 - optimizes: 'Tensor rank decomposition'
 
 ## Multivariate curve resolution-alternating least squares
@@ -101,7 +101,7 @@
 
 ## Jenkins–Traub algorithm for polynomial zeros
 - https://en.wikipedia.org/wiki/Jenkins%E2%80%93Traub_algorithm
-- original paper: 'A Three-Stage Algorithm for Real Polynomials Using Quadratic Iteration' (1970)
+- original paper: 'A Three-Stage Algorithm for Real Polynomials Using Quadratic Iteration' (1970) <https://doi.org/10.1137/0707045>
 - paper: 'Algorithm 493: Zeros of a Real Polynomial' (1975)
 - implemented in (libraries): 'sweeneychris/RpolyPlusPlus'
 
@@ -136,21 +136,21 @@
 
 ## Median of medians
 - also called: 'PICK', Blum-Floyd-Pratt-Rivest-Tarjan partition algorithm', 'BFPRT'
-- paper: 'Time bounds for selection (1973)'
+- paper: 'Time bounds for selection' (1973) <https://doi.org/10.1016/S0022-0000(73)80033-9>
 - https://en.wikipedia.org/wiki/Median_of_medians
 - solves: 'Selection problem'
 - input: 'random access collection'
 - properties: 'deterministic'
 
 ## Introselect
-- paper: 'Introspective Sorting and Selection Algorithms'
+- paper: 'Introspective Sorting and Selection Algorithms' (1997) <https://doi.org/10.1002/(SICI)1097-024X(199708)27:8%3C983::AID-SPE117%3E3.0.CO;2-%23>
 - https://en.wikipedia.org/wiki/Introselect
 - implemented in: 'C++ std::nth_element, 'numpy.partition'
 - solves: 'Selection problem'
 - input: 'random access collection'
 
 ## Floyd–Rivest algorithm
-- paper: 'Algorithm 489: the algorithm SELECT—for finding the ith smallest of n elements [M1] (1975)'
+- paper: 'Algorithm 489: the algorithm SELECT—for finding the ith smallest of n elements [M1]' (1975) <https://doi.org/10.1145/360680.360694>
 - https://en.wikipedia.org/wiki/Floyd%E2%80%93Rivest_algorithm
 - solves: 'Selection problem'
 - is a: 'Divide and conquer algorithm'
@@ -158,14 +158,14 @@
 
 ## Quickselect
 - also called: 'Hoare's selection algorithm'
-- paper: 'Algorithm 65: find (1961)'
+- paper: 'Algorithm 65: find' (1961) <https://doi.org/10.1145/366622.366647>
 - https://en.wikipedia.org/wiki/Quickselect
 - solves: 'Selection problem'
 - input: 'random access collection'
 - properties: 'parallelizable', 'randomized'
 
 ## Dijkstra's algorithm
-- paper: 'A note on two problems in connexion with graphs (1959)'
+- paper: 'A note on two problems in connexion with graphs' (1959) <https://doi.org/10.1007/BF01386390>
 - book: 'MIT Press', 'Introduction to Algorithms'
 - https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 - http://mathworld.wolfram.com/DijkstrasAlgorithm.html
@@ -178,8 +178,9 @@
 - input: 'Directed graph with non-negative weights'
 
 ## Bellman–Ford algorithm
-- paper: 'Structure in communication nets' (1955)
-- paper: 'On a routing problem' (1958)
+- also called: 'Bellman–Ford–Moore algorithm'
+- paper: 'Structure in communication nets' (1953) <https://doi.org/10.1007/BF02476438>
+- paper: 'On a routing problem' (1958) <https://doi.org/10.1090/qam/102435>
 - book: 'MIT Press', 'Introduction to Algorithms'
 - https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
 - solves variant of the 'Shortest path problem' for real-valued edge weights in directed graph in O(v*e) where v and e are the number of vertices and edges respectively.
@@ -188,7 +189,7 @@
 - input: 'Weighted directed graph'
 
 ## Johnson's algorithm
-- paper: 'Efficient Algorithms for Shortest Paths in Sparse Networks (1977)'
+- paper: 'Efficient Algorithms for Shortest Paths in Sparse Networks' (1977) <https://doi.org/10.1145/321992.321993>
 - https://en.wikipedia.org/wiki/Johnson%27s_algorithm
 - solves 'All-pairs shortest paths problem' for real-valued weights in a directed graph in O(v^2 log v + v*e) where v and e are the number of vertices and edges
 - implemented in: 'Python scipy.sparse.csgraph.shortest_path(method='J')', 'C++ boost::graph::johnson_all_pairs_shortest_paths'
@@ -197,7 +198,7 @@
 - input: 'weighted directed graph without negative cycles'
 
 ## Floyd–Warshall algorithm
-- paper: 'Algorithm 97: Shortest path (1962)'
+- paper: 'Algorithm 97: Shortest path' (1962) <https://doi.org/10.1145/367766.368168>
 - https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
 - http://mathworld.wolfram.com/Floyd-WarshallAlgorithm.html
 - domain: 'Graph theory'
@@ -209,7 +210,7 @@
 - operates in: 'weighted directed graph without negative cycles'
 
 ## Suurballe's algorithm
-- paper: 'Disjoint paths in a network (1974)'
+- paper: 'Disjoint paths in a network' (1974) <https://doi.org/10.1002/net.3230040204>
 - https://en.wikipedia.org/wiki/Suurballe%27s_algorithm
 - implemented in: 'Python nildo/suurballe'
 - uses: 'Dijkstra's algorithm'
@@ -217,7 +218,7 @@
 - input: 'Directed graph with non-negative weights'
 
 ## Edge disjoint shortest pair algorithm
-- paper: 'Survivable networks: algorithms for diverse routing'
+- paper: 'Survivable networks: algorithms for diverse routing' (1998) [978-0-7923-8381-9]
 - https://en.wikipedia.org/wiki/Edge_disjoint_shortest_pair_algorithm
 - solves: 'Shortest pair of edge disjoint paths'
 - superseded by: 'Suurballe's algorithm'
@@ -235,7 +236,7 @@
 
 ## Collaborative diffusion
 - also called: 'Dijkstra flow maps'
-- paper: 'Collaborative diffusion: programming antiobjects (2006)'
+- paper: 'Collaborative diffusion: programming antiobjects' (2006) <https://doi.org/10.1145/1176617.1176630>
 - https://en.wikipedia.org/wiki/Collaborative_diffusion
 - applications: 'pathfinding'
 - time complexity: constant in the number of agents
@@ -243,8 +244,8 @@
 
 ## Ukkonen's algorithm
 - https://en.wikipedia.org/wiki/Ukkonen%27s_algorithm
-- paper: 'On-line construction of suffix trees' (1995)
-- book: 'Algorithms on Strings, Trees, and Sequences'
+- paper: 'On-line construction of suffix trees' (1995) <https://doi.org/10.1007/BF01206331>
+- book: 'Cambridge', 'Algorithms on Strings, Trees, and Sequences'
 - output: 'suffix tree'
 - properties: 'online'
 - time complexity: O(n), where n is the length of the string
@@ -257,12 +258,12 @@
 - superseded by: 'Ukkonen's algorithm'
 
 ## McCreight's algorithm
-- book: 'Algorithms on Strings, Trees, and Sequences'
+- book: 'Cambridge', 'Algorithms on Strings, Trees, and Sequences'
 - output: 'suffix tree'
 - superseded by: 'Ukkonen's algorithm'
 
 ## A* search algorithm
-- paper: 'A Formal Basis for the Heuristic Determination of Minimum Cost Paths (1968)'
+- paper: 'A Formal Basis for the Heuristic Determination of Minimum Cost Paths' (1968) <https://doi.org/10.1109/TSSC.1968.300136>
 - https://en.wikipedia.org/wiki/A*_search_algorithm
 - tutorial: https://www.redblobgames.com/pathfinding/a-star/implementation.htmll
 - generalization of 'Dijkstra's algorithm'
@@ -299,7 +300,7 @@
 
 ## Exponential search
 - also called: 'Algorithm U', 'doubling search', 'galloping search', 'Struzik search'
-- paper: 'An almost optimal algorithm for unbounded searching' (1976)
+- paper: 'An almost optimal algorithm for unbounded searching' (1976) <https://doi.org/10.1016/0020-0190(76)90071-5>
 - https://en.wikipedia.org/wiki/Exponential_search
 - find element in sorted infinite list in O(log i) time where i is the position of the element in the list
 - input: 'Sorted list'
@@ -320,7 +321,7 @@
 - succeeded by: 'Anderson–Miller algorithm'
 
 ## Anderson–Miller algorithm
-- paper: 'Deterministic parallel list ranking' (1988)
+- paper: 'Deterministic parallel list ranking' (1988) <https://doi.org/10.1007/BFb0040376>
 - solves: 'List ranking'
 - is a: 'Parallel algorithm'
 - properties: 'optimal', 'deterministic'
@@ -328,24 +329,24 @@
 - abstract machine: 'EREW PRAM'
 
 ## Reid-Miller–Blelloch algorithm
-- paper: 'List Ranking and List Scan on the CRAYC90' (1996)
+- paper: 'List Ranking and List Scan on the CRAYC90' (1996) <https://doi.org/10.1006/jcss.1996.0074>
 - solves: 'List ranking'
 - is a: 'Parallel algorithm'
 - time complexity: O(log^2 n)
 
 ## Helman–JáJá algorithm
-- paper: 'Designing Practical Efficient Algorithms for Symmetric Multiprocessors' (1999)
+- paper: 'Designing Practical Efficient Algorithms for Symmetric Multiprocessors' (1999) <https://doi.org/10.1007/3-540-48518-X_3>
 - solves: 'List ranking'
 - is a: 'Parallel algorithm'
 
 ## Funnelsort
-- paper: 'Cache-oblivious algorithms' (1999)
+- paper: 'Cache-oblivious algorithms' (1999) <https://doi.org/10.1109/SFFCS.1999.814600>
 - https://en.wikipedia.org/wiki/Funnelsort
 - is a: 'cache-oblivious algorithm', 'external memory algorithm', 'Comparison-based sorting algorithm'
 - input: 'Collection'
 
 ## Quicksort
-- paper: 'Algorithm 64: Quicksort' (1961)
+- paper: 'Algorithm 64: Quicksort' (1961) <https://doi.org/10.1145/366622.366644>
 - https://en.wikipedia.org/wiki/Quicksort
 - http://mathworld.wolfram.com/Quicksort.html
 - book: 'MIT Press', 'Introduction to Algorithms'
@@ -373,20 +374,20 @@
 
 ## Gnome sort
 - also called: 'Stupid sort'
-- paper: 'Stupid Sort: A new sorting algorithm'
+- article: 'Stupid Sort: A new sorting algorithm' (2000)
 - https://en.wikipedia.org/wiki/Gnome_sort
 - time complexity (average, worst): O(n^2)
 - time complexity (best): O(n)
 - requires no nested loops
 
 ## Splaysort
-- paper: 'Splaysort: Fast, Versatile, Practical (1996)'
+- paper: 'Splaysort: Fast, Versatile, Practical' (1996) <https://doi.org/10.1002/(SICI)1097-024X(199607)26:7%3C781::AID-SPE35%3E3.0.CO;2-B>
 - https://en.wikipedia.org/wiki/Splaysort
 - based on: 'Splay tree'
 - properties: 'comparison based'
 
 ## Cocktail shaker sort
-- paper: 'Sorting by Exchanging (1973)'
+- book chapter: 'Sorting by Exchanging' in 'Art of Computer Programming. 3. Sorting and Searching' (1973)
 - also called: 'bidirectional bubble sort'
 - https://en.wikipedia.org/wiki/Cocktail_shaker_sort
 - input: 'Bidirectional Collection'
@@ -434,7 +435,7 @@
 - input: 'Random access collection'
 
 ## Introsort
-- paper: 'Introspective Sorting and Selection Algorithms' (1997)
+- paper: 'Introspective Sorting and Selection Algorithms' (1997) <https://doi.org/10.1002/(SICI)1097-024X(199708)27:8%3C983::AID-SPE117%3E3.0.CO;2-%23>
 - https://en.wikipedia.org/wiki/Introsort
 - is a: 'Sorting algorithm', 'Unstable sorting algorithm', 'Comparison-based sorting algorithm'
 - implemented in: 'C++ STL std::sort (usually)', '.net sort'
@@ -463,7 +464,7 @@
 - is a: 'Sorting algorithm', 'Parallel algorithm'
 
 ## Pairwise sorting network
-- paper: 'The pairwise sorting network' (1992)
+- paper: 'The pairwise sorting network' (1992) <https://doi.org/10.1142/S0129626492000337>
 - https://en.wikipedia.org/wiki/Pairwise_sorting_network
 - is a: 'Sorting algorithm', 'Parallel algorithm'
 
@@ -519,7 +520,7 @@
 - cache-oblivious algorithm
 
 ## Naive Method for SimRank by Jeh and Widom
-- paper: 'SimRank: a measure of structural-context similarity' (2002)
+- paper: 'SimRank: a measure of structural-context similarity' (2002) <https://doi.org/10.1145/775047.775126>
 - calculate: 'SimRank'
 
 ## De Casteljau's algorithm
@@ -546,6 +547,7 @@
 - input: 'two strings'
 
 ## Aho–Corasick algorithm
+- paper: 'Efficient string matching: An aid to bibliographic search' (1975) <https://doi.org/10.1145/360825.360855>
 - https://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_algorithm
 - https://xlinux.nist.gov/dads/HTML/ahoCorasick.html
 - multiple *string searching*
@@ -553,7 +555,6 @@
 - implemented in (libraries): 'pyahocorasick'
 - (pre)constructs 'Finite-state machine' from set of search strings
 - applications: virus signature detection
-- paper 'Efficient string matching: An aid to bibliographic search'
 - classification 'constructed search engine', 'match prefix first', 'one-pass'
 - shows better results than 'Commentz-Walter' for peptide identification according to 'Commentz-Walter: Any Better Than Aho-Corasick For Peptide Identification?' and for biological sequences according to 'A Comparative Study On String Matching Algorithms Of Biological Sequences'
 - input: 'Collection of strings' (construction)
@@ -566,13 +567,13 @@
 - implemented in (applications): grep (variant)
 
 ## Boyer–Moore string-search algorithm
+- paper: 'A Fast String Searching Algorithm' (1977) <https://doi.org/10.1145/359842.359859>
 - https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm
 - single *string searching*
 - implemented in (applications): 'grep'
 - implemented in (libraries): 'C++ std::boyer_moore_searcher'
 - implemented in (languages): 'Python str' (variant)
 - better for large alphabets like text than: 'Knuth–Morris–Pratt algorithm'
-- paper: 'A Fast String Searching Algorithm'
 
 ## Knuth–Morris–Pratt algorithm
 - https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
@@ -598,7 +599,7 @@
 - implemented in (applications): 'agrep'
 
 ## Myers' Diff Algorithm
-- paper: 'An O(ND) difference algorithm and its variations' (1986)
+- paper: 'An O(ND) difference algorithm and its variations' (1986) <https://doi.org/10.1007/BF01840446>
 - solves: 'Shortest Edit Script'
 - input: two strings
 - output: 'Shortest Edit Script'
@@ -625,11 +626,11 @@
 - approximate solution
 
 ## Hu–Tucker algorithm
-- paper: 'Optimal Computer Search Trees and Variable-Length Alphabetical Codes' (1971)
+- paper: 'Optimal Computer Search Trees and Variable-Length Alphabetical Codes' (1971) <https://doi.org/10.1137/0121057>
 - superseded by: 'Garsia–Wachs algorithm'
 
 ## Garsia–Wachs algorithm
-- paper: 'A New Algorithm for Minimum Cost Binary Trees' (1977)
+- paper: 'A New Algorithm for Minimum Cost Binary Trees' (1977) <https://doi.org/10.1137/0206045>
 - https://en.wikipedia.org/wiki/Garsia%E2%80%93Wachs_algorithm
 - input: 'List of non-negative reals'
 - output: 'Optimal binary search tree' (special case)
@@ -681,21 +682,21 @@
 
 ## Successive approximation push-relabel method
 - also called: 'Cost scaling', 'Cost-scaling push-relabel algorithm'
-- paper: 'Finding Minimum-Cost Circulations by Successive Approximation' (1990)
+- paper: 'Finding Minimum-Cost Circulations by Successive Approximation' (1990) <https://doi.org/10.1287/moor.15.3.430>
 - solves: 'Minimum-cost circulation problem', 'Minimum-cost flow problem'
 - implemented in: 'google/or-tools::min_cost_flow'
 
 ## Extension of Push–relabel for minimum cost flows
-- paper: 'An Efficient Implementation of a Scaling Minimum-Cost Flow Algorithm' (1997)
+- paper: 'An Efficient Implementation of a Scaling Minimum-Cost Flow Algorithm' (1997) <https://doi.org/10.1006/jagm.1995.0805>
 - solves: 'Minimum-cost flow problem'
 
 ## Cost-scaling push-relabel algorithm for the assignment problem
-- paper: 'An efficient cost scaling algorithm for the assignment problem' (1995)
+- paper: 'An efficient cost scaling algorithm for the assignment problem' (1995) <https://doi.org/10.1007/BF01585996>
 - solves: 'Linear assignment problem'
 - implemented in (libraries): 'google/or-tools::linear_assignment'
 
 ## Darga–Sakallah–Markov symmetry-discovery algorithm
-- paper: 'Faster symmetry discovery using sparsity of symmetries' (2008)
+- paper: 'Faster symmetry discovery using sparsity of symmetries' (2008) <https://doi.org/10.1145/1391469.1391509>
 - implemented in (libraries): 'google/or-tools::find_graph_symmetries'
 - solves: 'Graph automorphism problem'
 
@@ -742,6 +743,7 @@
 - implemented by (libraries): 'Lucence'
 
 ## Hunt–McIlroy algorithm
+- also called: 'Hunt–Szymanski algorithm'
 - https://en.wikipedia.org/wiki/Hunt%E2%80%93McIlroy_algorithm
 - solves: 'Longest common subsequence problem'
 - technical report: 'An Algorithm for Differential File Comparison'
@@ -2388,6 +2390,24 @@
 - domain: 'Computational physics', 'Robot kinematics'
 - cf. 'Lagrange multiplier method'
 - input: 'Kinematic chain' (Collection of points and constraints)
+
+## Gilbert–Johnson–Keerthi distance algorithm
+- also called: 'GJK algorithm'
+- paper: 'A fast procedure for computing the distance between complex objects in three-dimensional space' (1988) <https://doi.org/10.1109/56.2083>
+- https://en.wikipedia.org/wiki/Gilbert%E2%80%93Johnson%E2%80%93Keerthi_distance_algorithm
+- applications: 'Convex collision detection', 'Realtime physics'
+- uses: 'Johnson's distance subalgorithm'
+- domains: 'Computational geometry', 'Convex geometry'
+
+## Lin-Canny Closest Features Method
+- paper: 'A fast algorithm for incremental distance calculation' (1991) <https://doi.org/10.1109/ROBOT.1991.131723>
+- applications: 'Collision detection'
+- domains: 'Computational geometry'
+
+## H-Walk
+- paper: 'H-Walk: hierarchical distance computation for moving convex bodies' (1999) <https://doi.org/10.1145/304893.304979>
+- applications: 'Collision detection'
+- domains: 'Computational geometry'
 
 ## Sequence step algorithm
 - https://en.wikipedia.org/wiki/Sequence_step_algorithm

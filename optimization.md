@@ -124,6 +124,16 @@
 
 # Optimization algorithms
 
+## Sequential Minimal Optimization
+- also called: 'SMO'
+- technical report: 'Sequential Minimal Optimization: A Fast Algorithm for Training Support Vector Machines' (1998) <https://www.microsoft.com/en-us/research/publication/sequential-minimal-optimization-a-fast-algorithm-for-training-support-vector-machines/>
+- https://en.wikipedia.org/wiki/Sequential_minimal_optimization
+- solves: 'SVM type quadratic programming problems'
+
+## SMO-type decomposition method
+- based on: 'Sequential Minimal Optimization'
+- paper: 'Working Set Selection Using Second Order Information for Training Support Vector Machines' (2005) <https://dl.acm.org/doi/10.5555/1046920.1194907>
+
 ## Cutting-plane method
 - https://en.wikipedia.org/wiki/Cutting-plane_method
 - solves: 'Mixed Integer Linear Programming', 'Convex optimization'

@@ -14,6 +14,7 @@ Pointer Machine, Partial Persistence, Full Persistence, Confluent Persistence, R
 ## Heuristic
 - https://en.wikipedia.org/wiki/Heuristic
 - uses 'educated guesses' or 'profiling'
+- performance of heuristic depends on the data. there is no 'best' heuristic for all data sets
 
 ## Metaheuristic
 - https://en.wikipedia.org/wiki/Metaheuristic

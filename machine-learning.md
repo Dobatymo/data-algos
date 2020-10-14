@@ -1,9 +1,32 @@
 # Problems
 
+## Classification
+- https://en.wikipedia.org/wiki/Statistical_classification
+- type: 'Supervised learning'
+
+## Binary classification
+- special case of: 'Classification'
+
+## Multiclass classification
+- special case of: 'Classification'
+
+## Regression
+- also called: 'Regression analysis'
+- https://en.wikipedia.org/wiki/Regression_analysis
+- type: 'Supervised learning'
+
 ## One-class classification
+- also called: 'OCC'
 - https://en.wikipedia.org/wiki/One-class_classification
 - variants: 'Novelty detection', 'Anomaly detection'
 - domain: 'Machine learning'
+
+## Positive-unlabeled learning
+- also called: 'PU learning'
+- https://en.wikipedia.org/wiki/One-class_classification#PU_learning
+- paper: 'Building text classifiers using positive and unlabeled examples' (2003) <https://doi.org/10.1109/ICDM.2003.1250918>
+- domain: 'Machine learning'
+- special case of: 'One-class classification'
 
 ## Novelty detection
 - https://en.wikipedia.org/wiki/Novelty_detection
@@ -26,7 +49,70 @@
 - input: 'Neural network'
 - implemented in: 'GPipe library'
 
+# Meta algorithms
+
+## Bootstrap aggregating
+- also called: 'bagging'
+- paper: 'Bagging predictors' (1996) <https://doi.org/10.1007/BF00058655>
+- https://en.wikipedia.org/wiki/Bootstrap_aggregating
+- implemented in (libraries): 'sklearn.ensemble.BaggingClassifier'
+
 # Machine learning models and algorithms
+
+## Dense Passage Retriever
+- also called: 'DPR'
+- solves: 'Information retrieval', 'Ranking'
+- uses: 'BERT', 'FAISS'
+- applications: 'Open-domain question answering'
+
+## Naive Bayes classifier
+- also called: 'Naïve Bayes classifiers'
+- solves: 'Classification'
+- is a: 'Linear classifier'
+- uses model: 'Naïve Bayes probability model'
+- decision rule: 'Maximum a posteriori estimation'
+- related: 'Logistic regression'
+- is a bad estimator for probabilities
+
+## Gaussian Naive Bayes
+- usually optimized by: 'Maximum likelihood'
+- variant of: 'Naive Bayes classifier'
+- implemented in (libraries): 'sklearn.naive_bayes.GaussianNB'
+
+## Multinomial Naive Bayes
+- variant of: 'Naive Bayes classifier'
+- implemented in (libraries): 'sklearn.naive_bayes.MultinomialNB'
+
+## Bernoulli Naive Bayes
+- variant of: 'Naive Bayes classifier'
+- implemented in (libraries): 'sklearn.naive_bayes.BernoulliNB'
+
+## Linear discriminant analysis
+- also called: 'LDA', 'Normal discriminant analysis', 'NDA', 'Discriminant function analysis'
+- https://en.wikipedia.org/wiki/Linear_discriminant_analysis
+- related: 'Analysis of variance', 'Principal component analysis'
+- implemented in (libraries): 'sklearn.discriminant_analysis.LinearDiscriminantAnalysis'
+- quadratic variant: 'Quadratic discriminant analysis'
+- is a: 'Linear classifier'
+
+## Quadratic discriminant analysis
+- also called: 'QDA'
+- https://en.wikipedia.org/wiki/Quadratic_classifier#Quadratic_discriminant_analysis
+- implemented in (libraries): 'sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis'
+- is a: 'Quadratic classifier'
+
+## Bagging SVM
+- solves: 'Positive-unlabeled learning'
+- paper: 'A bagging SVM to learn from positive and unlabeled examples' (2014) <https://doi.org/10.1016/j.patrec.2013.06.010>
+
+## Structured support vector machine
+- also called: 'Structured SVM', 'Structural support vector machine', 'SSVM'
+- https://en.wikipedia.org/wiki/Structured_support_vector_machine
+
+## Positive Unlabeled Random Forest
+- also called: 'PURF'
+- solves: 'Positive-unlabeled learning'
+- paper: 'Towards Positive Unlabeled Learning for Parallel Data Mining: A Random Forest Framework' (2014) <https://doi.org/10.1007/978-3-319-14717-8_45>
 
 ## REINFORCE
 - also called: 'Monto-Carlo policy gradient'
@@ -36,6 +122,7 @@
 
 ## Actor-Critic
 - paper: 'Neuronlike adaptive elements that can solve difficult learning control problems' (1983)
+- type: 'Temporal-Difference Learning'
 
 ## Advantage Actor-Critic
 - also called: 'Actor Advantage Critic', 'A2C'
@@ -157,7 +244,7 @@
 - https://en.wikipedia.org/wiki/Self-organizing_map
 - type of: 'Artificial neural network'
 - unsupervised
-- solves: 'Nonlinear dimensionality reduction'
+- solves: 'Nonlinear dimensionality reduction', 'Dimensionality reduction'
 - applications: 'Visualization'
 - implemented in: 'Python mvpa2.mappers.som.SimpleSOMMapper, Bio.Cluster.somcluster'
 - paradigm: 'Competitive learning'
@@ -181,6 +268,12 @@
 - paper: 'Support vector clustering' (2001)
 - http://www.scholarpedia.org/article/Support_vector_clustering
 - implemented in: 'RapidMiner'
+
+## Chinese Whispers
+- https://en.wikipedia.org/wiki/Chinese_Whispers_(clustering_method)
+- paper: 'Chinese Whispers - an Efficient Graph Clustering Algorithm and its Application to Natural Language Processing Problems' (2006) <https://www.aclweb.org/anthology/W06-3812/>
+- applications: 'Clustering', 'Community identification', 'Natural language processing'
+- implemented in (libraries): 'dlib'
 
 ## ID3 algorithm
 - also called: 'Iterative Dichotomiser 3'

@@ -107,6 +107,21 @@
 - uses method: 'Principle of maximum entropy'
 - domain: 'Information theory'
 
+## Analysis of variance
+- also called: 'ANOVA'
+- https://en.wikipedia.org/wiki/Analysis_of_variance
+- implemented in (libraries): 'statsmodels.stats.anova.anova_lm'
+
+## One-way analysis of variance
+- also called: 'One-way ANOVA'
+- https://en.wikipedia.org/wiki/One-way_analysis_of_variance
+- implemented in (libraries): 'scipy.stats.f_oneway'
+
+## Naïve Bayes probability model
+- https://en.wikipedia.org/wiki/Naive_Bayes_classifier
+- special case of: 'Bayesian network'
+- type: 'conditional probability model'
+
 -- classification or regression models:
 
 ## Tensor rank decomposition
@@ -153,19 +168,41 @@
 - properties: 'reduced data model'
 - relies on: 'Nearest neighbor search'
 
-## Support-vector machine
+## Linear support-vector machine
 - also called: 'SVM', 'Support-vector network'
 - https://en.wikipedia.org/wiki/Support-vector_machine
-- implemented in (libraries): 'LIBLINEAR', 'sklearn.svm.LinearSVC', 'sklearn.svm.SVC'
 - Quadratic Programming problem
-- Linear variant optimized by: 'Coordinate descent', 'newGLMNET'
+- usually optimized by: 'Coordinate descent', 'newGLMNET'
 - properties: 'deterministic', 'discriminative'
+- solves: 'Classification'
+- is a: 'linear classifier'
+- non-linear variant: 'Support-vector machine (using kernel method)'
+- implemented in (libraries): 'LIBLINEAR', 'LIBSVM', 'sklearn.svm.LinearSVC', 'sklearn.svm.SVC'
 
-## Support-vector regression
+## Support-vector machine (using kernel method)
+- also called: 'SVM'
+- https://en.wikipedia.org/wiki/Support-vector_machine
+- implemented in (libraries): 'LIBSVM', 'sklearn.svm.SVC'
+- usually optimized by: 'SMO-type decomposition method'
+- solves: 'Classification'
+
+## Linear support-vector regression
 - also called: 'SVR'
 - https://en.wikipedia.org/wiki/Support-vector_machine#Regression
-- implemented in (libraries): 'LIBLINEAR', 'libsvm', 'Python sklearn.svm.SVR, sklearn.svm.LinearSVR'
+- implemented in (libraries): 'LIBLINEAR', 'LIBSVM', 'sklearn.svm.SVR', 'sklearn.svm.LinearSVR'
+- non-linear variant: 'Support-vector regression (using kernel method)'
+- solves: 'Regression'
+
+## Support-vector regression (using kernel method)
+- also called: 'SVR'
+- https://en.wikipedia.org/wiki/Support-vector_machine#Regression
 - properties: 'deterministic'
+- implemented in (libraries): 'LIBSVM', 'sklearn.svm.SVR'
+- usually optimized by: 'SMO-type decomposition method'
+- solves: 'Regression'
+
+## Support-vector clustering
+- also called: 'SVC'
 
 ## Hidden Markov model
 - also called: 'HMM'

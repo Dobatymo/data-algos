@@ -10,6 +10,7 @@
 - https://en.wikipedia.org/wiki/Breadth-first_search
 - input: 'Graph'
 - implemented in: 'boost::graph::breadth_first_search'
+- usually implemented with: 'Double-ended queue'
 
 ## Depth-first search
 - https://en.wikipedia.org/wiki/Depth-first_search
@@ -24,6 +25,17 @@
 ## Branch and bound search
 - implemented in (libraries): 'google/or-tools'
 - commonly used to solve: '0-1 knapsack problem'
+
+## Parzen–Rosenblatt window method
+- also called: 'Parzen-window method'
+- paper: 'Remarks on Some Nonparametric Estimates of a Density Function' (1956) <https://doi.org/10.1214%2Faoms%2F1177728190>
+- https://en.wikipedia.org/wiki/Kernel_density_estimation
+- applications: 'Kernel density estimation'
+- implemented in: 'Python scipy.signal.parzen'
+
+## Kernel density estimation using Gaussian kernels
+- applications: 'Kernel density estimation'
+- implemented in: 'Python scipy.stats.gaussian_kde', 'Mathematica SmoothKernelDistribution[ker->"Gaussian"]'
 
 ## k-d tree construction algorithm using sliding midpoint rule
 - example paper: Maneewongvatana and Mount 1999
@@ -127,7 +139,7 @@
 - implemented in: 'WojciechMula/sse-popcount'
 
 ## Cluster pruning
-- book: 'Cambridge University Press, Introduction to Information Retrieval' (2008)
+- book: 'Cambridge University Press', 'Introduction to Information Retrieval' (2008)
 - algorithmic analysis: 'Finding near neighbors through cluster pruning' (2007)
 - properties: 'randomized', 'external io'
 - applications: 'Approximate nearest neighbor search'
@@ -196,6 +208,7 @@
 - combination of 'Bellman–Ford' and 'Dijkstra's algorithm'
 - is faster than 'Floyd–Warshall algorithm' for sparse graphs
 - input: 'weighted directed graph without negative cycles'
+- challenges: 'SPOJ: JHNSN'
 
 ## Floyd–Warshall algorithm
 - paper: 'Algorithm 97: Shortest path' (1962) <https://doi.org/10.1145/367766.368168>
@@ -501,18 +514,41 @@
 - applications: 'Integer sorting'
 
 ## Fisher–Yates shuffle
-- also called: 'Knuth shuffle'
+- also called: 'Knuth shuffle', 'Algorithm P (Shuffling)'
 - https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 - is a: 'Shuffling algorithm', 'In-place algorithm'
 - unbiased
 - input: 'Random access collection'
+- applications: 'Card dealing'
 
-## Reservoir sampling
+## Alan Waterman's reservoir sampling algorithm
+- also called: 'Algorithm R'
 - https://en.wikipedia.org/wiki/Reservoir_sampling
-- https://xlinux.nist.gov/dads/HTML/reservoirSampling.html
-- family of 'randomized algorithms'
+- is a: 'randomized algorithms'
 - version of: 'Fisher–Yates shuffle'
+- runtime complexity: 'O(N)'
+
+## Sattolo's algorithm
+- paper: 'An algorithm to generate a random cyclic permutation' (1986) <https://doi.org/10.1016/0020-0190(86)90073-6>
+- https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Sattolo's_algorithm
+- https://danluu.com/sattolo/
+- version of: 'Fisher–Yates shuffle'
+- output: random cyclic permutations of length n
+
+## Vitter's reservoir sampling algorithm
+- also called: 'Algorithm Z'
+- https://en.wikipedia.org/wiki/Reservoir_sampling
+- paper: 'Random sampling with a reservoir' (1985) <https://doi.org/10.1145/3147.3165>
+- https://xlinux.nist.gov/dads/HTML/reservoirSampling.html
 - properties: 'online'
+- is a: 'randomized algorithms'
+- runtime complexity: 'O(n * (1 + log(N/n)))' (using the threshold optimization)
+
+## Reservoir sampling (optimal)
+- also called: 'Algorithm L'
+- paper: 'Reservoir-sampling algorithms of time complexity O(n(1 + log(N/n)))' (1994) <https://doi.org/10.1145/198429.198435>
+- properties: 'online'
+- is a: 'randomized algorithms'
 
 ## Cache-oblivious distribution sort
 - https://en.wikipedia.org/wiki/Cache-oblivious_distribution_sort
@@ -677,14 +713,35 @@
 - paper: 'A new approach to the maximum flow problem' (1986) <https://doi.org/10.1145/12130.12144>
 - paper: 'A new approach to the maximum-flow problem' (1988) <https://doi.org/10.1145/48014.61051>
 - https://en.wikipedia.org/wiki/Push–relabel_maximum_flow_algorithm
+- https://cp-algorithms.com/graph/push-relabel.html
 - solves: 'Maximum flow problem'
-- implemented in: 'boost::graph::push_relabel_max_flow', 'google/or-tools::max_flow'
+- implemented in (libraries): 'boost::graph::push_relabel_max_flow', 'google/or-tools::max_flow'
+
+## Improved push–relabel maximum flow algorithm
+- paper: 'Analysis of preflow push algorithms for maximum network flow' (1989) <https://doi.org/10.1137/0218072>
+- https://cp-algorithms.com/graph/push-relabel-faster.html
+- solves: 'Maximum flow problem'
 
 ## Successive approximation push-relabel method
 - also called: 'Cost scaling', 'Cost-scaling push-relabel algorithm'
 - paper: 'Finding Minimum-Cost Circulations by Successive Approximation' (1990) <https://doi.org/10.1287/moor.15.3.430>
 - solves: 'Minimum-cost circulation problem', 'Minimum-cost flow problem'
-- implemented in: 'google/or-tools::min_cost_flow'
+- implemented in (libraries): 'google/or-tools::min_cost_flow', 'lemon::CostScaling'
+
+## Cycle canceling
+- solves: 'Minimum-cost flow problem'
+- paper: 'A Primal Method for Minimal Cost Flows with Applications to the Assignment and Transportation Problems' (1967) <https://doi.org/10.1287/mnsc.14.3.205>
+- implemented in (libraries): 'lemon::CycleCanceling(Method=SIMPLE_CYCLE_CANCELING)'
+
+## Minimum mean cycle canceling
+- paper: 'Finding minimum-cost circulations by canceling negative cycles' (1989) <https://doi.org/10.1145/76359.76368>
+- implemented in (libraries): 'lemon::CycleCanceling(Method=MINIMUM_MEAN_CYCLE_CANCELING)'
+- solves: 'Minimum-cost flow problem'
+
+## Cancel-and-tighten algorithm
+- solves: 'Minimum-cost flow problem'
+- implemented in (libraries): 'lemon::CycleCanceling(Method=CANCEL_AND_TIGHTEN)'
+- runtime complexity: O(n^2 e^2 log(n))
 
 ## Extension of Push–relabel for minimum cost flows
 - paper: 'An Efficient Implementation of a Scaling Minimum-Cost Flow Algorithm' (1997) <https://doi.org/10.1006/jagm.1995.0805>
@@ -734,8 +791,11 @@
 - more efficient than: 'Fleury's algorithm'
 
 ## Kahn's algorithm
+- paper: 'Topological sorting of large networks' (1962) <https://doi.org/10.1145/368996.369025>
 - https://en.wikipedia.org/wiki/Topological_sorting#Kahn's_algorithm
 - applications: 'topological sorting'
+- time complexity: O(|V| + |E|)
+- input: 'Directed acyclic graph'
 
 ## HyperLogLog++
 - https://en.wikipedia.org/wiki/HyperLogLog
@@ -1184,6 +1244,13 @@
 - complexity: O(n log(n) log(log(n)))
 - practically outperforms 'Toom–Cook multiplication' for n > 10,000 digits [https://gmplib.org/manual/Multiplication-Algorithms.html]
 
+## Harvey and Van Der Hoeven algorithm
+- paper: 'Integer multiplication in time O(n log n)' (2019) <https://hal.archives-ouvertes.fr/hal-02070778>
+- is a: 'multiplication algorithm'
+- applications: 'integer multiplication'
+- complexity: O(n log n)
+- impractical, large constants
+
 ## Euclidean algorithm
 - https://en.wikipedia.org/wiki/Euclidean_algorithm
 - solves 'Greatest common divisor'
@@ -1558,9 +1625,21 @@
 
 ## Dinic's algorithm
 - also called: 'Dinitz's algorithm'
+- paper: 'Algorithm for Solution of a Problem of Maximum Flow in a Network with Power Estimation' (1970) <>
 - https://en.wikipedia.org/wiki/Dinic%27s_algorithm
+- https://cp-algorithms.com/graph/dinic.html
 - solves: 'Maximum flow problem'
 - similar: 'Edmonds–Karp algorithm'
+- runtime complexity: O(v e log(v)) (with dynamic trees)
+- runtime complexity: O(v^2 e) (with dynamic trees)
+
+## MPM algorithm
+- also called: 'Malhotra, Pramodh-Kumar and Maheshwari algorithm'
+- paper: 'An O(|V|3) algorithm for finding maximum flows in networks' (1978) <https://doi.org/10.1016/0020-0190(78)90016-9>
+- https://cp-algorithms.com/graph/mpm.html
+- solves: 'Maximum flow problem'
+- input: 'acyclic flow network'
+- runtime complexity: O(v^3)
 
 ## Edmonds–Karp algorithm
 - paper: 'Theoretical Improvements in Algorithmic Efficiency for Network Flow Problems' (1972)
@@ -1568,7 +1647,7 @@
 - https://brilliant.org/wiki/edmonds-karp-algorithm/
 - implements: 'Ford–Fulkerson method'
 - implemented in: 'Python networkx.algorithms.flow.edmonds_karp', 'boost::graph::edmonds_karp_max_flow'
-- time complexity: O(v e^2) or O(v^2 e) where v is the number of vertices and e the number of edges
+- time complexity: O(v e^2) [or O(v^2 e)?] where v is the number of vertices and e the number of edges
 - solves: 'Maximum flow problem'
 - input: 'Flow network'
 - output: 'Maximum flow'
@@ -2073,6 +2152,7 @@
 - input: 'Function'
 - output: 'Function in Chebyshev space of best approximation', e.g. 'Polynomial of best approximation'
 - applications: 'Function approximation'
+- implemented in (libraries): 'C++ samhocevar/lolremez'
 
 ## Neville's algorithm
 - https://en.wikipedia.org/wiki/Neville%27s_algorithm
@@ -2498,7 +2578,7 @@
 - https://en.wikipedia.org/wiki/Network_simplex_algorithm
 - solves: 'Minimum-cost flow problem'
 - specialisation of: 'Simplex algorithm'
-- implemented in (libraries): 'networkx.algorithms.flow.min_cost_flow'
+- implemented in (libraries): 'networkx.algorithms.flow.min_cost_flow', 'C++ lemon::NetworkSimplex'
 
 ## Expectation–maximization algorithm
 - also called: 'EM algorithm'
@@ -3707,6 +3787,71 @@
 - paper: 'A Computational Approach to Edge Detection' (1986) <https://doi.org/10.1109/TPAMI.1986.4767851>
 - implemented in (libraries): 'skimage.filters.apply_hysteresis_threshold'
 - domain: 'Image processing'
+
+## Wave Function Collapse algorithm
+- also called: 'WFC algorithm'
+- related papers: 'WaveFunctionCollapse is constraint solving in the wild' (2007) <https://doi.org/10.1145/3102071.3110566>
+- implemented in (libraries): 'mxgmn/WaveFunctionCollapse'
+- applications: 'Locally similar bitmap generation', 'Level generation', 'image generation'
+
+## Fuse algorithm
+- http://draves.org/fuse/
+- applications: 'texture synthesis', 'image fusion', 'associative image reconstruction'
+- type: 'Full neighbourhood search'
+- domain: 'Computer graphics'
+
+## Efros--Leung texture synthesis algorithm
+- paper: 'Texture synthesis by non-parametric sampling' (1999) <https://doi.org/10.1109/ICCV.1999.790383>
+- applications: 'texture synthesis'
+- type: 'Full neighbourhood search'
+- domain: 'Computer graphics'
+
+## Wei-Levoy texture synthesis algorithm
+- also called: 'WL algorithm'
+- paper: 'Fast texture synthesis using tree-structured vector quantization' (2000) <https://doi.org/10.1145/344779.345009>
+- applications: 'texture synthesis'
+- type: 'Full neighbourhood search'
+- domain: 'Computer graphics'
+
+## Ashikhmin texture synthesis algorithm
+- paper: 'Synthesizing natural textures' (2001) <https://doi.org/10.1145/364338.364405>
+- based on: 'Wei-Levoy texture synthesis algorithm'
+- applications: 'texture synthesis'
+- domain: 'Computer graphics'
+
+## k-coherent search
+- paper: 'Synthesis of bidirectional texture functions on arbitrary surfaces' (2002) <https://doi.org/10.1145/566654.566634>
+- applications: 'texture synthesis'
+- domain: 'Computer graphics'
+- uses: 'bidirectional texture function'
+
+## Resynthesis algorithm
+- thesis: 'Image Texture Tools: Texture Synthesis, Texture Transfer, and Plausible Restoration' by 'Paul Francis Harrison' (2005)
+- applications: 'texture synthesis'
+- domain: 'Computer graphics'
+
+## Winnow algorithm
+- https://en.wikipedia.org/wiki/Winnow_(algorithm)
+- paper: 'Learning Quickly When Irrelevant Attributes Abound: A New Linear-Threshold Algorithm' (1988) <https://doi.org/10.1023/A:1022869011914>
+- domain: 'Machine learning'
+- solves: 'Binary classification'
+- is a: 'Linear classifier'
+- type: 'Online learning'
+
+## Manacher's algorithm
+- paper: 'A New Linear-Time "On-Line" Algorithm for Finding the Smallest Initial Palindrome of a String' (1975) <https://doi.org/10.1145/321892.321896>
+- https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher's_algorithm
+- solves: 'Longest palindromic substring problem'
+- runtime complexity: O(n)
+
+## Jeuring's algorithm
+- paper: 'The derivation of on-line algorithms, with an application to finding palindromes' (1994) <https://doi.org/10.1007/BF01182773>
+- solves: 'Longest palindromic substring problem'
+- runtime complexity: O(n)
+
+## Takaoka's multiset permutations algorithm
+- paper: 'A Two-level Algorithm for Generating Multiset Permutations' (2009)
+- solves: 'Multiset permutation'
 
 # Filters
 

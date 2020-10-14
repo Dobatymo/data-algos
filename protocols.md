@@ -1,3 +1,25 @@
+# Uncategorized protocols
+
+## Garbled circuit
+- also called: 'Yao's garbled circuits protocol'
+- solves: 'Secure multi-party computation'
+
+## Privacy-Preserving Scalar Product Protocol
+- also called: 'PPSPP'
+- solves: 'Two-way privacy-preserving distance calculation'
+- paper: 'Secure two-party distance computation protocol based on privacy homomorphism and scalar product in wireless sensor networks' (2016) <https://doi.org/10.1109/TST.2016.7536716>
+
+## Homomorphic-Encryption-based Euclidean Distance Protocol
+- also called: 'HEEDP'
+- solves: 'Two-way privacy-preserving distance calculation'
+- paper: 'Secure two-party distance computation protocol based on privacy homomorphism and scalar product in wireless sensor networks' (2016) <https://doi.org/10.1109/TST.2016.7536716>
+
+## Spatial cloaking
+- solves: 'One-way privacy-preserving distance calculation'
+- paper: 'Anonymous Usage of Location-Based Services Through Spatial and Temporal Cloaking' (2003) <https://doi.org/10.1145/1066116.1189037>
+- paper: 'Evaluating the Privacy Guarantees of Location Proximity Services' (2017) <https://doi.org/10.1145/3007209>
+- idea: 'round coordinates, not distances'
+
 # Protocols (distributed algorithms, not simple network protocols)
 
 ## Identity-Based Privacy-Protected Access Control Filter

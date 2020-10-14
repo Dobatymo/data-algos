@@ -1,5 +1,46 @@
 # Problems
 
+-- uncategorized
+
+## Multiset permutation
+- also called: 'Distinct permutation', 'Permutation with replacement'
+- https://en.wikipedia.org/wiki/Permutation#Permutations_of_multisets
+- solved by (libraries): 'sympy.utilities.iterables.multiset_permutations', 'more_itertools.distinct_permutations'
+- solved by (algorithms): 'Takaoka's multiset permutations algorithm'
+- related: 'Multinomial theorem' (number of multiset permutations)
+
+## Content-based near-duplicate video detection
+- also called: 'NDVD'
+
+## Simplification of Mixed Boolean-Arithmetic expressions
+- also called: 'MBA simplification'
+- applications paper: 'Information Hiding in Software with Mixed Boolean-Arithmetic Transforms' (2007) <https://doi.org/10.1007/978-3-540-77535-5_5>
+- applications: 'data flow obfuscation', 'obfuscation'
+- approaches: 'term rewriting / pattern matching'
+- solved by (libraries): 'Python quarkslab/arybo'
+- domain: 'cryptography', 'computer algebra', 'bit-vector logic'
+- thesis: 'Obfuscation with Mixed Boolean-Arithmetic Expressions: Reconstruction, Analysis and Simplification Tools'
+
+## Secure multi-party computation
+- also called: 'multi-party computation', 'MPC', 'privacy-preserving computation'
+- https://en.wikipedia.org/wiki/Secure_multi-party_computation
+
+## Secure two-party computation
+- also called: '2PC'
+- https://en.wikipedia.org/wiki/Secure_two-party_computation
+- special case of: 'Secure multi-party computation'
+
+## Oblivious transfer
+- also called: 'OT', 'Symmetric private information retrieval', 'Symmetric PIR'
+- https://en.wikipedia.org/wiki/Oblivious_transfer
+- domain: 'cryptography'
+
+## Private information retrieval
+- also called: 'PIR'
+- https://en.wikipedia.org/wiki/Private_information_retrieval
+- special case of: 'Oblivious transfer'
+- domain: 'cryptography'
+
 -- implicit formulation with clear solutions
 
 Solution is given by constraints which must be fullfilled, an equation to be solved.
@@ -88,17 +129,24 @@ Solution is given by constraints which must be fullfilled, an equation to be sol
 
 ## Maximum flow problem
 - https://en.wikipedia.org/wiki/Maximum_flow_problem
+- https://cp-algorithms.com/graph/edmonds_karp.html
+- https://cp-algorithms.com/graph/push-relabel.html
 - book: 'Introduction to Algorithms'
 - domain: 'Graph theory'
 - solved by (libraries): 'google/or-tools'
+- solved by (algorithms): 'Bellman–Ford algorithm'
 
 ## Minimum-cost flow problem
 - also called: 'MCFP'
 - https://en.wikipedia.org/wiki/Minimum-cost_flow_problem
+- https://cp-algorithms.com/graph/min_cost_flow.html
 - generalization of: 'Maximum flow problem', 'Shortest path problem'
 - specialization of: 'Minimum-cost circulation problem'
 - solved by: 'Linear programming'
 - solved by (libraries): 'google/or-tools'
+
+## Minimum-cost maximum-flow problem
+- variation of: 'Minimum-cost flow problem'
 
 ## Minimum-cost circulation problem
 - https://en.wikipedia.org/wiki/Circulation_problem
@@ -183,6 +231,12 @@ Solution is given by mathematical formula or naive computation method.
 
 -- implicit or explicit formulation with clear solutions
 
+## Pareto frontier extraction
+- also called: 'Pareto front searching', 'Pareto set'
+- https://en.wikipedia.org/wiki/Pareto_efficiency#Pareto_frontier
+- solved by (libraries): 'kummahiih/pypareto'
+- domain: 'Multi-objective optimization'
+
 ## Disjoint set union problem
 
 ## Watershed transformation
@@ -199,7 +253,7 @@ Solution is given by mathematical formula or naive computation method.
 - solved by (algorithms): 'Depth-first search', 'Tarjan's strongly connected components algorithm'
 
 ## Connected-component labeling
-- book: 'The algorithm design manual'
+- book: 'The Algorithm Design Manual'
 - https://en.wikipedia.org/wiki/Connected-component_labeling
 - domain: 'Graph theory'
 - applications: 'Computer vision'
@@ -296,6 +350,7 @@ Solution is given by mathematical formula or naive computation method.
 - naive space complexity: linear in distinct number of elements
 
 ## Single-source shortest path problem
+- problem type: 'Shortest path problem'
 - also called: 'Least cost path'
 - https://en.wikipedia.org/wiki/Shortest_path_problem
 - book: 'Introduction to Algorithms'
@@ -310,10 +365,12 @@ Solution is given by mathematical formula or naive computation method.
 - domain: 'Graph theory'
 
 ## Single-pair shortest path problem
+- problem type: 'Shortest path problem'
 - https://en.wikipedia.org/wiki/Shortest_path_problem#Single-source_shortest_paths
 - no algorithms with better worst time complexity than for 'Single-source shortest path problem' are know (which is a generalization)
 
 ## All-pairs shortest paths problem
+- problem type: 'Shortest path problem'
 - https://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths
 - book: 'Introduction to Algorithms'
 - finds the shortest path for all pairs of vectices in a graph
@@ -321,18 +378,37 @@ Solution is given by mathematical formula or naive computation method.
 - domain: 'graph theory'
 - properties: 'optimal substructure'
 
+## Graph connectivity
+- https://en.wikipedia.org/wiki/Connectivity_(graph_theory)
+- description: "Are these nodes a and b of the graph connected?"
+- related: 'Connected-component finding'
+- domain: 'graph theory'
+
+## Negative cycle detection
+- also called: 'Negative weight cycle detection"
+- https://cp-algorithms.com/graph/finding-negative-cycle-in-graph.html
+- description: "Does the graph contain negative cycles?"
+- input: 'directed weighted graph'
+- domain: 'graph theory'
+- solved by (algorithms): 'Bellman–Ford algorithm'
+- related challenges: 'SPOJ: UCV2013B'
+
 ## Longest common substring problem
 - https://en.wikipedia.org/wiki/Longest_common_substring_problem
-- book: 'The algorithm design manual'
+- book: 'The Algorithm Design Manual'
 - cf. 'Longest common subsequence problem'
 - properties: 'optimal substructure'
 - solutions: 'Generalized suffix tree'
 - naive time complexity: O((n+m)*m^2) for length n and m of two strings (https://www.techiedelight.com/longest-common-substring-problem/)
 - domain: 'Combinatorics'
 
+## Longest palindromic substring problem
+- also called: 'Longest symmetric factor problem'
+- https://en.wikipedia.org/wiki/Longest_palindromic_substring
+
 ## Longest common subsequence problem
 - https://en.wikipedia.org/wiki/Longest_common_subsequence_problem
-- book: 'Introduction to Algorithms', 'The algorithm design manual'
+- book: 'Introduction to Algorithms', 'The Algorithm Design Manual'
 - cf. 'Longest common substring problem'
 - solved by: 'Hunt–McIlroy algorithm'
 - solved by application: 'diff'
@@ -346,7 +422,7 @@ Solution is given by mathematical formula or naive computation method.
 
 ## Shortest common superstring problem
 - https://en.wikipedia.org/wiki/Shortest_common_supersequence_problem#Shortest_common_superstring
-- book: 'The algorithm design manual'
+- book: 'The Algorithm Design Manual'
 - applications: sparse matrix compression
 - domain: 'Combinatorics'
 
@@ -518,6 +594,21 @@ Solution is given by mathematical formula or naive computation method.
 - https://en.wikipedia.org/wiki/Stable_marriage_problem
 - is a: 'matching problem'
 
+## Partition problem
+- also called: 'Number partitioning'
+- https://en.wikipedia.org/wiki/Partition_problem
+- domain: 'Number theory', 'Computer science'
+- hardness: 'NP-complete'
+- is a: 'Decision problem'
+- special case of: 'Subset sum problem'
+
+## Linear partition problem
+- book: 'The Algorithm Design Manual'
+- http://www8.cs.umu.se/kurser/TDBAfl/VT06/algorithms/BOOK/BOOK2/NODE45.HTM
+- domain: 'Number theory', 'Computer science'
+- is a: 'Optimization problem'
+- hardness: 'NP-hard'
+
 ## Maximum cut problem
 - https://en.wikipedia.org/wiki/Maximum_cut
 - hardness: 'NP-complete'
@@ -556,7 +647,7 @@ Solution is given by mathematical formula or naive computation method.
 
 ## Topological sorting
 - https://en.wikipedia.org/wiki/Topological_sorting
-- book: 'The algorithm design manual'
+- book: 'The Algorithm Design Manual'
 - implemented by: 'posix tsort'
 - implemented in: 'boost::graph::topological_sort'
 - input: 'directed acyclic graph'
@@ -569,15 +660,63 @@ Solution is given by mathematical formula or naive computation method.
 - domain: 'Algebra'
 
 ## Nearest neighbor search
+- also called: 'Similarity search', 'NNS', 'post-office problem'
 - https://en.wikipedia.org/wiki/Nearest_neighbor_search
-- also called: 'post-office problem'
-- solved exactly by: 'Space partitioning', 'Linear search'
-- solved approximatly by: 'Hierarchical Navigable Small World graphs', 'Locality-sensitive hashing', 'Cover tree', 'Vector quantization'
-- implemented by: 'spotify/annoy', 'C++ ANN', 'nmslib/hnsw', 'nmslib/nmslib'
+- https://en.wikipedia.org/wiki/Similarity_search
+- solved by: 'Space partitioning', 'Linear search'
+- solved by (libraries): 'C++ ANN', 'nmslib/hnsw', 'nmslib/nmslib'
+- approximate variant: 'Approximate nearest neighbor search'
 
 ## Approximate nearest neighbor search
+- also called: 'ANN', 'Approximate similarity search'
 - book: 'Handbook of Discrete and Computational Geometry'
 - https://en.wikipedia.org/wiki/Nearest_neighbor_search#Approximate_nearest_neighbor
+- solved by (libraries): 'PyNNDescent', 'spotify/annoy'
+- solved by: 'Hierarchical Navigable Small World graphs', 'Locality-sensitive hashing', 'Cover tree', 'Vector quantization'
+- exact variant: 'Nearest neighbor search'
+
+## Range searching
+- https://en.wikipedia.org/wiki/Range_searching
+- related problems: 'Nearest neighbor search'
+
+## Range reporting
+- https://en.wikipedia.org/wiki/Range_reporting
+- special case of: 'Range searching'
+- query name: 'reporting query'
+- answer type: list
+
+## Range counting
+- special case of: 'Range searching'
+- query name: 'Counting query'
+- answer type: int
+
+## Emptiness query of range searching
+- special case of: 'Range searching'
+- query name: 'Emptiness query'
+- answer type: bool
+
+## Lowest common ancestor
+- also called: 'LCA', 'Least common ancestor'
+- https://en.wikipedia.org/wiki/Lowest_common_ancestor
+
+## Longest common prefix problem
+- https://en.wikipedia.org/wiki/LCP_array
+- https://leetcode.com/problems/longest-common-prefix/
+
+## Range minimum query
+- also called: 'RMQ'
+- https://en.wikipedia.org/wiki/Range_minimum_query
+- http://wcipeg.com/wiki/Range_minimum_query
+- related: 'Lowest common ancestor', 'Longest common prefix problem'
+- variants: 'dynamic', 'static'
+- solved by: 'Segment tree'
+
+## Kernel density estimation
+- also called: 'KDE'
+- https://en.wikipedia.org/wiki/Kernel_density_estimation
+- domain: 'statistics'
+- properties: 'non-parametric'
+- solved by: 'Mathematica SmoothKernelDistribution', 'org.apache.spark.mllib.stat.KernelDensity'
 
 ## Sorting problem
 - https://en.wikipedia.org/wiki/Sorting_algorithm
@@ -587,13 +726,13 @@ Solution is given by mathematical formula or naive computation method.
 
 ## Partial sorting
 - https://en.wikipedia.org/wiki/Partial_sorting
-- solved by: 'heaps', 'quickselsort', 'Quickselect'
+- solved by: heaps, 'quickselsort', 'Quickselect'
 - variant of: 'Sorting problem'
 - domain: 'Computer science'
 
 ## Incremental sorting
 - https://en.wikipedia.org/wiki/Partial_sorting#Incremental_sorting
-- solved by: 'quickselect', 'heaps'
+- solved by: 'quickselect', heaps
 - domain: 'Computer science'
 - variant of: 'Sorting problem'
 
@@ -621,12 +760,18 @@ Solution is given by mathematical formula or naive computation method.
 - domain: 'Computer science'
 - naive time complexity: O(nm log(nm))
 - variant of: 'Sorting problem'
+- there exists a related unsolved problem
+- applications: 'transit fare minimisation'
+
+## 3SUM
+- https://en.wikipedia.org/wiki/3SUM
+- related: 'Subset sum problem'
 
 ## Motion planning
 - also called: 'Navigation problem', 'Piano mover's problem'
 - https://en.wikipedia.org/wiki/Motion_planning
 - http://planning.cs.uiuc.edu/node160.html
-- book: 'The algorithm design manual'
+- book: 'The Algorithm Design Manual'
 - hardness: PSPACE-hard
 - domain: 'Robotics'
 
@@ -747,6 +892,33 @@ Evaluation is usually empirical, based on metrics inpired by human perception or
 ## Frequency estimation
 - https://en.wikipedia.org/wiki/Spectral_density_estimation#Frequency_estimation
 
+## Grammatical error correction
+- also called: 'GEC'
+- https://paperswithcode.com/task/grammatical-error-correction
+- domain: 'Computational linguistics'
+- usually solved by: 'language models', 'sequence-to-sequence models'
+- tasks: 'BEA-2019 Shared Task', 'CoNLL-2014 Shared Task', 'CoNLL-2013 Shared Task'
+
+## Speech recognition
+- also called: 'automatic speech recognition', 'ASR', 'speech to text', 'STT'
+- https://en.wikipedia.org/wiki/Speech_recognition
+- https://paperswithcode.com/task/speech-recognition
+- solved by (applications): 'CMU Sphinx'
+
+## Speaker recognition
+- also called: 'speaker identification', 'voice recognition'
+- https://en.wikipedia.org/wiki/Speaker_recognition
+- https://paperswithcode.com/task/speaker-identification
+- input: 'audio'
+- output: 'text'
+
+## Handwriting recognition
+- also called: 'HWR', 'Handwritten Text Recognition', 'HTR'
+- https://en.wikipedia.org/wiki/Handwriting_recognition
+- input: 'image' (offline) or f(time) -> (real, real, bool) (online)
+- output: '(formatted) text'
+- conferences: 'International Conference on Frontiers in Handwriting Recognition'
+
 -- subjective (no simple objective performance metric)
 
 Empirical evaluation or based on "dumb" metrics. Even comparison to groundtruth is not easily possible.
@@ -782,9 +954,10 @@ Empirical evaluation or based on "dumb" metrics. Even comparison to groundtruth 
 - metrics (selection): 'BLEU'
 - usually solved by: 'machine learning'
 
-# Machine translation
+## Machine translation
 - also called: 'MT'
 - https://en.wikipedia.org/wiki/Machine_translation
 - domain: 'Computational linguistics'
 - metrics (selection): 'BLEU', 'ROUGE'
 - usually solved by: 'machine learning'
+- approaches: 'Statistical machine translation', 'Neural machine translation', 'Rule-based machine translation', 'Dictionary-based machine translation'

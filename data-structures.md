@@ -79,11 +79,30 @@
 - implements: 'Priority queue'
 
 ## Binary heap
+- paper: 'Algorithm 232 Heapsort' (1964) <https://doi.org/10.1145/512274.512284>
 - https://en.wikipedia.org/wiki/Binary_heap
 - implements: 'Priority queue'
 - variant implemented in: 'Python heapq', 'C++ std::make_heap, push_heap and pop_heap'
+- usually implemented as: 'Implicit data structure'
+
+## Segment tree
+- also called: 'Statistic tree'
+- https://en.wikipedia.org/wiki/Segment_tree
+- https://cp-algorithms.com/data_structures/segment_tree.html
+- https://www.hackerearth.com/practice/data-structures/advanced-data-structures/segment-trees/tutorial/
+- applications: 'Range minimum query'
+- implemented in (libraries): 'Python segment-tree'
+
+## Interval tree
+- https://en.wikipedia.org/wiki/Interval_tree
+
+## Longest common prefix array
+- also called: 'LCP array'
+- https://en.wikipedia.org/wiki/LCP_array
+- applications: 'Longest common prefix problem'
 
 ## Binary decision diagram
+- also called: 'BDD'
 - https://en.wikipedia.org/wiki/Binary_decision_diagram
 - compressed representation of sets or relations
 - implements: 'Boolean function'
@@ -98,9 +117,11 @@
 - also called: 'PDAG'
 - https://en.wikipedia.org/wiki/Propositional_directed_acyclic_graph
 - implements: 'Boolean function'
+- generalization of: 'Binary decision diagram'
 
 ## Trie
 - also called: 'digital tree'
+- paper: 'File searching using variable length keys' (1959) <https://doi.org/10.1145/1457838.1457895>
 - https://en.wikipedia.org/wiki/Trie
 - tree structure
 - set and map characteristics
@@ -111,16 +132,31 @@
 - for a more space efficient data structure see MAFST
 
 ## WPL tree
-- paper: 'Weighting Without Waiting: the Weighted Path Length Tree' (1991)
+- also called: 'Weighted Path Length Tree'
+- paper: 'Weighting Without Waiting: the Weighted Path Length Tree' (1991) <https://doi.org/10.1093/comjnl/34.5.444>
 
 ## PQ tree
-- paper: 'Testing for the consecutive ones property, interval graphs, and graph planarity using PQ-tree algorithms' (1976)
+- paper: 'Testing for the consecutive ones property, interval graphs, and graph planarity using PQ-tree algorithms' (1976) <https://doi.org/10.1016/S0022-0000(76)80045-1>
 - https://en.wikipedia.org/wiki/PQ_tree
 
 ## Radix tree
 - also called: 'Radix trie'
 - https://en.wikipedia.org/wiki/Radix_tree
 - is a: 'Binary trie'
+
+## Adaptive radix tree
+- also called: 'ART'
+- paper: 'The adaptive radix tree: ARTful indexing for main-memory databases' (2013) <https://doi.org/10.1109/ICDE.2013.6544812>
+
+## X-fast trie
+- paper: 'Log-logarithmic worst-case range queries are possible in space Θ(N)' (1983) <https://doi.org/10.1016/0020-0190(83)90075-3>
+- https://en.wikipedia.org/wiki/X-fast_trie
+- is a: 'Trie'
+
+## Y-fast trie
+- paper: 'Log-logarithmic worst-case range queries are possible in space Θ(N)' (1983) <https://doi.org/10.1016/0020-0190(83)90075-3>
+- https://en.wikipedia.org/wiki/Y-fast_trie
+- is a: 'Trie'
 
 ## Quadtree
 - https://en.wikipedia.org/wiki/Quadtree
@@ -145,14 +181,29 @@
 - properties: 'height-balanced'
 - stricter balanced and thus better for lookup (compared to 'Red-black tree')
 
-## treap
+## Treap
 - original paper: 'Randomized search trees' (1989)
 - https://en.wikipedia.org/wiki/Treap
+- https://brilliant.org/wiki/treaps/
 - book: 'Open Data Structures'
 - randomly ordered binary tree
 - log(N) lookup even for insertion of items in non-random order
 - heap like feature
 - used to implement dictionary in LEDA
+
+## Implicit treap
+- also called: 'Indexed list', 'Treap with implicit keys", 'Cartesian tree with implicit keys"
+- paper?: 'Efficient Data Structures and a New Randomized Approach for Sorting Signed Permutations by Reversals' (2003) <https://doi.org/10.1007/3-540-44888-8_13>
+- https://cp-algorithms.com/data_structures/treap.html#toc-tgt-6
+- implemented in: 'https://hackage.haskell.org/package/treap'
+- is a: 'Implicit data structure'
+
+## Fenwick tree
+- also called: 'Binary indexed tree'
+- paper: 'A new data structure for cumulative frequency tables' (1994) <https://doi.org/10.1002/spe.4380240306>
+- https://en.wikipedia.org/wiki/Fenwick_tree
+- https://brilliant.org/wiki/fenwick-tree/
+- usually implemented as: 'Implicit data structure'
 
 ## Scapegoat tree
 - also called: 'General balanced tree'
@@ -179,23 +230,35 @@
 - unsolved problem: 'Do splay trees perform as well as any other binary search tree algorithm?'
 
 ## k-d tree
+- also called: 'k-dimensional tree'
 - https://en.wikipedia.org/wiki/K-d_tree
 - is a: 'Space-partitioning tree'
-- applications: range searching, nearest neighbor search, kernel density estimation
+- applications: 'Range searching', 'Nearest neighbor search', 'Kernel density estimation'
 - for high dimensions should be: N >> 2^k, where N is the number of nodes and k is the number of dimensions
 - solves 'Recursive partitioning', 'Klee's measure problem', 'Guillotine problem'
 - implemented in: 'Python scipy.spatial.KDTree, sklearn.neighbors.KDTree, Bio.PDB.kdtrees.KDTree'
 
 ## Range tree
+- paper: 'Multidimensional divide-and-conquer' (1980) <https://doi.org/10.1145/358841.358850>
 - https://en.wikipedia.org/wiki/Range_tree
-- applications: range searching
+- applications: 'Range searching'
+
+## Compressed range trees
+- paper: 'A Functional Approach to Data Structures and Its Use in Multidimensional Searching' (1988) <https://doi.org/10.1137/0217026>
+- applications: 'Range searching'
+- space complexity: O(n)
+- query complexity: O(log n + k*log^ε n)
 
 ## B+ tree
 - https://en.wikipedia.org/wiki/B%2B_tree
 - https://xlinux.nist.gov/dads/HTML/bplustree.html
-- applications: filesystems, range searching, block-oriented data retrieval
+- applications: filesystems, 'Range searching', block-oriented data retrieval
 - k-ary tree
 - used by: Relational database management systems like Microsoft SQL Server, Key–value database management systems like CouchDB
+
+## Cartesian tree
+- https://en.wikipedia.org/wiki/Cartesian_tree
+- applications: 'Range searching', 'Range minimum query'
 
 ## Iliffe vector
 - https://en.wikipedia.org/wiki/Iliffe_vector
@@ -299,6 +362,7 @@
 ## M-tree
 - paper: 'M-tree: An Efficient Access Method for Similarity Search in Metric Spaces' (1997)
 - https://en.wikipedia.org/wiki/M-tree
+- http://www-db.deis.unibo.it/Mtree/main.html
 - better disk storage characteristics (because shallower) than 'Ball tree'
 - uses: 'nearest neighbor search'
 - is a: 'Space-partitioning tree', 'Metric tree'
@@ -335,7 +399,7 @@
 - implements: 'Graph'
 
 ## R-tree
-- paper: 'R-trees: a dynamic index structure for spatial searching' (1984)
+- paper: 'R-trees: a dynamic index structure for spatial searching' (1984) <https://doi.org/10.1145/971697.602266>
 - https://en.wikipedia.org/wiki/R-tree
 - applications: 'Spatial index', 'Range searching', 'Nearest neighbor search'
 - used by (applications): 'IBM Informix'
@@ -401,9 +465,11 @@
 - implemented in: 'pytries/datrie', 'libdatrie'
 
 ## Ternary search tree
+- also called: 'TST'
+- paper: 'Fast algorithms for sorting and searching strings' (1997)
 - https://en.wikipedia.org/wiki/Ternary_search_tree
 - type of: 'Trie'
-- applications: 'Nearest neighbor search'
+- applications: 'Nearest neighbor search', 'spell-checking', 'auto-completion'
 - implements: 'Map'
 
 ## Corner Stitching
@@ -543,13 +609,20 @@
 # Index data structures
 
 ## Inverted index
+- also called: 'Inverted file'
 - https://en.wikipedia.org/wiki/Inverted_index
 - https://xlinux.nist.gov/dads/HTML/invertedIndex.html
 - used by: 'ElasticSearch', 'Lucene'
 - maps content/text to locations/documents
 - Search engine indexing
 - cf. Back-of-the-book index, Concordance
-- applications: full-text search, sequence assembly
+- applications: 'full-text search', 'sequence assembly'
+- consists of: 'dictionary', 'postings list'
+
+## n-gram index
+- applications: 'indexed regex queries'
+- common variant: '3-gram index'
+- used by: 'Google Code Search'
 
 ## Sparse index
 - https://en.wikipedia.org/wiki/Database_index#Sparse_index

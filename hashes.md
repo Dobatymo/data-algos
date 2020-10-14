@@ -87,10 +87,11 @@
 - input: 'text'
 - metric: 'Cosine distance'
 
-##
+## Comprehensive feature mining-Based robust video fingerprinting
 - paper: 'Comprehensive feature-based robust video fingerprinting using tensor model' (2016)
 - applications: 'Content-based near-duplicate video detection'
 - input: 'video'
+- solves: 'Content-based near-duplicate video detection'
 
 ## Centroid of Gradient Orientations
 - also called: 'CGO'

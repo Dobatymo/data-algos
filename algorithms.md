@@ -3853,6 +3853,19 @@
 - paper: 'A Two-level Algorithm for Generating Multiset Permutations' (2009)
 - solves: 'Multiset permutation'
 
+## Fast Approximate Quadratic Programming
+- also called: 'Fast Approximate QAP', 'FAQ'
+- paper: 'Fast Approximate Quadratic Programming for Graph Matching' (2015) <https://doi.org/10.1371/journal.pone.0121002>
+- solves approximately: 'Quadratic assignment problem', 'Graph matching problem'
+- implemented in: 'scipy.optimize.quadratic_assignment(method="faq")'
+
+## 2-opt
+- https://en.wikipedia.org/wiki/2-opt
+- paper: 'A Method for Solving Traveling-Salesman Problems' (1958) <https://doi.org/10.1287/opre.6.6.791>
+- solves approximately: 'Quadratic assignment problem', 'Graph matching problem'
+- implemented in: 'scipy.optimize.quadratic_assignment(method="2opt")'
+- properties: 'greedy'
+
 # Filters
 
 ## Discrete Gaussian kernel

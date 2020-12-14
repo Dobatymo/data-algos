@@ -154,7 +154,12 @@ Solution is given by constraints which must be fullfilled, an equation to be sol
 ## 0-1 knapsack problem
 - https://en.wikipedia.org/wiki/Knapsack_problem
 
+## Graph matching problem
+- also called: 'GMP'
+https://en.wikipedia.org/wiki/Graph_matching
+
 ## Graph isomorphism
+- also called: 'Exact graph matching'
 - https://en.wikipedia.org/wiki/Graph_isomorphism
 
 ## Graph automorphism problem

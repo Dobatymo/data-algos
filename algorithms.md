@@ -132,6 +132,19 @@
 - applications: 'Graph classification'
 - implemented in: 'grakel.WeisfeilerLehman'
 
+## HCS clustering algorithm
+- also called: 'Highly Connected Subgraphs clustering algorithm'
+- paper: 'A clustering algorithm based on graph connectivity' (2000) <https://doi.org/10.1016/S0020-0190(00)00142-3>
+- https://en.wikipedia.org/wiki/HCS_clustering_algorithm
+- domain: 'Cluster analysis', 'Graph theory'
+
+## Girvan–Newman algorithm
+- https://en.wikipedia.org/wiki/Girvan%E2%80%93Newman_algorithm
+- domain: 'Network analysis'
+
+## Brandes algorithm for betweenness centrality
+- paper: 'A faster algorithm for betweenness centrality' (2000) <https://doi.org/10.1080/0022250X.2001.9990249>
+
 ## Harley-Seal algorithm
 - book: 'O'Reilly', 'Beautiful Code (2007)
 - applications: 'Hamming weight'
@@ -182,7 +195,7 @@
 - https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 - http://mathworld.wolfram.com/DijkstrasAlgorithm.html
 - uses method: 'Dynamic programming'
-- solves 'Single-source shortest path problem' for non-negative weights in directed/undirected graphs in O(v^2) where v is the number of vertices
+- solves: 'Single-source shortest path problem' for non-negative weights in directed/undirected graphs in O(v^2) where v is the number of vertices
 - variant implementation with 'Fibonacci heap' runs in O(e * v*log v) where e and v are the number of edges and vertices resp.
 - implemented in (libraries): 'Python scipy.sparse.csgraph.shortest_path(method="D")', 'boost::graph::dijkstra_shortest_paths'
 - implemented in (lattice variant): 'skimage.graph.MCP'
@@ -203,7 +216,7 @@
 ## Johnson's algorithm
 - paper: 'Efficient Algorithms for Shortest Paths in Sparse Networks' (1977) <https://doi.org/10.1145/321992.321993>
 - https://en.wikipedia.org/wiki/Johnson%27s_algorithm
-- solves 'All-pairs shortest paths problem' for real-valued weights in a directed graph in O(v^2 log v + v*e) where v and e are the number of vertices and edges
+- solves: 'All-pairs shortest paths problem' for real-valued weights in a directed graph in O(v^2 log v + v*e) where v and e are the number of vertices and edges
 - implemented in: 'Python scipy.sparse.csgraph.shortest_path(method='J')', 'C++ boost::graph::johnson_all_pairs_shortest_paths'
 - combination of 'Bellman–Ford' and 'Dijkstra's algorithm'
 - is faster than 'Floyd–Warshall algorithm' for sparse graphs
@@ -215,12 +228,35 @@
 - https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
 - http://mathworld.wolfram.com/Floyd-WarshallAlgorithm.html
 - domain: 'Graph theory'
-- solves 'All-pairs shortest paths problem' for real-valued weights for directed/undirected graphs in O(v^3) where v is the number of vertices
+- solves: 'All-pairs shortest paths problem' for real-valued weights for directed/undirected graphs in O(v^3) where v is the number of vertices
 - negative cycles are not allowed
 - uses method: 'dynamic programming'
 - implemented in: 'python scipy.sparse.csgraph.shortest_path(method='FW')', 'c++ boost::graph::floyd_warshall_all_pairs_shortest_paths', 'networkx.algorithms.shortest_paths.dense.floyd_warshall'
 - is faster than 'Johnson's algorithm' for dense graphs
 - operates in: 'weighted directed graph without negative cycles'
+
+## Seidel's algorithm
+- paper: 'On the All-Pairs-Shortest-Path Problem in Unweighted Undirected Graphs' (1995) <https://doi.org/10.1006/jcss.1995.1078>
+- https://en.wikipedia.org/wiki/Seidel%27s_algorithm
+- solves: 'All-pairs shortest paths problem' for undirected, unweighted, connected graphs
+- domain: 'Graph theory'
+
+## Yen's algorithm for the single-destination shortest path problem
+- paper: 'An algorithm for finding shortest routes from all source nodes to a given destination in general networks' (1970) <https://doi.org/10.1090/qam/253822>
+- solves: 'Single-destination shortest path problem'
+- domain: 'Graph theory'
+
+## Yen's algorithm
+- paper: 'Finding the K Shortest Loopless Paths in a Network' (1971) <https://doi.org/10.1287/mnsc.17.11.712>
+- https://en.wikipedia.org/wiki/Yen%27s_algorithm
+- solves: 'k shortest path routing' for loopless paths for a graph with non-negative edge cost
+- domain: 'Graph theory'
+- implemented in: 'handloomweaver/YenKSP', 'iszczesniak/yen'
+
+## Eppstein's algorithm
+- paper: 'Finding the k Shortest Paths' (1998) <https://doi.org/10.1137/S0097539795290477>
+- solves: 'k shortest path routing' for loopy paths
+- domain: 'Graph theory'
 
 ## Suurballe's algorithm
 - paper: 'Disjoint paths in a network' (1974) <https://doi.org/10.1002/net.3230040204>
@@ -229,6 +265,7 @@
 - uses: 'Dijkstra's algorithm'
 - solves: 'Shortest pair of edge disjoint paths'
 - input: 'Directed graph with non-negative weights'
+- domain: 'Graph theory'
 
 ## Edge disjoint shortest pair algorithm
 - paper: 'Survivable networks: algorithms for diverse routing' (1998) [978-0-7923-8381-9]
@@ -715,7 +752,7 @@
 - https://en.wikipedia.org/wiki/Push–relabel_maximum_flow_algorithm
 - https://cp-algorithms.com/graph/push-relabel.html
 - solves: 'Maximum flow problem'
-- implemented in (libraries): 'boost::graph::push_relabel_max_flow', 'google/or-tools::max_flow'
+- implemented in (libraries): 'boost::graph::push_relabel_max_flow', 'google/or-tools::max_flow', 'graph_tool.flow.push_relabel_max_flow'
 
 ## Improved push–relabel maximum flow algorithm
 - paper: 'Analysis of preflow push algorithms for maximum network flow' (1989) <https://doi.org/10.1137/0218072>
@@ -782,6 +819,12 @@
 - implemented in 'C++ boost::graph::prim_minimum_spanning_tree'
 - time complexity depends on used data structures
 - book: 'MIT Press', 'Introduction to Algorithms'
+
+## Borůvka's algorithm
+- also called: 'Sollin's algorithm'
+- https://en.wikipedia.org/wiki/Bor%C5%AFvka%27s_algorithm
+- output: 'Minimum spanning tree' / 'minimum spanning forest'
+- properties: 'greedy'
 
 ## Hierholzer's algorithm
 - https://en.wikipedia.org/wiki/Eulerian_path#Hierholzer's_algorithm
@@ -943,14 +986,39 @@
 - solves approximately: 'Graph coloring problem'
 - implemented in: 'Mathematica BrelazColoring'
 
+## Chaitin's algorithm
+- https://en.wikipedia.org/wiki/Chaitin%27s_algorithm
+- paper: 'Register allocation & spilling via graph coloring' (1982) <https://doi.org/10.1145/800230.806984>
+- domain: 'Graph theory', 'Compiler design'
+- applications: 'Register allocation'
+
+## Dijkstra–Scholten algorithm
+- paper: 'Termination detection for diffusing computations' (1980) <https://doi.org/10.1016/0020-0190(80)90021-6>
+- https://en.wikipedia.org/wiki/Dijkstra%E2%80%93Scholten_algorithm
+- domain: 'Computer science', 'Distributed computing'
+- applications: 'Termination analysis'
+
+## Huang's algorithm (1988)
+- paper: 'A fully distributed termination detection scheme' (1988) <https://doi.org/10.1016/0020-0190(88)90125-1>
+- domain: 'Computer science', 'Distributed computing'
+- applications: 'Termination analysis'
+- superseeded by: 'Huang's algorithm (1989)'
+
+## Huang's algorithm (1989)
+- paper: 'Termination detection by using distributed snapshots' (1989) <https://doi.org/10.1016/0020-0190(89)90010-0>
+- https://en.wikipedia.org/wiki/Huang%27s_algorithm
+- domain: 'Computer science', 'Distributed computing'
+- applications: 'Termination analysis'
+- superseeds: 'Huang's algorithm (1988)'
+
 ## Local-Ratio algorithm
-- paper: 'A Local-Ratio Theorem for Approximating the Weighted Vertex Cover Problem'
+- paper: 'A Local-Ratio Theorem for Approximating the Weighted Vertex Cover Problem' (1985) <https://doi.org/10.1016/S0304-0208(08)73101-3>
 - implemented in: 'networkx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover'
 - solves approximately: 'Vertex cover problem'
 - domain: 'Graph theory'
 
 ## Hopcroft–Karp algorithm
-- paper: 'An $n^{5/2}$ Algorithm for Maximum Matchings in Bipartite Graphs (1973)'
+- paper: 'An $n^{5/2}$ Algorithm for Maximum Matchings in Bipartite Graphs' (1971) <https://doi.org/10.1109/SWAT.1971.1>
 - https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
 - https://brilliant.org/wiki/hopcroft-karp/
 - input: 'Bipartite graph'
@@ -962,7 +1030,7 @@
 
 ## Hungarian Maximum Matching algorithm
 - also called: 'Kuhn-Munkres algorithm', 'Hungarian method'
-- paper: 'The Hungarian method for the assignment problem (1955)'
+- paper: 'The Hungarian method for the assignment problem' (1955) <https://doi.org/10.1002/nav.3800020109>
 - https://en.wikipedia.org/wiki/Hungarian_algorithm
 - http://mathworld.wolfram.com/HungarianMaximumMatchingAlgorithm.html
 - https://brilliant.org/wiki/hungarian-matching/
@@ -976,11 +1044,12 @@
 
 ## Kuhn–Munkres algorithm with backtracking
 - also called: 'KM_B algorithm'
-- paper: 'Solving the Many to Many assignment problem by improving the Kuhn–Munkres algorithm with backtracking' (2015)
+- paper: 'Solving the Many to Many assignment problem by improving the Kuhn–Munkres algorithm with backtracking' (2016) <https://doi.org/10.1016/j.tcs.2016.01.002>
 - solves: 'Many-to-many assignment problem'
 
 ## Cuthill–McKee algorithm
-- paper: 'Reducing the bandwidth of sparse symmetric matrices' (1969)
+- also called: 'CM algorithm'
+- paper: 'Reducing the bandwidth of sparse symmetric matrices' (1969) <https://doi.org/10.1145/800195.805928>
 - https://en.wikipedia.org/wiki/Cuthill%E2%80%93McKee_algorithm
 - http://ciprian-zavoianu.blogspot.com/2009/01/project-bandwidth-reduction.html
 - domain: 'Numerical linear algebra'
@@ -998,7 +1067,7 @@
 
 ## GPS algorithm
 - also called: 'Gibbs-Poole-Stockmeyer algorithm'
-- paper: 'An Algorithm for Reducing the Bandwidth and Profile of a Sparse Matrix' (1976)
+- paper: 'An Algorithm for Reducing the Bandwidth and Profile of a Sparse Matrix' (1976) <https://doi.org/10.1137/0713023>
 - solves approximately: 'Bandwidth reduction problem'
 
 ## Jonker-Volgenant algorithm
@@ -1064,6 +1133,7 @@
 - paper: 'An improved branch and bound algorithm for the maximum clique problem' (2007)
 - https://en.wikipedia.org/wiki/MaxCliqueDyn_maximum_clique_algorithm
 - solves: 'Maximum clique'
+- implemented in: 'janezkonc/mcqd'
 
 ## Edmonds' algorithm
 - also called: 'Chu–Liu/Edmonds' algorithm'
@@ -1075,7 +1145,7 @@
 
 ## Blossom algorithm
 - also called: 'Edmonds' matching algorithm'
-- paper: 'Paths, trees, and flowers (1965)'
+- paper: 'Paths, trees, and flowers' (1965) <https://doi.org/10.4153/CJM-1965-045-4>
 - https://en.wikipedia.org/wiki/Blossom_algorithm
 - http://mathworld.wolfram.com/BlossomAlgorithm.html
 - https://brilliant.org/wiki/blossom-algorithm/
@@ -1089,9 +1159,10 @@
 - runtime complexity: O(sqrt(n) m) for n vertices and m edges
 - original paper: 'An O(sqrt(|v|) |E|) algoithm for finding maximum matching in general graphs' (1980)
 - exposition paper: 'The general maximum matching algorithm of micali and vazirani' (1988)
+- implemented in: 'AlexanderSoloviev/mv-matching', 'mh3166/Extended_MV_algorithm'
 
 ## Xiao and Nagamochi's algorithm for the maximum independent set
-- paper: 'Exact algorithms for maximum independent set' (2017)
+- paper: 'Exact algorithms for maximum independent set' (2017) <https://doi.org/10.1016/j.ic.2017.06.001>
 - solves: 'Maximum independent set problem'
 - time complexity: O(1.1996^n)
 - space complexity: polynomial
@@ -1120,13 +1191,15 @@
 - solves: 'Boolean satisfiability problem'
 
 ## DPLL algorithm
-- paper: 'A machine program for theorem-proving (1962)'
-- https://en.wikipedia.org/wiki/DPLL_algorithm
 - also called: 'Davis–Putnam–Logemann–Loveland algorithm'
+- paper: 'A machine program for theorem-proving' (1962) <https://doi.org/10.1145/368273.368557>
+- https://en.wikipedia.org/wiki/DPLL_algorithm
 - solves: 'Boolean satisfiability problem'
-- applications: 'Automated theorem proving'
+- applications: 'Automated theorem proving', 'SAT solvers'
 - extension of: 'Davis–Putnam algorithm'
 - properties: 'complete', 'sound'
+- implemented in: 'marcmelis/dpll-sat', 'khamkarajinkya/Davis-Putnam-Logemann-Loveland-Algorithm', 'asgordon/DPLL', 'samidakhani/dpll'
+- superseeds: 'Davis–Putnam algorithm'
 
 ## Conflict-driven clause learning
 - paper: 'GRASP-A new search algorithm for satisfiability'
@@ -1277,7 +1350,7 @@
 
 ## BCJR algorithm
 - https://en.wikipedia.org/wiki/BCJR_algorithm
-- paper: 'Optimal Decoding of Linear Codes for minimizing symbol error rate (1974)'
+- paper: 'Optimal Decoding of Linear Codes for minimizing symbol error rate' (1974) <https://doi.org/10.1109/TIT.1974.1055186>
 - decodes: 'Error correction code'
 - implemented in: 'C++ Susa'
 - related theory: 'maximum a posteriori'
@@ -1323,7 +1396,7 @@
 
 ## Dynamic time warping
 - https://en.wikipedia.org/wiki/Dynamic_time_warping
-- paper: 'Dynamic programming algorithm optimization for spoken word recognition (1978)'
+- paper: 'Dynamic programming algorithm optimization for spoken word recognition' (1978) <https://doi.org/10.1109/TASSP.1978.1163055>
 - applications: 'Time series analysis', 'Speech recognition', 'Speaker recognition', 'Signature recognition', 'Shape matching', 'Correlation power analysis'
 - implemented in: 'Python pydtw', 'Python librosa.core.dtw'
 - possibly superseded by: 'Connectionist temporal classification'
@@ -1514,7 +1587,8 @@
 - implemented in (applications): 'msieve', 'GGNFS'
 
 ## Shor's algorithm
-- paper: 'Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer (1994)'
+- paper: 'Algorithms for quantum computation: discrete logarithms and factoring' (1994) <https://doi.org/10.1109/SFCS.1994.365700>
+- paper: 'Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer (1997)' <https://doi.org/10.1137/S0097539795293172>
 - https://en.wikipedia.org/wiki/Shor%27s_algorithm
 - is a: 'Quantum algorithm'
 - applications: 'Integer factorization'
@@ -1602,9 +1676,17 @@
 - domain: 'Graph theory'
 - improved by: 'Karger–Stein algorithm'
 
+## Stoer–Wagner algorithm
+- paper: 'A simple min-cut algorithm' (1997) <https://doi.org/10.1145/263867.263872>
+- https://en.wikipedia.org/wiki/Stoer%E2%80%93Wagner_algorithm
+- input: 'undirected weighted graph with non-negative weights'
+- output: 'Minimum cut'
+- implemented in: 'graph_tool.flow.min_cut'
+- domain: 'Graph theory'
+
 ## Boykov-Kolmogorov algorithm
 - paper: 'An experimental comparison of min-cut/max- flow algorithms for energy minimization in vision' (2004)
-- implemented in: 'Python networkx.algorithms.flow.boykov_kolmogorov', 'boost::graph::boykov_kolmogorov_max_flow'
+- implemented in: 'Python networkx.algorithms.flow.boykov_kolmogorov', 'boost::graph::boykov_kolmogorov_max_flow', 'graph_tool.flow.boykov_kolmogorov_max_flow'
 
 ## Stoer and Wagner's minimum cut algorithm
 - paper: 'A Simple Min-Cut Algorithm (1994)'
@@ -1646,7 +1728,7 @@
 - https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm
 - https://brilliant.org/wiki/edmonds-karp-algorithm/
 - implements: 'Ford–Fulkerson method'
-- implemented in: 'Python networkx.algorithms.flow.edmonds_karp', 'boost::graph::edmonds_karp_max_flow'
+- implemented in: 'Python networkx.algorithms.flow.edmonds_karp', 'boost::graph::edmonds_karp_max_flow', 'graph_tool.flow.edmonds_karp_max_flow'
 - time complexity: O(v e^2) [or O(v^2 e)?] where v is the number of vertices and e the number of edges
 - solves: 'Maximum flow problem'
 - input: 'Flow network'
@@ -3034,9 +3116,10 @@
 - domain: 'Networking'
 
 ## EigenTrust
-- paper: 'The Eigentrust algorithm for reputation management in P2P networks' (2003)
+- paper: 'The Eigentrust algorithm for reputation management in P2P networks' (2003) <https://doi.org/10.1145/775152.775242>
 - https://en.wikipedia.org/wiki/EigenTrust
 - applications: 'Reputation management', 'Peer-to-peer networking'
+- implemented in: 'graph_tool.centrality.eigentrust'
 
 ## Segmented string relative ranking
 - book: 'PUBLIC BRAINPOWER: Civil Society and Natural Resource Management'
@@ -3080,7 +3163,8 @@
 - https://en.wikipedia.org/wiki/PageRank
 - domain: 'Graph theory'
 - applications: 'Link analysis', 'Linear algebra'
-- input: 'Google matrix'
+- input: 'Google matrix' / 'Graph'
+- implemented in: 'graph_tool.centrality.pagerank'
 
 ## CheiRank
 - https://en.wikipedia.org/wiki/CheiRank

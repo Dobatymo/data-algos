@@ -127,6 +127,10 @@ Solution is given by constraints which must be fullfilled, an equation to be sol
 - also called: 'Job-shop problem', 'JSP'
 - https://en.wikipedia.org/wiki/Job_shop_scheduling
 
+## Degree diameter problem
+- https://en.wikipedia.org/wiki/Degree_diameter_problem
+- domain: 'Graph theory'
+
 ## Maximum flow problem
 - https://en.wikipedia.org/wiki/Maximum_flow_problem
 - https://cp-algorithms.com/graph/edmonds_karp.html
@@ -156,11 +160,12 @@ Solution is given by constraints which must be fullfilled, an equation to be sol
 
 ## Graph matching problem
 - also called: 'GMP'
-https://en.wikipedia.org/wiki/Graph_matching
+- https://en.wikipedia.org/wiki/Graph_matching
 
 ## Graph isomorphism
 - also called: 'Exact graph matching'
 - https://en.wikipedia.org/wiki/Graph_isomorphism
+- solved by (libraries): 'graph_tool.topology.isomorphism'
 
 ## Graph automorphism problem
 - https://en.wikipedia.org/wiki/Graph_automorphism
@@ -355,8 +360,8 @@ Solution is given by mathematical formula or naive computation method.
 - naive space complexity: linear in distinct number of elements
 
 ## Single-source shortest path problem
+- also called: 'SSSP problem', 'Least cost path'
 - problem type: 'Shortest path problem'
-- also called: 'Least cost path'
 - https://en.wikipedia.org/wiki/Shortest_path_problem
 - book: 'Introduction to Algorithms'
 - survey paper: 'A Survey of Shortest-Path Algorithms' (2017)
@@ -369,17 +374,29 @@ Solution is given by mathematical formula or naive computation method.
 - properties: 'optimal substructure'
 - domain: 'Graph theory'
 
+## Single-destination shortest path problem
+- https://en.wikipedia.org/wiki/Shortest_path_problem
+- domain: 'Graph theory'
+
+## k shortest path routing
+- https://en.wikipedia.org/wiki/K_shortest_path_routing
+- solved by (algorithm): 'Eppstein's algorithm' (loopy variant)
+- solved by (algorithm): 'Yen's algorithm' (loopless variant)
+- domain: 'Graph theory'
+
 ## Single-pair shortest path problem
 - problem type: 'Shortest path problem'
-- https://en.wikipedia.org/wiki/Shortest_path_problem#Single-source_shortest_paths
+- https://en.wikipedia.org/wiki/Shortest_path_problem
 - no algorithms with better worst time complexity than for 'Single-source shortest path problem' are know (which is a generalization)
 
 ## All-pairs shortest paths problem
+- also called: 'APSP problem'
 - problem type: 'Shortest path problem'
 - https://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths
 - book: 'Introduction to Algorithms'
-- finds the shortest path for all pairs of vectices in a graph
-- solved by: 'Floyd–Warshall algorithm', 'Johnson's algorithm'
+- finds the shortest path for all pairs of vertices in a graph
+- solved by (algorithms): 'Floyd–Warshall algorithm', 'Johnson's algorithm'
+- solved by (libraries): 'graph_tool.topology.shortest_distance'
 - domain: 'graph theory'
 - properties: 'optimal substructure'
 

@@ -124,6 +124,11 @@
 
 # Optimization algorithms
 
+## Iteratively reweighted least squares
+- also called: 'IRLS'
+- https://en.wikipedia.org/wiki/Iteratively_reweighted_least_squares
+- domain: 'Optimization'
+
 ## Sequential Minimal Optimization
 - also called: 'SMO'
 - technical report: 'Sequential Minimal Optimization: A Fast Algorithm for Training Support Vector Machines' (1998) <https://www.microsoft.com/en-us/research/publication/sequential-minimal-optimization-a-fast-algorithm-for-training-support-vector-machines/>

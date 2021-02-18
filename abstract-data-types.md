@@ -106,8 +106,9 @@
 ## Minimum cut
 - https://en.wikipedia.org/wiki/Minimum_cut
 - https://xlinux.nist.gov/dads/HTML/minimumcut.html
-- found by: 'Karger's algorithm'
+- found by: 'Karger's algorithm', 'Stoer–Wagner algorithm'
 - based on: 'Graph'
+- found by (libraries): 'graph_tool.flow.min_cut'
 
 ## Delaunay triangulation
 - https://en.wikipedia.org/wiki/Delaunay_triangulation
@@ -167,6 +168,7 @@
 - unique solution
 - applications: 'Network design', 'Image segmentation', 'Cluster analysis'
 - based on: 'connected, edge-weighted (un)directed graph'
+- solved by: 'networkx.algorithms.tree.mst.minimum_spanning_tree, 'graph_tool.topology.min_spanning_tree'
 
 ## Second-best minimum spanning tree
 - book: 'Introduction to Algorithms'

@@ -1,16 +1,19 @@
-# Metrics, Distances, Measures, Similarities, Losses and Costs
+# Metrics, Distances, Measures, Norms, Similarities, Losses and Costs
+
+-- metrics, distances, similaries, losses and costs (inputs are two objects, output is a single number)
 
 ## Endpoint error
-- also called: 'EPE', 'End-to-end point error'
+- also called: 'EPE', 'End-to-end point error', 'Average endpoint error', 'AEE'
 - used to evaluate: 'Optical flow'
-
+- same as: 'Euclidean 
 ## Average angular error
+- also called: 'AAE'
 - used to evaluate: 'Optical flow'
 
 ## SimRank
 - https://en.wikipedia.org/wiki/SimRank
 - paper: 'SimRank: a measure of structural-context similarity (2002)'
-- domain: graph theory
+- domain: 'Graph theory'
 
 ## Levenshtein distance
 - https://en.wikipedia.org/wiki/Levenshtein_distance
@@ -18,11 +21,21 @@
 - applications: 'Spelling correction', 'Sequence alignment', 'Approximate string matching', 'Linguistic distance'
 - properties: 'Discrete'
 
+## Euclidean distance
+- also called: 'Euclidean metric'
+- https://en.wikipedia.org/wiki/Euclidean_distance
+- https://mathworld.wolfram.com/EuclideanMetric.html
+- input: 'two vectors'
+- output: 'float'
+- is a: 'metric'
+
 ## Hamming distance
 - https://en.wikipedia.org/wiki/Hamming_distance
 - is a: 'metric'
 - applications: 'Coding theory', 'Block code', 'Error detection and correction', 'Telecommunication'
 - properties: 'Discrete'
+- input: 'two bit vectors'
+- output: 'int'
 
 ## Bit Error Rate
 - also called: 'Normalized hamming distance', 'Simple matching coefficient'
@@ -112,12 +125,25 @@
 - also called: 'Mean-squared error', 'mean squared deviation', 'MSD', 'MSE'
 - https://en.wikipedia.org/wiki/Mean_squared_error
 - applications: 'Statistical model', 'Linear regression'
-- implemented in: 'Python sklearn.metrics.mean_squared_error, tf.metrics.mean_squared_error, skimage.measure.compare_mse', 'andrewekhalel/sewar'
+- implemented in: 'Python sklearn.metrics.mean_squared_error, tf.metrics.mean_squared_error, torch.nn.MSELoss, skimage.measure.compare_mse, andrewekhalel/sewar'
 - properties: 'Continuous'
 
 ## Mean absolute error
 - https://en.wikipedia.org/wiki/Mean_absolute_error
-- implemented in: 'Python sklearn.metrics.mean_absolute_error, tf.metrics.mean_absolute_error, tf.losses.absolute_difference'
+- implemented in: 'Python sklearn.metrics.mean_absolute_error, tf.metrics.mean_absolute_error, tf.losses.absolute_difference, torch.nn.L1Loss'
+
+## Negative log-likelihood
+- also called: 'NLL'
+- implemented in: 'torch.nn.NLLLoss'
+
+## Connectionist temporal classification
+- also called: 'CTC'
+- https://en.wikipedia.org/wiki/Connectionist_temporal_classification
+- implemented in: 'torch.nn.CTCLoss'
+
+## Kullback-Leibler divergence
+- https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
+- implemented in: 'torch.nn.KLDivLoss'
 
 ## Hinge loss
 - https://en.wikipedia.org/wiki/Hinge_loss
@@ -286,25 +312,21 @@
 - implemented in: 'aizvorski/video-quality'
 - applications: 'Video quality assessment'
 
-## Natural Image Quality Evaluator
-- also called: 'NIQE'
-- paper: 'Making a “Completely Blind” Image Quality Analyzer' (2012)
-- properties: 'no-reference'
-- implemented in: 'Matlab niqe', 'aizvorski/video-quality'
-
 ## Universal Quality Image Index
 - also called: 'Quality Index Q', 'UQI'
 - paper: 'A universal image quality index' (2002)
 - applications: 'Image quality assessment'
 - implemented in: 'sewar.full_ref.uqi'
 
-## Spectral Distortion Inde
+## Spectral Distortion Index
 - paper: 'Multispectral and Panchromatic Data Fusion Assessment Without Reference' (2008)
 - implemented in: 'sewar.no_ref.d_lambda'
+- output: 'float'
 
 ## Spatial Distortion Index
 - paper: 'Multispectral and Panchromatic Data Fusion Assessment Without Reference' (2008)
 - implemented in: 'sewar.no_ref.d_s'
+- output: 'float'
 
 ## Quality with No Reference
 - also called: 'QNR'
@@ -339,13 +361,43 @@
 ## Indel
 - like Levenshtein, but with inserts and deletes only
 - implemented in: 'abydos.distance.Indel'
+- input: 'two strings'
 
 ## Sørensen–Dice coefficient
 - also called: 'Dice's coefficient', 'Dice similarity coefficient', 'DSC'
 - also called (binary classification): 'F1 score'
 - https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
+- https://en.wikipedia.org/wiki/F-score
 - properties: 'set based'
 - implemented in: 'sklearn.metrics.f1_score', 'adtk.metrics.f1_score'
+
+## Sampled F1 score
+- implemented in: 'sklearn.metrics.f1_score(average="samples")'
+- applications: 'multi-label classification'
+
+## Precision at k
+- also called: 'P@k'
+- https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval)#Precision_at_K
+- applications: 'multi-label classification'
+
+## Average precision
+- also called: 'AP'
+- https://en.wikipedia.org/w/index.php?title=Information_retrieval&oldid=793358396#Average_precision
+- applications: 'binary classification', 'multi-label classification'
+- implemented in: 'sklearn.metrics.average_precision_score'
+
+## Matthews correlation coefficient
+- also called: 'MCC'
+- https://en.wikipedia.org/wiki/Matthews_correlation_coefficient
+- implemented in: 'sklearn.metrics.matthews_corrcoef'
+- applications: 'binary classification', 'multi-class classification'
+
+## Mean Average Precision
+- also called: 'mAP'
+- https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval)#Mean_average_precision
+
+## Mean Average Precision at K
+- also called: 'MAP@k'
 
 ## Recall
 - also called: 'Sensitivity', 'True positive rate'
@@ -447,8 +499,10 @@
 - implemented in: 'gcunhase/NLPMetrics'
 
 ## SARI
-- paper: 'Optimizing Statistical Machine Translation for Text Simplification' (2016)
+- paper: 'Optimizing Statistical Machine Translation for Text Simplification' (2016) <https://doi.org/10.1162/tacl_a_00107>
 - applications: 'Machine translation', 'Sentence simplification'
+- output: 'float'
+- input: 'two sets of tokens'
 
 ## PGD-IL metric (custom name)
 - paper: 'Objective Quality Assessment for Image Retargeting Based on Perceptual Geometric Distortion and Information Loss' (2014)
@@ -515,12 +569,12 @@
 
 ## Simplified form of PSI
 - based on: 'Pair Sets Index'
-- paper: 'Set Matching Measures for External Cluster Validity' (2016)
+- paper: 'Set Matching Measures for External Cluster Validity' (2016) <https://doi.org/10.1109/TKDE.2016.2551240>
 - is a: 'metric'
 
 ## Criterion H
 - also called: 'CH'
-- paper: 'An Experimental Comparison of Model-Based Clustering Methods' (2001)
+- paper: 'An Experimental Comparison of Model-Based Clustering Methods' (2001) <https://doi.org/10.1023/A:1007648401407>
 - is a: 'Point-level index'
 - uses: 'Greedy pairing' (to match clusters)
 - implemented in: 'josemarialuna/ExternalValidity'
@@ -535,35 +589,218 @@
 - applications: 'External evaluation of cluster analysis'
 - is a: 'Pair-counting measure'
 - implemented in (libraries): 'sklearn.metrics.fowlkes_mallows_score'
-- is a: 'External validity index'
+- is a: 'External validity index', 'Similarity'
+- input: 'two clusterings of a set of points'
+
+## Consensus score
+- paper: 'FABIA: factor analysis for bicluster acquisition' (2010)
+- implemented in (libraries): 'sklearn.metrics.consensus_score'
+- applications: 'Internal evaluation of bicluster analysis'
+- is a: 'Similarity'
+- input: 'two sets of biclusters'
+
+-- Norms, measures, indices, coefficients and no-reference metrics (input is one object, output is a single number)
 
 ## Silhouette value
 - also called: 'Silhouette coefficient'
 - https://en.wikipedia.org/wiki/Silhouette_(clustering)
 - implemented in (libraries): 'sklearn.metrics.silhouette_score'
 - applications: 'Internal evaluation of cluster analysis'
+- is a: 'measure'
+- output: 'float'
+- input: [samples, features] matrix and [labels] vector
+
+## Davies–Bouldin index
+- also called: 'DBI'
+- paper: 'A Cluster Separation Measure' (1979) <https://doi.org/10.1109/TPAMI.1979.4766909>
+- https://en.wikipedia.org/wiki/Davies%E2%80%93Bouldin_index
+- applications: 'Internal evaluation of cluster analysis'
+- is a: 'measure'
+- output: 'float', [0, inf]
+- implemented in: 'sklearn.metrics.davies_bouldin_score'
+- input: [samples, features] matrix and [labels] vector
+- domain: 'Cluster analysis', 'Data analysis'
 
 ## Calinski–Harabasz index
 - also called: 'Variance ratio criterion'
-- paper: 'A dendrite method for cluster analysis' (1972)
+- paper: 'A dendrite method for cluster analysis' (1972) <https://doi.org/10.1080/03610927408827101>
 - implemented in (libraries): 'sklearn.metrics.calinski_harabasz_score'
-
-## Consensus score
-- paper: 'FABIA: factor analysis for bicluster acquisition' (2010)
-- implemented in (libraries): 'sklearn.metrics.consensus_score'
-- applications: 'Internal evaluation of bicluster analysis'
-
--- Norms and measures
+- applications: 'Internal evaluation of cluster analysis'
+- is a: 'measure'
+- output: 'float'
 
 ## Shannon entropy
 - paper: 'A mathematical theory of communication' (1948)
 - https://en.wikipedia.org/wiki/Entropy_(information_theory)
 - implemented in: 'Python skimage.measure.shannon_entropy'
 - is a: 'Expected value'
+- output: 'float'
+- input: 'random variable'
 
 ## Euclidean norm
 - https://en.wikipedia.org/wiki/Norm_(mathematics)#Euclidean_norm
+- is a: 'Norm'
+- domain: 'Linear algebra'
+- output: 'float'
+- input: 'vector'
 
 ## Taxicab norm
 - also called: 'Manhattan norm'
 - https://en.wikipedia.org/wiki/Norm_(mathematics)#Taxicab_norm_or_Manhattan_norm
+- is a: 'Norm'
+- domain: 'Linear algebra'
+- output: 'float'
+- input: 'vector'
+
+## Graph density
+- https://en.wikipedia.org/wiki/Dense_graph
+- is a: 'Graph measure'
+- input: 'Graph'
+- output: 'float' [0, 1] (without self-loops)
+- implemented in: 'networkx.classes.function.density'
+- domain: 'Graph theory'
+
+## Graph diameter
+- https://mathworld.wolfram.com/GraphDiameter.html
+- https://en.wikipedia.org/wiki/Distance_(graph_theory)
+- implemented in: 'networkx.algorithms.distance_measures.diameter', 'Mathematica GraphDiameter'
+- domain: 'Graph theory'
+- input: 'Connected graph'
+- is a: 'Graph measure'
+- output: 'int'
+- related: 'Graph eccentricity'
+
+## Graph entanglement
+- https://en.wikipedia.org/wiki/Entanglement_(graph_measure)
+- input: 'Directed graph'
+- domain: 'Graph theory'
+- is a: 'Graph measure', 'Graph invariant'
+- output: 'int'
+
+## Graph eccentricity
+- https://mathworld.wolfram.com/GraphEccentricity.html
+- http://braph.org/manual/graph-measures/
+- https://en.wikipedia.org/wiki/Distance_(graph_theory)
+- implemented in: 'Mathematica Combinatorica`Eccentricity', 'networkx.algorithms.distance_measures.eccentricity'
+- output: 'List[int]'
+- input: 'Graph'
+- notes: 'gives eccentricity per vertex'
+- related: 'Graph diameter'
+
+## Betweenness centrality
+- https://en.wikipedia.org/wiki/Betweenness_centrality
+- input: 'Graph'
+- output: 'List[int]'
+- notes: 'gives betweenness centrality per node'
+- implemented in: 'networkx.algorithms.centrality.betweenness_centrality'
+- calculated by (algorithm): 'Brandes algorithm for betweenness centrality'
+
+## Average graph eccentricity
+- https://mathworld.wolfram.com/GraphEccentricity.html
+- http://braph.org/manual/graph-measures/
+- domain: 'Graph theory'
+- output: 'float'
+
+## Average shortest path length
+- also called: 'Average path length'
+- https://en.wikipedia.org/wiki/Average_path_length
+- implemented in: 'networkx.algorithms.shortest_paths.generic.average_shortest_path_length'
+- domain: 'Graph theory'
+- input: 'Connected graph'
+- output: 'float'
+- related problem: 'All-pairs shortest paths problem'
+
+## Cycle rank
+- https://en.wikipedia.org/wiki/Cycle_rank
+- domain: 'Graph theory'
+- is a: 'Graph measure', 'Graph invariant'
+- input: 'Directed graph'
+- output: 'int'
+
+## Circuit rank
+- https://en.wikipedia.org/wiki/Circuit_rank
+- https://mathworld.wolfram.com/CircuitRank.html
+- also called: 'Cycle rank'
+- input: 'Undirected graph'
+- is a: 'Graph measure', 'Graph invariant'
+- domain: 'Graph theory'
+- output: 'int'
+
+## Graph radius
+- https://mathworld.wolfram.com/GraphRadius.html
+- https://en.wikipedia.org/wiki/Distance_(graph_theory)
+- implemented in: 'networkx.algorithms.distance_measures.radius'
+- domain: 'Graph theory'
+- input: 'Connected graph'
+- is a: 'Graph measure'
+- output: 'int'
+
+## Small-world coefficient sigma
+- also called: 'small-coefficient'
+- https://en.wikipedia.org/wiki/Small-world_network
+- implemented in: 'networkx.algorithms.smallworld.sigma'
+- domain: 'Graph theory'
+- is a: 'Graph measure'
+- quantifies: 'network small-worldness'
+- output: 'float'
+- input: 'Graph'
+
+## Small-world coefficient omega
+- also called: 'small-world measure'
+- https://en.wikipedia.org/wiki/Small-world_network
+- implemented in: 'networkx.algorithms.smallworld.omega'
+- domain: 'Graph theory'
+- is a: 'Graph measure'
+- quantifies: 'network small-worldness'
+- output: 'float', [-1, 1]
+- input: 'Graph'
+
+## Node connectivity
+- also called: 'Vertex connectivity'
+- https://en.wikipedia.org/wiki/Connectivity_(graph_theory)
+- implemented in (approximation): 'networkx.algorithms.approximation.connectivity.node_connectivity'
+- implemented in: 'networkx.algorithms.connectivity.connectivity.node_connectivity', 'Mathematica VertexConnectivity'
+- domain: 'Graph theory'
+- input: 'Graph'
+- is a: 'Graph measure'
+- output: 'int'
+
+## Edge connectivity
+- https://en.wikipedia.org/wiki/Connectivity_(graph_theory)
+- implemented in: 'networkx.algorithms.connectivity.connectivity.edge_connectivity', 'Mathematica EdgeConnectivity'
+- domain: 'Graph theory'
+- input: 'Graph'
+- is a: 'Graph measure'
+- output: 'int'
+
+## Global clustering coefficient
+- https://en.wikipedia.org/wiki/Clustering_coefficient#Global_clustering_coefficient
+- domain: 'Graph theory'
+- input: 'Graph'
+- implemented in: 'Mathematica GlobalClusteringCoefficient', 'graph_tool.clustering.global_clustering'
+
+## Average clustering coefficient
+- also called: 'Mean clustering coefficient', 'Overall clustering coefficient'
+- https://en.wikipedia.org/wiki/Clustering_coefficient#Network_average_clustering_coefficient
+- implemented in (approximation): 'networkx.algorithms.approximation.clustering_coefficient.average_clustering'
+- implemented in: 'Mathematica MeanClusteringCoefficient'
+- domain: 'Graph theory'
+- output: 'float'
+- input: 'Graph'
+- related: 'Local clustering coefficient'
+
+## Natural Image Quality Evaluator
+- also called: 'NIQE'
+- paper: 'Making a “Completely Blind” Image Quality Analyzer' (2012) <https://doi.org/10.1109/LSP.2012.2227726>
+- properties: 'no-reference'
+- implemented in: 'Matlab niqe', 'aizvorski/video-quality'
+- applications: 'blind image quality assessment'
+- input: 'Image'
+- domain: 'Image processing'
+
+## Edge reciprocity
+- https://en.wikipedia.org/wiki/Reciprocity_(network_science)
+- implemented in: 'graph_tool.topology.edge_reciprocity'
+- input: 'Graph'
+- output: 'float'
+- domain: 'Graph theory'

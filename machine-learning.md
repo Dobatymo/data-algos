@@ -315,10 +315,20 @@
 - is a: 'Subspace clustering algorithm'
 
 ## Isolation Forest
+- also called: 'iForest'
+- https://en.wikipedia.org/wiki/Isolation_forest
 - solves: 'Anomaly detection'
-- paper: 'Isolation Forest' (2008)
+- paper: 'Isolation Forest' (2008) <https://doi.org/10.1109/ICDM.2008.17>
 - implemented in: 'sklearn.ensemble.IsolationForest'
 - is a: 'Ensemble method'
+
+## Extended Isolation Forest
+- also called: 'EIF'
+- https://en.wikipedia.org/wiki/Isolation_forest
+- paper: 'Extended Isolation Forest' (2019) <https://doi.org/10.1109/TKDE.2019.2947676>
+- solves: 'Anomaly detection'
+- improvement of: 'Isolation Forest'
+- implemented in: 'Python eif'
 
 ## Local Outlier Factor
 - solves: 'Novelty detection', 'Anomaly detection'

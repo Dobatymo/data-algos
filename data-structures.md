@@ -95,6 +95,15 @@
 
 ## Interval tree
 - https://en.wikipedia.org/wiki/Interval_tree
+- variants: 'centered interval tree', 'augmented interval tree'
+- applications: 'windowing queries'
+- properties: 'output-sensitive'
+- implemented in (libraries): 'Python intervaltree'
+
+## Nested Containment List
+- paper: 'Nested Containment List (NCList): a new algorithm for accelerating interval query of genome alignment and interval databases' (2007) <https://doi.org/10.1093/bioinformatics/btl647>
+- implemented in (libraries): 'Python ncls'
+- applications: 'interval overlap queries'
 
 ## Longest common prefix array
 - also called: 'LCP array'
@@ -293,6 +302,17 @@
 - space complexity (worst): O(n log n)
 - time complexity (search, insert, delete) (average): O(log n)
 - time complexity (search, insert, delete) (worst): O(n)
+
+## Interval Skip List
+- paper: 'The interval skip list: A data structure for finding all intervals that overlap a point' (1991) <https://doi.org/10.1007/BFb0028258>
+- implemented in (libraries): 'CGAL::Interval_skip_list', 'Dart kseo/interval_skip_list'
+- applications: 'stabbing queries'
+
+## AABB tree
+- also called: 'Axis-aligned bounding box tree'
+- https://en.wikipedia.org/wiki/Minimum_bounding_box#Axis-aligned_minimum_bounding_box
+- implemented in (libraries): 'CGAL::AABB_tree'
+- implemented in (libraries): 'Python aabbtree'
 
 ## Finite-state machine
 - also called: 'FSM', 'Finite-state automaton', 'FSA'

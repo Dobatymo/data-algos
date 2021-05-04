@@ -41,6 +41,15 @@
 - type of: 'One-class classification'
 - domain: 'Machine learning'
 
+## Covariance matrix estimation
+- also called: 'Covariance estimation'
+- https://en.wikipedia.org/wiki/Estimation_of_covariance_matrices
+- domain: 'statistics', 'Multivariate analysis'
+
+## Sparse inverse covariance matrix estimation
+- also called: 'Sparse precision matrix estimation'
+- domain: 'statistics', 'Multivariate analysis'
+
 # ML related, but not really ML
 
 ## GPipe
@@ -58,6 +67,13 @@
 - implemented in (libraries): 'sklearn.ensemble.BaggingClassifier'
 
 # Machine learning models and algorithms
+
+## FairCo
+- paper: 'Controlling Fairness and Bias in Dynamic Learning-to-Rank' (2020) <https://doi.org/10.1145/3397271.3401100>
+- applications: 'Learning to rank'
+- domain: 'Machine learning', 'Information retrieval'
+- Dynamic learning to rank
+- implemented in: 'MarcoMorik/Dynamic-Fairness'
 
 ## Dense Passage Retriever
 - also called: 'DPR'
@@ -201,8 +217,9 @@
 - implemented in: 'Python kk7nc/RMDL'
 
 ## MSRN
-- paper: 'Multi-scale Residual Network for ImageSuper-Resolution'
+- paper: 'Multi-scale Residual Network for Image Super-Resolution' (2018) <https://doi.org/10.1007/978-3-030-01237-3_32>
 - applications: 'Single Image Super-Resolution'
+- implemented in: 'Python MIVRC/MSRN-PyTorch'
 
 ## Automatic Differentiation Variational Inference
 - also called: 'ADVI'
@@ -217,6 +234,7 @@
 - implemented in: 'xgboost', 'LightGBM', 'pGBRT', 'catboost'
 - applications: 'Learning to rank'
 - easily distributable
+- properties: 'non-parametric'
 
 ## Elastic net regularization
 - https://en.wikipedia.org/wiki/Elastic_net_regularization
@@ -226,6 +244,7 @@
 ## Tikhonov regularization
 - also called: 'Ridge regression'
 - https://en.wikipedia.org/wiki/Tikhonov_regularization
+- implemented in (part of): 'sklearn.linear_model.Ridge'
 
 ## LASSO regularization
 - https://en.wikipedia.org/wiki/Lasso_(statistics)
@@ -236,8 +255,10 @@
 
 ## Isomap
 - https://en.wikipedia.org/wiki/Isomap
-- paper: 'A Global Geometric Framework for Nonlinear Dimensionality Reduction (2000)'
+- paper: 'A Global Geometric Framework for Nonlinear Dimensionality Reduction' (2000) <https://doi.org/10.1126/science.290.5500.2319>
 - solves: 'Nonlinear dimensionality reduction'
+- implemented in: 'sklearn.manifold.Isomap'
+- type: 'isometric mapping'
 
 ## Self-organizing map
 - also called: 'Kohonen map', 'Kohonen network'
@@ -296,10 +317,26 @@
 
 ## DBSCAN
 - also called: 'Density-based spatial clustering of applications with noise'
-- paper: 'A density-based algorithm for discovering clusters in large spatial databases with noise' (1996)
+- paper: 'A density-based algorithm for discovering clusters in large spatial databases with noise' (1996) <https://dl.acm.org/doi/proceedings/10.5555/3001460>
 - https://en.wikipedia.org/wiki/DBSCAN
 - is a: 'Density-based clustering algorithm'
-- implemented in: 'Python sklearn.cluster.dbscan'
+- implemented in: 'Python sklearn.cluster.DBSCAN'
+
+## Mini-batch k-Means clustering 
+- paper: 'Web-scale k-means clustering' (2010) <https://doi.org/10.1145/1772690.1772862>
+- implemented in: 'sklearn.cluster.MiniBatchKMeans', 'sofia-ml/sofia-kmeans'
+- domain: 'data mining'
+
+## BIRCH
+- also called: 'Balanced iterative reducing and clustering using hierarchies'
+- paper: 'BIRCH: an efficient data clustering method for very large databases' (1996) <https://doi.org/10.1145/235968.233324>
+- https://en.wikipedia.org/wiki/BIRCH
+- type: 'unsupervised'
+- implemented in: 'sklearn.cluster.Birch'
+- properties: 'online'
+- alternative to: 'Mini-Batch K-Means clustering'
+- domain: 'data mining'
+- applications: 'Hierarchical clustering'
 
 ## OPTICS algorithm
 - also called: 'Ordering points to identify the clustering structure algorithm'
@@ -314,6 +351,13 @@
 - variant of: 'DBSCAN'
 - is a: 'Subspace clustering algorithm'
 
+## Random Cut Forest
+- also called: 'RCF'
+- paper: 'Robust random cut forest based anomaly detection on streams' (2016) <https://dl.acm.org/doi/proceedings/10.5555/3045390>
+- implemented in (cloud): 'AWS sagemaker.RandomCutForest'
+- applications: 'Anomaly detection'
+- type: 'unsupervised'
+
 ## Isolation Forest
 - also called: 'iForest'
 - https://en.wikipedia.org/wiki/Isolation_forest
@@ -324,32 +368,97 @@
 
 ## Extended Isolation Forest
 - also called: 'EIF'
-- https://en.wikipedia.org/wiki/Isolation_forest
 - paper: 'Extended Isolation Forest' (2019) <https://doi.org/10.1109/TKDE.2019.2947676>
+- https://en.wikipedia.org/wiki/Isolation_forest
 - solves: 'Anomaly detection'
 - improvement of: 'Isolation Forest'
 - implemented in: 'Python eif'
 
 ## Local Outlier Factor
-- solves: 'Novelty detection', 'Anomaly detection'
 - also called: 'LOF'
-- https://en.wikipedia.org/wiki/Local_outlier_factor
 - paper: 'LOF: identifying density-based local outliers'
+- solves: 'Novelty detection', 'Anomaly detection'
+- https://en.wikipedia.org/wiki/Local_outlier_factor
 - implemented in: 'sklearn.neighbors.LocalOutlierFactor', 'ELKI'
 - is a: 'Nearest neighbor method'
 
 ## Elliptic Envelope
-- solves: 'Anomaly detection'
 - paper: 'A Fast Algorithm for the Minimum Covariance Determinant Estimator (1998)'
+- solves: 'Anomaly detection'
 - implemented in: 'sklearn.covariance.EllipticEnvelope'
 - input: 'Normal distributed data' with n_samples > n_features ** 2
 - uses: 'Covariance estimation'
 
+## Graphical Lasso
+- also called: 'GLasso algorithm'
+- paper: 'Sparse inverse covariance estimation with the graphical lasso' (2008) <https://doi.org/10.1093/biostatistics/kxm045>
+- https://en.wikipedia.org/wiki/Graphical_lasso
+- implemented in: 'sklearn.covariance.GraphicalLasso', 'sklearn.covariance.graphical_lasso', 'R glasso'
+- solves: 'Sparse inverse covariance matrix estimation'
+
+## Ledoit-Wolf estimator
+- also called: 'LW'
+- paper: 'A well-conditioned estimator for large-dimensional covariance matrices' (2004) <https://doi.org/10.1016/S0047-259X(03)00096-4>
+- implemented in: 'sklearn.covariance.LedoitWolf'
+- applications: 'Covariance matrix estimation'
+- is a: 'well-conditioned estimator'
+- assumes distribution: None
+
+## Oracle Approximating Shrinkage estimator
+- also called: 'OAS'
+- paper: 'Shrinkage Algorithms for MMSE Covariance Estimation' (2010) <https://doi.org/10.1109/TSP.2010.2053029>
+- implemented in: 'sklearn.covariance.OAS'
+- applications: 'Covariance matrix estimation'
+- improvement of: 'Ledoit-Wolf estimator'
+- assumes distribution: 'Gaussian'
+
+## Minimum Covariance Determinant
+- also called: 'MCD'
+- paper: 'Least median of squares regression' (1983) <https://doi.org/10.1080/01621459.1984.10477105>
+- applications: 'Covariance matrix estimation'
+- assumes distribution: 'Gaussian'
+- is a: 'robust estimator'
+
+## FAST-MCD algorithm
+- also called: 'FastMCD'
+- paper: 'A Fast Algorithm for the Minimum Covariance Determinant Estimator' (1999) <https://doi.org/10.1080/00401706.1999.10485670>
+- implemented in: 'sklearn.covariance.MinCovDet', 'R fastmcd'
+
 ## Random forest
+- paper: 'Random decision forests' (1995) <https://doi.org/10.1109/ICDAR.1995.598994>
+- paper: 'Random Forests' (2001) <https://doi.org/10.1023/A:1010933404324>
 - https://en.wikipedia.org/wiki/Random_forest
 - properties: 'Embarrassingly parallel' (Tree growth step)
+- implemented in: 'sklearn.ensemble.RandomForestClassifier'
+
+## Random Forest regression
+- paper: 'Random Forests' (2001) <https://doi.org/10.1023/A:1010933404324>
+- paper: 'Extremely randomized trees' (2006) <https://doi.org/10.1007/s10994-006-6226-1>
+- https://en.wikipedia.org/wiki/Random_forest
+- implemented in: 'sklearn.ensemble.RandomForestRegressor'
+
+## AdaBoost
+- also called: 'Adaptive Boosting'
+- paper: 'Experiments with a new boosting algorithm' (1996) <https://dl.acm.org/doi/proceedings/10.5555/3091696>
+- paper: 'A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting' (1997) <https://doi.org/10.1006/jcss.1997.1504>
+- https://en.wikipedia.org/wiki/AdaBoost
+- variants (multi-class): 'AdaBoost.M1', 'AdaBoost.M2'
+- implemented in: 'R ebmc/adam2', 'R adabag/adaboost.M1'
+
+## AdaBoost-SAMME
+- also called: 'Stagewise Additive Modeling using a Multi-class Exponential loss function'
+- paper: 'Multi-class AdaBoost' (2009) <https://dx.doi.org/10.4310/SII.2009.v2.n3.a8>
+- https://en.wikipedia.org/wiki/AdaBoost
+- implemented in: 'sklearn.ensemble.AdaBoostClassifier'
+- variant of: 'AdaBoost'
+- variants: 'SAMME.R'
+
+## AdaBoost.R2
+- paper: 'Improving Regressors using Boosting Techniques' (1997) <https://dl.acm.org/doi/proceedings/10.5555/645526>
+- implemented in: 'sklearn.ensemble.AdaBoostRegressor'
+- variant of: 'AdaBoost'
 
 ## Multi-Channel Convolutional Neural Network
 - also called: 'MCCNN'
-- paper: 'Question Answering on Freebase via Relation Extraction and Textual Evidence' (2016)
+- paper: 'Question Answering on Freebase via Relation Extraction and Textual Evidence' (2016) <https://doi.org/10.18653/v1/P16-1220>
 - applications: 'Relation Extraction'

@@ -565,6 +565,17 @@
 - version of: 'Fisher–Yates shuffle'
 - runtime complexity: 'O(N)'
 
+## Birkhoff algorithm
+- also called: 'Birkhoff-von-Neumann algorithm'
+- paper: 'Tres observaciones sobre el algebra lineal' (1946) <https://ci.nii.ac.jp/naid/10006506380/>
+- https://en.wikipedia.org/wiki/Birkhoff_algorithm
+- input: bistochastic matrix
+- solves: decomposing a bistochastic matrix into a convex combination of permutation matrices
+- solves: 'Fair random assignment', 'Birkhoff decomposition'
+- applications: 'Matrix decomposition'
+- implemented in: 'Python birkhoff'
+- domain: 'Linear algebra'
+
 ## Sattolo's algorithm
 - paper: 'An algorithm to generate a random cyclic permutation' (1986) <https://doi.org/10.1016/0020-0190(86)90073-6>
 - https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#Sattolo's_algorithm
@@ -687,7 +698,7 @@
 - also called: 'NMF', 'NNMF'
 - https://en.wikipedia.org/wiki/Non-negative_matrix_factorization
 - applications: 'Collaborative filtering', 'Dimensionality reduction', 'Text mining'
-- implemented in (libraries): 'Python sklearn.decomposition.NMF'
+- implemented in (libraries): 'Python sklearn.decomposition.NMF', 'surprise.prediction_algorithms.matrix_factorization.NMF'
 
 ## Beam search
 - https://en.wikipedia.org/wiki/Beam_search
@@ -2645,6 +2656,24 @@
 ## Rete algorithm
 - https://en.wikipedia.org/wiki/Rete_algorithm
 - is a: 'Pattern matching algorithm'
+
+## PrefixSpan
+- paper: 'PrefixSpan,: mining sequential patterns efficiently by prefix-projected pattern growth' (2001) <https://doi.org/10.1109/ICDE.2001.914830>
+- applications: 'Sequential pattern mining'
+- domain: 'Data mining'
+- implemented in: 'Python prefixspan'
+
+## SPADE
+- also called: 'Sequential PAttern Discovery using Equivalence classes'
+- paper: 'SPADE: An Efficient Algorithm for Mining Frequent Sequences' (2001) <https://doi.org/10.1023/A:1007652502315>
+- applications: 'Sequential pattern mining'
+- domain: 'Data mining'
+- implemented in: 'mtitov/pyrexplorer'
+
+## AprioriAll
+- paper: 'Mining sequential patterns' (1995) <https://doi.org/10.1109/ICDE.1995.380415>
+- applications: 'Sequential pattern mining'
+- domain: 'Data mining'
 
 ## Hilltop algorithm
 - article: 'Hilltop: A Search Engine based on Expert Documents'

@@ -601,6 +601,20 @@
 
 -- Norms, measures, indices, coefficients and no-reference metrics (input is one object, output is a single number)
 
+## Discounted cumulative gain
+- also called: 'DCG'
+- https://en.wikipedia.org/wiki/Discounted_cumulative_gain
+- measure of ranking quality
+- domain: 'Information retrieval'
+- implemented in: 'sklearn.metrics.dcg_score'
+
+## Normalized discounted cumulative gain
+- also called: 'Normalized DCG', 'NDCG'
+- https://en.wikipedia.org/wiki/Discounted_cumulative_gain#Normalized_DCG
+- measure of ranking quality
+- domain: 'Information retrieval'
+- implemented in: 'sklearn.metrics.ndcg_score'
+
 ## Silhouette value
 - also called: 'Silhouette coefficient'
 - https://en.wikipedia.org/wiki/Silhouette_(clustering)

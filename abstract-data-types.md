@@ -248,7 +248,7 @@
 
 ## Singular value decomposition
 - https://en.wikipedia.org/wiki/Singular_value_decomposition
-- implemented in: 'scipy.linalg.svd'
+- implemented in: 'scipy.linalg.svd', 'surprise.prediction_algorithms.matrix_factorization.SVD'
 - applications: 'Matrix decomposition', 'Matrix approximation', 'Signal processing', 'Statistics'
 - used for: 'Pseudoinverse', 'Kabsch algorithm'
 - solves: 'Total least squares problem'

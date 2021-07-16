@@ -30,6 +30,12 @@
 - properties: 'can be traversed in-order in constant space'
 - implemented in (libraries): 'libavl'
 
+## AVL tree
+- paper: 'An algorithm for the organization of information' (1962) <>
+- https://en.wikipedia.org/wiki/AVL_tree
+- https://www.geeksforgeeks.org/avl-tree-set-1-insertion/
+- is a: 'Self-balancing binary search tree'
+
 ## Gap buffer
 - https://en.wikipedia.org/wiki/Gap_buffer
 - applications: 'Text editor'
@@ -99,6 +105,14 @@
 - applications: 'windowing queries'
 - properties: 'output-sensitive'
 - implemented in (libraries): 'Python intervaltree'
+
+## Range query tree (?)
+- also called: 'RQT'
+- https://en.wikipedia.org/wiki/Range_query_tree
+- is a: 'perfect binary tree'
+- don't confuse with: 'Segment tree', 'Range tree'
+- is this the same as?: 'Segment tree'
+- similar: 'Fenwick tree'
 
 ## Nested Containment List
 - paper: 'Nested Containment List (NCList): a new algorithm for accelerating interval query of genome alignment and interval databases' (2007) <https://doi.org/10.1093/bioinformatics/btl647>
@@ -212,7 +226,10 @@
 - paper: 'A new data structure for cumulative frequency tables' (1994) <https://doi.org/10.1002/spe.4380240306>
 - https://en.wikipedia.org/wiki/Fenwick_tree
 - https://brilliant.org/wiki/fenwick-tree/
+- https://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
 - usually implemented as: 'Implicit data structure'
+- applications: 'Prefix sum'
+- implemented in (libraries): 'Python dstein64/fenwick'
 
 ## Scapegoat tree
 - also called: 'General balanced tree'

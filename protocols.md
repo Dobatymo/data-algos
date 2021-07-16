@@ -67,6 +67,10 @@
 - RFC: 6817
 - is a: 'congestion control algorithm'
 
+## SACK
+- also called: 'Selective acknowledgment'
+- RFC: 2018
+
 # Cryptographic communication protocols
 
 ## Secure Shell
@@ -186,6 +190,125 @@
 ## Mobile CoWPI
 - also called: 'Mobile Conversations With Privacy and Integrity'
 - paper: 'End-to-End Secure Mobile Group Messaging with Conversation Integrity and Deniability' (2018)
+
+# Transport protocols
+
+## TCP
+- also called: 'Transmission Control Protocol'
+- https://en.wikipedia.org/wiki/Transmission_Control_Protocol
+- usually layered on: 'IP'
+- features: 'stream based', 'congestion control'
+- uses: 'SACK', 'Nagle's algorithm'
+
+## UDP
+- also called: 'User Datagram Protocol'
+- https://en.wikipedia.org/wiki/User_Datagram_Protocol
+- usually layered on: 'IP'
+
+## SCTP
+- also called: 'Stream Control Transmission Protocol'
+- https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol
+- RFC: 4960
+- features: 'multihoming', 'message based', 'congestion control'
+- usually layered on: 'UDP', 'IP'
+
+## QUIC
+- also called: 'Quick UDP Internet Connections'
+- https://en.wikipedia.org/wiki/QUIC
+- RFC: 9000
+- usually layered on: 'UDP'
+- features: 'FEC', 'congestion control', 'multiplexing without head-of-line blocking'
+
+# Streaming protocols
+
+## RTMFP
+- also called: 'Real-Time Media Flow Protocol'
+- https://en.wikipedia.org/wiki/Real-Time_Media_Flow_Protocol
+- RFC: 7016
+- usually layered on: 'UDP'
+
+## Automatic repeat request
+- also called: 'ARQ'
+- https://en.wikipedia.org/wiki/Automatic_repeat_request
+
+## MSS
+- also called: 'Microsoft Smooth Streaming'
+- uses: 'HTTP'
+
+## HDS
+- also called: 'HTTP Dynamic Streaming'
+- uses: 'HTTP'
+
+## HLS
+- also called: 'HTTP Live Streaming'
+- https://en.wikipedia.org/wiki/HTTP_Live_Streaming
+- uses: 'HTTP'
+- RFC: 8216
+- container: 'MPEG-TS'
+
+## DASH
+- also called: 'Dynamic Adaptive Streaming over HTTP', 'MPEG-DASH'
+- uses: 'TCP', 'HTTP'
+- codec-agnostic
+- Adaptive bitrate streaming
+- container: 'MP4'
+
+## RTMP
+- also called: 'Real-Time Messaging Protocol'
+- https://en.wikipedia.org/wiki/Real-Time_Messaging_Protocol
+- usually layered on: 'TCP'
+
+## RTP
+- also called: 'Real-time Transport Protocol'
+- RFC: 3550
+- https://en.wikipedia.org/wiki/Real-time_Transport_Protocol
+- uses: 'UDP'
+- used with: 'RTCP'
+- see also: 'SRTP'
+- features: 'Content agnostic'
+- standardized payload formats: 'Flexible Forward Error Correction (FEC)'
+
+## RTSP
+- also called: 'Real Time Streaming Protocol'
+- https://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol
+- uses: 'RTP', 'RTCP'
+
+## SRTP
+- also called: 'Secure Real-time Transport Protocol'
+- https://en.wikipedia.org/wiki/Secure_Real-time_Transport_Protocol
+- see also: 'RTP'
+
+## RTCP
+- also called: 'RTP Control Protocol'
+- https://en.wikipedia.org/wiki/RTP_Control_Protocol
+
+## WebRTC
+- also called: 'Web Real-Time Communication'
+- https://en.wikipedia.org/wiki/WebRTC
+- https://webrtc.org/
+- Open Source
+- 'Data Channel' uses 'SCTP', 'DTLS', 'UDP'
+- 'Media Transport' uses 'SRTP'
+
+## FTL
+- also called: 'Faster Than Light'
+- uses: 'UDP', 'RTP'
+- proprietary
+
+## Secure Reliable Transport
+- also called: 'SRT'
+- https://en.wikipedia.org/wiki/Secure_Reliable_Transport
+- https://www.haivision.com/products/srt-secure-reliable-transport/
+- Open Source
+- features: 'FEC', 'AES encryption', 'Content agnostic'
+- based on: 'UDT'
+- supposed to be a replacement for: 'RTMP'
+
+## Reliable Internet Stream Transport
+- also called: 'RIST'
+- https://en.wikipedia.org/wiki/Reliable_Internet_Stream_Transport
+- features: 'ARQ', 'FEC', 'Bitmask NACK', 'Range NACK'
+- uses: 'RTCP', 'SMPTE-2022 Forward Error Correction', 'RTP', 'DTLS'
 
 # Communication protocols
 
@@ -355,3 +478,5 @@
 - properties: 'p2p'
 - implemented in (libraries): 'libutp'
 - implemented by (applications): 'µTorrent', 'qBittorrent'
+- alternative to: 'TCP'
+- uses: 'LEDBAT'

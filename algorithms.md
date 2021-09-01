@@ -1795,16 +1795,17 @@
 - implemented in: 'Cilk'
 
 ## Louvain algorithm
-- paper: 'Fast unfolding of communities in large networks' (2008)
+- paper: 'Fast unfolding of communities in large networks' (2008) <https://doi.org/10.1088%2F1742-5468%2F2008%2F10%2FP10008>
 - https://en.wikipedia.org/wiki/Louvain_modularity#Algorithm
 - applications: 'Community detection'
 - domain: 'Network theory'
 
 ## Leiden algorithm
-- paper: 'From Louvain to Leiden: guaranteeing well-connected communities' (2018)
+- paper: 'From Louvain to Leiden: guaranteeing well-connected communities' (2018) <https://doi.org/10.1038/s41598-019-41695-z>
 - created as improvement of: 'Louvain algorithm'
-- applications: 'Community detection'
+- applications: 'Community detection', 'bipartite graph clustering'
 - domain: 'Network theory'
+- implemented in (libraries): 'Python leidenalg', 'R leiden'
 
 ## k-means clustering
 - https://en.wikipedia.org/wiki/K-means_clustering
@@ -1923,6 +1924,16 @@
 - also called: 'Proximal interpolation', 'Point sampling'
 - https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation
 - applications: 'Multivariate interpolation', 'Image scaling'
+
+## Chaikin's algorithm
+- also called: 'Chaikin's corner-cutting algorithm'
+- paper: 'An algorithm for high-speed curve generation' (1974) <https://doi.org/10.1016/0146-664X(74)90028-8>
+- secondary source: https://www.bit-101.com/blog/2021/08/chaikins-algorithm-drawing-curves/
+- secondary source: https://sighack.com/post/chaikin-curves
+- is a: 'Geometric algorithm'
+- applications: 'Curve drawing'
+- refinement-based corner cutting algorithm
+- 'Chaikin curve' is equivalent to 'quadratic B-spline curve'
 
 --- move these to models.md
 

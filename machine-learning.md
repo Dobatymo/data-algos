@@ -284,6 +284,12 @@
 - implemented in: 'libsvm', 'sklearn.svm.OneClassSVM'
 - uses: 'Support estimation'
 
+## Support Vector Data Description
+- also called: 'SVDD'
+- paper: 'Support Vector Data Description' (2004) <https://doi.org/10.1023/B:MACH.0000008084.60811.49>
+- keywords: support vector classifier
+- applications: 'One-class classification'
+
 ## Support-vector clustering
 - also called: 'SVC'
 - paper: 'Support vector clustering' (2001)

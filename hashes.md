@@ -189,19 +189,20 @@
 
 ## DCT based hash
 - is this the same as: 'pHash'?
-- paper: 'Robust video hash extraction' (2004)
+- paper: 'Robust video hash extraction' (2004) <https://doi.org/10.1109/SIU.2004.1338317>
 - implemented in: 'pHash::ph_dct_imagehash'
 - metric: 'Hamming distance'
 - input: 'image'
 - review thesis: 'Implementation and Benchmarking of Perceptual Image Hash Functions' (2010)
 
 ## Compact Fourier Mellin Transform (CFMT)-based hash
-- paper: 'Duplicate Image Detection in Large Scale Databases' (2007)
+- paper: 'Duplicate Image Detection in Large Scale Databases' (2007) <https://doi.org/10.1142/9789812818997_0008>
 - metric: 'L1 distance', 'L2 distance' (preferred)
 - input: 'image'
 
 ## MinHash
-- paper: 'On the resemblance and containment of documents' (1997)
+- also called: 'the min-wise independent permutations locality sensitive hashing scheme'
+- paper: 'On the resemblance and containment of documents' (1997) <https://doi.org/10.1109/SEQUEN.1997.666900>
 - https://en.wikipedia.org/wiki/MinHash
 - properties: 'probabilistic'
 - applications: 'Locality-sensitive hashing', 'Set similarity', 'data mining', 'bioinformatics', 'clustering'
@@ -209,7 +210,7 @@
 - approximates: 'Jaccard similarity'
 
 ## SimHash
-- paper: 'Similarity Estimation Techniques from Rounding Algorithms'
+- paper: 'Similarity estimation techniques from rounding algorithms' (2002) <https://doi.org/10.1145/509907.509965>
 - https://en.wikipedia.org/wiki/SimHash
 - metric: 'Hamming distance'
 - applications: 'Locality-sensitive hashing'

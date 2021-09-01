@@ -206,9 +206,13 @@
 
 ## Treap
 - original paper: 'Randomized search trees' (1989)
-- https://en.wikipedia.org/wiki/Treap
-- https://brilliant.org/wiki/treaps/
-- book: 'Open Data Structures'
+- paper: 'Randomized search trees' (1996) <https://doi.org/10.1007/BF01940876>
+- primary source: https://faculty.washington.edu/aragon/pubs/rst89.pdf
+- primary source: https://faculty.washington.edu/aragon/pubs/rst96.pdf
+- secondary source: https://en.wikipedia.org/wiki/Treap
+- secondary source: https://brilliant.org/wiki/treaps/
+- secondary source: https://www.geeksforgeeks.org/treap-a-randomized-binary-search-tree/
+- book: 'Open Data Structures' <https://opendatastructures.org/>
 - randomly ordered binary tree
 - log(N) lookup even for insertion of items in non-random order
 - heap like feature
@@ -217,14 +221,15 @@
 ## Implicit treap
 - also called: 'Indexed list', 'Treap with implicit keys", 'Cartesian tree with implicit keys"
 - paper?: 'Efficient Data Structures and a New Randomized Approach for Sorting Signed Permutations by Reversals' (2003) <https://doi.org/10.1007/3-540-44888-8_13>
-- https://cp-algorithms.com/data_structures/treap.html#toc-tgt-6
+- secondary source: https://cp-algorithms.com/data_structures/treap.html#toc-tgt-6
 - implemented in: 'https://hackage.haskell.org/package/treap'
 - is a: 'Implicit data structure'
 
 ## Fenwick tree
 - also called: 'Binary indexed tree'
 - paper: 'A new data structure for cumulative frequency tables' (1994) <https://doi.org/10.1002/spe.4380240306>
-- https://en.wikipedia.org/wiki/Fenwick_tree
+- secondary source: https://en.wikipedia.org/wiki/Fenwick_tree
+- secondary source: https://jornhub.dev/articles/fenwick-trees/
 - https://brilliant.org/wiki/fenwick-tree/
 - https://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
 - usually implemented as: 'Implicit data structure'
@@ -233,21 +238,22 @@
 
 ## Scapegoat tree
 - also called: 'General balanced tree'
-- paper: 'Improving partial rebuilding by using simple balance criteria' (1989)
-- paper: 'Scapegoat trees' (1993)
-- https://en.wikipedia.org/wiki/Scapegoat_tree
+- paper: 'Improving partial rebuilding by using simple balance criteria' (1989) <https://doi.org/10.1007/3-540-51542-9_33>
+- paper: 'Scapegoat trees' (1993) <https://dl.acm.org/doi/10.5555/313559.313676>
+- primary source: https://people.csail.mit.edu/rivest/pubs/GR93.pdf
+- secondary source: https://en.wikipedia.org/wiki/Scapegoat_tree
 - book: 'Open Data Structures'
 - is a: 'Binary search tree'
 - properties: 'Self-balancing'
 
 ## BK-tree
-- original paper: 'Some approaches to best-match file searching' (1973)
+- paper: 'Some approaches to best-match file searching' (1973) <https://doi.org/10.1145/362003.362025>
 - https://en.wikipedia.org/wiki/BK-tree
 - is a: 'Space-partitioning tree', 'Metric tree'
 - applications: approximate string matching
 
 ## Splay tree
-- original paper: 'Self-adjusting binary search trees' (1985)
+- paper: 'Self-adjusting binary search trees' (1985) <https://doi.org/10.1145/3828.3835>
 - https://en.wikipedia.org/wiki/Splay_tree
 - is a: 'Binary search tree'
 - properties: 'self-optimizing'
@@ -257,6 +263,7 @@
 
 ## k-d tree
 - also called: 'k-dimensional tree'
+- paper: 'Multidimensional binary search trees used for associative searching' (1975) <https://doi.org/10.1145/361002.361007>
 - https://en.wikipedia.org/wiki/K-d_tree
 - is a: 'Space-partitioning tree'
 - applications: 'Range searching', 'Nearest neighbor search', 'Kernel density estimation'
@@ -274,13 +281,6 @@
 - applications: 'Range searching'
 - space complexity: O(n)
 - query complexity: O(log n + k*log^ε n)
-
-## B+ tree
-- https://en.wikipedia.org/wiki/B%2B_tree
-- https://xlinux.nist.gov/dads/HTML/bplustree.html
-- applications: filesystems, 'Range searching', block-oriented data retrieval
-- k-ary tree
-- used by: Relational database management systems like Microsoft SQL Server, Key–value database management systems like CouchDB
 
 ## Cartesian tree
 - https://en.wikipedia.org/wiki/Cartesian_tree
@@ -379,27 +379,50 @@
 - implemented in: 'C++ dawgdic'
 
 ## B-tree
-- https://en.wikipedia.org/wiki/B-tree
-- https://xlinux.nist.gov/dads/HTML/btree.html
-- book: 'Introduction to Algorithms'
+- paper: 'Organization and maintenance of large ordered indices' (1970) <https://doi.org/10.1145%2F1734663.1734671>
+- secondary source: https://en.wikipedia.org/wiki/B-tree
+- secondary source: https://xlinux.nist.gov/dads/HTML/btree.html
+- book: 'Introduction to Algorithms' (1990)
 - used to implement lots of databases and filesystems
 - self-balancing
 - non-binary
 
+## B+ tree
+- secondary source: https://en.wikipedia.org/wiki/B%2B_tree
+- secondary source: https://xlinux.nist.gov/dads/HTML/bplustree.html
+- applications: filesystems, 'Range searching', block-oriented data retrieval
+- k-ary tree
+- used by: Relational database management systems like Microsoft SQL Server, Key–value database management systems like CouchDB
+- based on: 'B-tree'
+
+## UB-tree
+- also called: 'Universal B-Tree'
+- original paper: 'The universal B-tree for multidimensional indexing: General concepts' (1997) <https://doi.org/10.1007/3-540-63343-X_48>
+- paper: 'Integrating the UB-Tree into a Database System Kernel' (2000) <https://dl.acm.org/doi/10.5555/645926.671872>
+- primary source: http://www.vldb.org/conf/2000/P263.pdf
+- secondary source: https://en.wikipedia.org/wiki/UB-tree
+- secondary source: https://xlinux.nist.gov/dads/HTML/universalBTree.html
+- is a: 'Self-balancing search tree'
+- based on: 'B+ tree'
+
+
 ## SS-Tree (Similarity search tree)
-- paper: 'Similarity indexing with the SS-tree'
+- paper: 'Similarity indexing with the SS-tree' (1996) <https://doi.org/10.1109/ICDE.1996.492202>
 - applications: 'Similarity indexing', 'Nearest neighbor search'
 
 ## Cover tree
-- https://en.wikipedia.org/wiki/Cover_tree
-- paper: "Cover Trees for Nearest Neighbor"
+- paper: 'Cover trees for nearest neighbor' (2006) <https://doi.org/10.1145/1143844.1143857>
+- primary source: https://hunch.net/~jl/projects/cover_tree/cover_tree.html
+- primary source: https://www.cc.gatech.edu/~isbell/reading/papers/cover-tree-icml.pdf
+- secondary source: https://en.wikipedia.org/wiki/Cover_tree
 - applications: nearest neighbor search
 - is a: Metric tree
+- implemented in: 'DNCrane/Cover-Tree', 'loehndorf/covertree'
 
 ## M-tree
-- paper: 'M-tree: An Efficient Access Method for Similarity Search in Metric Spaces' (1997)
-- https://en.wikipedia.org/wiki/M-tree
-- http://www-db.deis.unibo.it/Mtree/main.html
+- paper: 'M-tree: An Efficient Access Method for Similarity Search in Metric Spaces' (1997) <https://dl.acm.org/doi/10.5555/645923.671005>
+- primary source: http://www-db.deis.unibo.it/Mtree/main.html
+- secondary source: https://en.wikipedia.org/wiki/M-tree
 - better disk storage characteristics (because shallower) than 'Ball tree'
 - uses: 'nearest neighbor search'
 - is a: 'Space-partitioning tree', 'Metric tree'
@@ -551,15 +574,6 @@
 - original paper: 'Faster deterministic sorting and searching in linear space' (1996)
 - https://en.wikipedia.org/wiki/Exponential_tree
 - variant of: 'Binary search tree'
-
-## UB-tree
-- also called: 'Universal B-Tree'
-- original paper: 'The Universal B-Tree for Multidimensional Indexing: general Concepts' (1997)
-- paper: 'Integrating the UB-Tree into a Database System Kernel' (2000)
-- https://en.wikipedia.org/wiki/UB-tree
-- https://xlinux.nist.gov/dads/HTML/universalBTree.html
-- is a: 'Self-balancing search tree'
-- based on: 'B+ tree'
 
 ## Log-structured merge-tree
 - also called: 'LSM tree'

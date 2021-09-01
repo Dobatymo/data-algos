@@ -369,6 +369,9 @@
 - https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
 - https://en.wikipedia.org/wiki/F-score
 - properties: 'set based'
+- similar: 'Jaccard index'
+- is not: 'metric'
+- is a: 'semimetric'
 - implemented in: 'sklearn.metrics.f1_score', 'adtk.metrics.f1_score'
 
 ## Sampled F1 score
@@ -598,6 +601,12 @@
 - applications: 'Internal evaluation of bicluster analysis'
 - is a: 'Similarity'
 - input: 'two sets of biclusters'
+
+## Mash distance
+- paper: 'Mash: fast genome and metagenome distance estimation using MinHash' (2016) <https://doi.org/10.1186/s13059-016-0997-x>
+- implemented in: 'marbl/Mash'
+- uses: 'MinHash'
+
 
 -- Norms, measures, indices, coefficients and no-reference metrics (input is one object, output is a single number)
 

@@ -2,6 +2,12 @@
 
 -- uncategorized
 
+## Frequent itemset mining
+- also called: 'FIM'
+- domain: 'Data analysis', 'Data mining'
+- paper: 'Mining association rules between sets of items in large databases' (1993) <https://doi.org/10.1145/170035.170072>
+- applications: 'Market basket analysis'
+
 ## Multiset permutation
 - also called: 'Distinct permutation', 'Permutation with replacement'
 - https://en.wikipedia.org/wiki/Permutation#Permutations_of_multisets
@@ -44,6 +50,11 @@
 -- implicit formulation with clear solutions
 
 Solution is given by constraints which must be fullfilled, an equation to be solved.
+
+## Robust PCA problem
+- https://en.wikipedia.org/wiki/Robust_principal_component_analysis
+- paper: 'Robust Principal Component Analysis: Exact Recovery of Corrupted Low-Rank Matrices via Convex Optimization' (2009) <https://papers.nips.cc/paper/2009/hash/c45147dee729311ef5b5c3003946c48f-Abstract.html>
+- possibly solved by: 'proximal gradient approach'
 
 ## Greatest common divisor
 - https://en.wikipedia.org/wiki/Greatest_common_divisor
@@ -148,6 +159,12 @@ Solution is given by constraints which must be fullfilled, an equation to be sol
 - specialization of: 'Minimum-cost circulation problem'
 - solved by: 'Linear programming'
 - solved by (libraries): 'google/or-tools'
+
+## Finding spanning arborescence of minimum weight
+- also called: 'Minimum spanning arborescence', 'optimum branching problem'
+- input: 'Directed graph'
+- related adt: 'Spanning arborescence of minimum weight'
+- solved by (algorithm): 'Edmonds' algorithm'
 
 ## Minimum-cost maximum-flow problem
 - variation of: 'Minimum-cost flow problem'
@@ -393,12 +410,26 @@ Solution is given by mathematical formula or naive computation method.
 - also called: 'APSP problem'
 - problem type: 'Shortest path problem'
 - https://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths
+- https://algowiki-project.org/en/All_Pairs_Shortest_Path_(APSP)
 - book: 'Introduction to Algorithms'
 - finds the shortest path for all pairs of vertices in a graph
 - solved by (algorithms): 'Floyd–Warshall algorithm', 'Johnson's algorithm'
 - solved by (libraries): 'graph_tool.topology.shortest_distance'
 - domain: 'graph theory'
 - properties: 'optimal substructure'
+
+## Longest path problem
+- also called: 'Longest simple path problem'
+- https://en.wikipedia.org/wiki/Longest_path_problem
+- hardness: NP-Hard
+- decision problem hardness: NP-complete
+- linear for Directed acyclic graph inputs (using topological sort)
+- In weighted complete graphs with non-negative edge weights, the weighted longest path problem is the same as 'Travelling salesman problem'
+
+## All-pairs shortest simple paths problem
+- related: 'All-pairs shortest paths problem'
+- allows negative cost cycles
+- NP-Hard
 
 ## Graph connectivity
 - https://en.wikipedia.org/wiki/Connectivity_(graph_theory)
@@ -429,6 +460,7 @@ Solution is given by mathematical formula or naive computation method.
 - https://en.wikipedia.org/wiki/Longest_palindromic_substring
 
 ## Longest common subsequence problem
+- also called: 'LCS', 'LCSS'
 - https://en.wikipedia.org/wiki/Longest_common_subsequence_problem
 - book: 'Introduction to Algorithms', 'The Algorithm Design Manual'
 - cf. 'Longest common substring problem'

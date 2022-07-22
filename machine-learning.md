@@ -41,6 +41,11 @@
 - type of: 'One-class classification'
 - domain: 'Machine learning'
 
+## Discrete sequence anomaly detection'
+- also called: 'symbolic sequence anomaly detection'
+- type of: 'One-class classification'
+- domain: 'Machine learning'
+
 ## Covariance matrix estimation
 - also called: 'Covariance estimation'
 - https://en.wikipedia.org/wiki/Estimation_of_covariance_matrices
@@ -259,6 +264,14 @@
 - solves: 'Nonlinear dimensionality reduction'
 - implemented in: 'sklearn.manifold.Isomap'
 - type: 'isometric mapping'
+- uses: 'Floyd-Warshall algorithm'
+
+## UMAP
+- also called: 'Uniform Manifold Approximation and Projection'
+- paper: 'UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction' (2018) <https://arxiv.org/abs/1802.03426>
+- solves: 'Nonlinear dimensionality reduction'
+- applications: 'Data visualization'
+- implemented in: 'Python umap-learn'
 
 ## Self-organizing map
 - also called: 'Kohonen map', 'Kohonen network'
@@ -266,9 +279,23 @@
 - type of: 'Artificial neural network'
 - unsupervised
 - solves: 'Nonlinear dimensionality reduction', 'Dimensionality reduction'
-- applications: 'Visualization'
+- applications: 'Data visualization'
 - implemented in: 'Python mvpa2.mappers.som.SimpleSOMMapper, Bio.Cluster.somcluster'
 - paradigm: 'Competitive learning'
+
+## t-SNE
+- also called: 't-distributed stochastic neighbor embedding'
+- paper: 'Stochastic neighbor embedding' (2002) <https://dl.acm.org/doi/10.5555/2968618.2968725>
+- https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding
+- solves: 'Nonlinear dimensionality reduction'
+- applications: 'Data visualization'
+- implemented in: 'Python sklearn.manifold.TSNE'
+
+## Barnes-Hut t-SNE
+- paper: 'Accelerating t-SNE using tree-based algorithms' (2014) <https://dl.acm.org/doi/10.5555/2627435.2697068>
+- runtime complexity: O(N log N)
+- spacy complexity: O(N)
+- uses: 'Barnes-Hut algorithm'
 
 ## Recursive autoencoder
 - also called: 'RAE'
@@ -280,9 +307,17 @@
 - paper: 'Learning Structured Output Representation using Deep Conditional Generative Models' (2015)
 
 ## OneClass SVM
+- also called: 'OCSVM'
 - solves: 'Novelty detection'
 - implemented in: 'libsvm', 'sklearn.svm.OneClassSVM'
 - uses: 'Support estimation'
+- applications: 'One-class classification'
+
+## OneClass CRF
+- also called: 'OCCRF', 'One-class conditional random fields'
+- paper: 'One-class conditional random fields for sequential anomaly detection' (2013) <https://dl.acm.org/doi/10.5555/2540128.2540370>
+- applications: 'One-class classification', 'Sequence anomaly detection'
+- version of: 'Conditional random field'
 
 ## Support Vector Data Description
 - also called: 'SVDD'
@@ -357,10 +392,11 @@
 - variant of: 'DBSCAN'
 - is a: 'Subspace clustering algorithm'
 
-## Random Cut Forest
-- also called: 'RCF'
+## Robust Random Cut Forest
+- also called: 'RRCF', 'Random Cut Forest','RCF'
 - paper: 'Robust random cut forest based anomaly detection on streams' (2016) <https://dl.acm.org/doi/proceedings/10.5555/3045390>
 - implemented in (cloud): 'AWS sagemaker.RandomCutForest'
+- implemented in: 'kLabUM/rrcf'
 - applications: 'Anomaly detection'
 - type: 'unsupervised'
 

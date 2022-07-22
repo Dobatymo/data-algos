@@ -170,6 +170,12 @@
 - based on: 'connected, edge-weighted (un)directed graph'
 - solved by: 'networkx.algorithms.tree.mst.minimum_spanning_tree, 'graph_tool.topology.min_spanning_tree'
 
+## Spanning arborescence of minimum weight
+- also called: 'Minimum spanning arborescence', 'optimum branching problem'
+- input: 'Directed graph'
+- related problem: 'Finding spanning arborescence of minimum weight'
+- solved by: 'networkx.algorithms.tree.branchings.minimum_spanning_arborescence'
+
 ## Second-best minimum spanning tree
 - book: 'Introduction to Algorithms'
 - solution need not be unique
@@ -253,6 +259,15 @@
 - used for: 'Pseudoinverse', 'Kabsch algorithm'
 - solves: 'Total least squares problem'
 - domain: 'Linear algebra'
+
+## Sparse PCA
+- also called: 'sparse PCA via regularized SVD', 'sPCA-rSVD'
+- paper: 'Sparse principal component analysis via regularized low rank matrix approximation' (2008) <https://doi.org/10.1016/j.jmva.2007.06.007>
+
+## Sparse singular value decomposition
+- also called: 'SSVD'
+- paper: 'Biclustering via sparse singular value decomposition' (2010) <https://doi.org/10.1111/j.1541-0420.2010.01392.x>
+- implemented in: 'R irlba.ssvd'
 
 ## Cholesky decomposition
 - https://en.wikipedia.org/wiki/Cholesky_decomposition

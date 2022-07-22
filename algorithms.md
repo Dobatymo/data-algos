@@ -209,7 +209,7 @@
 - book: 'MIT Press', 'Introduction to Algorithms'
 - https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
 - solves variant of the 'Shortest path problem' for real-valued edge weights in directed graph in O(v*e) where v and e are the number of vertices and edges respectively.
-- negative cycles are detected
+- negative cycles are detected (but not handled)
 - implemented in: 'Python scipy.sparse.csgraph.shortest_path(method="BF")', 'boost:graph::bellman_ford_shortest_paths'
 - input: 'Weighted directed graph'
 
@@ -217,7 +217,7 @@
 - paper: 'Efficient Algorithms for Shortest Paths in Sparse Networks' (1977) <https://doi.org/10.1145/321992.321993>
 - https://en.wikipedia.org/wiki/Johnson%27s_algorithm
 - solves: 'All-pairs shortest paths problem' for real-valued weights in a directed graph in O(v^2 log v + v*e) where v and e are the number of vertices and edges
-- implemented in: 'Python scipy.sparse.csgraph.shortest_path(method='J')', 'C++ boost::graph::johnson_all_pairs_shortest_paths'
+- implemented in: 'Python scipy.sparse.csgraph.shortest_path(method='J')', 'C++ boost::graph::johnson_all_pairs_shortest_paths', 'networkx.algorithms.shortest_paths.weighted.johnson'
 - combination of 'Bellman–Ford' and 'Dijkstra's algorithm'
 - is faster than 'Floyd–Warshall algorithm' for sparse graphs
 - input: 'weighted directed graph without negative cycles'
@@ -229,7 +229,7 @@
 - http://mathworld.wolfram.com/Floyd-WarshallAlgorithm.html
 - domain: 'Graph theory'
 - solves: 'All-pairs shortest paths problem' for real-valued weights for directed/undirected graphs in O(v^3) where v is the number of vertices
-- negative cycles are not allowed
+- negative cycles are not allowed (they are not detected either)
 - uses method: 'dynamic programming'
 - implemented in: 'python scipy.sparse.csgraph.shortest_path(method='FW')', 'c++ boost::graph::floyd_warshall_all_pairs_shortest_paths', 'networkx.algorithms.shortest_paths.dense.floyd_warshall'
 - is faster than 'Johnson's algorithm' for dense graphs
@@ -1168,7 +1168,7 @@
 
 ## Micali and Vazirani's matching algorithm
 - runtime complexity: O(sqrt(n) m) for n vertices and m edges
-- original paper: 'An O(sqrt(|v|) |E|) algoithm for finding maximum matching in general graphs' (1980)
+- original paper: 'An O(sqrt(|v|) |E|) algorithm for finding maximum matching in general graphs' (1980) <https://doi.org/10.1109/SFCS.1980.12>
 - exposition paper: 'The general maximum matching algorithm of micali and vazirani' (1988)
 - implemented in: 'AlexanderSoloviev/mv-matching', 'mh3166/Extended_MV_algorithm'
 
@@ -1354,7 +1354,7 @@
 - solves: 'Viterbi path'
 - applications: 'Speech recognition', 'Convolutional code', 'Speech synthesis', 'Computational linguistics', 'Bioinformatics'
 - related theory: 'Hidden Markov model'
-- implemented in: 'Python librosa.sequence.viterbi'
+- implemented in: 'Python librosa.sequence.viterbi', 'hmmlearn'
 
 ## List Viterbi algorithm
 - also called: 'LVA'
@@ -1409,11 +1409,20 @@
 - https://en.wikipedia.org/wiki/Dynamic_time_warping
 - paper: 'Dynamic programming algorithm optimization for spoken word recognition' (1978) <https://doi.org/10.1109/TASSP.1978.1163055>
 - applications: 'Time series analysis', 'Speech recognition', 'Speaker recognition', 'Signature recognition', 'Shape matching', 'Correlation power analysis'
-- implemented in: 'Python pydtw', 'Python librosa.core.dtw'
+- implemented in: 'Python pydtw', 'Python librosa.core.dtw', 'tslearn.metrics.dtw'
 - possibly superseded by: 'Connectionist temporal classification'
 - input: two sequences
 - time complexity: O(n m), where n and m are the lengths of the input sequences
 - space complexity: O(n m), where n and m are the lengths of the input sequences
+- is a: distance function
+- similar: 'Needleman–Wunsch algorithm'
+- is not a: 'metric'
+
+## Canonical Time Warping
+- paper: 'Canonical Time Warping for Alignment of Human Behavior' (2009) <https://dl.acm.org/doi/10.5555/2984093.2984349>
+- implemented in: 'tslearn.metrics.ctw'
+- is a: distance function
+- input: two sequences
 
 ## Grubbs's test for outliers
 - also called: 'Maximum normalized residual test', 'Extreme studentized deviate test'
@@ -1816,20 +1825,41 @@
 - input: 'Collection of points' & 'Positive integer k'
 - output: 'Collection of cluster indices'
 
+## k-Shape
+- paper: 'k-Shape: Efficient and Accurate Clustering of Time Series' (2016) <https://doi.org/10.1145/2949741.2949758>
+- applications: 'Time series analysis', 'Cluster analysis', 'Shape-based clustering', 'Time series clustering'
+- implemented in: 'tslearn.clustering.KShape'
+- centroid-based
+
+## Time series k-means clustering algorithm
+- implemented in: 'tslearn.clustering.TimeSeriesKMeans'
+
+## BFR algorithm
+- also called: 'Bradley-Fayyad-Reina-algorithm'
+- https://en.wikipedia.org/wiki/BFR_algorithm
+- variant of: 'k-means clustering'
+- assumes: that clusters are normally distributed around a centroid in a Euclidean space
+
 ## PQk-means
 - also called: 'Product-quantized k-means'
 - paper: 'PQk-means: Billion-scale Clustering for Product-quantized Codes' (2017)
 - implemented in (libraries): 'Python pqkmeans'
 - approximation of: 'k-means clustering'
 
-## k-medoids algorithm
-- also called: 'Partitioning Around Medoids'
+## Partitioning Around Medoids
+- also called: 'PAM'
 - https://en.wikipedia.org/wiki/K-medoids
 - is a: 'Clustering algorithm'
 - more robust to noise than 'k-means clustering'
 - input: 'Collection of points' & 'Positive integer k'
 - output: 'Collection of cluster indices'
 - implemented in: 'Python Bio.Cluster.kmedoids'
+- solves: 'k-medoids clustering problem'
+
+## FasterPAM
+- paper: 'Fast and eager k-medoids clustering: o(k) runtime improvement of the PAM, CLARA, and CLARANS algorithms' (2021) <https://doi.org/10.1016/j.is.2021.101804>
+- implemented in: 'Python kmedoids'
+- solves: 'k-medoids clustering problem'
 
 ## Lloyd's algorithm
 - https://en.wikipedia.org/wiki/Lloyd%27s_algorithm
@@ -1839,7 +1869,7 @@
 - approximates: 'Centroidal Voronoi tessellation'
 
 ## Linde–Buzo–Gray algorithm
-- paper: 'An Algorithm for Vector Quantizer Design' (1980)
+- paper: 'An Algorithm for Vector Quantizer Design' (1980) <https://doi.org/10.1109/TCOM.1980.1094577>
 - https://en.wikipedia.org/wiki/Linde%E2%80%93Buzo%E2%80%93Gray_algorithm
 - similar: 'k-means clustering'
 - generalization of: 'Lloyd's algorithm'
@@ -1850,6 +1880,58 @@
 - https://en.wikipedia.org/wiki/Single-linkage_clustering
 - applications: 'Hierarchical clustering'
 - implemented by: 'SLINK algorithm'
+- is a: 'agglomerative clustering method'
+
+## Balanced iterative reducing and clustering using hierarchies
+- also called: 'BIRCH'
+- paper: 'BIRCH: an efficient data clustering method for very large databases' (1996) <https://doi.org/10.1145/233269.233324>
+- https://en.wikipedia.org/wiki/BIRCH
+- implemented in: 'pyclustering.cluster.birch.birch'
+- domain: 'cluster analysis'
+
+## DBSCAN
+- also called: 'Density-based spatial clustering of applications with noise'
+- paper: 'A density-based algorithm for discovering clusters in large spatial databases with noise' (1996) <https://dl.acm.org/doi/10.5555/3001460.3001507>
+- https://en.wikipedia.org/wiki/DBSCAN
+- applications: 'Density-based clustering'
+- implemented in: 'pyclustering.cluster.dbscan.dbscan'
+
+## k-medians clustering
+- https://en.wikipedia.org/wiki/K-medians_clustering
+- implemented in: 'pyclustering.cluster.kmedians.kmedians'
+- less sensitive to outliers than 'k-means clustering'
+- domain: 'cluster analysis'
+
+## CURE algorithm
+- https://en.wikipedia.org/wiki/CURE_algorithm
+- applications: 'clustering'
+- runtime complexity: O(n^2 log n)
+- space complexity: O(n)
+- implemented in: 'pyclustering.cluster.cure.cure'
+- Assumes a Euclidean distance
+
+## Nearest-neighbor chain algorithm
+- https://en.wikipedia.org/wiki/Nearest-neighbor_chain_algorithm
+- applications: 'agglomerative hierarchical clustering'
+- domain: 'cluster analysis'
+
+## Neighbor joining
+- paper: 'The neighbor-joining method: a new method for reconstructing phylogenetic trees.' (1987) <https://doi.org/10.1093/oxfordjournals.molbev.a040454>
+- https://en.wikipedia.org/wiki/Neighbor_joining
+- applications: 'agglomerative clustering'
+- input: 'Distance matrix'
+- implemented in: 'RapidNJ', 'NINJA'
+
+## Lance–Williams algorithms
+- paper: 'A general theory of classificatory sorting strategies: II. Clustering systems' (1967) <https://doi.org/10.1093/comjnl/10.3.271>
+- applications: 'agglomerative hierarchical clustering'
+- is a: infinite family of algorithms
+
+## Ward's minimum variance method
+- also called: 'Ward's method'
+- https://en.wikipedia.org/wiki/Ward%27s_method
+- is a: objective function
+- applications: 'agglomerative hierarchical clustering'
 
 ## SLINK algorithm
 - paper: 'SLINK: An optimally efficient algorithm for the single-link cluster method'
@@ -1879,26 +1961,26 @@
 - implemented in: 'scipy.cluster.hierarchy.linkage'
 
 ## Unweighted Pair Group Method with Arithmetic Mean
-- also called: UPGMA
+- also called: 'UPGMA'
 - https://en.wikipedia.org/wiki/UPGMA
-- applications: 'Hierarchical clustering'
+- applications: 'agglomerative hierarchical clustering'
 - implemented in: 'Python scipy.cluster.hierarchy.linkage, Bio.Phylo.TreeConstruction.DistanceTreeConstructor'
 - creates: 'Dendrogram', 'Ultrametric tree'
 
 ## Weighted Pair Group Method with Arithmetic Mean
-- also called: WPGMA
+- also called: 'WPGMA'
 - https://en.wikipedia.org/wiki/WPGMA
-- applications: 'Hierarchical clustering'
+- applications: 'agglomerative hierarchical clustering'
 - implemented in: 'scipy.cluster.hierarchy.linkage'
 - creates: 'Dendrogram', 'Ultrametric tree'
 
 ## Unweighted Pair Group Method with Centroid Averaging
-- also called: UPGMC
+- also called: 'UPGMC'
 - applications: 'Hierarchical clustering'
 - implemented in: 'scipy.cluster.hierarchy.linkage'
 
 ## Weighted Pair Group Method with Centroid Averaging
-- also called: WPGMC
+- also called: 'WPGMC'
 - applications: 'Hierarchical clustering'
 - implemented in: 'scipy.cluster.hierarchy.linkage'
 
@@ -2425,7 +2507,7 @@
 - solves: 'Connected-component finding'
 
 ## Hoshen–Kopelman algorithm
-- paper: 'Percolation and cluster distribution. I. Cluster multiple labeling technique and critical concentration algorithm (1976)'
+- paper: 'Percolation and cluster distribution. I. Cluster multiple labeling technique and critical concentration algorithm (1976)' <https://doi.org/10.1103/PhysRevB.14.3438>
 - https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm
 - is a: 'Cluster analysis algorithm'
 - input: 'regular network of bools'
@@ -2668,18 +2750,32 @@
 - https://en.wikipedia.org/wiki/Rete_algorithm
 - is a: 'Pattern matching algorithm'
 
+## GSP algorithm
+- also called: 'Generalized Sequential Pattern algorithm'
+- paper: 'Mining sequential patterns: Generalizations and performance improvements' (1996) <https://doi.org/10.1007/BFb0014140>
+- applications: 'Sequential pattern mining'
+- domain: 'Data mining', 'Java SPMF'
+
+
 ## PrefixSpan
 - paper: 'PrefixSpan,: mining sequential patterns efficiently by prefix-projected pattern growth' (2001) <https://doi.org/10.1109/ICDE.2001.914830>
-- applications: 'Sequential pattern mining'
+- applications: 'Sequential pattern mining', 'Discrete sequence anomaly detection'
 - domain: 'Data mining'
-- implemented in: 'Python prefixspan'
+- implemented in: 'Python prefixspan', 'Spark MLlib PrefixSpan', 'Java SPMF'
 
 ## SPADE
 - also called: 'Sequential PAttern Discovery using Equivalence classes'
+- paper: 'Efficient enumeration of frequent sequences' (1998) <https://doi.org/10.1145/288627.288643>
 - paper: 'SPADE: An Efficient Algorithm for Mining Frequent Sequences' (2001) <https://doi.org/10.1023/A:1007652502315>
 - applications: 'Sequential pattern mining'
 - domain: 'Data mining'
-- implemented in: 'mtitov/pyrexplorer'
+- implemented in: 'mtitov/pyrexplorer', 'Java SPMF'
+
+## cSPADE
+- also called: 'constrained SPADE'
+- paper: 'Sequence mining in categorical domains: incorporating constraints' (2000) <https://doi.org/10.1145/354756.354849>
+- domain: 'Data mining'
+- variant of: 'SPADE'
 
 ## AprioriAll
 - paper: 'Mining sequential patterns' (1995) <https://doi.org/10.1109/ICDE.1995.380415>
@@ -2722,7 +2818,7 @@
 - paper: 'Trainable grammars for speech recognition (1971)'
 - uses?: 'Expectation–maximization algorithm'
 - special case of?: 'Expectation–maximization algorithm'
-- generalization of: 'Forward–backward algorithm'
+- generalization of: 'Forward-backward algorithm'
 - re-estimating production probabilities in a probabilistic context-free grammar
 - applications: 'PCFG'
 
@@ -2766,13 +2862,18 @@
 - uses technique: 'Bottom-up parsing'
 - implemented in: 'Python nltk.parse.shiftreduce.ShiftReduceParser'
 
+## Forward-backward algorithm
+- https://en.wikipedia.org/wiki/Forward%E2%80%93backward_algorithm
+- applications: 'inference algorithm for hidden Markov models'
+- uses: 'Dynamic programming'
+
 ## Baum–Welch algorithm
 - https://en.wikipedia.org/wiki/Baum%E2%80%93Welch_algorithm
-- uses: 'Forward–backward algorithm', 'Expectation–maximization algorithm'
+- uses: 'Forward-backward algorithm', 'Expectation–maximization algorithm'
 - input: 'Hidden Markov model'
 - output: 'HMM parameters'
 - applications: 'Speech recognition', 'Cryptanalysis', 'Copy-number variation'
-- implemented in (libraries): 'GHMM'
+- implemented in (libraries): 'GHMM', 'hmmlearn'
 
 ## WINEPI
 - https://en.wikipedia.org/wiki/WINEPI
@@ -2803,12 +2904,41 @@
 - properties: 'vectorized'
 - uses: 'Fast Fourier transform'
 
+## Barnes-Hut algorithm
+- also called: 'Barnes-Hut treecode algorithm', 'Barnes-Hut simulation'
+- https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation
+- is a: 'Approximation algorithm'
+- approximately solves: 'N-body simulation'
+
 ## Principal component analysis
 - also called: 'PCA', 'Karhunen–Loève transform', 'KLT', 'Hotelling transform'
 - https://en.wikipedia.org/wiki/Principal_component_analysis
-- applications: 'Dimensionality reduction', 'Exploratory data analysis'
+- applications: 'Exploratory data analysis'
 - implemented in: 'LAPACK', 'ARPACK', 'Python sklearn.decomposition.PCA, Bio.Cluster.pca'
 - can be implemented using: 'Singular Value Decomposition'
+- solves: 'Linear dimensionality reduction'
+
+## Robust principal component analysis
+- also called: 'Robust PCA'
+- https://en.wikipedia.org/wiki/Robust_principal_component_analysis
+- variant of: 'Principal component analysis'
+- solved by: 'Principal Component Pursuit'
+
+## Principal Component Pursuit
+- also called: 'PCP'
+- paper: 'Robust principal component analysis?' (2011) <https://doi.org/10.1145/1970392.1970395>
+- is a: 'convex program'
+- applications: 'video surveillance', 'face recognition'
+- solves: 'Robust PCA problem'
+
+## Stable PCP
+- variant of: 'Principal Component Pursuit'
+- solves: 'Robust PCA problem'
+
+## IR-CUR
+- also called: 'Iterated Robust CUR'
+- paper: 'Rapid Robust Principal Component Analysis: CUR Accelerated Inexact Low Rank Estimation' (2021) <>
+- solves: 'Robust PCA problem'
 
 ## Kernel principal component analysis
 - https://en.wikipedia.org/wiki/Kernel_principal_component_analysis
@@ -2982,9 +3112,20 @@
 - supersedes: 'Natarajan's algorithm for finding the reset sequence of a monotoic DFA'
 
 ## Apriori algorithm
-- https://en.wikipedia.org/wiki/Apriori_algorithm
-- applications: 'Association rule learning', 'Data mining'
+- paper: 'Fast Algorithms for Mining Association Rules' (1994) <http://www.vldb.org/conf/1994/P487.PDF>
+- https://en.wikipedia.org/wiki/Association_rule_learning#Apriori_algorithm
+- https://golden.com/wiki/Apriori_algorithm-9W3JD
+- applications: 'Association rule learning', 'Data mining', 'Market basket analysis'
 - based on: 'Breadth-first search'
+- related problems: 'Frequent itemset mining'
+- implemented in: 'mlxtend.frequent_patterns.apriori', 'ymoch/apyori'
+
+## FP-growth algorithm
+- also called: 'Frequent Pattern growth'
+- paper: 'Mining frequent patterns without candidate generation' (2000) <https://doi.org/10.1145/335191.335372>
+- applications: 'Frequent pattern mining', 'Data mining', 'Market basket analysis'
+- implemented in: 'mlxtend.frequent_patterns.fpgrowth'
+- related problems: 'Frequent itemset mining'
 
 ## Random sample consensus
 - also called: 'RANSAC'

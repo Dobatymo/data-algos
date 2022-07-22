@@ -144,11 +144,19 @@
 
 ## Conditional random field
 - also called: 'CRF'
+- paper: 'Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data' (2001) <https://dl.acm.org/doi/10.5555/645530.655813>
 - https://en.wikipedia.org/wiki/Conditional_random_field
 - properties: 'discriminative', 'undirected', 'probabilistic', 'graphical'
 - applications: 'Structured prediction', 'POS tagging', 'shallow parsing', 'named entity recognition', 'object recognition'
 - usually optimized by: 'L-BFGS', 'Stochastic gradient descent'
 - implemented in: 'CRFSuite', 'python-crfsuite'
+- generalization of: 'Linear Chain CRF'
+
+## Linear Chain CRF
+- also called: 'Linear chain conditional random field'
+- implemented in: 'torch_struct.LinearChainCRF'
+- specialization of: 'CRF'
+- properties: 'discriminative', 'undirected', 'probabilistic'
 
 ## k-nearest neighbors algorithm
 - also called: 'k-NN', 'KNN'
@@ -170,6 +178,8 @@
 
 ## Linear support-vector machine
 - also called: 'SVM', 'Support-vector network'
+- paper: 'A training algorithm for optimal margin classifiers' (1992) <https://doi.org/10.1145/130385.130401>
+- paper: 'Support-vector networks' (1995) <https://doi.org/10.1007/BF00994018>
 - https://en.wikipedia.org/wiki/Support-vector_machine
 - Quadratic Programming problem
 - usually optimized by: 'Coordinate descent', 'newGLMNET'
@@ -206,11 +216,14 @@
 
 ## Hidden Markov model
 - also called: 'HMM'
+- paper: 'Statistical Inference for Probabilistic Functions of Finite State Markov Chains' (1966) <https://doi.org/10.1214/aoms/1177699147>
 - https://en.wikipedia.org/wiki/Hidden_Markov_model
 - properties: 'generative', 'stochastic'
 - type of: 'Markov model'
-- applications: 'Speech recognition', 'Natural language processing', 'Bioinformatics'
+- applications: 'Speech recognition', 'Natural language processing', 'Bioinformatics', 'Discrete sequence anomaly detection'
 - domain: 'Machine learning'
+- implemented in: 'Python hmmlearn', 'Python torch_struct.HMM'
+- usually optimized by: 'Forward-backward algorithm', 'Viterbi algorithm'
 
 ## Helmholtz machine
 - https://en.wikipedia.org/wiki/Helmholtz_machine
@@ -369,22 +382,65 @@
 - https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model
 - implemented in: 'Python statsmodels.tsa.arima_model.ARMA'
 - applications: 'Time series analysis'
-- properties: 'autoregressive', 'linear'
+- properties: 'autoregressive', 'linear', 'univariate'
 - commonly estimated by: 'Box–Jenkins method'
 
-## Autoregressive integrated moving average
+## Autoregressive moving average vector model
+- also called: 'ARMAV', 'VARMA', 'Vector ARMA'
+- applications: 'Time series analysis'
+- properties: 'autoregressive', 'multivariate'
+
+## Autoregressive integrated moving average model
 - also called: 'ARIMA'
 - https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average
-- implemented in: 'Python statsmodels.tsa.arima_model.ARIMA'
+- implemented in: 'Python statsmodels.tsa.arima.model.ARIMA'
 - applications: 'Time series analysis'
-- properties: 'autoregressive', 'linear'
+- properties: 'autoregressive', 'linear', 'univariate'
 - commonly estimated by: 'Box–Jenkins method'
 
 ## Autoregressive conditional heteroskedasticity
 - also called: 'ARCH'
 - https://en.wikipedia.org/wiki/Autoregressive_conditional_heteroskedasticity
 - applications: 'Time series analysis'
-- properties: 'autoregressive'
+- properties: 'autoregressive', 'univariate'
+
+## Exponential smoothing
+- also called: 'Holt Winter's exponential smoothing'
+- implemented in: 'Python statsmodels.tsa.holtwinters.ExponentialSmoothing'
+- applications: 'Time series analysis'
+- properties: 'univariate'
+
+## Vector autoregression
+- also called: 'VAR'
+- https://en.wikipedia.org/wiki/Vector_autoregression
+- applications: 'Time series analysis'
+- properties: 'autoregressive', 'multivariate'
+- implemented in: 'Python statsmodels.tsa.vector_ar', 'Python pyflux.VAR', 'sktime.forecasting.var.VAR'
+
+## Structural vector autoregression
+- also called: 'Structural VAR', 'SVAR'
+- https://en.wikipedia.org/wiki/Vector_autoregression#Structural_VAR
+- applications: 'Time series analysis'
+- properties: 'autoregressive', 'multivariate'
+- implemented in: 'Python statsmodels.tsa.vector_ar.svar_model.SVAR'
+
+## BATS
+- paper: 'Forecasting Time Series With Complex Seasonal Patterns Using Exponential Smoothing' (2012) <https://doi.org/10.1198/jasa.2011.tm09771>
+- implemented in: 'tbats'
+- applications: 'Time series analysis'
+
+## TBATS
+- paper: 'Forecasting Time Series With Complex Seasonal Patterns Using Exponential Smoothing' (2012) <https://doi.org/10.1198/jasa.2011.tm09771>
+- implemented in: 'tbats'
+- applications: 'Time series analysis'
+
+## Matrix autoregressive model
+- also called: 'MAR'
+- paper: 'Autoregressive models for matrix-valued time series' (2021) <https://doi.org/10.1016/j.jeconom.2020.07.015>
+- applications: 'Time series analysis'
+- properties: 'autoregressive', 'multivariate', 'bilinear'
+- usually optimized by: 'Alternating Least Squares'
+- related problems: 'Nearest Kronecker product problem'
 
 ## Probabilistic context-free grammar
 - also called: 'PCFG', 'Stochastic context-free grammar', 'SCFG'
@@ -417,7 +473,7 @@
 ## Ising model
 - https://en.wikipedia.org/wiki/Ising_model
 - usually solved by: 'Transfer-matrix method'
-- usually samples by: 'Metropolis–Hastings algorithm'
+- usually sampled by: 'Metropolis–Hastings algorithm'
 - variants: 'ANNNI model', 'Z N model', 'Potts model'
 - describes: 'Ferromagnetism'
 

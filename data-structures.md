@@ -532,6 +532,11 @@
 - applications: 'Nearest neighbor search', 'spell-checking', 'auto-completion'
 - implements: 'Map'
 
+## Hierarchical Navigable Small world graphs
+- also called: 'Hierarchical NSW', 'HNSW'
+- paper: 'Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs' (2018) <https://doi.org/10.1109/TPAMI.2018.2889473>
+- applications: 'Approximate nearest Neighbor Search'
+
 ## Corner Stitching
 - paper: 'Corner Stitching: a Data Structuring Technique for VLSI Layout Tools (1982)'
 - applications: 'Very Large Scale Integration'
@@ -560,6 +565,15 @@
 - properties: 'probabilistic'
 - implements: 'Set'
 - applications: 'caching strategies', 'database query optimization', 'rate-limiting', 'data synchronization', 'chemical structure searching'
+- is a: 'probabilistic data structure'
+
+## Count–min sketch
+- also called: 'CM sketch'
+- paper: 'An improved data stream summary: the count-min sketch and its applications' (2005) <https://doi.org/10.1016/j.jalgor.2003.12.001>
+- https://en.wikipedia.org/wiki/Count%E2%80%93min_sketch
+- is a: 'probabilistic data structure'
+- used by: 'MIDAS anomaly detection algorithm'
+- properties: 'sub-linear space usage'
 
 ## Optimal binary search tree
 - https://en.wikipedia.org/wiki/Optimal_binary_search_tree

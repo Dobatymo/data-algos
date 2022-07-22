@@ -21,6 +21,19 @@
 - applications: 'Spelling correction', 'Sequence alignment', 'Approximate string matching', 'Linguistic distance'
 - properties: 'Discrete'
 
+## Longest common subsequence similarity measure
+- paper: 'Discovering similar multidimensional trajectories' (2002) <https://doi.org/10.1109/ICDE.2002.994784>
+- implemented in: 'tslearn.metrics.lcss'
+- related: 'Longest common subsequence problem'
+- is not a: metric
+- applications: 'Time series analysis', 'Sequence alignment'
+
+## Global Alignment Kernel
+- also called: 'GAK'
+- paper: 'Fast global alignment kernels' (2011) <https://dl.acm.org/doi/10.5555/3104482.3104599>
+- implemented in: 'tslearn.metrics.gak'
+- applications: 'Time series analysis', 'Sequence alignment'
+
 ## Euclidean distance
 - also called: 'Euclidean metric'
 - https://en.wikipedia.org/wiki/Euclidean_distance
@@ -99,6 +112,7 @@
 ## Cosine similarity
 - https://en.wikipedia.org/wiki/Cosine_similarity
 - is not: 'metric'
+- is a: 'Semi metric'
 - applications: 'natural language processing', 'data mining'
 - metric version: 'angular distance'
 - implemented in: 'sklearn.metrics.pairwise.cosine_similarity'
@@ -125,8 +139,8 @@
 - also called: 'Mean-squared error', 'mean squared deviation', 'MSD', 'MSE'
 - https://en.wikipedia.org/wiki/Mean_squared_error
 - applications: 'Statistical model', 'Linear regression'
-- implemented in: 'Python sklearn.metrics.mean_squared_error, tf.metrics.mean_squared_error, torch.nn.MSELoss, skimage.measure.compare_mse, andrewekhalel/sewar'
-- properties: 'Continuous'
+- implemented in: 'Python sklearn.metrics.mean_squared_error, tf.metrics.mean_squared_error, torch.nn.MSELoss, skimage.measure.compare_mse, andrewekhalel/sewar', 'cv::quality::QualityMSE'
+- properties: 'Continuous', 'full reference'
 
 ## Mean absolute error
 - https://en.wikipedia.org/wiki/Mean_absolute_error
@@ -166,6 +180,7 @@
 - paper: 'Sequential Operations in Digital Picture Processing (1966)'
 - applications: 'Computer vision', 'Image similarity'
 - approximates: 'Euclidean distance'
+- implemented in: 'tfg.nn.loss.chamfer_distance', 'Python chamferdist'
 
 ## Hausdorff distance
 - https://en.wikipedia.org/wiki/Hausdorff_distance
@@ -174,9 +189,11 @@
 - implemented in: 'scipy.spatial.distance.directed_hausdorff'
 
 ## Mahalanobis distance
+- paper: 'On the generalised distance in statistics' (1936)
 - https://en.wikipedia.org/wiki/Mahalanobis_distance
 - applications: 'Cluster analysis', 'Anomaly detection'
 - implemented in: 'scipy.spatial.distance.mahalanobis'
+- properties: 'unitless', 'scale-invariant'
 
 ## q-gram distance
 - for example defined in paper: 'Approximate string-matching with q-grams and maximal matches'
@@ -186,7 +203,7 @@
 - also called: 'SSIM', 'Structural similarity index'
 - paper: 'Image quality assessment: from error visibility to structural similarity (2004)'
 - https://en.wikipedia.org/wiki/Structural_similarity
-- implemented in: 'Python skimage.metrics.structural_similarity', 'tf.image.ssim', 'aizvorski/video-quality', 'sewar.full_ref.ssim'
+- implemented in: 'Python skimage.metrics.structural_similarity', 'tf.image.ssim', 'aizvorski/video-quality', 'sewar.full_ref.ssim', 'piq.ssim', 'cv::quality::QualitySSIM'
 - properties: 'full reference'
 - corresponding distance: 'Structural Dissimilarity' (not a metric)
 - applications: 'Video quality evaluation', 'Image Quality Assessment'
@@ -194,22 +211,75 @@
 
 ## IW-SSIM
 - also called: 'Information Content Weighted Structural Similarity Index'
-- paper: 'Information Content Weighting for Perceptual Image Quality Assessment' (2010)
+- paper: 'Information Content Weighting for Perceptual Image Quality Assessment' (2010) <https://doi.org/10.1109/TIP.2010.2092435>
+- implemented in: 'Python piq.information_weighted_ssim'
+- properties: 'full reference'
 
 ## MS-SSIM
 - also called: 'Multi-scale Structural Similarity Index'
 - paper: 'Multiscale structural similarity for image quality assessment' (2003)
-- implemented in: 'sewar.full_ref.msssim'
+- implemented in: 'sewar.full_ref.msssim', 'piq.multi_scale_ssim'
 - properties: 'full reference'
 
 ## Visual Information Fidelity
 - also called: 'VIF'
-- paper: 'Image information and visual quality' (2006)
+- paper: 'Image information and visual quality' (2006) <https://doi.org/10.1109/TIP.2005.859378>
 - https://en.wikipedia.org/wiki/Visual_Information_Fidelity
 - properties: 'full reference'
 - applications: 'Video quality evaluation', 'Image Quality Assessment'
 - domain: 'Image processing'
-- implemented in: 'aizvorski/video-quality', 'Python andrewekhalel/sewar'
+- implemented in: 'aizvorski/video-quality', 'Python andrewekhalel/sewar', 'piq.vif_p'
+
+## Feature Similarity Index Measure
+- also called: 'FSIM'
+- paper: 'FSIM: A Feature Similarity Index for Image Quality Assessment' (2011) <https://doi.org/10.1109/TIP.2011.2109730>
+- implemented in: 'piq.fsim'
+- properties: 'full reference'
+
+## Gradient Magnitude Similarity Deviation
+- also called: 'GMSD'
+- paper: 'Gradient Magnitude Similarity Deviation: A Highly Efficient Perceptual Image Quality Index' (2013) <https://doi.org/10.1109/TIP.2013.2293423>
+- implemented in: 'piq.gmsd', 'cv::quality::QualityGMSD'
+- properties: 'full reference'
+
+## Multi-Scale Gradient Magnitude Similarity Deviation
+- also called: 'MS-GMSD'
+- paper: 'Gradient magnitude similarity deviation on multiple scales for color image quality assessment' (2017) <https://doi.org/10.1109/ICASSP.2017.7952357>
+- implemented in: 'piq.multi_scale_gmsd'
+- properties: 'full reference'
+
+## Visual Saliency-induced Index
+- also called: 'VSI'
+- paper: 'VSI: A Visual Saliency-Induced Index for Perceptual Image Quality Assessment' (2014) <https://doi.org/10.1109/TIP.2014.2346028>
+- implemented in: 'piq.vsi'
+- properties: 'full reference'
+- applications: 'Perceptual image quality assessment'
+
+## Haar Perceptual Similarity Index
+- also called: 'HaarPSI'
+- paper: 'A Haar Wavelet-Based Perceptual Similarity Index for Image Quality Assessment' (2017) <https://doi.org/10.48550/arXiv.1607.06140>
+- implemented in: 'piq.haarpsi'
+- properties: 'full reference'
+- applications: 'image quality assessment'
+
+## Mean Deviation Similarity Index
+- also called: 'MDSI'
+- paper: 'Mean Deviation Similarity Index: Efficient and Reliable Full-Reference Image Quality Evaluator' (2016) <https://doi.org/10.1109/ACCESS.2016.2604042>
+- implemented in: 'piq.mdsi'
+- properties: 'full reference'
+- applications: 'image quality assessment'
+
+## Total Variation metric
+- also called: 'TV'
+- https://remi.flamary.com/demos/proxtv.html
+- implemented in: 'piq.total_variation'
+- properties: 'no reference'
+
+## Blind/Referenceless Image Spatial Quality Evaluator
+- also called: 'BRISQUE'
+- implemented in: 'piq.brisque', 'cv::quality::QualityBRISQUE'
+- properties: 'no reference'
+- applications: 'image quality assessment'
 
 ## ERGAS
 - also called: 'Erreur Relative Globale Adimensionnelle de Synthèse' ()
@@ -299,7 +369,8 @@
 ## Peak signal-to-noise ratio
 - also called: 'PSNR'
 - https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio
-- implemented in: 'Python skimage.metrics.peak_signal_noise_ratio', 'aizvorski/video-quality', 'sewar.full_ref.psnr'
+- implemented in: 'Python skimage.metrics.peak_signal_noise_ratio', 'aizvorski/video-quality', 'sewar.full_ref.psnr', 'piq.psnr', 'cv::quality::QualityPSNR'
+- properties: 'full reference'
 
 ## Polar edge coherence
 - also called: 'PEC'
